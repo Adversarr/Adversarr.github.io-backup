@@ -22,4 +22,7 @@ npm install hexo-renderer-mathjax
 npm install searchdb
 npm install hexo-asset-image
 npm install hexo-deployer-git
+npm i kityminder-core-new
+npm i kity
+npm i hexo-simple-mindmap
 ```

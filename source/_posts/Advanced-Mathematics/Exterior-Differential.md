@@ -67,3 +67,12 @@ $$
 ${\displaystyle d\omega} {\displaystyle =\left({\frac {\partial p}{\partial x}}+{\frac {\partial q}{\partial y}}+{\frac {\partial r}{\partial z}}\right)dx\wedge dy\wedge dz}{\displaystyle ={\mathrm{div}}V\,dx\wedge dy\wedge dz,}$
 
 其中 $V$ 是一个向量场定义为 **${\displaystyle V=[p,q,r].}$**
+
+{% pullquote mindmap %}
++ 123
+  + 123
+  + 333
+  + 4
+- 1233
+  - 123
+{% endpullquote %}

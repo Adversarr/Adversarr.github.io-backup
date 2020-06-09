@@ -28,6 +28,9 @@
     "hexo-renderer-pandoc": "^0.3.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.7.1"
+    "hexo-simple-mindmap": "^0.2.0",
+    "hexo-symbols-count-time": "^0.7.1",
+    "kity": "^2.0.4",
+    "kityminder-core-new": "^1.4.54"
   }
 }

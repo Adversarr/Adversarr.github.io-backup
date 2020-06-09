@@ -131,6 +131,7 @@ deploy:
 theme: next
 auto_spacing: true
 
+
 note:
   # Note tag style values:
   #  - simple    bs-callout old alert style. Default.
@@ -139,10 +140,10 @@ note:
   #  - disabled  disable all CSS styles import of note tag.
   style: modern
   icons: true
-  border_radius: -18
+  border_radius: -12
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 6
+  light_bg_offset: 12
 # Code Highlight theme
 # Available value: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme

@@ -117,7 +117,7 @@ tag_generator:
 deploy:
   type: git
   repository: git@github.com:Jerryyang2001/Jerryyang2001.github.io.git
-  branch: master
+  branch: gh-pages
   message: Site updated:{{ now('YYYY-MM-DD HH:mm:ss') }})
 
 

@@ -13,12 +13,19 @@ body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
-
+  --h1-fontsize: 2rem;   /* 1,5   rem = 24px */
+  --h2-fontsize: 1.5rem; /* 1,375 rem = 22px */
+  --h3-fontsize: 1.25rem;  /* 1,25  rem = 20px */
+  --h4-fontsize: 1.125rem; /* 1,125 rem = 18px */
+  --accent-color: #aeb1b5; /* #'s before H1-3 */
+  --header-color: #222324;
+  --control-text-color: #667176;
   +tablet-mobile() {
     // Remove the padding of body when the sidebar is open.
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,10 +35,62 @@ h1, h2, h3, h4, h5, h6 {
   margin: 20px 0 15px;
 }
 
+/*
 for $headline in (1 .. 6) {
   h{$headline} {
     font-size: $font-size-headings-base - $font-size-headings-step * $headline;
   }
+}
+*/
+
+h1:not(:first-child) {
+  margin-top: 3rem;
+}
+
+h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: var(--h2-fontsize);
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: var(--h3-fontsize);
+}
+
+h4, h5, h6 {
+  color: var(--header-color);  
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: var(--h4-fontsize);
+}
+
+h6 {
+  color: var(--control-text-color);	
+}
+
+h2::before,
+h3::before {
+  font-weight: 400;
+  text-align: right;
+  width: 5ch;
+  padding-right: 1ch;
+  margin-left: -6ch;
+  color: var(--accent-color);
+  display: inline-block;
+}
+
+h2::before {
+  content: '##';
+}
+
+h3::before {
+  content: '###';
 }
 
 p {

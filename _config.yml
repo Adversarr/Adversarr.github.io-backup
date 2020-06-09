@@ -144,9 +144,6 @@ note:
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 12
-# Code Highlight theme
-# Available value: normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
 
 search:
   path: search.xml

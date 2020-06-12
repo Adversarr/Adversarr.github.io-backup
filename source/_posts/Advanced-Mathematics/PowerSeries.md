@@ -56,3 +56,9 @@ mathjax: true
 **Thm**：在 $x=R$ 处收敛，则和函数在 $[0,R]$ 连续
 
 > 通过函数项级数的判定即可得到这些定理
+
+## 斯特林公式
+
+公式：$\displaystyle n!=\sqrt{2\pi n} (\frac n e)^ne^{\frac{\theta}{12n}}\approx\sqrt{2\pi n} (\frac n e)^n,\theta\in(0,1)$
+
+沃利斯公式：$\displaystyle \frac \pi 2=\lim\limits_{n \to \infin}\frac{[(2n)!!]^2}{[(2n-1)!!]^2(2n+1)}$

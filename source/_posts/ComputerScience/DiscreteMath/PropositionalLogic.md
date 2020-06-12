@@ -218,6 +218,7 @@ mathjax: true
   > 3. 主析取范式法
 
 - 推理定律
+  
   > 重言蕴含式
   >
   > 1. 附加律$A\Rightarrow A\vee B$

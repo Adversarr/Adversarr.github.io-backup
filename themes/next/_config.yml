@@ -97,7 +97,7 @@ scheme: Muse
 #scheme: Gemini
 
 # Dark Mode
-darkmode: auto
+darkmode: false
 
 
 # ---------------------------------------------------------------
@@ -139,7 +139,7 @@ sidebar:
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
   # Pisces | Gemini: 240
-  #width: 300
+  # width: 300
 
   # Sidebar Display (only for Muse | Mist), available values:
   #  - post    expand on posts automatically. Default.
@@ -356,7 +356,7 @@ codeblock:
   copy_button:
     enable: false
     # Show text copy result.
-    show_result: false
+    show_result: mac
     # Available values: default | flat | mac
     style:
 
@@ -365,7 +365,7 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
@@ -441,7 +441,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: Source Code Pro
+    family: Monaco
 
 
 # ---------------------------------------------------------------

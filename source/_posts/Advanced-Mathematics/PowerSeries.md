@@ -27,7 +27,7 @@ mathjax: true
 
 其中 $R=\frac 1 \rho$ 称作**收敛半径**，称 $(-R,R)$ 为**收敛区间**
 
-{% note default %}
+{% note tip Tips  %}
 
 收敛区间和收敛域是不同的，区别在于端点处可能条件收敛
 

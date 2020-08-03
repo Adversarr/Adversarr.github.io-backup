@@ -7,6 +7,11 @@
       "label": "Clean and Deploy",
       "type": "shell",
       "command": ["hexo clean", "hexo d -g"]
+    },
+    {
+      "label": "Lua This File",
+      "type": "shell",
+      "command": ["lua", "${file}"]
     }
   ]
 }

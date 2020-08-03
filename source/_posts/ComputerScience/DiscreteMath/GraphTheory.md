@@ -26,7 +26,7 @@ mathjax: true
 1. $V$ 是一个非空的有穷集，称作顶点集。其元素称作**顶点**或**结点**
 2. $E$ 是无序积 $V\times V$的有穷多重子集，称作**边集**，其中的元素称为**有向边**，简称为**边**
 
-{% note %}
+{% note info 基本概念 %}
 
 - **无向图**和**有向图**统称为**图**，通常用 $G$ 表示无向图，用 $D$ 表示有向图
 - 图的顶点数称为这个图的**阶**，因而也有 **n 阶图**
@@ -56,7 +56,7 @@ mathjax: true
 
 **Def**：（出度、入度、度数）设 $G=<V,E>$ 为无向图，$\forall v\in V$ 称 $v$ 为边的端点的次数为 $v$ 的次数为 $v$ 的**度数**，相同的定义有向图上的**入度**，**出度**，**度数**
 
-{% note %}
+{% note info 一些定义 %}
 
 无向图中：
 
@@ -103,9 +103,12 @@ mathjax: true
 
 **Def**：（同构）若存在双射函数 $f:V_1\rightarrow V_2$ 使得 $\forall v_i,v_j\in V_1,(v_i,v_j)\in E_1\iff (f(v_i),f(v_j))\in E_2$ 且对应边的重数相同，则称 $G_1$ 与 $G_2$ 同构，记作 $\approxeq$
 
-{% note default %}
+{% note info 彼得松图 %}
+
 **Def**：彼得松图
+
 {% asset_img Peterson.png 彼得松图 %}
+
 {% endnote %}
 
 ### 完全图
@@ -214,7 +217,7 @@ mathjax: true
 
 **Def**：（无向图的 关联矩阵$\boldsymbol{M}(G)$）$m_{ij}$ 表示顶点与边 $e_j$ 的**关联次数**
 
-{% note default %}
+{% note info 性质 %}
 
 不难看出，该矩阵：
 
@@ -235,7 +238,7 @@ m_{ij} = \begin{cases}
 \end{cases}
 $$
 
-{% note default %}
+{% note info 性质 %}
 
 不难看出，该矩阵：
 

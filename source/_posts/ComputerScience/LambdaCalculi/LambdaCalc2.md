@@ -1,11 +1,11 @@
 ---
-title: Lambda 演算（2）
+title: Lambda 演算简介（2）
 tags:
   - 编程
   - Lambda演算
 categories: 程序设计
 mathjax: true
-date: 2020-06-11 00:00:00
+date: 2020-06-11
 ---
 
 
@@ -56,9 +56,7 @@ Lambda 演算中的常见概念
 - `car cons e1 e2` $\mathop {\rightarrow}\limits^\beta$ `e1`
 - `cdr cons e1 e2` $\mathop {\rightarrow}\limits^\beta$ `e2`
 
-{% note info %}
-
-#### 演算提示
+{% note info 演算提示 %}
 
 不得不说，这个代数定义实在精彩，希望读者能拿纸笔算一算。在这里给出一定的提示
 
@@ -73,3 +71,45 @@ Lambda 演算中的常见概念
 - 请读者计算`empty? (cons e1 e2)` 和 `empty? empty`。
 
 {% endnote %}
+
+### 数
+
+| 概念      | Lambda 表达式                  | 记法              |
+| --------- | ------------------------------ | ----------------- |
+| `0`       | $\mathrm{[empty]}$             | `[false]`         |
+| `1`       | $\mathrm{[cons][true][false]}$ | `[true]`          |
+| `add1 n`  | $\mathrm{[cons][true][}n]$     | `[cons][true][n]` |
+| `sub1 n`  | $\mathrm{[cdr][n]}$            | `[cdr][n]`        |
+| `zero? n` | $\mathrm{[empty?][}n]$         | `[empty?][n]`     |
+
+需要注意的是，如果我们不用 `[true]` 和 `[false]` 表示 `0` 和 `1` ，而将其适当展开，我们可以得到这样的表达式：
+
+- `[0] = lambda x y.y`
+- `[n+1] = lambda x y.x [n]`
+
+读者应该发现，在定义集合的势的时候，我们用了类似的处理方法：
+
+> 一个自然数可以定义为集合：
+>
+> - $0=\emptyset$
+> - 后继：$n^+=n\cup\{n\}$
+>
+> 一个有穷集的势定义为与其等势的一个自然数。
+
+在定义这些运算之后，我们给出加法的定义：
+
+| 概念      | Lambda 表达式                                                | 记法                                  |
+| --------- | ------------------------------------------------------------ | ------------------------------------- |
+| `add x y` | $\mathrm{\lambda x.\lambda y.\lambda s.\lambda z.(x~s~(y~s~z))}$ | `lambda x y.lambda s z.(x s (y s z))` |
+
+以后在使用时，即可直接使用这些**概念**，进行演算。
+
+## 简单类型的Lambda 演算
+
+回顾前文中所有的Lambda 演算，我们发现，我们所有的演算，都是在Lambda 表达式中进行的，并没有脱开这些表达式，没有用到 `数` `布尔` 等常见的**类型**，在此引入这些概念：
+
+类型化lambda演算的主要变化是增加了一个叫做「基类型」（base types）的概念。在类型化lambda演算中，你可以使用一些由原子值构成的论域（universe）， 这些值分为不同的简单类型。因此，例如，我们可以有一个类型 $N$，它由包含了自然数集合，也可以有一个类型 $B$，对应布尔值`true` / `false`，以及一个对应于字符串类型的类 $S$。
+
+现在我们有了基本类型，接下来我们讨论函数的类型。函数将一种类型（参数的类型）的值映射到的第二种类型（返回值的类型）的值。对于一个接受类型A的输入参数，并且返回类型B的值的函数，我们将它的类型写为$A \rightarrow B$ 。$\rightarrow$叫做函数类型构造器（function type constructor），它是右关联的，所以 $A \rightarrow B \rightarrow C$ 表示 $A \rightarrow (B \rightarrow C)$。
+
+TODO: 未完待续

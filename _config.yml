@@ -26,7 +26,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
-code_dir: downloads/code
+code_dir: code
 i18n_dir: :lang
 skip_render:
 
@@ -128,7 +128,7 @@ deploy:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: cards
 auto_spacing: true
 
 
@@ -138,7 +138,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: modern
+  style: flat
   icons: true
   border_radius: -12
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).

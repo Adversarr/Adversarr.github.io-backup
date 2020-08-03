@@ -67,11 +67,11 @@ $$
 
 > 这个时候，我们才能用 $=$ 替换 $\sim$
 
-{% note default %}
+{% note info TODO: %}
 
 有了这个定理之后，就有一系列的骚操作了
 
-<!-- TODO: -->
+TODO:
 
 {% endnote %}
 

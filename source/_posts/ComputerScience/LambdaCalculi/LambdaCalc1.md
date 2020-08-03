@@ -1,5 +1,5 @@
 ---
-title: Lambda 演算（1）
+title: Lambda 演算简介（1）
 date: 2020-6-9
 tags:
   - 编程
@@ -131,7 +131,7 @@ $\mathrm{(\lambda x.plus~x~x)~y}$：`(lambda x. plus x x) y`（前缀表达式�
 
 柯里化（Currying）是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，并且返回接受余下的参数且返回结果的新函数的技术。在直觉上，柯里化声称：
 
-{% cq %} “如果你固定某些参数，你将得到接受余下参数的一个函数”{% endcq %}
+{% note info %} “如果你固定某些参数，你将得到接受余下参数的一个函数”{% endnote %}
 
 由这个理论，我们来构建一个加法运算：`lambda x.(lambda y. plus x y)`
 
@@ -218,9 +218,7 @@ $$
 
 一个**完全约化**（fully-reduced）的 Lambda 表达式形式没有可约化的表达式。同时，若给出从 $\mathrm {e1}$ 到 $\mathrm{e2}$ 演算序列，则 $\mathrm e2$ 不可约化，且在该演算序列中的所有表达式都约化为 $\mathrm e2$（存在且唯一）。
 
-{% note danger %}
-
-#### 一个无穷递归的例子
+{% note warning 一个无穷递归的例子 %}
 
 $\mathrm{(\lambda x.x~x)~(\lambda x.x~x)}$
 

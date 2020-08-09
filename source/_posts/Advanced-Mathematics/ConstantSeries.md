@@ -86,7 +86,7 @@ mathjax: true
 
 **Thm**：若级数绝对收敛，则其的任何一个重排绝对收敛，且和相等
 
-**Thm**：若级数 $\sum\limits_{n=1}^{\infty} a_n = A$ 和 $\sum\limits_{n=1}^{\infty} b_n = B$ 绝对收敛，则各项相乘得到的乘积项按任何次序排列得到的级数 $\sum\limits_{n=1}^{\infty} c_n$ 绝对收敛于 $AB$ 
+**Thm**：若级数 $\sum\limits_{n=1}^{\infty} a_n = A$ 和 $\sum\limits_{n=1}^{\infty} b_n = B$ 绝对收敛，则各项相乘得到的乘积项按任何次序排列得到的级数 $\sum\limits_{n=1}^{\infty} c_n$ 绝对收敛于 $AB$
 
 **Lemma**：（Abel 变换式）$\sum\limits_{k =1}^{m}\alpha_k\beta_k = \sum\limits_{k=1}^{m-1}(\alpha_k-\alpha_k+1)B_k +a_mB_m$
 

@@ -208,7 +208,7 @@ optimize:
 # ---------------------------------------------------------------
 
 comments: 
-  enable: 
+  enable: true
 
   ## Disqus
   disqus: 

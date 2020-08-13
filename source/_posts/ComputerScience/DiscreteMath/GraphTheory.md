@@ -5,7 +5,7 @@ tags:
   - 图论
   - 离散数学
 categories: 离散数学
-mathjax: true
+math: true
 ---
 
 图论的基本概念和定理，真的炒鸡多呀。

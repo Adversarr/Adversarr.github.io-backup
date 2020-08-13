@@ -5,20 +5,20 @@ tags:
   - 高等数学
   - 级数
 categories: 高等数学
-mathjax: true
+math: true
 ---
 
 函数项级数
 
 <!--more-->
 
-**Def**：将无穷多项的一列函数依次用加号得到的表达式称为函数项级数$\displaystyle\sum\limits_{n=1}^{\infin}u_n(x_0)$
+**Def**：将无穷多项的一列函数依次用加号得到的表达式称为函数项级数$\displaystyle\sum\limits_{n=1}^{\infty}u_n(x_0)$
 
 ## 函数项级数的处处收敛性
 
-**Def**：（函数项级数的处处收敛性和和函数）若级数 $\displaystyle\sum\limits_{n=1}^{\infin}u_n(x_0)$ 收敛，则称 $x_0$ 为**收敛点**，收敛点全体构成的集合称为**收敛域**，相对应的定义**发散点**，**发散域**。如果 $\forall x\in D$ 级数收敛则称为在 $D$ 上处处收敛。称收敛处的极限值为**和函数** $S(x)$
+**Def**：（函数项级数的处处收敛性和和函数）若级数 $\displaystyle\sum\limits_{n=1}^{\infty}u_n(x_0)$ 收敛，则称 $x_0$ 为**收敛点**，收敛点全体构成的集合称为**收敛域**，相对应的定义**发散点**，**发散域**。如果 $\forall x\in D$ 级数收敛则称为在 $D$ 上处处收敛。称收敛处的极限值为**和函数** $S(x)$
 
-与常数项级数相似，**余项** $R_n(x) = S(x) -S_n(x) \rightarrow 0 (n\rightarrow \infin)$
+与常数项级数相似，**余项** $R_n(x) = S(x) -S_n(x) \rightarrow 0 (n\rightarrow \infty)$
 
 {% note tip Tips %}
 

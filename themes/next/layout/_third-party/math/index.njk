@@ -1,7 +1,7 @@
 {%- if theme.math.mathjax.enable or theme.math.katex.enable %}
   {%- set is_index_has_math = false %}
 
-  {# At home, check if there has `mathjax: true` post #}
+  {# At home, check if there has `math: true` post #}
   {%- if is_home() and theme.math.per_page %}
     {%- for post in page.posts.toArray() %}
       {%- if post.mathjax and not is_index_has_math %}

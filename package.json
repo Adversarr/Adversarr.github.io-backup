@@ -9,19 +9,19 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.2.1"
+    "version": "5.0.2"
   },
   "dependencies": {
     "@upupming/hexo-renderer-markdown-it-plus": "^2.0.2",
     "co": "^4.6.0",
-    "hexo": "^4.2.1",
+    "hexo": "^5.0.2",
     "hexo-asset-image": "^1.0.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^1.0.0",
     "hexo-generator-json-content": "^4.2.3",
-    "hexo-generator-searchdb": "^1.3.0",
+    "hexo-generator-searchdb": "^1.3.2",
     "hexo-generator-tag": "^1.0.0",
     "hexo-inject": "^1.0.0",
     "hexo-jupyter-notebook": "0.0.3",
@@ -33,6 +33,7 @@
     "hexo-simple-mindmap": "^0.2.0",
     "hexo-symbols-count-time": "^0.7.1",
     "kity": "^2.0.4",
-    "kityminder-core-new": "^1.4.54"
+    "kityminder-core-new": "^1.4.55",
+    "waque": "^1.12.2"
   }
 }

@@ -2,7 +2,7 @@
 title: 整数的因子分解
 author: Clover
 date: 2020-5-21
-mathjax: true
+math: true
 tags:
   - 算法
   - 数论

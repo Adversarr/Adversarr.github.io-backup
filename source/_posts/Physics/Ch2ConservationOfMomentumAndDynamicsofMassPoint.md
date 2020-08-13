@@ -5,7 +5,7 @@ date: 2020-6-8
 categories: 基础物理学
 tags:
   - 物理
-mathjax: true
+math: true
 ---
 想当初，我也记过这么多东西，吖……
 

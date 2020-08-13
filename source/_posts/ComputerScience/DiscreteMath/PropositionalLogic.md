@@ -4,7 +4,7 @@ date: 2020-6-6
 tags:
   - 数理逻辑
 categories: 离散数学
-mathjax: true
+math: true
 ---
 
 数理逻辑，可以说是到现在为止，写的最详细的了。

@@ -5,7 +5,7 @@ tags:
   - 编程
   - Lambda演算
 categories: 程序设计
-mathjax: true
+math: true
 ---
 
 摘自 Wikipedia，知乎等。

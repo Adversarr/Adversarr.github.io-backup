@@ -358,7 +358,7 @@ codeblock:
     # Show text copy result.
     show_result: mac
     # Available values: default | flat | mac
-    style: default
+    style: mac
 
 back2top:
   enable: true
@@ -491,7 +491,7 @@ baidu_push: false
 # Math Formulas Render Support
 math:
   # Default (true) will load mathjax / katex script on demand.
-  # That is it only render those page which has `mathjax: true` in Front-matter.
+  # That is it only render those page which has `math: true` in Front-matter.
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: true
 

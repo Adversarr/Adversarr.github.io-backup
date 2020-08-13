@@ -5,7 +5,7 @@ categories: 高等数学
 tags:
   - 高等数学
   - 级数
-mathjax: true
+math: true
 ---
 
 级数部分相关定理。

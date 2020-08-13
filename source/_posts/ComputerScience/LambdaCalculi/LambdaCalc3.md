@@ -4,7 +4,7 @@ tags:
   - 编程
   - Lambda演算
 categories: 程序设计
-mathjax: true
+math: true
 date: 2020-06-11
 ---
 

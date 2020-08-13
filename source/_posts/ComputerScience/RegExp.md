@@ -1,3 +1,16 @@
+---
+title: 正则表达式文法
+date: 2020-7-1
+tags:
+  - 编程
+categories: 程序设计
+mathjax: false
+---
+
+正则表达式规则
+
+<!-- more -->
+
 # 正则表达式
 
 ## 描述模式

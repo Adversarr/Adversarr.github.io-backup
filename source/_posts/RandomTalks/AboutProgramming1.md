@@ -5,7 +5,7 @@ tags:
   - 杂谈
   - 编程
 categories: 杂谈
-mathjax: true
+math: true
 ---
 
 编程十载。

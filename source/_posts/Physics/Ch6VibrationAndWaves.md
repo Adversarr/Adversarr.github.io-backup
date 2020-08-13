@@ -5,7 +5,7 @@ tags:
   - 物理
   - 波
 categories: 基础物理学
-mathjax: true
+math: true
 ---
 
 【期末复习系列】基础物理学第六章-振动与波。后续会把其他这个学期学过的内容补上。

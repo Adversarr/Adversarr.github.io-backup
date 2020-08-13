@@ -7,7 +7,7 @@ tag:
   - 向量空间
   - 解析几何
 categories: 高等数学
-mathjax: true
+math: true
 ---
 
 临近期末，来一波概念回顾。

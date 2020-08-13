@@ -5,7 +5,7 @@ tags:
   - 图论
   - 离散数学
 categories: 离散数学
-mathjax: true
+math: true
 ---
 
 <!-- TODO: -->

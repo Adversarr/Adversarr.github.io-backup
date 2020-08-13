@@ -5,7 +5,7 @@ tags:
   - 级数
   - 高等数学
 categories: 高等数学
-mathjax: true
+math: true
 ---
 
 幂级数
@@ -20,10 +20,10 @@ mathjax: true
 2. 收敛范围是一个对称区间
 3. 仅在 $x=0$ 收敛
 
-**Thm**：（幂级数的收敛半径）对于幂级数的系数 $a_n$，若 $\rho =\overline{\lim\limits_{n\rightarrow \infin}}\sqrt[n]{|a_n|}$ 则
+**Thm**：（幂级数的收敛半径）对于幂级数的系数 $a_n$，若 $\rho =\overline{\lim\limits_{n\rightarrow \infty}}\sqrt[n]{|a_n|}$ 则
 
-1. 当 $0\le \rho<+\infin,|x|<\frac 1 \rho$ 幂级数绝对收敛
-2. 当 $0<\rho<\infin, |x|>\frac 1 \rho$ 幂级数发散
+1. 当 $0\le \rho<+\infty,|x|<\frac 1 \rho$ 幂级数绝对收敛
+2. 当 $0<\rho<\infty, |x|>\frac 1 \rho$ 幂级数发散
 
 其中 $R=\frac 1 \rho$ 称作**收敛半径**，称 $(-R,R)$ 为**收敛区间**
 
@@ -61,4 +61,4 @@ mathjax: true
 
 公式：$\displaystyle n!=\sqrt{2\pi n} (\frac n e)^ne^{\frac{\theta}{12n}}\approx\sqrt{2\pi n} (\frac n e)^n,\theta\in(0,1)$
 
-沃利斯公式：$\displaystyle \frac \pi 2=\lim\limits_{n \to \infin}\frac{[(2n)!!]^2}{[(2n-1)!!]^2(2n+1)}$
+沃利斯公式：$\displaystyle \frac \pi 2=\lim\limits_{n \to \infty}\frac{[(2n)!!]^2}{[(2n-1)!!]^2(2n+1)}$

@@ -6,7 +6,7 @@ categories: 基础物理学
 tags:
   - 物理
   - 运动学
-mathjax: true
+math: true
 ---
 
 想当初，我还做了这么多笔记？

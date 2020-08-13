@@ -5,7 +5,7 @@ tags:
   - 级数
   - 傅里叶
 categories: 高等数学
-mathjax: true
+math: true
 ---
 
 傅里叶级数，真的就看上去简单。
@@ -38,12 +38,12 @@ $$
 称为函数$f$ 的**傅里叶系数**，而
 
 $$
-\frac {a_0} 2+\sum\limits_{n=1}^\infin(a_n\cos nx+b_n\sin nx)
+\frac {a_0} 2+\sum\limits_{n=1}^\infty(a_n\cos nx+b_n\sin nx)
 $$
 
 称为**傅里叶级数**
 
-> 问题在于，这个级数的和函数不一定和原函数相等，因而，我们用$\displaystyle f\sim \frac {a_0} 2+\sum\limits_{n=1}^\infin(a_n\cos nx+b_n\sin nx)$ 来表示。
+> 问题在于，这个级数的和函数不一定和原函数相等，因而，我们用$\displaystyle f\sim \frac {a_0} 2+\sum\limits_{n=1}^\infty(a_n\cos nx+b_n\sin nx)$ 来表示。
 
 ### 傅氏级数的收敛性定理和傅氏展开式
 
@@ -63,7 +63,7 @@ $$
 \end{cases}
 $$
 
-- **Thm**：（傅里叶级数的收敛性原理2）若 $f(x)$ 以 $2\pi$ 为周期，且在区间 $[-\pi,\pi]$ 上分段可微，则该傅里叶级数在任一点处收敛到和函数 $\displaystyle S(x) =\frac 1 2(f(x+0)+f(x-0)),-\infin<x<\infin$
+- **Thm**：（傅里叶级数的收敛性原理2）若 $f(x)$ 以 $2\pi$ 为周期，且在区间 $[-\pi,\pi]$ 上分段可微，则该傅里叶级数在任一点处收敛到和函数 $\displaystyle S(x) =\frac 1 2(f(x+0)+f(x-0)),-\infty<x<\infty$
 
 > 这个时候，我们才能用 $=$ 替换 $\sim$
 
@@ -77,9 +77,9 @@ TODO:
 
 ### 奇偶周期函数的傅氏级数
 
-- 偶函数：$b_n=0,~f(x)=\frac {a_0}{2}+\sum\limits_{n=1}^{\infin} a_n\cos nx$ 称为**傅氏余弦函数**
+- 偶函数：$b_n=0,~f(x)=\frac {a_0}{2}+\sum\limits_{n=1}^{\infty} a_n\cos nx$ 称为**傅氏余弦函数**
 
-- 奇函数：$a_n=0,~f(x) \sim \sum\limits_{n=1}^\infin b_n\sin nx$ 称为**傅氏正弦函数**
+- 奇函数：$a_n=0,~f(x) \sim \sum\limits_{n=1}^\infty b_n\sin nx$ 称为**傅氏正弦函数**
 
 > 这个结论是显然的，只是给个定义
 

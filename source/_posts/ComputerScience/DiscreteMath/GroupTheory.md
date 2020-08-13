@@ -5,7 +5,7 @@ tags:
   - 代数结构
   - 离散数学
 categories: 离散数学
-mathjax: true
+math: true
 ---
 
 期末复习了 qwwww

@@ -225,10 +225,10 @@ math: true
   > 2. 化简律$A\wedge B\Rightarrow A$
   > 3. 假言推理$(A\rightarrow B)\wedge A\Rightarrow B$
   > 4. 抗拒式 $(A \rightarrow B) \wedge \neg B \Rightarrow \neg A$
-  > 5. 析取三段论$(A \rightarrow B) \wedge \neg B \Rightarrow \neg A $
+  > 5. 析取三段论$(A \rightarrow B) \wedge \neg B \Rightarrow \neg A$
   > 6. 假言三段论$(A \rightarrow B) \wedge(B \rightarrow C) \Rightarrow(A \rightarrow C)$
   > 7. 等价三段论$(A \leftrightarrow B) \wedge(B \leftrightarrow C) \Rightarrow(A \leftrightarrow C)$
-  > 8. 构造性二难$(A \rightarrow B) \wedge(C \rightarrow D) \wedge(A \vee C) \Rightarrow(B \vee D) $
+  > 8. 构造性二难$(A \rightarrow B) \wedge(C \rightarrow D) \wedge(A \vee C) \Rightarrow(B \vee D)$
   > 9. 构造性二难（特殊）$(A \rightarrow B) \wedge(\neg A \rightarrow B) \Rightarrow B$
   > 10. 破坏性二难$(A \rightarrow B) \wedge(C \rightarrow D) \wedge(\neg B \vee \neg D) \Rightarrow \neg A \vee \neg C$
 

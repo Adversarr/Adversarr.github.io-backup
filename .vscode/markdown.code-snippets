@@ -19,10 +19,29 @@
 		"scope": "markdown",
 		"prefix": ["{% note", "note"],
 		"body": [
-			"{% note ${1:default} %}",
+			"{% note ${1:primary} %}",
+			"",
 			"$0",
-			"{% endnote %}"
+			"",
+			"{% endnote %}",
+			""
 		],
 		"description": "Make notes"
+	},
+	"Hexo label":{
+		"scope": "markdown",
+		"prefix": ["{% label", "label"],
+		"body": [
+			"{% label ${1:success}  @${2:text} %}"
+		],
+		"description": "Make labels, support for: primary secondary success danger warning info light"
+	},
+	"Hexo button":{
+		"scope": "markdown",
+		"prefix": ["{% btn", "btn"],
+		"body": [
+			"{% btn ${1:url}, ${2:text}, ${3:title} %}"
+		],
+		"description": "Button"
 	}
 }

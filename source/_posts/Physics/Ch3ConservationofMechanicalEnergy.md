@@ -31,7 +31,7 @@ TODO: ND complete
   - 瞬时功率
   - 功率单位
 
-{% note info %}
+{% note primary %}
 
 ### 质点的动能定理（Theorem of Kinetic Energy）
 
@@ -47,7 +47,7 @@ TODO: ND complete
 
 ### 万有引力、重力、弹性力做功的特点
 
-{% note info %}
+{% note primary %}
 
 #### 万有引力做功
 

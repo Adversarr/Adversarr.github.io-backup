@@ -56,7 +56,9 @@ Lambda 演算中的常见概念
 - `car cons e1 e2` $\mathop {\rightarrow}\limits^\beta$ `e1`
 - `cdr cons e1 e2` $\mathop {\rightarrow}\limits^\beta$ `e2`
 
-{% note info 演算提示 %}
+{% note primary %}
+
+**演算提示**
 
 不得不说，这个代数定义实在精彩，希望读者能拿纸笔算一算。在这里给出一定的提示
 

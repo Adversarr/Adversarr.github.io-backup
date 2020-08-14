@@ -82,7 +82,9 @@ $$
 
 **Def**：（由 $B$ 生成的子群）设 $B$ 是 $G$ 的子集，将所有包含 $B$ 的子群的交记作 $<B>$。
 
-{% note caution Caution %}
+{% note caution %}
+
+**Caution**
 
 未知正确性：
 
@@ -110,7 +112,10 @@ $$
 1. $\forall a,b\in G, Ha = Hb 或 Ha\cap Hb =\emptyset$
 2. $\cup\{Ha|a\in G\} = G$
 
-{% note info Tips %}
+{% note primary %}
+
+**Tips**
+
 于此同时，$H$ 的所有右陪集的集合 $\{Ha|a\in G\}$ 恰好构成 G 的一个划分，并且，这个划分的所有划分快都和 $H$ 等势。
 
 用同样的方法可以定义 $H$ 的左陪集。

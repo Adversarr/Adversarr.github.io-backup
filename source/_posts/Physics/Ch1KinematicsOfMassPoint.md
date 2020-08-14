@@ -366,7 +366,7 @@ $$
 
 ## 习题
 
-{% note info %}
+{% note primary %}
 
 **坐标系变换**
 

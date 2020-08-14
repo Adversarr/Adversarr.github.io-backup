@@ -31,7 +31,9 @@ math: true
 
 **Thm**：G 是非平凡的欧拉图，当且仅当 G 是连通的且为几个不重合的圈的并
 
-{% note info Fleury Alg （求欧拉回路） %}
+{% note primary %}
+
+**Fleury Alg （求欧拉回路）**
 
 1. 任取 $v_0\in V(G)$，令 $P_0=v_0$
 2. 设 $P_i = v_0e_1\dots e_i v_i$，若 $E(G) - \{e_1,e_2,\dots,e_i\}$中没有与 $v_i$ 关联的边，则停止，否则按以下条件选下一条边：

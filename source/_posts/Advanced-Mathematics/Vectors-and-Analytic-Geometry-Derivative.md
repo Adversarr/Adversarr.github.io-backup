@@ -22,7 +22,7 @@ math: true
 
 对加法和数乘满足：(For any a, b in V)
 
-{% note **Def**ault %}
+{% note primary %}
 
 1. 交换律
 2. 结合律

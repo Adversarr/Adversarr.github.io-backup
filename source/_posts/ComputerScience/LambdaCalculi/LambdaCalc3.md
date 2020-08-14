@@ -73,7 +73,9 @@ LET: metafact = lambda fact . (lambda n . IsZero n 1 (Mult n (fact (Pred n))))
 => mult n (metafact (Y metafact) (Pred n))
 ```
 
-{% note info 一点思考 %}
+{% note primary %}
+
+**一点思考**
 
 读者应分析结构：`lambda t.lambda x.f (t x) x `，指出其中 `f` 和 `t` 的作用：（在此仅给出个人的理解）
 

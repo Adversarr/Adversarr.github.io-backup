@@ -18,7 +18,7 @@ Lambda 演算（Lambda Calculus）是一套从数理逻辑中发展，以变量�
 
 Lambda 演算可比拟是最根本的编程语言，它包括了一条变换规则（变量替换）和一条将函数抽象化定义的方式。因此普遍公认是一种更接近软件而非硬件的方式。对函数式编程语言造成很大影响，比如`Lisp`、`ML`语言和`Haskell`语言。在 1936 年邱奇利用 Lambda 演算给出了对于判定性问题（Entscheidungs problem）的否定：关于两个 Lambda 表达式是否等价的命题，无法由一个“通用的算法”判断，这是不可判定性能够证明的头一个问题，甚至还在停机问题之先。
 
-{% note info %}
+{% note primary %}
 
 ### 后文中使用的一些 Racket 语义
 
@@ -63,7 +63,7 @@ $\sum\limits_{i=0}^ni$：`(define (sumto n) (/ (* n (+ n 1)) 2))`
 
 图灵机是一种**抽象机器**，它在无限长磁带上进行计算。如果一个问题可以用图灵机解决，我们说它是**可计算的**。否则，它是**不可计算的**。
 
-{% note info %}
+{% note primary %}
 
 ### 停机问题
 
@@ -98,7 +98,7 @@ Lambda 演算包括了建构 Lambda 项，和对 Lambda 项运行归约的操作
 2. 抽象（Abstraction）：$\mathrm{(\lambda x.~expression)}$ $\mathrm{expression}$ 是一个 Lambda 表达式
 3. 应用（Application）：$\mathrm{(e_1,e_2)}$ 其中 $e_1,e_2$ 为 Lambda 表达式
 
-{% note info %}
+{% note primary %}
 
 ### 常用表示法
 
@@ -131,7 +131,7 @@ $\mathrm{(\lambda x.plus~x~x)~y}$：`(lambda x. plus x x) y`（前缀表达式�
 
 柯里化（Currying）是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，并且返回接受余下的参数且返回结果的新函数的技术。在直觉上，柯里化声称：
 
-{% note info %} “如果你固定某些参数，你将得到接受余下参数的一个函数”{% endnote %}
+{% note primary %} “如果你固定某些参数，你将得到接受余下参数的一个函数”{% endnote %}
 
 由这个理论，我们来构建一个加法运算：`lambda x.(lambda y. plus x y)`
 
@@ -186,7 +186,7 @@ $\beta$-规约是一个操作：将$\mathrm{(\lambda x.e1)~e2}$，转化为 $\ma
 
 > 规约来自：_reduction_ 一词，个人认为翻译为 **约化** 更为准确。
 
-{% note info %}
+{% note primary %}
 
 #### alpha-转化和 beta-规约的实例
 
@@ -218,7 +218,9 @@ $$
 
 一个**完全约化**（fully-reduced）的 Lambda 表达式形式没有可约化的表达式。同时，若给出从 $\mathrm {e1}$ 到 $\mathrm{e2}$ 演算序列，则 $\mathrm e2$ 不可约化，且在该演算序列中的所有表达式都约化为 $\mathrm e2$（存在且唯一）。
 
-{% note warning 一个无穷递归的例子 %}
+{% note warning %}
+
+**一个无穷递归的例子**
 
 $\mathrm{(\lambda x.x~x)~(\lambda x.x~x)}$
 

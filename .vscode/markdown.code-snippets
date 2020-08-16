@@ -43,5 +43,18 @@
 			"{% btn ${1:url}, ${2:text}, ${3:title} %}"
 		],
 		"description": "Button"
+	},
+	"Hexo Mindmap":{
+		"scope": "markdown",
+		"prefix": ["{% pullquote", "mindmap", "pullquote"],
+		"body": [
+			"{% pullquote mindmap mindmap-md %}",
+			"",
+			"$0",
+			"",
+			"{% endpullquote %}",
+			""
+		],
+		"description": "Button"
 	}
 }

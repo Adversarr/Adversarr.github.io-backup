@@ -8,7 +8,7 @@ tags:
 math: true
 ---
 
-TODO: ND complete
+基础物理学Ch5 刚体运动学
 
 <!-- more -->
 

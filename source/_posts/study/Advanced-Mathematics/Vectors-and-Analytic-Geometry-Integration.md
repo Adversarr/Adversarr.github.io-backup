@@ -74,7 +74,7 @@ math: true
 
 ### 第一型线积分
 
-- 第一型线积分的计算公式 $r = r(t)\rightarrow \int_{(C)}f ds = \int_f \sqrt{\dot x^2+\dot y^2+\dot z^2}\mathrm d t$
+- 第一型线积分的计算公式 $r = r(t)\rightarrow \int_{(C)}f ds = \int_{(C)}f \sqrt{\dot x^2+\dot y^2+\dot z^2}\mathrm d t$
 
 ### 第一型面积分
 

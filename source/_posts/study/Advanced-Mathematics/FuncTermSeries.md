@@ -30,9 +30,9 @@ math: true
 
 ## 函数项级数的一致收敛性与判别法
 
-**Def**：（一致收敛性）$\forall \varepsilon >0,\exist N(\varepsilon)\in \Nu_+,\forall n>N(\varepsilon)\forall x\in D,|S_n(x)-S(x)|<\varepsilon$
+**Def**：（一致收敛性）$\forall \varepsilon >0,\exists N(\varepsilon)\in \mathrm N_+,\forall n>N(\varepsilon)\forall x\in D,|S_n(x)-S(x)|<\varepsilon$
 
-**Thm**：（Cauchy 一致收敛原理）函数项级数一致收敛的充要条件是 $\forall \varepsilon>0,\exist N(\varepsilon)i\in \Nu,\forall n,p\in\Nu_+,n>N时\forall x\in D,|S_{n+p}-S_n|<\varepsilon$
+**Thm**：（Cauchy 一致收敛原理）函数项级数一致收敛的充要条件是 $\forall \varepsilon>0,\exists N(\varepsilon)i\in \mathrm N,\forall n,p\in\mathrm N_+,n>N时\forall x\in D,|S_{n+p}-S_n|<\varepsilon$
 
 > 这个结论是显然的，我们需要更多的准敛法则
 

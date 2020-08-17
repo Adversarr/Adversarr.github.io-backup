@@ -1,5 +1,5 @@
 ---
-title: 基础物理学Ch7 狭义相对论
+title: 狭义相对论
 author: Clover
 date: 2020-6-8
 categories: 基础物理学

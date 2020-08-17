@@ -1,5 +1,5 @@
 ---
-title: 基础物理学Ch5 刚体运动学
+title: 刚体运动学
 author: Clover
 date: 2020-6-8
 categories: 基础物理学

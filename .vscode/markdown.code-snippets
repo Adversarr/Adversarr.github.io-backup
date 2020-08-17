@@ -56,5 +56,13 @@
 			""
 		],
 		"description": "Button"
+	},
+	"Hexo Checkbox":{
+		"scope": "markdown",
+		"prefix": ["checkbox", "{% cb", "cb"],
+		"body": [
+			"{% cb ${1:text}, ${2:false}, ${3:true} %}"
+		],
+		"description": "Button"
 	}
 }

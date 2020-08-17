@@ -1,5 +1,5 @@
 ---
-title: 基础物理学Ch3 机械能守恒
+title: 机械能守恒
 author: Clover
 date: 2020-6-8
 categories: 基础物理学

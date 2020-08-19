@@ -71,11 +71,30 @@ npm install
 
 - 初次尝试
 
+``` BASH
+hexo s --debug # 显示debug反馈
+hexo s # 精简模式
+```
+
+应当显示：
+<!-- TODO -->
+
+deploy 配置
+
+```yaml
+deploy:
+  type: git
+  repository: git@github.com:Jerryyang2001/Jerryyang2001.github.io.git
+  branch: master # 注意是 master 分支
+  message: Site updated:{{ now('YYYY-MM-DD HH:mm:ss') }})
+```
+
 - 站点配置
   - `_config.yml`
 
 - 更换主题（以我现在用的 `Fluid` 为例）
   - 注意看文档就行
+  - 主题配置
 
 - 发布文章
   - Hexo 工作流

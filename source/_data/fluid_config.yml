@@ -72,7 +72,7 @@ color:  # 主题颜色配置，不一定能每一处都生效，可能会被局�
 font:  # 主题字体配置
   font_size: 16px                   # 全局字号
   font_family:                      # 全局字体
-  code_font_size: 85%               # 代码的字号
+  code_font_size: 100%               # 代码的字号
 
 custom_js:   # 指定自定义 js 文件路径，路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js，支持列表
 custom_css:   # 指定自定义 css 文件路径，路径是相对 source 目录，如 /css/custom.css 同上，支持列表
@@ -131,6 +131,7 @@ navbar:
     - { key: 'category', link: '/categories/', icon: 'iconfont icon-category-fill' }
     - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
     - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
+    - { key: 'schedule', link: '/schedule/', icon: 'iconfont icon-plan' }  # 友链页，把前面#去掉即可展示
     #- { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }  # 友链页，把前面#去掉即可展示
 
 search: # 搜索栏，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件。

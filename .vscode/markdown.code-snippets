@@ -61,7 +61,15 @@
 		"scope": "markdown",
 		"prefix": ["checkbox", "{% cb", "cb"],
 		"body": [
-			"{% cb ${1:text}, ${2:false}, ${3:true} %}"
+			"{% cb ${1:text}, ${2:false}, ${3:false} %}"
+		],
+		"description": "Button"
+	},
+	"Emphasize":{
+		"scope": "markdown",
+		"prefix": ["emphasize"],
+		"body": [
+			"**{% label info @「$1」 %}**"
 		],
 		"description": "Button"
 	}

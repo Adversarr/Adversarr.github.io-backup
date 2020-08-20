@@ -55,7 +55,7 @@
 			"{% endpullquote %}",
 			""
 		],
-		"description": "Button"
+		"description": "MindMap"
 	},
 	"Hexo Checkbox":{
 		"scope": "markdown",
@@ -63,7 +63,7 @@
 		"body": [
 			"{% cb ${1:text}, ${2:false}, ${3:false} %}"
 		],
-		"description": "Button"
+		"description": "Checkbox"
 	},
 	"Emphasize":{
 		"scope": "markdown",
@@ -71,6 +71,6 @@
 		"body": [
 			"**{% label info @「$1」 %}**"
 		],
-		"description": "Button"
+		"description": "Emphasize"
 	}
 }

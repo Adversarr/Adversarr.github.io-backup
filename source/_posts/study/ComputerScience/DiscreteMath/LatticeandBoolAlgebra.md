@@ -16,7 +16,7 @@ math: true
 
 ## 格的定义和性质
 
-**Def**：（格）设$<S,\preccurlyeq>$ 是偏序集，若 $\forall x,y\in S,\{x,y\}$ 都有最小上界和最大下界，则称 $S$ 关于偏序 $\preccurlyeq$ 成一个格
+**Def**：（格）设$< S,\preccurlyeq >$ 是偏序集，若 $\forall x,y\in S,\{x,y\}$ 都有最小上界和最大下界，则称 $S$ 关于偏序 $\preccurlyeq$ 成一个格
 
 {% note default %}
 由于最小上界和最大下界的唯一性，可以把求 $\{x,y\}$ 的最小上界和最大下界看成二元运算，$\wedge$ 为最大下界，$\vee$ 为最小上界
@@ -26,12 +26,14 @@ math: true
 
 **Thm**：格中的 $\wedge,\vee$运算满足交换律，结合律，幂等律，吸收律
 
-**Thm**：设 $<S,*,\circ>$是一个具有两个二元运算的代数系统，且对于两个运算满足交换律，结合律，吸收律，则可以适当的定义 $S$ 中的偏序 $\preccurlyeq$ 使之成为一个格。
+**Thm**：设 $< S,*,\circ >$是一个具有两个二元运算的代数系统，且对于两个运算满足交换律，结合律，吸收律，则可以适当的定义 $S$ 中的偏序 $\preccurlyeq$ 使之成为一个格。
 
-**Def**：设 $<S,*,\circ>$ 是代数系统，如果 $*$ 和 $\circ$ 满足结合律，分配律，吸收律，则该代数系统构成一个格
+**Def**：设 $< S,*,\circ >$ 是代数系统，如果 $*$ 和 $\circ$ 满足结合律，交换律，吸收律，则该代数系统构成一个格
 
-{% note default %}
+{% note primary %}
+
 注意：这里的幂等律在上面三个运算律满足时自然满足
+
 {% endnote %}
 
 **Thm**：设 $L$ 是格，则 $\forall a,b\in L$ 有 $a\preccurlyeq b\iff a\wedge b =a\iff a\vee b=b$
@@ -42,7 +44,7 @@ math: true
 
 ## 分配格、有补格、布尔代数
 
-**Def**：（分配格）设 $<L,\wedge,\vee>$ 是格，若 $\forall a,b,c\in L$ 有
+**Def**：（分配格）设 $< L,\wedge,\vee >$ 是格，若 $\forall a,b,c\in L$ 有
 
 $$
 a\wedge(b\vee c) =(a\wedge b)\vee (a\wedge c)\\
@@ -64,7 +66,7 @@ $$
 
 **Def**：（全下界，全上界）设 $L$ 是格，若存在 $a\in L$ 使得 $\forall x\in L,a\preccurlyeq x$ 则称为 $L$ 的全下界；对称的定义 $L$ 的全上界
 
-**Def**：设 $L$ 是格，若 $L$ 存在全下界和全上界，则称 $L$ 为有界格，记作 $<L,\wedge,\vee,0,1>$
+**Def**：设 $L$ 是格，若 $L$ 存在全下界和全上界，则称 $L$ 为有界格，记作 $< L,\wedge,\vee,0,1 >$
 
 **Def**：（补元）在有界格中，$a\in L$，若存在 $b\in L$ 使得 $a\wedge b =0$ 且 $a\vee b =1$，则称 $b$ 为 $a$ 的补元
 

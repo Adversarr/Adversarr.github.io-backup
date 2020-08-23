@@ -77,7 +77,14 @@ hexo s # 精简模式
 ```
 
 应当显示：
-<!-- TODO -->
+
+```bash
+...
+
+INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
+```
+
+`ctrl + 鼠标左键` 点击链接看看？
 
 deploy 配置
 
@@ -91,6 +98,7 @@ deploy:
 
 - 站点配置
   - `_config.yml`
+  - 实际上就按照 readme 走就行。
 
 - 更换主题（以我现在用的 `Fluid` 为例）
   - 注意看文档就行

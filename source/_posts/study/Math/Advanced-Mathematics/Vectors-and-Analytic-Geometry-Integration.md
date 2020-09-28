@@ -6,7 +6,7 @@ tag:
   - 高等数学
   - 向量空间
   - 多元函数
-categories: 高等数学
+categories: 数学
 math: true
 ---
 

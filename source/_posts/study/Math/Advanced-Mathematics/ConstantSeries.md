@@ -1,7 +1,7 @@
 ---
 title: 无穷级数
 date: 2020-5-25
-categories: 高等数学
+categories: 数学
 tags:
   - 高等数学
   - 级数

@@ -3,7 +3,8 @@ title: 数理逻辑
 date: 2020-6-6
 tags:
   - 数理逻辑
-categories: 离散数学
+  - 离散数学
+categories: 数学
 math: true
 ---
 

@@ -4,7 +4,7 @@ date: 2020-06-07 19:40:12
 tags:
   - 级数
   - 傅里叶
-categories: 高等数学
+categories: 数学
 math: true
 ---
 

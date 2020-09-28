@@ -4,7 +4,7 @@ date: 2020-06-25
 tags:
   - 图论
   - 离散数学
-categories: 离散数学
+categories: 数学
 math: true
 ---
 

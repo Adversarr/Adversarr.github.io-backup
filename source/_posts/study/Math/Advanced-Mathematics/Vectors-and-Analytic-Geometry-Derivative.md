@@ -6,7 +6,7 @@ tags:
   - 微分
   - 高等数学
 math: true
-categories: 高等数学
+categories: 数学
 ---
 
 到这里，这个学期的内容就大致整理完整了。

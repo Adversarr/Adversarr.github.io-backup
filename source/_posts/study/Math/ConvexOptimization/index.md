@@ -35,8 +35,8 @@ $$
 其中：
 
 - 优化变量：$x$
-- 目标函数：$f_0:\R^n\rightarrow\R$
-- 约束函数：$f_i:\R^n\rightarrow\R$
+- 目标函数：$f_0:\mathrm{R}^n\rightarrow\mathrm{R}$
+- 约束函数：$f_i:\mathrm{R}^n\rightarrow\mathrm{R}$
 - 最优解：在**所有满足约束的向量**中，向量 $x^*$ 对应的目标函数值**最小**
 
 ### 应用
@@ -70,7 +70,7 @@ $$
 
 - 有解析解 $x* = (A^TA)^{-1}A^Tb$
 - 有可靠的求解算法和软件 <!-- TODO -->
-- 计算时间：正比于 $n^2k(A\in \R^{k\times n})$
+- 计算时间：正比于 $n^2k(A\in \mathrm{R}^{k\times n})$
 - 技术成熟
 - 最⼩⼆乘的使⽤
   - 判别⼗分简单

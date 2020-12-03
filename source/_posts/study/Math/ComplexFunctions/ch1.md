@@ -1,0 +1,230 @@
+---
+title: 「复变函数」
+date: 2020-11-20
+tags:
+  - 复变函数
+  - 高等数学
+math: true
+categories: 数学
+---
+
+复数与复变函数
+
+<!-- more -->
+
+
+# Ch1 复数与复变函数
+
+## 复数的概念与运算
+
+### 复数的概念
+
+1. 定义：$(x,y)$ -> $z=x+iy,i^2=-1$
+2. $\mathrm{Re}(z)$
+3. $\mathrm{Im}(z)$
+4. 相等：实部虚部对应相等
+
+##### 复数的四则运算
+
+1. 加减
+2. 乘除
+
+##### 满足的运算规律
+
+1. 交换
+2. 结合
+3. 分配
+
+##### 共轭复数
+
+$\bar z = x - iy$
+
+1. $z \bar z = |z|$
+2. $\overline{z_1\pm z_2} = \bar{z_1}\pm\bar{z_2}$
+3. $\overline{z_1z_2} = \bar{z_1}\bar{z_2}$
+4. $z+\bar z = \mathrm{Re}(z)$
+5. $(z-\bar z)/i = \mathrm{Im}(z)$
+
+### 复数的几何表示
+
+1. 点表示：$z=x+iy\leftrightarrow (x,y)$
+   
+   复平面、虚轴
+
+2. 向量表示
+
+3. 三角表达：$z=r(\cos\theta+i\sin \theta)$
+
+##### 复数的模和辐角
+
+1. 模 $|z| = r = \sqrt{x^2+y^2}$
+2. 辐角 $\mathrm{Arg}~z = \theta$
+
+> 利用欧拉公式：
+> 
+> - $z = re^{i\theta}$
+
+> $z = 0$ 辐角不确定
+> 
+> 辐角的主值 $-\pi<\theta_0\le\pi$
+
+辐角主值计算：
+
+1. 求 $\arctan \frac y x$
+2. 求 $\theta_0$
+
+{% note caution %}
+
+- $\mathrm{Arg}(z_1z_2)=\mathrm{Arg}z_1+\mathrm{Arg}z_2$
+- $\mathrm{Arg}(z_1/z_2)=\mathrm{Arg}z_1-\mathrm{Arg}z_2$
+
+注意这里指的是集合相等
+
+- $|z_1z_2|=|z_1||z_2|$
+- $|z_1/z_2|=|z_1|/|z_2|$
+
+{% endnote %}
+
+做题全靠猜
+
+### 复数的乘幂和方根
+
+##### 复数的乘幂
+
+$$
+\begin{aligned}
+&z=re^{i\theta} = r(\cos\theta+i\sin\theta)\\
+&z^n = z\cdot z\cdot z\cdot\dots\cdot z\\
+&z^n=re^{in\theta}=r(\cos n\theta+i\sin n\theta)
+\end{aligned}
+$$
+
+##### 复数的方根
+
+$$
+\begin{aligned}
+&z=re^{i\theta} = r(\cos\theta+i\sin\theta)\\
+&\sqrt[n]z= \sqrt[n]r(\cos\frac{\theta + 2k\pi}n+i\sin\frac{\theta + 2k\pi}n)\\
+\end{aligned}
+$$
+
+### 复数在几何上的应用举例
+
+{% note primary %}
+
+$z^n=1$
+
+{% endnote %}
+
+{% note primary %}
+
+- 复数表示复平面上的过$z_1,~z_2$的直线方程：$z-z_1=t(z_2-z_1)$
+
+{% endnote %}
+
+{% note success %}
+
+- 复数表示圆方程：$|z-z_0| = R$
+
+{% endnote %}
+
+{% note secondary %}
+
+1. 中垂线：$|z-z_1|=|z-z_2|$
+2. 特殊直线：$\mathrm{Im}(i+z)=4$
+
+{% endnote %}
+
+### 复球面与无穷远点
+
+- 引入无穷远点，表达复数
+
+## 复变函数的极限与连续性
+
+### 复平面上的区域
+
+##### 区域的概念
+
+**区域：连通的开集**
+
+<!-- TODO: 不是开集的情况 -->
+
+> 开集：$\forall z\in A,\exists U(z)\subset A$，即$\mathrm{int}A = A$
+> 
+> - 内点、外点、边界点
+>   连通：折线连接
+> - 单连通、复连通（用闭曲线包围部分是否都在原集合内定义）
+
+- $z_0$ 的 $\delta$ 邻域
+- 去心邻域
+
+> 可以定义 $\infin$的邻域和去心邻域
+
+##### 简单曲线、单连通、多连通
+
+**简单曲线**：
+
+- 连续
+- 导函数连续，且 $(x')^2+(y')^2 \ne 0$
+- 不相交（没有重点）：$t_1=t_2\Leftrightarrow z(t_1)=z(t_2)$
+
+**连通区域**：
+
+- 单连通
+- 多连通
+
+### 复变函数的概念
+
+**Def1.1 复变函数**：（可以是多值的）
+
+映射下的象和原象
+
+复变函数的集合表示
+
+### 复变函数的极限和连续性
+
+**Def1.1 极限的定义**：
+
+**Thm1**：设$f$在$z_0$的某个去心领域有定义，则：
+
+$$
+\lim f(z) = A\iff \begin{cases}
+   \lim u = \mathrm{Re}(A)\\
+   \lim v = \mathrm{Im}(A)
+\end{cases}
+$$
+
+极限的性质：
+
+- 唯一性
+- 局部有界性
+- 有理运算法则
+
+**Def1.3 连续、在区域内连续**
+
+**Thm1.2**：$f$ 在 $z_0$ 连续. $\iff$ $u$，$v$ 在 $(x_0,y_0)$ 同时连续
+
+- 有理运算不改变连续性
+- 函数复合不改变连续性
+
+---
+
+Homework:
+
+P24
+
+1 -> 2, 3
+
+2
+
+4 -> 1, 6
+
+8 -> 3, 5
+
+12
+
+14 -> 1, 3
+
+19
+
+26 -> 2, 4

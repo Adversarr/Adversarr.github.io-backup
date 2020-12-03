@@ -1,5 +1,5 @@
 ---
-title: 概率统计与随机过程 3 - 随机向量及其概率分布
+title: 「概率统计与随机过程」 3 - 随机向量及其概率分布
 date: 2020-11-18
 categories: 数学
 tags:
@@ -9,7 +9,11 @@ math: true
 hide: false
 ---
 
-# 随机向量及其概率分布
+随机向量及其概率分布
+
+<!-- more -->
+
+# Chapter3-随机向量及其概率分布
 
 ### 二维随机向量的联合分布函数
 
@@ -175,3 +179,30 @@ $$
 - $\Gamma$ 函数与卡方分布 $X\sim\chi(n) = P(n/2, 1/2)$，$x_1...x_n~\sim N(0,1)$，$\sum x_i^2\sim \chi(n)$
   - $X,Y\sim \Gamma(\alpha_{1,2},\beta)\rightarrow X+Y\sim\Gamma(\alpha_1+\alpha_2,\beta)$
 
+##### 一般步骤
+
+1. 先求出分布函数
+2. 关于 z 求导数得到结果
+
+##### 最大值最小值函数
+
+相互独立情况下：
+
+$$
+\begin{aligned}
+  &N=\min\{X_i\}, M = \max\{X_i\}\\
+  &F_{\min}(z)=1-\Pi[1-F_{X_i}(z)]\\
+  &F_{\max}(z)=\Pi F_{X_i}(z)
+\end{aligned}
+$$
+
+如果相同分布：
+
+$$
+\begin{aligned}
+  &F_{\min}(z)=1-[1-F(z)]^n\\
+  &F_{\max}(z)=F(z)^n\\
+  &f_{\min}(z) =n[1-F(z)]^{n-1} f(z)\\
+  &f_{\max}(z) =nF(z)^{n-1} f(z)
+\end{aligned}
+$$

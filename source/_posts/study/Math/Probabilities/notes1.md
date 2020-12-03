@@ -1,5 +1,5 @@
 ---
-title: 概率统计与随机过程 1 - 随机事件及其概率
+title: 「概率统计与随机过程」 1 - 随机事件及其概率
 date: 2020-11-18
 categories: 数学
 tags:
@@ -8,6 +8,10 @@ tags:
 math: true
 hide: false
 ---
+
+随机事件及其概率
+
+<!-- more -->
 
 # 随机事件及其概率
 
@@ -31,12 +35,12 @@ hide: false
 - 设$E$是随机试验，$\varOmega$ 是 $E$ 的样本空间，对于每一个随机事件，赋予唯一的实数$P(A)$，满足：非负性、规范性、可列可加性，则称集合函数$P(\cdot)$为概率测度
 
 - Thms：
-  - $P(\empty)=0$
+  - $P(\emptyset)=0$
   - $P(\cup A_i)=\sum P(A_i)$
   - $P(\bar A) = 1-P(A)$
   - $P(A\cup B) + P(AB) = P(A)+P(B)$
-  - $A\sub B\rightarrow P(B-A)=P(B)-P(A)$
-  - $A\sub B\rightarrow P(A)\le P(B)$
+  - $A\subset B\rightarrow P(B-A)=P(B)-P(A)$
+  - $A\subset B\rightarrow P(A)\le P(B)$
 
 ### 1.3 古典概型
 
@@ -48,7 +52,7 @@ hide: false
 ### 1.4 条件概率
 
 - Def 1.5：设 $\varOmega$ 是随机试验 $E$ 的样本空间，$A_1,A_2,\dots, A_n$ 是随机事件，若满足：
-  1. $A_iA_j = \empty,~\forall i\ne j$
+  1. $A_iA_j = \emptyset,~\forall i\ne j$
   2. $\cup A_j = \varOmega$
   
   则称$A_1,A_2,\dots, A_n$ 是$\varOmega$ 的一个有穷划分。
@@ -76,7 +80,7 @@ hide: false
 
 - Def 1.6：设$A,B$是两个随机事件，若：$P(AB) = P(A)P(B)$则称 $A, B$ 是两个相互独立的随机事件
 
-> $\varOmega,~\empty$ 与任一事件相互独立
+> $\varOmega,~\emptyset$ 与任一事件相互独立
 
 - Thm 1.5：$P(A),P(B)>0$ 时 $A,B独立\iff P(A|B)=P(A), P(B|A)=P(B)$
 

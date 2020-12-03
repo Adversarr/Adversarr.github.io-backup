@@ -5,7 +5,13 @@ category: Deep Learning
 tags:
 - Deep Learning
 - GCN
+hide: true
 ---
+
+
+图卷积神经网络
+
+<!-- more -->
 
 # Graph Convolutional Network
 

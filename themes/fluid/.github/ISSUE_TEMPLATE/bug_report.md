@@ -7,13 +7,14 @@ assignees: ''
 ---
 
 #### Make sure
-- [ ] Upgrade the latest [release version](https://github.com/fluid-dev/hexo-theme-fluid/releases).
+- [ ] Upgrade the latest [release](https://github.com/fluid-dev/hexo-theme-fluid/releases).
 - [ ] Browser does not belong to IE and other old browsers
 - [ ] It can be replicated through `hexo clean && hexo s` and cleared browser cache in the localhost.
 - [ ] Not affected by other Hexo plugins
 
 #### Describe the bug
 <!-- A clear and concise description of what the bug is. -->
+<!-- It is better to provide related items of _config.yml -->
 
 #### To Reproduce
 Steps to reproduce the behavior:

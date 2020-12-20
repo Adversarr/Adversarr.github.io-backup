@@ -40,7 +40,7 @@ categories: 数学
 
 ### Cauchy 积分定理
 
-- 若 $f(z) = u(x,y)+iv(x,y)$在单连通域 $D$ 内解析，$f'$ 连续则$u,v$ 有一节连续偏导数。且满足 $C-R$ 方程。则对于任一分段光滑的简单闭曲线 $L_1$：$\displaystyle \int _{L_1} f(z)\mathrm dz = 0$
+- 若 $f(z) = u(x,y)+iv(x,y)$在单连通域 $D$ 内解析，$f'$ 连续且$u,v$ 有一节连续偏导数，满足 $C-R$ 方程。则对于任一分段光滑的简单闭曲线 $L_1$：$\displaystyle \int _{L_1} f(z)\mathrm dz = 0$
 - $f(z)$ 在单连通域 $D$ 内解析，$f'$ 在 $D$ 内连续时，复积分 $\displaystyle \int _Lf(z)\mathrm dz$ 与路径无关
 
 ##### 柯西-古萨基本定理
@@ -62,7 +62,9 @@ $$\displaystyle\oint_L\frac{1}{(z-z_0)^n}\mathrm dz= \begin{cases}2\pi i,&n=1,\\
 
 利用复合闭路定理：$L$ 可以为任意包含$z_0$的闭曲线。
 
-- **Thm**：闭路变形定理：
+- **Thm**：闭路变形定理
+
+重要结论：
 
 $$
 \oint_L\frac{1}{(z-z_0)^n}\mathrm dz= \begin{cases}2\pi i,&n=1,\\0,&n\ne 1,n\in \mathrm Z.\end{cases}
@@ -100,8 +102,8 @@ $$
 
 ##### Thms
 
-- 设 $f$ 在 $D$ 内解析，$z_0\in D$，圆周 $K_R$ 及其内部均含于 $D$，则$|f^{(n)}(z_0)|\le \frac{n! M(R)}{R^n}$，$M(R) = \max_{|z-z_0|=R}|f(z)|$
+- **Thm**（柯西不等式）设 $f$ 在 $D$ 内解析，$z_0\in D$，圆周 $K_R$ 及其内部均含于 $D$，则$|f^{(n)}(z_0)|\le \frac{n! M(R)}{R^n}$，$M(R) = \max_{|z-z_0|=R}|f(z)|$
 
-- （柳维尔定理）$f(z)$ 在整个复平面上解析且有界，则 $f(z)$ 在复平面上恒为常数。
+- **Thm**（柳维尔定理）$f(z)$ 在整个复平面上解析且有界，则 $f(z)$ 在复平面上恒为常数。
 
-- （莫雷拉定理）$f(z)$ 在单连通区域 $D$ 内解析且有界，，且对于任一简单闭曲线$L$上：$\int_Lf(z)\mathrm dz =0$，则$f(z)$ 在 $D$ 内解析。
+- **Thm**（莫雷拉定理）$f(z)$ 在单连通区域 $D$ 内解析且有界，，且对于任一简单闭曲线$L$上：$\int_Lf(z)\mathrm dz =0$，则$f(z)$ 在 $D$ 内解析。

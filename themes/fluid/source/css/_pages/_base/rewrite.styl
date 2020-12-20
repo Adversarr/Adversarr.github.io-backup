@@ -27,20 +27,23 @@
     border-width 0
     outline 0
 
-  @media (min-width: 600px)
-    &.scrolling-navbar
-      padding-top 12px
-      padding-bottom 12px
-      -webkit-transition background 0.5s ease-in-out, padding 0.5s ease-in-out
-      transition background 0.5s ease-in-out, padding 0.5s ease-in-out
+  &.scrolling-navbar
+    will-change background, padding
+    -webkit-transition background 0.5s ease-in-out, padding 0.5s ease-in-out
+    transition background 0.5s ease-in-out, padding 0.5s ease-in-out
 
-    &.scrolling-navbar .navbar-nav > li
-      -webkit-transition-duration 1s
-      transition-duration 1s
+    @media (min-width: 600px)
+      &
+        padding-top 12px
+        padding-bottom 12px
 
-  &.scrolling-navbar.top-nav-collapse
-    padding-top 5px
-    padding-bottom 5px
+      & .navbar-nav > li
+        -webkit-transition-duration 1s
+        transition-duration 1s
+
+    &.top-nav-collapse
+      padding-top 5px
+      padding-bottom 5px
 
   .dropdown-menu
     font-size 0.875rem
@@ -178,20 +181,25 @@
   strong
     font-weight bold
 
+  em
+    font-style normal
+    text-decoration underline
+    text-decoration-color darkcyan
+    text-decoration-style double
+
   pre
-    position relative
-    overflow visible
+    font-size $code-font-size !important
 
     code
-      font-size $code-font-size
-      display block
       overflow-x auto
-      padding .5rem 0
       line-height 1.5
       border-radius 3px
       tab-size 4
 
-      &.mermaid > svg
+    .mermaid
+      text-align center
+
+      & > svg
         min-width 100%
 
   p > img, p > a > img
@@ -212,13 +220,60 @@
 
 // Rewrite highlight
 .markdown-body
-  div.hljs
+  .hljs
     overflow-x initial
     padding 0
-    border-radius 3px
 
     pre
       background-color initial !important
+
+  .radius3
+    border-radius 3px
+
+  & > .code-wrapper
+    position relative
+
+    pre[class*=language-].line-numbers
+      position initial
+
+figure.highlight
+  position relative
+
+  table
+    border 0
+    margin 0
+    width auto
+    border-radius 3px
+
+  td
+    border 0
+    padding 0
+
+  tr
+    border 0
+
+  td.code
+    width 100%
+
+  td.gutter
+    display table-cell
+
+    &:not(.hljs)
+      background-color #f6f8fa
+
+    pre
+      text-align right
+      font-size 1px
+      overflow-x none
+      overflow-y none
+      padding 0 .75rem
+      line-height 1.5
+      background-color inherit
+      border-radius initial
+      border-right 1px solid #999
+
+      span.line
+        color #999
 
 // Rewrite mdb.css
 .list-group-item
@@ -340,6 +395,12 @@
     -webkit-transition color .2s ease-out, -webkit-transform .2s ease-out
     transition transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out
 
+// Rewrite toc
+.toc-list-item
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
 // Rewrite iconfont
 .iconfont
   font-size 1rem
@@ -417,6 +478,19 @@ input[type=checkbox]
     color var(--link-hover-color)
     background-color var(--link-hover-bg-color)
 
+// Rewrite fancybox
+a.fancybox:hover
+  text-decoration none
+
+// Rewrite nprogress
+$npColor = theme-config("fun_features.progressbar.color", "#29d")
+#nprogress
+  .bar
+    height theme-config-unit("fun_features.progressbar.height_px", 3, "px") !important
+    background-color $npColor !important
+  .peg
+    box-shadow 0 0 14px $npColor, 0 0 8px $npColor !important
+
 // Rewrite valine
 .v[data-class=v]
   .status-bar, .veditor, .vinput, .vbtn, p, pre code
@@ -435,3 +509,28 @@ input[type=checkbox]
   .gt-comment-body
     color var(--text-color) !important
     transition color .2s ease-in-out
+
+// Rewrite remark42
+#remark-km423lmfdslkm34-back
+  z-index 1030
+#remark-km423lmfdslkm34-node
+  z-index 1031
+
+// Rewrite mathjax
+mjx-container, .mjx-container
+  overflow-x auto
+  overflow-y hidden !important
+  padding .5em 0
+
+  &:focus, svg:focus
+    outline none
+
+.mjx-char
+  line-height 1
+
+// Rewrite katex
+.katex-block
+  overflow-x auto
+
+.katex, .mjx-mrow
+  white-space pre-wrap !important

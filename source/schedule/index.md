@@ -41,3 +41,13 @@ var inline = {
   math: /^\$\$\s*([\s\S]*?[^\$])\s*\$\$(?!\$)/,
 };
 ```
+
+update to 1.8.6 Fluid.：
+
+in `fluid/languages/zh-CN.yaml`
+
+```
+schedule:
+  title: 日程
+  subtitle: 近期日程安排
+```

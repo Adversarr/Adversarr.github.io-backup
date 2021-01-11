@@ -188,5 +188,19 @@ $$
 2. 期望：$EX=\mu$
 3. 方差：$DX=\sigma^2$
 
+#### 卡方分布 $\chi^2(n)$
+
+1. 形式（自由度为 n）：$\chi^2=\sum_{i=1}^nX_i^2,~X_i\sim N(0,1)$
+2. 期望：$E\chi^2=n$
+3. 方差：$E\chi^2=2n$
+
+#### t-分布
+
+1. 形式（自由度为 n）：$T=\frac{X}{\sqrt{Y/n}},~X\sim N(0,1),~Y\sim \chi^2(n)$
+
+#### F-分布
+
+1. 形式（自由度为 m, n）：$F=\frac{X/m}{Y/n},~X\sim \chi^2(m),~Y\sim\chi^2(n)$
+
 {% endnote %}
 

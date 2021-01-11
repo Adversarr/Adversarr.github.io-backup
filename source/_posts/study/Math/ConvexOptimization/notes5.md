@@ -1,6 +1,9 @@
 ---
 title: 对偶
+hide: true
 ---
+
+凸优化
 
 <!-- more -->
 
@@ -50,3 +53,48 @@ $$
     &s.t.~~\lambda\succeq 0
 \end{aligned}
 $$
+
+- 通过 Lagrange 对偶函数获取 $p^*$ 的最佳下界
+- 凸优化问题：$d^*\le p^*$
+
+例如线性规划问题：
+
+$$
+\begin{aligned}
+\min.&c^Tx\\
+s.t.&Ax=b\\&x\succeq 0
+\end{aligned}
+$$
+
+对偶问题为：
+
+$$
+\begin{aligned}
+  \max.&-b^Tv\\
+  s.t.&A^Tv+c\succeq0
+\end{aligned}
+$$
+
+> 对于一个线性规划问题，其对偶问题也是线性规划问题
+
+#### 弱对偶与强对偶
+
+（弱对偶）对于凸优化和非凸优化都有：$d^*\le p^*$
+
+（强对偶）对偶间隙 $p^*-d^* =0$
+
+凸优化问题中保证强对偶的条件称为**约束准则**。
+
+#### Slater 约束准则
+
+**Thm**：若某个凸优化问题中，存在一点 $x\in \mathrm{relint}~D=\{x\in D|B(x,r)\cap \mathrm{aff}D\subset D\}$ 使得该问题是**严格可行**的（$x\in relint~D,f_i(x)<0,Ax=b$）则为强对偶问题。
+
+### KKT 最优性条件
+
+（互补松弛性）$\lambda^*_if_i(x^*)=0$
+
+（原始可行性）$f_i(x)\le 0$
+
+（对偶可行性）$\lambda_i\ge 0$
+
+（稳定性条件）$\displaystyle\frac{\partial}{\partial x}L(x,\lambda,\nu)=0$

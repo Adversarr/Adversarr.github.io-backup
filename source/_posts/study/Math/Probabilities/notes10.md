@@ -9,6 +9,8 @@ math: true
 hide: false
 ---
 
+马尔科夫链
+<!-- more -->
 
 ## 马尔科夫链
 

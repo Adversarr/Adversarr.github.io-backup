@@ -9,6 +9,8 @@ math: true
 hide: false
 ---
 
+假设检验
+
 <!-- more -->
 
 ## 假设检验

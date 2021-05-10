@@ -353,6 +353,7 @@ footer:
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     with
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    <div>Je pense, donc je suis</div>
   '
 
   # 展示网站的 PV、UV 统计数

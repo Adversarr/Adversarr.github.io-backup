@@ -32,6 +32,7 @@
     "hexo-server": "^1.0.0",
     "hexo-simple-mindmap": "^0.2.0",
     "hexo-symbols-count-time": "^0.7.1",
+    "hexo-theme-fluid": "^1.8.10",
     "kity": "^2.0.4",
     "kityminder-core-new": "^1.4.55",
     "waque": "^1.12.2"

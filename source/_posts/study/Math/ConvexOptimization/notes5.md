@@ -1,6 +1,6 @@
 ---
 title: 「凸优化」 对偶
-date: 2020-9-26
+date: 2020-12-26
 categories: 数学
 tags:
   - 凸优化

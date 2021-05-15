@@ -155,7 +155,7 @@ $$
 一般可微优化问题，对偶间隙为 0 需要满足 KKT 条件，包含以下四个部分：
 
 1. （互补松弛性）$\lambda^*_if_i(x^*)=0$
-2. （原始可行性）$f_i(x)\le 0$
+2. （原始可行性）$f_i(x)\le 0, h_i(x)=0$
 3. （对偶可行性）$\lambda_i\ge 0$
 4. （稳定性条件）$\displaystyle\frac{\partial}{\partial x}L(x,\lambda,\nu)=0$
 

@@ -9,6 +9,7 @@ keywords: "study"
 author: Jerry Yang
 language: zh-CN
 timezone: 'Asia/Shanghai'
+favicon: image/favicon.webp
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -157,3 +158,17 @@ symbols_count_time:
   total_symbols: false          # 站点总字数统计
   total_time: false             # 站点总阅读时长
   exclude_codeblock: false     # 排除代码字数统计
+
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  plugins:
+    - plugin:
+        name: markdown-it-mark
+        enable: false

@@ -9,7 +9,7 @@ info:
   theme_docs: https://volantis.js.org/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
-    js: # https://cdn.jsdelivr.net/npm/hexo-theme-volantis@<%- theme.info.theme_version %>/source/js/app.min.js # 注意版本!!!
+    js: https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.1/source/js/app.min.js # 注意版本!!!
     css:
       first: # /css/first.css (需自行替换CDN 首屏样式 cover navbar search )
       style: # /css/style.css (需自行替换CDN 异步加载 Others...           )
@@ -161,7 +161,7 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: image/favicon.webp
+        avatar: /image/favicon.webp
         name: 些些同学
         url: /
       # 文章创建日期

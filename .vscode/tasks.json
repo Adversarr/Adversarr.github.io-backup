@@ -6,7 +6,12 @@
     {
       "label": "Clean and Deploy",
       "type": "shell",
-      "command": ["hexo clean", "hexo d -g"]
+      "command": [
+        "hexo clean", 
+        "hexo d -g",
+        "git add .",
+        "git commit",
+        "git push"]
     },
     {
       "label": "Lua This File",

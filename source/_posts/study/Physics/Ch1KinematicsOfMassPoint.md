@@ -366,7 +366,7 @@ $$
 
 ## 习题
 
-{% note primary %}
+{% noteblock quote %}
 
 **坐标系变换**
 
@@ -398,4 +398,4 @@ $$
 >
 > _实际上只需要记住：_$\dot e_\theta =-\dot \theta e_r,\dot e_r = \dot\theta e_\theta$
 
-{% endnote %}
+{% endnoteblock %}

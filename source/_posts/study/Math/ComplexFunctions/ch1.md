@@ -75,7 +75,7 @@ $\bar z = x - iy$
 1. 求 $\arctan \frac y x$
 2. 求 $\theta_0$，注意：$\theta_0\in(-\pi,\pi]$
 
-{% note caution %}
+{% noteblock quote %}
 
 - $\mathrm{Arg}(z_1z_2)=\mathrm{Arg}z_1+\mathrm{Arg}z_2$
 - $\mathrm{Arg}(z_1/z_2)=\mathrm{Arg}z_1-\mathrm{Arg}z_2$
@@ -85,7 +85,7 @@ $\bar z = x - iy$
 - $|z_1z_2|=|z_1||z_2|$
 - $|z_1/z_2|=|z_1|/|z_2|$
 
-{% endnote %}
+{% endnoteblock %}
 
 #### 复数的乘幂和方根
 
@@ -112,30 +112,30 @@ $$
 
 #### 复数在几何上的应用举例
 
-{% note primary %}
+{% noteblock quote %}
 
 求解：$z^n=1$
 
-{% endnote %}
+{% endnoteblock %}
 
-{% note primary %}
+{% noteblock quote %}
 
 复数表示复平面上的过$z_1,~z_2$的直线方程：$z-z_1=t(z_2-z_1)$
 
-{% endnote %}
+{% endnoteblock %}
 
-{% note success %}
+{% noteblock quote %}
 
 复数表示圆方程：$|z-z_0| = R$
 
-{% endnote %}
+{% endnoteblock %}
 
-{% note secondary %}
+{% noteblock quote %}
 
 1. 中垂线：$|z-z_1|=|z-z_2|$
 2. 特殊直线：$\mathrm{Im}(i+z)=4$
 
-{% endnote %}
+{% endnoteblock %}
 
 #### 复球面与无穷远点
 

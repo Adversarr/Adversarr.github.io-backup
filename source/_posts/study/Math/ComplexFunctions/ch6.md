@@ -50,7 +50,7 @@ $w'(t_0)=f'(z)z'(t_0)\ne 0$ 则$\Gamma$ 在$w_0=f(z_0)$ 的切向量为 $w'(t_0)
 
 **Thm**：$w=f(z)$ 是 $D$ 内的单叶映射，则它将 $z$ 平面上的区域 $D$ 共形映射为 $w$ 平面上的区域 $G=f(D)$ 它的反函数 $z=f^{-1}(w)$ 在 $G$ 内单叶解析，且：$[f^{-1}(w)]'=\frac{1}{f'(z)}$
 
-{% note primary %}
+{% noteblock quote %}
 
 ### review
 
@@ -60,4 +60,4 @@ $w'(t_0)=f'(z)z'(t_0)\ne 0$ 则$\Gamma$ 在$w_0=f(z_0)$ 的切向量为 $w'(t_0)
 
 解析 & f‘≠ 0 => 保角性
 
-{% endnote %}
+{% endnoteblock %}

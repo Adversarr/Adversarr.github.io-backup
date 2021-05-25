@@ -142,7 +142,7 @@ $$
 - $\sigma^2_{ij}\le \sigma_{ii}\sigma_{jj}$
 - n 维正态分布：$f(\mathbb{x})=\frac{1}{(2\pi)^{n/2}|\sigma|^{1/2}}\exp\{-\frac{1}{2} (x-\mu)^T\Sigma^{-1}(x-\mu)\}$
 
-{% note primary %}
+{% noteblock quote %}
 
 ### Summary
 
@@ -202,5 +202,5 @@ $$
 
 1. 形式（自由度为 m, n）：$F=\frac{X/m}{Y/n},~X\sim \chi^2(m),~Y\sim\chi^2(n)$
 
-{% endnote %}
+{% endnoteblock %}
 

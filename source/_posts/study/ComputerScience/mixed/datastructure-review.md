@@ -61,9 +61,9 @@ Status x; // 等价于 int x;
 // 注意：不能有 template<
 ```
 
-{% note primary %}
+{% noteblock quote %}
 
-*{% label info @「再碎碎念一下」 %}*
+*{% kbd 「再碎碎念一下」 %}*
 
 `template` 还记得多少。
 
@@ -75,11 +75,11 @@ Status x; // 等价于 int x;
 
 我慌了。
 
-{% endnote %}
+{% endnoteblock %}
 
 #### 时间复杂度
 
-**{% label info @「全场暴毙」 %}**：写出下面这个算法的时间复杂度
+**{% kbd 「全场暴毙」 %}**：写出下面这个算法的时间复杂度
 
 ```cpp
 // n 为 str 长度
@@ -97,7 +97,7 @@ int func(char *str, char c)
 
 #### 评估算法
 
-**{% label info @「算法的特性」 %}**：
+**{% kbd 「算法的特性」 %}**：
 
 1. 有穷性
 2. 确定性
@@ -105,16 +105,16 @@ int func(char *str, char c)
 4. 输入
 5. 输出
 
-**{% label info @「算法的评估」 %}**：
+**{% kbd 「算法的评估」 %}**：
 
 1. 高效性
 2. 正确性
 3. 健壮性
 4. 可读性
 
-{% note info %}
+{% noteblock quote %}
 
-**{% label info @「要点：」 %}**
+**{% kbd 「要点：」 %}**
 
 > 1. 时间复杂度如何？
 > 2. 空间复杂度如何？
@@ -122,12 +122,12 @@ int func(char *str, char c)
 > 4. 如何实现？（注意细节）
 > 5. 能手算吗？
 
-{% endnote %}
+{% endnoteblock %}
 
 
 ### 1、线性表
 
-**{% label info @「顺序表」 %}**
+**{% kbd 「顺序表」 %}**
 
 
 1. 静态 `#define MAXSIZE 100`
@@ -146,7 +146,7 @@ int func(char *str, char c)
   - 无序：$O(na*nb)$
   - 有序：$O(na+nb)$
 
-**{% label info @「链表」 %}**
+**{% kbd 「链表」 %}**
 
 1. 单链表存储、插入、删除、合并
 2. 循环链表
@@ -160,14 +160,14 @@ int func(char *str, char c)
 
 链式存储！
 
-1. **{% label info @「栈」 %}**：LIFO
+1. **{% kbd 「栈」 %}**：LIFO
   1. 定义
   2. 初始化
   3. 压栈
   4. 出栈
 Q：一个 n 元素序列依次进栈，则其不同的出栈队列有多少种
 A：卡特兰数
-2. **{% label info @「队列」 %}**：FIFO
+2. **{% kbd 「队列」 %}**：FIFO
   1. 链式表示
   2. 循环队列（这个定义是啥？）
     1. 重点是如何判断 overflow
@@ -257,15 +257,15 @@ A：卡特兰数
 8. 树的各种遍历法
 9.  森林化为二叉树
 
-{% note primary %}
+{% noteblock quote %}
 
 **应用**
 
-1. **{% label info @「堆」 %}**：上浮下沉
+1. **{% kbd 「堆」 %}**：上浮下沉
    1. 用的是完全二叉树的顺序存储
-2. **{% label info @「Huffman编码树」 %}**
+2. **{% kbd 「Huffman编码树」 %}**
 
-{% endnote %}
+{% endnoteblock %}
 
 
 ### 6、查找
@@ -338,7 +338,7 @@ int search(SeqTable st, KeyTp key)
       1. 先按BST插入
       2. 检查、维持平衡
 
-**{% label info @「B 树」 %}**
+**{% kbd 「B 树」 %}**
 
 > 盲猜会考【迷之自信】  
 
@@ -365,7 +365,7 @@ int search(SeqTable st, KeyTp key)
       3. 这个分裂的结点是root？
 4. 构造：不断插入
 
-**{% label info @「B+」 %}**
+**{% kbd 「B+」 %}**
 1. 注意和B树的区别：
    1. m 还是 m + 1？
    2. 看清楚上一层的key实则是子树的key的最大值
@@ -377,7 +377,7 @@ int search(SeqTable st, KeyTp key)
       2. father 的 ptr 数目（度）= m？
       3. 这个分裂的结点是root？
 
-**{% label info @「Hash」 %}**
+**{% kbd 「Hash」 %}**
 
 1. 两个问题：
    1. 均匀的散列函数（简单快速）
@@ -458,7 +458,7 @@ Hash(key) = key % 11;
 |  归并  |  $O(n log n)$  | y |  常见（C++ STL）  |
 |  基数  |  $O(n log n)$  |  n  |  分配、收集  |
 
-**{% label info @「快速排序」 %}**：主要思想是选一个数，做交换，让序列中左边的数都比这个数小，右边的数都比这个数大。
+**{% kbd 「快速排序」 %}**：主要思想是选一个数，做交换，让序列中左边的数都比这个数小，右边的数都比这个数大。
 
 q一下以前见过的一个讲的很好的解释【找不到链接了，如果找到了请评论区发一下】：
 

@@ -29,7 +29,7 @@ math: true
   - 瞬时功率
   - 功率单位
 
-{% note primary %}
+{% noteblock quote %}
 
 ### 质点的动能定理（Theorem of Kinetic Energy）
 
@@ -39,13 +39,13 @@ math: true
 
 > 功和动能都与参考系有关，动能定理只能适用于惯性系！
 
-{% endnote %}
+{% endnoteblock %}
 
 ## 保守力 势能
 
 ### 万有引力、重力、弹性力做功的特点
 
-{% note primary %}
+{% noteblock quote %}
 
 #### 万有引力做功
 
@@ -63,7 +63,7 @@ $W=\int_A^b \vec P \cdot \mathrm d \vec r=mgz_A-mgz_B$
 
 $W=\frac{1}{2}kx_A^2-\frac{1}{2}kx_B^2$
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 保守力和非保守力
 

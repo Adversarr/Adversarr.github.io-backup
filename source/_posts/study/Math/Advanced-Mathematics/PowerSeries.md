@@ -27,13 +27,13 @@ math: true
 
 其中 $R=\frac 1 \rho$ 称作**收敛半径**，称 $(-R,R)$ 为**收敛区间**
 
-{% note primary  %}
+{% noteblock done %}
 
 **Tips**
 
 收敛区间和收敛域是不同的，区别在于端点处可能条件收敛
 
-{% endnote %}
+{% endnoteblock %}
 
 **Thm**：幂级数在 $x =x_1$ 处收敛，则在 $(-|x_1|,|x_1|)$ 上绝对收敛。若 $x=x_2$ 发散，则它在 $|x|>|x_2|$ 处也发散
 

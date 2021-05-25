@@ -101,7 +101,7 @@ math: true
 
 ### 相关问题
 
-{% note primary %}
+{% noteblock quote %}
 
 **夹角**
 
@@ -109,10 +109,10 @@ math: true
 2. 直线与平面
 3. 平面与平面
 
-{% endnote %}
+{% endnoteblock %}
 
 
-{% note secondary %}
+{% noteblock quote %}
 
 **距离**
 
@@ -120,11 +120,11 @@ math: true
 2. 点到直线 $\displaystyle d = \frac{|\vec{M_0M_1}\times a|}{|a|}$
 3. 异面直线的距离 $\displaystyle d = \frac{|[\vec{M_0M_1}a_1a_2]|}{|a_1\times a_2|}$
 
-{% endnote %}
+{% endnoteblock %}
 
-**{% label info  @直线与平面的交点 %}**
+**{% kbd 直线与平面的交点 %}**
 
-**{% label success  @过直线的平面束 %}**
+**{% kbd 过直线的平面束 %}**
 
 ## 空间曲面和空间曲线
 
@@ -150,7 +150,7 @@ math: true
 
 ### 几种常见的二次曲面
 
-{% note info %}
+{% noteblock quote %}
 
 ![椭圆锥面](https://pic3.zhimg.com/80/v2-2f9167b3a6014ae1db97a646450038e7_720w.jpg)
 
@@ -171,6 +171,6 @@ math: true
 
 ![抛物柱面](https://pic1.zhimg.com/80/v2-8f6a7089275ec0d89c28fa6a611a2175_720w.jpg)
 
-{% endnote %}
+{% endnoteblock %}
 
 

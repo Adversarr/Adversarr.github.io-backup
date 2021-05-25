@@ -133,7 +133,7 @@ $$
 
 - 对于离散型随机变量，若无法达到 $P=1-\alpha$ 则我们找到尽量接近的值使得$P\ge 1-\alpha$
 
-{% note info %}
+{% noteblock quote %}
 
 #### （已知 σ） 如何求参数 $\theta$ 的置信区间？
 
@@ -145,17 +145,17 @@ $$
 
 即：$P(\bar X-\frac{\sigma}{\sqrt n}z_{\alpha/2}<\mu<\bar X+\frac{\sigma}{\sqrt n}z_{\alpha/2})=1-\alpha$，其中$z_{\alpha}$ 为上侧 α 分位点
 
-{% endnote %}
+{% endnoteblock %}
 
 > 置信区间越短 → 精度高
 
-{% note primary %}
+{% noteblock quote %}
 
 1. 寻求样本和 $\theta$ 的函数 $W(X_1,...,X_n;\theta)$ 其分布不依赖于 $\alpha$ 和其他位置参数。（*枢轴量*）
 2. 构造常数 $a,b$ 使得 $P(a<W<b)=1-\alpha$
 3. 从中解出 $\hat\theta_1(X_1,...,X_n),\hat\theta_2(X_1,...,X_n)$ 得到置信区间
 
-{% endnote %}
+{% endnoteblock %}
 
 #### 单个正态总体的置信区间
 

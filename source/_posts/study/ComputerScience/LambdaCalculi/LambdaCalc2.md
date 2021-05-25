@@ -56,7 +56,7 @@ Lambda 演算中的常见概念
 - `car cons e1 e2` $\mathop {\rightarrow}\limits^\beta$ `e1`
 - `cdr cons e1 e2` $\mathop {\rightarrow}\limits^\beta$ `e2`
 
-{% note primary %}
+{% noteblock quote %}
 
 **演算提示**
 
@@ -72,7 +72,7 @@ Lambda 演算中的常见概念
 
 - 请读者计算`empty? (cons e1 e2)` 和 `empty? empty`。
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 数
 

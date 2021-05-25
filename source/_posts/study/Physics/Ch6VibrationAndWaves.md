@@ -86,11 +86,11 @@ math: true
 - 振动位移表达式$\xi(x,t) = A\cos[\omega(t-\frac x u)+\varphi_0]$
 - 角波数$k=\frac{2\pi}{\lambda},~~\xi(x,t) = A\cos[\omega t-kx+\varphi_0]$
 
-{% note primary %}
+{% noteblock quote %}
 
-**{% label info @「相位落后法」 %}**
+**{% kbd 「相位落后法」 %}**
 
-{% endnote %}
+{% endnoteblock %}
 
 #### 波动方程
 

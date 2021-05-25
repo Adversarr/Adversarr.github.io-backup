@@ -26,7 +26,7 @@ categories: 数学
 1. $V$ 是一个非空的有穷集，称作顶点集。其元素称作**顶点**或**结点**
 2. $E$ 是无序积 $V\times V$的有穷多重子集，称作**边集**，其中的元素称为**有向边**，简称为**边**
 
-{% note primary %}
+{% noteblock quote %}
 
 **基本概念**
 
@@ -52,13 +52,13 @@ categories: 数学
   - $N_D(v) = \Gamma^+\cup\Gamma^-$ 为 $v$ 的**邻域**
   - $\overline N_D=N_D\cup\{v\}$ 为 $v$ 的**闭邻域**
 
-{% endnote %}
+{% endnoteblock %}
 
 **Def**：（平行边）在无向图中，如果关联一对顶点的无向边多于一条，则称为**平行边**，平行边的条数称为**重数**，在邮箱图中，如果关联一对顶点的有向边多于 1 条，并且这些边的终点始点相同，则称为**平行边**，含有平行边的图称作**多重图**，不含平行边、也不含自环的图称为**简单图**
 
 **Def**：（出度、入度、度数）设 $G=< V,E >$ 为无向图，$\forall v\in V$ 称 $v$ 为边的端点的次数为 $v$ 的次数为 $v$ 的**度数**，相同的定义有向图上的**入度**，**出度**，**度数**
 
-{% note primary  %}
+{% noteblock done  %}
 
 一些定义
 
@@ -80,7 +80,7 @@ categories: 数学
 
 当然，有**奇度节点**，**偶度节点**
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 握手定理
 
@@ -107,7 +107,7 @@ categories: 数学
 
 **Def**：（同构）若存在双射函数 $f:V_1\rightarrow V_2$ 使得 $\forall v_i,v_j\in V_1,(v_i,v_j)\in E_1\iff (f(v_i),f(v_j))\in E_2$ 且对应边的重数相同，则称 $G_1$ 与 $G_2$ 同构，记作 $\approxeq$
 
-{% note primary %}
+{% noteblock quote %}
 
 **彼得松图**
 
@@ -115,7 +115,7 @@ categories: 数学
 
 {% asset_img Peterson.png 彼得松图 %}
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 完全图
 
@@ -223,7 +223,7 @@ categories: 数学
 
 **Def**：（无向图的 关联矩阵$\boldsymbol{M}(G)$）$m_{ij}$ 表示顶点与边 $e_j$ 的**关联次数**
 
-{% note primary %}
+{% noteblock quote %}
 
 **性质**
 
@@ -234,7 +234,7 @@ categories: 数学
 3. 两列相同，当且仅当这两列对应了平行边
 4. 某一行和为 0 当且仅当对应了孤立点
 
-{% endnote %}
+{% endnoteblock %}
 
 **Def**：（有向图的 关联矩阵 $\boldsymbol{M}(D)$）有向图无环，则令：
 
@@ -246,7 +246,7 @@ m_{ij} = \begin{cases}
 \end{cases}
 $$
 
-{% note primary %}
+{% noteblock quote %}
 
 **性质**
 
@@ -256,7 +256,7 @@ $$
 2. 每行 -1 个数为 $v_i$ 的入度，1 的个数为出度
 3. 两列相同，当且仅当这两列对应了平行边
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 邻接矩阵
 

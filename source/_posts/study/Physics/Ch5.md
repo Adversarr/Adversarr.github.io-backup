@@ -20,9 +20,9 @@ math: true
 
 ## 刚体运动学
 
-**{% label info @「刚体」 %}**：在外力作用下，形状大小不变的物体（任意两个质点之间的距离保持不变）`这是一个理想模型！`
+**{% kbd 「刚体」 %}**：在外力作用下，形状大小不变的物体（任意两个质点之间的距离保持不变）`这是一个理想模型！`
 
-**{% label info @「运动形式」 %}**：
+**{% kbd 「运动形式」 %}**：
 
 - 平动
 - 转动
@@ -52,7 +52,7 @@ math: true
 
 **角量$\omega$与线量$v$的关系**：$\vec v = \omega r \vec{e_t} = \vec \omega \times \vec r$
 
-**{% label info @「匀变速定轴转动的运动学公式」 %}**
+**{% kbd 「匀变速定轴转动的运动学公式」 %}**
 
 | 质点平动                     | 刚体绕轴转动                                          |
 | ---------------------------- | ----------------------------------------------------- |
@@ -86,7 +86,7 @@ math: true
 >
 > 取决于质量、形状、位置。
 
-{% note primary %}
+{% noteblock quote %}
 
 质量是$m$长度$l$的棒，以中点为轴：$I = \frac{1}{12} ml^2$
 
@@ -98,17 +98,17 @@ math: true
 
 **垂直轴定理**（对于一个薄板而言）：$I_z = I_x +I_y$
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 刚体定轴转动的角动量定理和角动量守恒
 
-**{% label info @「刚体定轴转动的角动量」 %}**：$L_z = \sum\limits_i m_i r_i^2\omega = I\omega$
+**{% kbd 「刚体定轴转动的角动量」 %}**：$L_z = \sum\limits_i m_i r_i^2\omega = I\omega$
 
-**{% label info @「刚体定轴转动的角动量定理」 %}**：$\int M_z \mathrm{d}t = I\omega_2 -I \omega_1$
+**{% kbd 「刚体定轴转动的角动量定理」 %}**：$\int M_z \mathrm{d}t = I\omega_2 -I \omega_1$
 
-**{% label info @「刚体定轴转动的角动量守恒定律」 %}**：$if M_z = 0 ,\ then \  L_z = I\omega = const$
+**{% kbd 「刚体定轴转动的角动量守恒定律」 %}**：$if M_z = 0 ,\ then \  L_z = I\omega = const$
 
-**{% label info @「刚体定轴转动的角冲量定理」 %}**：$\int M_z\mathrm dt=I_z\omega -I_z\omega_0$
+**{% kbd 「刚体定轴转动的角冲量定理」 %}**：$\int M_z\mathrm dt=I_z\omega -I_z\omega_0$
 
 ### 刚体定轴转动的动能定理
 
@@ -118,20 +118,20 @@ math: true
 
 力矩的功率：$P= \frac{\mathrm{d} W}{\mathrm{ d} t}=M_z \omega$
 
-**{% label info @「刚体定轴转动的动能」 %}**：$E_k = \frac 1 2 I\omega^2$
+**{% kbd 「刚体定轴转动的动能」 %}**：$E_k = \frac 1 2 I\omega^2$
 
-**{% label info @「刚体绕定轴转动的动能定理」 %}**：$W = \int_{\theta_1}^{\theta_2} I \omega \mathrm{d} \omega = E_{k2} - E_{k1 = }=\frac 1 2 I\omega_2^2-\frac 1 2 I\omega_1^2$
+**{% kbd 「刚体绕定轴转动的动能定理」 %}**：$W = \int_{\theta_1}^{\theta_2} I \omega \mathrm{d} \omega = E_{k2} - E_{k1 = }=\frac 1 2 I\omega_2^2-\frac 1 2 I\omega_1^2$
 
 ### 刚体的定点转动（进动）（Precession）
 
 陀螺的进动角速度：$\omega_\mathrm p = \frac {\mathrm d \phi}{\mathrm d t} = \frac{|\mathrm d L|}{\mathrm d t\cdot L\sin \theta} = \frac{mgr_c}{I\omega}$
-{% note warning %}
+{% noteblock quote %}
 
 注意角加速度的方向。
 
 注意理解场平架陀螺仪工作原理。
 
-{% endnote %}
+{% endnoteblock %}
 
 
 ### 刚体动力学：总结

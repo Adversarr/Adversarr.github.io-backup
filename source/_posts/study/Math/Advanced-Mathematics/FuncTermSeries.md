@@ -20,13 +20,13 @@ math: true
 
 与常数项级数相似，**余项** $R_n(x) = S(x) -S_n(x) \rightarrow 0 (n\rightarrow \infty)$
 
-{% note primary %}
+{% noteblock quote %}
 
 **Tips**
 
 需要注意的是，有限个可导函数的和为可导函数，可积函数的和为可积函数，但是在无穷多个时此结论不一定成立
 
-{% endnote %}
+{% endnoteblock %}
 
 ## 函数项级数的一致收敛性与判别法
 

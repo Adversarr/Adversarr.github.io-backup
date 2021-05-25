@@ -1,6 +1,9 @@
 ---
 hide: true
+title: C++ 编程规范
 ---
+
+Google C/C++ 规范文档。
 
 <!-- more -->
 

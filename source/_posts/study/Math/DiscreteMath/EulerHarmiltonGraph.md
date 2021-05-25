@@ -31,7 +31,7 @@ math: true
 
 **Thm**：G 是非平凡的欧拉图，当且仅当 G 是连通的且为几个不重合的圈的并
 
-{% note primary %}
+{% noteblock quote %}
 
 **Fleury Alg （求欧拉回路）**
 
@@ -40,7 +40,7 @@ math: true
    1. $e_{i+1}$ 与 $v_i$ 关联
    2. 优先选：$e_{i+1}$ 不是 $G-\{e_1,\dots,e_i\}$ 中的桥
 
-{% endnote %}
+{% endnoteblock %}
 
 ## 哈密顿图
 

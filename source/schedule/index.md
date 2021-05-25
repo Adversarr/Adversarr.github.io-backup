@@ -3,7 +3,7 @@ title: 日程
 date: 2020-05-26 09:57:51
 ---
 
-{% cb 并查集和图论, false, false %}
+{% checkbox 并查集和图论 %}
 
 ```bash Dependencies
 # npm install hexo-renderer-pandoc

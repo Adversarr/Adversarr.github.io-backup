@@ -18,9 +18,9 @@ math: true
 
 **Def**：（格）设$< S,\preccurlyeq >$ 是偏序集，若 $\forall x,y\in S,\{x,y\}$ 都有最小上界和最大下界，则称 $S$ 关于偏序 $\preccurlyeq$ 成一个格
 
-{% note default %}
+{% noteblock quote %}
 由于最小上界和最大下界的唯一性，可以把求 $\{x,y\}$ 的最小上界和最大下界看成二元运算，$\wedge$ 为最大下界，$\vee$ 为最小上界
-{% endnote %}
+{% endnoteblock %}
 
 **Thm**：（格的对偶原理）设 $f$ 是含有格中元素以及符号 $=,\preccurlyeq,\succcurlyeq,\vee,\wedge$ 的命题，若 $f$ 对于一切格为真，则 $f$ 的对偶命题 $f'$ 也对一切格为真
 
@@ -30,11 +30,11 @@ math: true
 
 **Def**：设 $< S,*,\circ >$ 是代数系统，如果 $*$ 和 $\circ$ 满足结合律，交换律，吸收律，则该代数系统构成一个格
 
-{% note primary %}
+{% noteblock quote %}
 
 注意：这里的幂等律在上面三个运算律满足时自然满足
 
-{% endnote %}
+{% endnoteblock %}
 
 **Thm**：设 $L$ 是格，则 $\forall a,b\in L$ 有 $a\preccurlyeq b\iff a\wedge b =a\iff a\vee b=b$
 
@@ -53,10 +53,10 @@ $$
 
 则称 $L$ 为分配格。
 
-{% note default %}
+{% noteblock quote %}
 两类特殊的格结构：钻石格和五角格
 {% asset_img TwoSpecialLattice.png 钻石格和五角格 %}
-{% endnote %}
+{% endnoteblock %}
 
 **Thm**：若 $L$ 是格，则 $L$ 是分配格，iff $L$ 中不含有与钻石格或五角格同构的子格
 
@@ -79,9 +79,9 @@ $$
 1. $\forall a\in B,(a')' = a$
 2. $\forall a,b\in B,(a\wedge b)' =(a'\vee b'),(a\vee b)' = (a'\wedge b')$
 
-{% note default %}
+{% noteblock quote %}
 在这个定理中，第一条称作 **双重否定律**，第二条称作**德摩根律**，在命题代数和集合代数中的双重否定律，实则是该定理的特例
-{% endnote %}
+{% endnoteblock %}
 
 **Def**：设$<B,*,\circ>$是代数系统，若运算满足：
 

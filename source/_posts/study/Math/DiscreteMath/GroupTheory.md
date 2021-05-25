@@ -82,7 +82,7 @@ $$
 
 **Def**：（由 $B$ 生成的子群）设 $B$ 是 $G$ 的子集，将所有包含 $B$ 的子群的交记作 $<B>$。
 
-{% note caution %}
+{% noteblock quote %}
 
 **Caution**
 
@@ -90,7 +90,7 @@ $$
 
 - $<B>$ 中只含有 $B$ 中的元素或其逆元。
 
-{% endnote %}
+{% endnoteblock %}
 
 **Def**：设 $H$ 是群 $G$ 的子群，$a\in G$，令$Ha =\{ha|h\in H\}$ 称之为子群 $H$ 在 $G$ 中的右陪集，并称 $a$ 为 $Ha$ 的代表元素。
 
@@ -112,14 +112,14 @@ $$
 1. $\forall a,b\in G, Ha = Hb 或 Ha\cap Hb =\emptyset$
 2. $\cup\{Ha|a\in G\} = G$
 
-{% note primary %}
+{% noteblock quote %}
 
 **Tips**
 
 于此同时，$H$ 的所有右陪集的集合 $\{Ha|a\in G\}$ 恰好构成 G 的一个划分，并且，这个划分的所有划分快都和 $H$ 等势。
 
 用同样的方法可以定义 $H$ 的左陪集。
-{% endnote %}
+{% endnoteblock %}
 
 **Def**：（指数）$H$ 在 $G$ 中的左右陪集数相等，记作 $H$ 在 $G$ 中的指数 $[G:H]$
 

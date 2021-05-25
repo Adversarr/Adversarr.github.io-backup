@@ -22,7 +22,7 @@ categories: 数学
 
 对加法和数乘满足：(For any a, b in V)
 
-{% note primary %}
+{% noteblock quote %}
 
 1. 交换律
 2. 结合律
@@ -33,7 +33,7 @@ categories: 数学
 7. 对数乘的分配律
 8. 对 a, b 的结合律
 
-{% endnote %}
+{% endnoteblock %}
 
 - **Def**：长度（范数）
 - **Def**：距离

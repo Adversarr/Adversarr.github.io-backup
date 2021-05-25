@@ -70,11 +70,11 @@ math: true
 
 - **Def**：重言式、矛盾式、可满足式
 
-{% note default %}
+{% noteblock quote %}
 
 很明显，我们不能有这么傻的方法求真值。
 
-{% endnote %}
+{% endnoteblock %}
 
 ## 等值演算
 

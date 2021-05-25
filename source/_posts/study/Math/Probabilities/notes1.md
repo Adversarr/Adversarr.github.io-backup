@@ -62,7 +62,7 @@ hide: false
   2. $\cup A_j = \varOmega$
 则称$A_1,A_2,\dots, A_n$ 是$\varOmega$ 的一个有穷划分。
 
-> 相同定义 {% label primary @可列无穷划分 %}
+> 相同定义 {% kbd 可列无穷划分 %}
 
 **Def**（条件概率）设 $A,B$ 是两个随机事件，$P(B)>0$ 则称 $P(A|B)=P(AB)/P(B)$ 为事件 $B$ 发生条件下，事件 $A$ 发生的概率
 

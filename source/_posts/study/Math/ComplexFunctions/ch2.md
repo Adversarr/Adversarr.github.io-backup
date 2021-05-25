@@ -83,12 +83,12 @@ $\displaystyle w = e^z = e^x(\cos y + i \sin y)$
 - 周期性：$e^{z+2k\pi i} = e^z$
 - 处处解析：$(e^z)'=e^z$
 
-{% note primary %}
+{% noteblock quote %}
 
 1. $y = 0\Rightarrow w = e^x$
 2. $x = 0\Rightarrow w = e^{iy}=\cos y+i\sin y$
 
-{% endnote %}
+{% endnoteblock %}
 
 #### 对数函数
 

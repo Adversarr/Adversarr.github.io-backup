@@ -67,11 +67,11 @@ $$
 
 > 这个时候，我们才能用 $=$ 替换 $\sim$
 
-{% note success %}
+{% noteblock quote %}
 
 有了这个定理之后，就可以求出一系列看似无法求出的和
 
-{% endnote %}
+{% endnoteblock %}
 
 ### 奇偶周期函数的傅氏级数
 

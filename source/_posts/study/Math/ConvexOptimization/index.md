@@ -18,9 +18,9 @@ hide: false
 
 数学优化问题：（数学规划）
 
-{% note primary %}
+{% noteblock quote %}
 从一个**可行解集合**中,**寻找**出**最优**元素。
-{% endnote %}
+{% endnoteblock %}
 
 数学形式：
 

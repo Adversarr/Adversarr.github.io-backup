@@ -220,10 +220,10 @@ comments:
   valine:
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
-    placeholder: 快来评论吧~  # 评论占位提示
+    placeholder: ヾﾉ≧∀≦)o 来呀~快活呀! # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
-    appId: # your appId
-    appKey: # your appKey
+    appId: ezslGx5u7TEoWQoDFfofu8to-gzGzoHsz # your appId
+    appKey: vhuFwrNX5X0JUsN8f4YXXLQq # your appKey
     meta: [nick,mail,link] # valine comment header info
     requiredFields: [nick,mail]
     enableQQ: true # Unstable avatar link
@@ -464,6 +464,19 @@ site_footer:
   analytics: >
     <span id="lc-sv">本站总访问量为<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
   # site copyright
   copyright: '[Copyright © 2017-2020 XXX](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')

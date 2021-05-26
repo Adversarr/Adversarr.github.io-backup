@@ -9,7 +9,7 @@ info:
   theme_docs: https://volantis.js.org/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
   cdn:
-    js: https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.1/source/js/app.min.js # 注意版本!!!
+    js: https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.3.1/source/js/app.min.js # TODO:注意版本!!!
     css:
       first: # /css/first.css (需自行替换CDN 首屏样式 cover navbar search )
       style: # /css/style.css (需自行替换CDN 异步加载 Others...           )

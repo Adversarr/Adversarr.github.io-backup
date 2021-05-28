@@ -10,7 +10,7 @@ author: Jerry Yang
 language: zh-CN
 timezone: 'Asia/Shanghai'
 favicon: image/favicon.webp
-
+mathjax: true
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://jerryyang2001.github.io
@@ -131,9 +131,6 @@ deploy:
 ## Themes: https://hexo.io/themes/
 theme: volantis
 auto_spacing: true
-
-mathjax:
-    enable: true
 
 note:
   # Note tag style values:

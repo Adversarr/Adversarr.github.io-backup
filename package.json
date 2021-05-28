@@ -13,7 +13,6 @@
     },
     "dependencies": {
         "hexo": "^5.4.0",
-        "hexo-asset-image": "^1.0.0",
         "hexo-deployer-git": "^3.0.0",
         "hexo-generator-archive": "^1.0.0",
         "hexo-generator-category": "^1.0.0",
@@ -21,10 +20,8 @@
         "hexo-generator-tag": "^1.0.0",
         "hexo-inject": "^1.0.0",
         "hexo-renderer-ejs": "^1.0.0",
-        "hexo-renderer-mathjax": "^0.6.0",
         "hexo-renderer-pandoc": "^0.3.0",
         "hexo-renderer-stylus": "^2.0.1",
-        "hexo-server": "^2.0.0",
-        "hexo-theme-volantis": "^4.3.1"
+        "hexo-server": "^2.0.0"
     }
 }

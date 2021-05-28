@@ -14,7 +14,7 @@ info:
       first: # /css/first.css (需自行替换CDN 首屏样式 cover navbar search )
       style: # /css/style.css (需自行替换CDN 异步加载 Others...           )
 ########################################################################
-
+mathjax: true
 ############################### Navigation Bar ############################### > start
 # 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
 navbar:
@@ -464,19 +464,6 @@ site_footer:
   analytics: >
     <span id="lc-sv">本站总访问量为<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为<span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
   # site copyright
   copyright: '[Copyright © 2017-2020 XXX](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')

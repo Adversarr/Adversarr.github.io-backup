@@ -4,7 +4,7 @@ date: 2020-9-26
 categories: 数学
 tags:
   - 凸优化
-math: true
+mathjax: true
 hide: false
 ---
 

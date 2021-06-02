@@ -5,6 +5,7 @@ group: NumericRecipies
 categories: [数学]
 tags:
   - 数值分析
+sidebar: [grid, toc, tags]
 ---
 
 数值分析 ch 1 - 引言

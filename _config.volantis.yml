@@ -424,6 +424,14 @@ sidebar:
           friendlyShow: true    # 更友好的时间显示
           text: '最后活动时间：'
           unit: '日'
+
+    group-numeric-recipies:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 数值分析
+      header:
+        icon: fa fa-book
+        title: 数值分析
 ############################### Sidebar ############################### > end
 
 

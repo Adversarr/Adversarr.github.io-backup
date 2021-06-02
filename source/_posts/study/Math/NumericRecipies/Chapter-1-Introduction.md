@@ -1,11 +1,12 @@
 ---
 layout: post
 title: 数值分析-引言
-group: NumericRecipies
+group: group-numeric-recipies
+order: 1
 categories: [数学]
 tags:
   - 数值分析
-sidebar: [grid, toc, tags]
+sidebar: [group-numeric-recipies, toc]
 ---
 
 数值分析 ch 1 - 引言

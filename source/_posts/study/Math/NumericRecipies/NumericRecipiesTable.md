@@ -1,9 +1,9 @@
 ---
 title: 数值分析-目录
-layout: list
-group: NumericRecipies
+layout: post
+group: group-numeric-recipies
 index: true
-sidebar: [NumericRecipies, toc, tags]
+sidebar: [group-numeric-recipies, toc, tags]
 ---
 
 2020-2021-3 数值分析（现代数值方法）

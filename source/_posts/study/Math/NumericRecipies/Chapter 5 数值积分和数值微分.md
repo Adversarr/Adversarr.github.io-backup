@@ -99,6 +99,16 @@ $$
 2. Simpson公式：截断误差为$-\frac{(b-a)^5}{2880}f^{(4)}(\eta)$，代数精度为3
 3. Cotes公式：代数精度为5
 
+### 梯形公式、Simpson公式和Cotes公式的截断误差
+
+$$
+R_T(f) = -\frac{(b-a)^3}{12}f''(\eta),\quad \eta\in (a,b)\\
+R_S(f) = -\frac{(b-a)^4}{2880}f^{(4)}(\eta),\quad\eta\in (a,b)\\
+R_C(f) = -\frac{2(b-a)}{945}(\frac{(b-a)}4)^6f^{(6)}(\eta),\quad\eta\in (a,b)
+$$
+
+
+
 ## 复化求积公式
 
 ### 复化梯形求积公式

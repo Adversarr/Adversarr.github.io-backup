@@ -72,5 +72,11 @@
 			"**{% label info @「$1」 %}**"
 		],
 		"description": "Emphasize"
+	},
+	"Theorem": {
+		"scope": "markdown",
+		"prefix": ["Thm", "thm"],
+		"body": "{% p blue, Theorem ${1:text} %}",
+		"description": "Make a Theorem here"
 	}
 }

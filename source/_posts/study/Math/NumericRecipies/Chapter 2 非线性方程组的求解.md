@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 非线性方程求解
+title: 数值分析-非线性方程求解
 group: group-numeric-recipies
 order: 2
 categories: [数学]

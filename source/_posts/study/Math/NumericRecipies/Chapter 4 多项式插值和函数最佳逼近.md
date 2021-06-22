@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 多项式插值和函数最佳逼近
+title: 数值分析-多项式插值和函数最佳逼近
 group: group-numeric-recipies
 order: 4
 categories: [数学]
@@ -57,7 +57,7 @@ $$
 求n次多项$l_k(x)$满足：
 
 $$
-$l_k(x_j)=(j==k)$
+l_k(x_j)= \mathbb 1_{j=k}
 $$
 
 
@@ -351,7 +351,6 @@ $$
 &&&\mu_{n-1}& 2& \lambda_{n-1}\\
 &&&&1 &2
 \end{matrix}\right]
-
 \left[\begin{matrix}
 M_0\\M_1\\M_2\\\vdots\\M_{n-1}\\M_n
 \end{matrix}\right] =
@@ -375,8 +374,6 @@ $$
 ### 线性赋范空间
 
 **Def**（线性空间）若$\forall x,y\in X, \lambda x\in R,\lambda x\in X, x+y\in X$则称$X$为线性空间。
-
-[Def（范数）一个函数，满足：非负性、齐次性、三角不等式](https://www.wolai.com/aUj4aLWYjNtp7jA2QAGq6w)←[Chapter 3 线性方程组的数值解](https://www.wolai.com/hF3aUaiBe35x1FMpgPX15q)
 
 **Def**（线性赋范空间）对应的空间称线性赋范空间
 
@@ -445,7 +442,6 @@ $$
 \left[
 (\varphi_i, \varphi_j)
 \right][c_0,c_1,...,c_m]^T = [(f, \varphi_0), (f,\varphi_1),...,(f,\varphi_m)]
-
 $$
 
 

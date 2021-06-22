@@ -3,7 +3,6 @@ title: 「复变函数」复数项级数的概念和性质
 date: 2021-01-11
 tags:
   - 复变函数
-  - 高等数学
 math: true
 categories: 数学
 ---

@@ -57,7 +57,7 @@ cover:
   # background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
   background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # /image/favicon.webp # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: '些些同学的藏宝阁'
+  title: 'SEU最大工具人的部落格'
   subtitle: 'Je pense, donc je suis'
   search: 也许你在找些有意思的... # A Wonderful Theme for Hexo # search bar placeholder
   features:
@@ -162,7 +162,7 @@ article:
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
         avatar: /image/favicon.webp
-        name: 些些同学
+        name: Jerry Yang
         url: /
       # 文章创建日期
       date:
@@ -338,9 +338,9 @@ sidebar:
         - icon: fas fa-rss
           url: /atom.xml
         - icon: fas fa-envelope
-          url: mailto:me@xxx.com
+          url: mailto:213190186@seu.edu.cn
         - icon: fab fa-github
-          url: https://github.com/volantis-x/
+          url: https://github.com/Jerryyang2001
         - icon: fas fa-headphones-alt
           url: /
     # ---------------------------------------

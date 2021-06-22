@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 数值积分和数值微分
+title: 数值分析-数值积分和数值微分
 group: group-numeric-recipies
 order: 5
 categories: [数学]
@@ -303,7 +303,9 @@ $$
 求积公式的稳定性
 : 若对于任意 $\varepsilon>0$ 存在 $\delta > 0$ 当 $\max_{0\le k \le n}|f(x_k) - \tilde f_k| < \delta$ 时， 有$|I_n(f) - I_n(\tilde{f})|<\varepsilon$ 则该公式是稳定的。
 
-{% p blue, Theorem Gauss公式是稳定的 %}
+{% p blue, Theorem %}
+
+Gauss公式是稳定的
 
 求积公式的收敛性
 : 若对于任意 $\varepsilon>0$ 存在$N$，当$n>N$时，有$|I(f) -I_n(f)|<\varepsilon$ 则称该求积公式收敛。

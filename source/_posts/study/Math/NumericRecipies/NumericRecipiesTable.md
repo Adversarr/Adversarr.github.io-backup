@@ -1,5 +1,6 @@
 ---
 title: 数值分析-总结
+date: 2021-06-25
 layout: post
 group: group-numeric-recipies
 index: true

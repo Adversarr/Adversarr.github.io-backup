@@ -3,7 +3,6 @@ title: 「复变函数」
 date: 2020-11-20
 tags:
   - 复变函数
-  - 高等数学
 math: true
 categories: 数学
 ---

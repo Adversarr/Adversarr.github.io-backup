@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 常微分方程的数值解
+title: 数值分析-常微分方程的数值解
 group: group-numeric-recipies
 order: 5
 categories: [数学]

@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "些些同学的藏宝阁"
+title: "SEU最大工具人的部落格"
 description: "Je pense, donc je suis"
 keywords: "study"
 author: Jerry Yang
@@ -164,3 +164,12 @@ pandoc:
   template:
   meta:
   mathEngine: mathjax
+
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20

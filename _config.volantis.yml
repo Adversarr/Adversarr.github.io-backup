@@ -432,6 +432,13 @@ sidebar:
       header:
         icon: fa fa-book
         title: 数值分析
+    group-cg-intro:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 计算机图形学入门-GAMES 101
+      header:
+        icon: fa fa-book
+        title: 计算机图形学入门-GAMES 101
 ############################### Sidebar ############################### > end
 
 

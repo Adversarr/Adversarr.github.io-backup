@@ -1,11 +1,11 @@
 ---
-title: 谈谈编程 2
+title: Robocup 2021 校赛记录
 date: 2021-07-30
 tags:
   - 杂谈
   - 编程
 categories: 杂谈
-math: true
+math: false
 ---
 
 编程十载，这次谈谈抽象。

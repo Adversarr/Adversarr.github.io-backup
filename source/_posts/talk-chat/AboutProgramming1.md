@@ -6,6 +6,8 @@ tags:
   - 编程
 categories: 杂谈
 math: true
+plugins:
+  - mathjax
 ---
 
 编程十载。

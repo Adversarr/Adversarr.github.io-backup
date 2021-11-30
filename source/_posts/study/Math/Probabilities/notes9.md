@@ -6,6 +6,8 @@ tags:
   - 概率论
   - 统计
 math: true
+plugins:
+  - mathjax
 hide: false
 ---
 

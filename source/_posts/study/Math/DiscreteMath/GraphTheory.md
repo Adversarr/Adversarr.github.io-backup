@@ -5,6 +5,8 @@ tags:
   - 图论
   - 离散数学
 math: true
+plugins:
+  - mathjax
 categories: 数学
 ---
 

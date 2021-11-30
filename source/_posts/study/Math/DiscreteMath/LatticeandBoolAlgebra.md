@@ -6,6 +6,8 @@ tags:
   - 离散数学
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 半个上午的时间，回顾一下上章的内容，呼

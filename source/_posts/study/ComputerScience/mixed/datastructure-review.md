@@ -6,6 +6,8 @@ tags:
   - 数据结构
   - 编程
 math: true
+plugins:
+  - mathjax
 hide: false
 ---
 

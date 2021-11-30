@@ -6,6 +6,8 @@ tags:
   - 微分
   - 高等数学
 math: true
+plugins:
+  - mathjax
 categories: 数学
 ---
 

@@ -6,6 +6,8 @@ tags:
   - 高等数学
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 幂级数

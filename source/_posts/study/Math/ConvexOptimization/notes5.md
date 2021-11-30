@@ -5,6 +5,8 @@ categories: 数学
 tags:
   - 凸优化
 math: true
+plugins:
+  - mathjax
 hide: false
 marp: true
 class: invert

@@ -8,6 +8,8 @@ tag:
   - 解析几何
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 临近期末，来一波概念回顾。

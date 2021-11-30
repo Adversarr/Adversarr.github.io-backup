@@ -6,6 +6,8 @@ categories: 基础物理学
 tags:
   - 物理
 math: true
+plugins:
+  - mathjax
 ---
 基础物理学Ch3 机械能守恒 这部分就简单提一句
 

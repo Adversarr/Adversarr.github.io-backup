@@ -6,6 +6,8 @@ tags:
   - Lambda演算
 categories: 程序设计
 math: true
+plugins:
+  - mathjax
 ---
 
 摘自 Wikipedia，知乎等。

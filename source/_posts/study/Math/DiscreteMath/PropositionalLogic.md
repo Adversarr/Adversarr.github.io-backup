@@ -6,6 +6,8 @@ tags:
   - 离散数学
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 数理逻辑，可以说是到现在为止，写的最详细的了。

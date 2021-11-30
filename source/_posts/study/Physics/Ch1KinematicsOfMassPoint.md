@@ -7,6 +7,8 @@ tags:
   - 物理
   - 运动学
 math: true
+plugins:
+  - mathjax
 ---
 
 想当初，我还做了这么多笔记？

@@ -6,6 +6,8 @@ categories: 基础物理学
 tags:
   - 物理
 math: true
+plugins:
+  - mathjax
 ---
 想当初，我也记过这么多东西，吖……
 

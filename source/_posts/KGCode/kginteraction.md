@@ -5,6 +5,8 @@ categories: KGCode
 tags:
 - KGCode
 math: true
+plugins:
+  - mathjax
 ---
 
 知识融合方法概述

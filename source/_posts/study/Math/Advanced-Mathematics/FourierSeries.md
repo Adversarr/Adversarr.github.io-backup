@@ -6,6 +6,8 @@ tags:
   - 傅里叶
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 傅里叶级数，真的就看上去简单。

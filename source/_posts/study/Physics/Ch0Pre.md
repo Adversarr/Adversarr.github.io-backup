@@ -6,6 +6,8 @@ categories: 基础物理学
 tags:
   - 物理
 math: true
+plugins:
+  - mathjax
 ---
 
 基础物理学 绪论

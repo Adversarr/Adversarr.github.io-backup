@@ -4,6 +4,8 @@ date: 2021-01-11
 tags:
   - 复变函数
 math: true
+plugins:
+  - mathjax
 categories: 数学
 ---
 

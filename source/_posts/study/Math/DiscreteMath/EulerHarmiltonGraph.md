@@ -6,6 +6,8 @@ tags:
   - 离散数学
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 <!-- TODO: -->

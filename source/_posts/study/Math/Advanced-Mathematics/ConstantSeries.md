@@ -6,6 +6,8 @@ tags:
   - 高等数学
   - 级数
 math: true
+plugins:
+  - mathjax
 ---
 
 级数部分相关定理。

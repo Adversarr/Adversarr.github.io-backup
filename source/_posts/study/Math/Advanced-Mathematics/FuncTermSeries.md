@@ -6,6 +6,8 @@ tags:
   - 级数
 categories: 数学
 math: true
+plugins:
+  - mathjax
 ---
 
 函数项级数

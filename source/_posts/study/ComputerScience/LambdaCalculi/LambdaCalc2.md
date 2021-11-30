@@ -5,6 +5,8 @@ tags:
   - Lambda演算
 categories: 程序设计
 math: true
+plugins:
+  - mathjax
 date: 2020-06-11
 ---
 

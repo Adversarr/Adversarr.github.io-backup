@@ -7,6 +7,8 @@ categories: [数学]
 tags:
   - 数值分析
 sidebar: [group-numeric-recipies, toc]
+plugins:
+  - mathjax
 ---
 
 数值分析 ch 4 多项式插值和函数最佳逼近

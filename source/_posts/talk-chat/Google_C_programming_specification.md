@@ -151,7 +151,7 @@ Tip
 > - 函数：总是使用 `#include`.
 > - 类模板：优先使用 `#include`.
 
-至于什么时候包含头文件，参见 [1.5. #include 的路径及顺序](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/headers/##name-and-order-of-includes) 。
+至于什么时候包含头文件，参见 [1.5. `#include` 的路径及顺序](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/headers/##name-and-order-of-includes) 。
 
 ### 1.4. 内联函数
 

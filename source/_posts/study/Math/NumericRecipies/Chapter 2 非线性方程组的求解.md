@@ -7,6 +7,8 @@ categories: [数学]
 tags:
   - 数值分析
 sidebar: [group-numeric-recipies, toc]
+plugins:
+  - mathjax
 ---
 
 数值分析 ch 2 - 非线性方程求解

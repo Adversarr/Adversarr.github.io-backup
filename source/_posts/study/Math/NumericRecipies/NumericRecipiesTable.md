@@ -5,6 +5,8 @@ layout: post
 group: group-numeric-recipies
 index: true
 sidebar: [group-numeric-recipies, toc, tags]
+plugins:
+  - mathjax
 ---
 
 2020-2021-3 数值分析（现代数值方法）

@@ -5,6 +5,8 @@ categories: 数学
 tags:
   - 凸优化
 mathjax: true
+plugins:
+  - mathjax
 hide: false
 ---
 

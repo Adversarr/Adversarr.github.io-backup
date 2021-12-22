@@ -44,7 +44,7 @@ navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
     img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    icon:
+    icon: 
     title:
   menu:
     - name: 博客
@@ -77,10 +77,10 @@ cover:
     home: true
     archive: false
     others: false # can be written in front-matter 'cover: true'
-  background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
-  # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  # background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
+  background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: 'SEU最大工具人的部落格'
+  title: '逆版本战士の部落格'
   subtitle: 'Je pense, donc je suis'
   search: 也许你在找些有意思的... # search bar placeholder
   features:
@@ -184,7 +184,8 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: /image/favicon.webp
+        # avatar: /image/favicon.webp
+        avatar: /image/logo.png
         name: Jerry Yang
         url: /
       # 文章创建日期
@@ -237,7 +238,7 @@ article:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
-  service: giscus # giscus, beaudar, utterances, valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
+  service: valine # giscus, beaudar, utterances, valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
   # giscus
   # https://giscus.app
   # https://github.com/laymonage/giscus
@@ -282,10 +283,10 @@ comments:
   valine:
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
-    placeholder: 快来评论吧~  # 评论占位提示
+    placeholder: ヾﾉ≧∀≦)o 来呀~快活呀!  # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
-    appId: # your appId
-    appKey: # your appKey
+    appId: ezslGx5u7TEoWQoDFfofu8to-gzGzoHsz # your appId
+    appKey: vhuFwrNX5X0JUsN8f4YXXLQq # your appKey
     meta: [nick,mail,link] # valine comment header info
     requiredFields: [nick,mail]
     enableQQ: true # Unstable avatar link
@@ -395,7 +396,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      avatar: /image/logo.png
       shape: rectangle # circle, rectangle
       url: /about/
       title:
@@ -435,7 +436,7 @@ sidebar:
       header:
         icon: fas fa-folder-open
         title: 文章分类
-        url: /blog/categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     tagcloud:
@@ -444,7 +445,7 @@ sidebar:
       header:
         icon: fas fa-tags
         title: 热门标签
-        url: /blog/tags/
+        url: /tags/
       min_font: 14
       max_font: 24
       color: true
@@ -504,6 +505,22 @@ sidebar:
       header:
         icon: fas fa-clock WISTERIA
         title: 最近更新
+    # ---------------------------------------
+    # Groups
+    group-numeric-recipies:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 数值分析
+      header:
+        icon: fa fa-book
+        title: 数值分析
+    group-cg-intro:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 计算机图形学入门-GAMES 101
+      header:
+        icon: fa fa-book
+        title: 计算机图形学入门-GAMES 101
 ############################### Sidebar ############################### > end
 
 
@@ -847,7 +864,7 @@ plugins:
 ############################### Rightmenu ############################### > start
 # 自定义右键菜单
 rightmenu:
-  enable: true
+  enable: false
   faicon: fa              # 公共图标类型 fa fal fas fad
   # hr: 分割线, music: 音乐控制器
   layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]
@@ -1060,13 +1077,13 @@ custom_css:
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: 'UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      fontfamily: '"PingFang SC", UbuntuMono, "Varela Round", "Microsoft YaHei", Helvetica, Arial'
       name: 'UbuntuMono'
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
     codefont:
-      fontfamily: 'Menlo, UbuntuMono, Monaco'
+      fontfamily: 'Monaco, Menlo, UbuntuMono'
       # name: 'Monaco'
       # url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
       # weight: normal
@@ -1078,8 +1095,8 @@ custom_css:
 analytics:
   busuanzi: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
-    app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
-    app_key: # jfHtEKVE24j0IVCGHbvuFClp
+    app_id: u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
+    app_key: jfHtEKVE24j0IVCGHbvuFClp
     custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 ############################### Analytics ############################### > end
 

@@ -1,0 +1,122 @@
+---
+title: 编译原理
+date: 2021-12-13
+categories: 程序设计
+tags:
+  - 编译原理
+math: true
+plugins:
+  - mathjax
+---
+
+编译原理期末复习
+
+<!--more -->
+
+# 编译原理习题集
+
+## Chapter 2：语言和文法
+
+### 构造无e产生式的上下文无关文法
+
+#### 取模相关：奇偶性、整除性
+
+1. {w| w $\in$ (a,b,c)\* and the numbers of a’s and b’s and c’s occurred in w are even}
+2. {w| w $\in$ (a,b,c)\* and the numbers of a’s and b’s occurred in w are odd}
+3. {w| w $\in$ (a,b,c)\* , w is lead by a and the numbers of a’s and b’s occurred in w are even}
+
+方法：构造有穷自动机，然后转换为CFG。
+
+#### 个数相关
+
+1. { $a^i b^j$ |i≥(2j+1) and j≥0}
+2. { $a^ib^jc^k$|j≥(i+k+1) and i≥0, k≥1}
+
+方法：进行合理的拆分，例如：
+
+$$
+a^i b^j (i\ge 2j + 1, j\ge 0) = a^k(aab)^j(k \ge 1, j \ge 0)
+$$
+
+消除相关的不等式即可。
+
+## Chapter 3：词法分析
+
+从RegEx构造（最小化）DFA：
+
+1. aa\*(bab\*a)\*(a|b)b\*
+2. a(bab\*a)\*(a|b)b\*
+3. ((ba\*)\*a)\*(a|b)
+
+直接用书上的算法做就行。
+
+这一章的定义、算法有：
+
+1. **定义**：DFA、NFA、正则表达式（Regular Expression）、线性文法、正规定义（Regular Definition）
+2. **算法**：
+   1. NFA到DFA
+      1. 子集法
+      2. DFA到NFA是没有意义的
+   2. DFA最小化
+      1. 划分法
+   3. RegEx-NFA
+      1. 正向：反复使用Thompson法则
+      2. 反向：一样用Thompson法则，但是需要注意其中的一些路径组合
+   4. 右线性文法-NFA
+      1. ->：增加新的终态、根据产生式设置move函数
+      2. <-：分别考虑出边和终态来构造
+   5. 左线性文法-NFA
+      1. ->：识别符号S设置为终态、设置Q0为新的初态、根据产生式考虑三种情况即可。
+      2. <-：
+
+
+## Chapter 4：语法分析
+
+主要内容：
+
+1. 消除$\varepsilon$产生式
+2. 消除（直接和间接）左递归
+   1. 注意使用范围
+3. 提取左公因子
+4. First 和 Follow 集
+5. LL文法
+   1. 构造LL1分析表
+   2. LL1文法的判断方法
+6. LR文法
+   1. LR0
+   2. SLR
+   3. LR1
+   4. LALR
+      
+      > 真的烦人！
+
+### 消除左递归、提取左公因子并构造LL1
+
+$$
+S \rightarrow iCtS|iCtSeS|a\\
+C \rightarrow C \text{ or } D | D\\
+D \rightarrow D \text{ or } E | E\\
+E \rightarrow (C) | b
+$$
+
+### 构造LR1
+
+$$
+S \rightarrow \text{ if } S \text{ else } S\\
+S \rightarrow \text{ if } S\\
+S \rightarrow S~;S\\
+S \rightarrow a
+$$
+
+### （带有二义性的文法）构造LR1
+
+优先级：$; > \text{do} > \text{or}$
+
+$$
+S\rightarrow \text{ do } S \text{ or }
+\\
+S\rightarrow \text{ do } S\\
+S\rightarrow S~;S\\
+S\rightarrow a
+$$
+

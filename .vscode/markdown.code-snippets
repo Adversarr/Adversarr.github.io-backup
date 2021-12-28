@@ -19,11 +19,11 @@
 		"scope": "markdown",
 		"prefix": ["{% note", "note"],
 		"body": [
-			"{% note ${1:primary} %}",
+			"{% noteblock::${1:title} %}",
 			"",
 			"$0",
 			"",
-			"{% endnote %}",
+			"{% endnoteblock %}",
 			""
 		],
 		"description": "Make notes"
@@ -44,39 +44,84 @@
 		],
 		"description": "Button"
 	},
-	"Hexo Mindmap":{
-		"scope": "markdown",
-		"prefix": ["{% pullquote", "mindmap", "pullquote"],
-		"body": [
-			"{% pullquote mindmap mindmap-md %}",
-			"",
-			"$0",
-			"",
-			"{% endpullquote %}",
-			""
-		],
-		"description": "MindMap"
-	},
-	"Hexo Checkbox":{
+	// "Hexo Mindmap":{
+	// 	"scope": "markdown",
+	// 	"prefix": ["{% pullquote", "mindmap", "pullquote"],
+	// 	"body": [
+	// 		"{% pullquote mindmap mindmap-md %}",
+	// 		"",
+	// 		"$0",
+	// 		"",
+	// 		"{% endpullquote %}",
+	// 		""
+	// 	],
+	// 	"description": "MindMap"
+	// },
+	"Checkbox":{
 		"scope": "markdown",
 		"prefix": ["checkbox", "{% cb", "cb"],
 		"body": [
-			"{% cb ${1:text}, ${2:false}, ${3:false} %}"
+			"{% checkbox ${1:checked}::${2:text} %}"
 		],
-		"description": "Checkbox"
+		"description": "Volantis Checkbox"
 	},
-	"Emphasize":{
+	"Timeline":{
 		"scope": "markdown",
-		"prefix": ["emphasize"],
+		"prefix": ["{% timeline"],
 		"body": [
-			"**{% label info @「$1」 %}**"
+			"{% timeline ${1:text} %}",
+            "",
+            "$0",
+            "",
+            "{% endtimeline %}"
 		],
-		"description": "Emphasize"
+		"description": "Volantis Timeline"
 	},
+
+    "Timenode":{
+		"scope": "markdown",
+		"prefix": ["{% timenode"],
+		"body": [
+			"{% timenode ${1:text} %}",
+            "",
+            "$0",
+            "",
+            "{% endtimenode %}"
+		],
+		"description": "Volantis Timenode"
+	},
+
+    "Underline": {
+        "scope": "markdown",
+        "prefix": ["underline", "{% u"],
+        "body": "{% u ${1:text} %}",
+        "description": "Volantis Underline"
+    },
+
+    "Emphasize": {
+        "scope": "markdown",
+        "prefix": ["{% emp"],
+        "body": "{% emp ${1:text} %}",
+        "description": "Volantis Emphasize"
+    },
+
 	"Theorem": {
 		"scope": "markdown",
 		"prefix": ["Thm", "thm"],
 		"body": "{% p blue, Theorem ${1:text} %}",
 		"description": "Make a Theorem here"
-	}
+	},
+
+    "Folding": {
+        "scope": "markdown",
+		"prefix": ["{% folding"],
+		"body": [
+			"{% folding ${1:text} %}",
+            "",
+            "$0",
+            "",
+            "{% endfolding %}"
+		],
+		"description": "Volantis Folding"
+    }
 }

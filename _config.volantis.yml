@@ -731,7 +731,7 @@ plugins:
   #   icon: fas fa-moon # 可自定义
   #   toggle: darkmode
   darkmode:
-    enable: #true
+    enable: true
 
   # 旧版 Internet Explorer 淘汰行动
   # https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support
@@ -864,7 +864,7 @@ plugins:
 ############################### Rightmenu ############################### > start
 # 自定义右键菜单
 rightmenu:
-  enable: false
+  enable: true
   faicon: fa              # 公共图标类型 fa fal fas fad
   # hr: 分割线, music: 音乐控制器
   layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]

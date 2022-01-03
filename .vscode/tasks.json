@@ -4,19 +4,26 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Clean and Deploy",
-      "type": "shell",
-      "command": [
-        "hexo clean", 
-        "hexo d -g",
-        "git add .",
-        "git commit",
-        "git push"]
+        "label": "Lua This File",
+        "type": "shell",
+        "command": [
+            "lua",
+            "${file}"
+        ]
     },
     {
-      "label": "Lua This File",
-      "type": "shell",
-      "command": ["lua", "${file}"]
+        "type": "npm",
+        "script": "deploy",
+        "problemMatcher": [],
+        "label": "npm: deploy",
+        "detail": "hexo deploy"
+    },
+    {
+        "type": "npm",
+        "script": "clean",
+        "problemMatcher": [],
+        "label": "npm: clean",
+        "detail": "hexo clean"
     }
-  ]
+]
 }

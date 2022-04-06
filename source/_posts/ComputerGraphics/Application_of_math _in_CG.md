@@ -1,7 +1,7 @@
 ---
 title: 数学在计算机图形学中的应用
 date: 2020-9-26
-categories: 程序设计
+categories: 计算机图形学
 tags:
   - 计算机图形学
   - 编程
@@ -10,7 +10,9 @@ math: false
 hide: false
 ---
 
-摘抄自刘利刚（中国科学技术大学）http://staff.ustc.edu.cn/~lgliu
+摘抄自 http://staff.ustc.edu.cn/~lgliu 
+
+老板～捞捞～
 
 <!-- more -->
 

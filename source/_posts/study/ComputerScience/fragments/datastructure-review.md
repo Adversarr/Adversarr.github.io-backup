@@ -1,7 +1,7 @@
 ---
 title: 数据结构复习
 date: 2020-8-19
-categories: 程序设计
+categories: 课程
 tags:
   - 数据结构
   - 编程
@@ -514,6 +514,9 @@ def qsort(seq: list, l: int, r: int):
 ```
 
 > 不保证正确。嘿嘿😶
+
+
+排序：(ref: runoob)
 
 插入排序
 

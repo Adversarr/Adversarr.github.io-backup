@@ -1,7 +1,7 @@
 ---
 title: 连续信号的正交分解「信号频域分析」
 date: 2021-6-13
-categories: 专业课
+categories: 课程
 tags:
   - 信号与系统
 math: true

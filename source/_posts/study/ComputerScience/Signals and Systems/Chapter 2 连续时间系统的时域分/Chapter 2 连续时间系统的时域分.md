@@ -1,7 +1,7 @@
 ---
 title: 连续时间系统的时域分析
 date: 2021-6-13
-categories: 专业课
+categories: 课程
 tags:
   - 信号与系统
 math: true

@@ -6,14 +6,15 @@
 title: "逆版本战士の部落格"
 description: "Je pense, donc je suis"
 keywords: "study"
-author: Jerry Yang
+author: Adversarr
 language: zh-CN
 timezone: 'Asia/Shanghai'
 favicon: image/favicon.webp
 
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://jerryyang2001.github.io
+url: http://adversarr.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -117,7 +118,7 @@ tag_generator:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:Jerryyang2001/Jerryyang2001.github.io.git
+  repository: git@github.com:adversarr/adversarr.github.io.git
   branch: master
   message: Site updated:{{ now('YYYY-MM-DD HH:mm:ss') }})
 

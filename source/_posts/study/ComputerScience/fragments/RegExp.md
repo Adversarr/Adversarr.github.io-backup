@@ -3,7 +3,7 @@ title: 正则表达式文法
 date: 2020-7-1
 tags:
   - 编程
-categories: 程序设计
+categories: 计算机科学
 mathjax: false
 ---
 

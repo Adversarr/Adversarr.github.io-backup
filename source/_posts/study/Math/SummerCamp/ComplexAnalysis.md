@@ -7,7 +7,7 @@ tags:
   - 数学
   - 夏令营
 mathjax: true
-hide: false
+
 group: group-adv-math
 sidebar: [group-adv-math, toc]
 ---

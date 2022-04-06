@@ -1,7 +1,7 @@
 ---
 title: 信号与系统-引论
 date: 2021-6-13
-categories: 专业课
+categories: 课程
 tags:
   - 信号与系统
 math: true
@@ -13,6 +13,7 @@ sidebar: [group-signals-and-systems, toc]
 ---
 
 信号与系统-引论
+
 <!-- more -->
 
 # Chapter 1 Introduction

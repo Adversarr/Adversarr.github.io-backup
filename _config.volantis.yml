@@ -41,9 +41,10 @@ scroll_smooth: true
 ############################### Navigation Bar ############################### > start
 # 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
 navbar:
-  visiable: auto # always, auto
+  visiable: always # always, auto
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    # img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: /image/logo.png
     icon: 
     title:
   menu:
@@ -78,7 +79,7 @@ cover:
     archive: false
     others: false # can be written in front-matter 'cover: true'
   # background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
-  background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  background: https://api.dujin.org/bing/1920.php
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: '逆版本战士の部落格'
   subtitle: 'Je pense, donc je suis'
@@ -100,14 +101,14 @@ cover:
     #   icon: #
     #   img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
     #   url: /contributors/
-    - name: 博客
+    - name: 归档
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
       url: /archives/
     - name: Github
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: https://github.com/Jerryyang2001
+      url: https://github.com/adversarr
 ############################### Cover ############################### > end
 
 pages:
@@ -164,7 +165,7 @@ article:
       # ----------------
       # 版权声明组件 (for layout: post)
       copyright:
-        enable: true
+        enable: false
         permalink: '本文永久链接是：'
         content:
           - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
@@ -178,7 +179,7 @@ article:
           - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
     # 文章底部信息
     # 从 meta_library 中取
-    bottom_meta: [updated, tags, share]
+    bottom_meta: [updated, tags]
     # meta library
     meta_library:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
@@ -186,7 +187,7 @@ article:
       author:
         # avatar: /image/favicon.webp
         avatar: /image/logo.png
-        name: Jerry Yang
+        name: Adversarr
         url: /
       # 文章创建日期
       date:
@@ -283,7 +284,7 @@ comments:
   valine:
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是valine的问题
-    placeholder: ヾﾉ≧∀≦)o 来呀~快活呀!  # 评论占位提示
+    placeholder: ヾﾉ≧∀≦)o  # 评论占位提示
     # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder emojiCDN emojiMaps] 选项
     appId: ezslGx5u7TEoWQoDFfofu8to-gzGzoHsz # your appId
     appKey: vhuFwrNX5X0JUsN8f4YXXLQq # your appKey
@@ -1042,7 +1043,7 @@ color_scheme:
 ############################### Custom css ############################### > start
 custom_css:
   cursor:
-    enable: #true
+    enable: # true
     text: https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/text.png
     pointer: https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png
     default: https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png
@@ -1103,17 +1104,21 @@ custom_css:
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: '"PingFang SC", UbuntuMono, "Varela Round", "Microsoft YaHei", Helvetica, Arial'
-      name: 'UbuntuMono'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      fontfamily: 'Monaco, "PingFang SC", "Varela Round", "Microsoft YaHei", Helvetica, Arial'
+      # name: 'UbuntuMono'
+      # url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      # weight: normal
+      # style: normal
+      name: 'Monaco'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
       weight: normal
       style: normal
     codefont:
       fontfamily: 'Monaco, Menlo, UbuntuMono'
-      # name: 'Monaco'
-      # url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
-      # weight: normal
-      # style: normal
+      name: 'Monaco'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      weight: normal
+      style: normal
 ############################### Custom css ############################### > end
 
 

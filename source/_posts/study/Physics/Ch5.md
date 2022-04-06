@@ -2,7 +2,7 @@
 title: 刚体运动学
 author: Clover
 date: 2020-6-8
-categories: 基础物理学
+categories: 课程
 tags:
   - 物理
 math: true

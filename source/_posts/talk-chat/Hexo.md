@@ -1,10 +1,10 @@
 ---
 title: Hexo 建站实录
-author: Jerry Yang
+author: Adversarr
 tag:
 - 杂记
 categories:
-- 编程
+- 杂谈
 date: 2020-8-13
 ---
 
@@ -91,7 +91,7 @@ deploy 配置
 ```yaml
 deploy:
   type: git
-  repository: git@github.com:Jerryyang2001/Jerryyang2001.github.io.git
+  repository: git@github.com:adversarr/adversarr.github.io.git
   branch: master # 注意是 master 分支
   message: Site updated:{{ now('YYYY-MM-DD HH:mm:ss') }})
 ```

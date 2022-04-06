@@ -1,6 +1,10 @@
 ---
 hide: true
 title: C++ 编程规范
+category: 计算机科学
+tag:
+- C++
+- 编程
 ---
 
 Google C/C++ 规范文档。

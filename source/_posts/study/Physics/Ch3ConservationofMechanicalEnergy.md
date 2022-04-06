@@ -8,6 +8,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 基础物理学Ch3 机械能守恒 这部分就简单提一句
 

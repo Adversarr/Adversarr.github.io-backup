@@ -8,6 +8,7 @@ categories: 数学
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 数理逻辑，可以说是到现在为止，写的最详细的了。

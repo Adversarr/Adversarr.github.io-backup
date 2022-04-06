@@ -8,6 +8,7 @@ categories: 数学
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 函数项级数

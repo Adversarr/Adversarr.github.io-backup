@@ -111,7 +111,8 @@ deploy:
 
 - 个性化设置
   - 搜索器
-  - Mathjax
+  - mathjax
+  - katex
   - Valine
   - 思维导图
 

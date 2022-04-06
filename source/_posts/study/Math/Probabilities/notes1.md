@@ -4,11 +4,12 @@ date: 2020-11-18
 categories: 数学
 tags:
   - 概率论
-  - 统计
 math: true
 plugins:
   - mathjax
-hide: false
+  - katex
+group: group-probabilites
+sidebar: [group-probabilites, toc]
 ---
 
 随机事件及其概率

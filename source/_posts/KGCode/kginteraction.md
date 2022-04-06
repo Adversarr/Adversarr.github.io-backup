@@ -7,6 +7,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 知识融合方法概述

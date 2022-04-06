@@ -9,6 +9,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 想当初，我还做了这么多笔记？

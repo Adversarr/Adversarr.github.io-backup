@@ -10,6 +10,7 @@ categories: 数学
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 多元函数积分学复习提纲。些些在 5.20 被强行塞了一大把狗粮之后，才知道下个星期就要考试，现在才开始预习...

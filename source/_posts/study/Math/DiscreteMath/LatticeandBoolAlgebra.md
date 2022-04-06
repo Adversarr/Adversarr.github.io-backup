@@ -8,6 +8,7 @@ categories: 数学
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 半个上午的时间，回顾一下上章的内容，呼

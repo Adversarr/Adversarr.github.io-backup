@@ -8,6 +8,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 基础物理学Ch4 角动量守恒

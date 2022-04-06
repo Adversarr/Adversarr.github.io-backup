@@ -8,6 +8,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 hide: false
 ---
 

@@ -8,6 +8,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 基础物理学Ch7 狭义相对论

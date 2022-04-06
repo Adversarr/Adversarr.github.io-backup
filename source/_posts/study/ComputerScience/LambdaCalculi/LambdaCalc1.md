@@ -8,6 +8,7 @@ categories: 程序设计
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 摘自 Wikipedia，知乎等。

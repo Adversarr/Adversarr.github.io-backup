@@ -9,6 +9,7 @@ tags:
 sidebar: [group-numeric-recipies, toc]
 plugins:
   - mathjax
+  - katex
 ---
 
 数值分析 ch 5 - 数值积分和数值微分

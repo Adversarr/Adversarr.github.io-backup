@@ -9,6 +9,7 @@ tags:
 sidebar: [group-numeric-recipies, toc]
 plugins:
   - mathjax
+  - katex
 ---
 
 数值分析 ch 2 - 非线性方程求解

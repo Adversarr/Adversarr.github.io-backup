@@ -7,6 +7,7 @@ categories: 程序设计
 math: true
 plugins:
   - mathjax
+  - katex
 date: 2020-06-11
 ---
 

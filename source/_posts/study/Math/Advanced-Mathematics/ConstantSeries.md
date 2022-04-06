@@ -8,6 +8,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 级数部分相关定理。

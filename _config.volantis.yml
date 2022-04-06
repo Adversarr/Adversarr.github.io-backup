@@ -403,12 +403,12 @@ sidebar:
       subtitle:
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
-        - icon: fas fa-rss
-          url: /atom.xml
+        # - icon: fas fa-rss
+        #   url: /atom.xml
         - icon: fas fa-envelope
-          url: mailto:me@xxx.com
+          url: mailto:yangzherui2001@foxmail.com
         - icon: fab fa-github
-          url: https://github.com/volantis-x/
+          url: https://github.com/Jerryyang2001/
         - icon: fas fa-headphones-alt
           url: /
     # ---------------------------------------
@@ -475,7 +475,7 @@ sidebar:
           unit: '篇'
         runtime:
           enable: true
-          data: '2020/01/01'    # 填写建站日期
+          data: '2020/03/15'    # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         wordcount:
@@ -514,6 +514,7 @@ sidebar:
       header:
         icon: fa fa-book
         title: 数值分析
+
     group-cg-intro:
       class: group
       display: [desktop, mobile]
@@ -521,6 +522,31 @@ sidebar:
       header:
         icon: fa fa-book
         title: 计算机图形学入门-GAMES 101
+
+    group-adv-math:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 数学课程
+      header:
+        icon: fa fa-book
+        title: 数学课程
+
+    group-signals-and-systems:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 信号与系统
+      header:
+        icon: fa fa-book
+        title: 信号与系统
+
+
+    group-probabilities:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 概率统计
+      header:
+        icon: fa fa-book
+        title: 概率统计
 ############################### Sidebar ############################### > end
 
 
@@ -545,7 +571,7 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, analytics, info, copyright]
+  layout: [aplayer, social, license, analytics, info]
   social:
     - icon: #fas fa-rss
       url:
@@ -562,7 +588,7 @@ site_footer:
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: '[Copyright © 2017-2020 XXX](/)'
+  copyright: '[Copyright © 2017-2020 YZR](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 ############################### Site Footer ############################### > end
@@ -864,7 +890,7 @@ plugins:
 ############################### Rightmenu ############################### > start
 # 自定义右键菜单
 rightmenu:
-  enable: true
+  enable: false
   faicon: fa              # 公共图标类型 fa fal fas fad
   # hr: 分割线, music: 音乐控制器
   layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]

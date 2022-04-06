@@ -8,6 +8,7 @@ categories: 杂谈
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 编程十载。

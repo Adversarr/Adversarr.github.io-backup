@@ -8,6 +8,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 想当初，我也记过这么多东西，吖……
 

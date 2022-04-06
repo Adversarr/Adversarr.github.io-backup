@@ -7,6 +7,7 @@ tags:
 math: true
 plugins:
   - mathjax
+  - katex
 hide: false
 marp: true
 class: invert

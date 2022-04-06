@@ -4,11 +4,13 @@ date: 2020-12-18
 categories: 数学
 tags:
   - 概率论
-  - 统计
 math: true
 plugins:
   - mathjax
+  - katex
 hide: false
+group: group-probabilites
+sidebar: [group-probabilites, toc]
 ---
 
 Chapter 6 抽样分布

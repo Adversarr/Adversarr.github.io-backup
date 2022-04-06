@@ -4,10 +4,10 @@ date: 2020-12-11
 categories: 数学
 tags:
   - 概率论
-  - 统计
 math: true
 plugins:
   - mathjax
+  - katex
 hide: false
 ---
 

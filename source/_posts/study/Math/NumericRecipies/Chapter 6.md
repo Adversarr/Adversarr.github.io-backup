@@ -10,6 +10,7 @@ tags:
 sidebar: [group-numeric-recipies, toc]
 plugins:
   - mathjax
+  - katex
 ---
 
 数值分析 Chapter 6 常微分方程的数值解

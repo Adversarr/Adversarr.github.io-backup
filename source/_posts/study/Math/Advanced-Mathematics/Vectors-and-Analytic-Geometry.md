@@ -10,6 +10,7 @@ categories: 数学
 math: true
 plugins:
   - mathjax
+  - katex
 ---
 
 临近期末，来一波概念回顾。

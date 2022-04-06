@@ -7,6 +7,7 @@ tags:
 mathjax: true
 plugins:
   - mathjax
+  - katex
 hide: false
 ---
 

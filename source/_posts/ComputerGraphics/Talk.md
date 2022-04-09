@@ -1,0 +1,92 @@
+---
+title: Games 102 - 08 - 离散微分几何
+date: 2022-04-09
+plugin: 
+- mathjax
+---
+
+Games 102 - 离散微分几何
+
+<!--more-->
+
+## 三角网格存储
+
+常用的是**半边数据结构**（Half-Edge）数据结构
+
+- 将网络连接关系存储在边上，表达为两条半边
+- 目的：提高点线面和查找效率
+
+## 曲线、曲面微分几何
+
+### 曲线的微分几何学
+
+- Frenet标架
+- Curvature $\kappa$ 和 密切圆
+
+- 与参数选择无关 — 本征量
+
+### 曲面的微分几何学
+
+- 关于 $u$ 和 $v$ 的偏导 — 切平面
+- 切平面的法向 — $r_u\times r_v$
+- 法平面和曲面求交线，可以定义出一个空间曲线，可以定义其曲率 – 方向曲率（法曲率）— 描述曲面沿着方向的弯曲程度
+
+### 曲面的曲率
+
+观察法曲率：
+
+1. 有两个正交的方向，使得其能够取最大 $\kappa_1$ 和最小$\kappa_2$
+
+有 Euler's Equation 成立：
+$$
+\kappa = \kappa_1 \cos^2\theta +  \kappa_2 \sin^2\theta 
+$$
+高斯曲率：
+
+1. $\kappa = \kappa_1\kappa_2$
+2. **等距变换的不变量**
+3. 处处为 0 的曲面 — 可展曲面
+4. **可展曲面**可以分类为：
+   - 柱面
+   - 锥面
+   - 切线面
+
+平均曲率：
+
+1. $\kappa = \frac {\kappa_1 + \kappa_2}{2}$
+2. 处处平均曲率为 0 的曲面 — 极小曲面 — 所有点都是鞍点
+
+## 离散微分几何
+
+考虑到三角网格只有 $C^0$ ，使用采样的点来估计原有曲面属性。
+
+### 方法
+
+#### 连续逼近
+
+考虑使用一个简单的曲面来拟合曲面的局部。从而就能计算出
+
+#### 离散估计
+
+用面积/角度等特征来进行计算
+
+### 例子
+
+#### 平均曲率计算
+
+由 Laplace-Beltrami 定理：
+$$
+\mathbf K (\mathbf x_i) = \frac{1}{2\mathcal A_M} \sum_{j\in N_1(i)} (\cot \alpha_{ij}+ \cot \beta_{ij})(\mathbf x_i - \mathbf x_j)
+$$
+
+#### 高斯曲率计算
+
+由 Gauss-Bonnet 定理：
+$$
+\kappa(\mathbf x_i) = (2\pi - \sum_{j = 1}^{\#f} \theta_j) / \mathcal A_M
+$$
+
+
+> Discrete differential-geometry operators for trangulated 2-manifolds. – 2003
+
+### 极小曲面

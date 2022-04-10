@@ -1,5 +1,5 @@
 ---
-title: Collision Detection 整理 3 - Narrow Phase 阶段
+title: Collision Detection 整理 4 - Deformed Object
 date: 2022-03-28
 categories: 计算机图形学
 tags:
@@ -10,10 +10,9 @@ plugins:
   - mathjax
   - katex
 hide: false
-sidebar: [group-cg-intro, toc]
 ---
 
-碰撞检测 3 - Narrow Phase
+碰撞检测 4 - Deformed Object
 
 <!--more-->
 

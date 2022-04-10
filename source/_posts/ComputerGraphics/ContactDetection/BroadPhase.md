@@ -10,7 +10,6 @@ plugins:
   - mathjax
   - katex
 hide: false
-sidebar: [group-cg-intro, toc]
 ---
 
 介绍几种在各类代码库中应用的 Broad Phase 算法

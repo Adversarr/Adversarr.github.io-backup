@@ -10,7 +10,6 @@ plugins:
   - mathjax
   - katex
 hide: false
-sidebar: [group-cg-intro, toc]
 ---
 
 碰撞检测笔记 3 — Narrow Phase

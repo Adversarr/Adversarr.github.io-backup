@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649573244315" as="style">
+  <link rel="preload" href="/css/style.css?time=1649767464211" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1812,8 +1812,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649573244315" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649573244315"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1649767464211" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1649767464211"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2742,14 +2742,33 @@ A_M
   
     <div class="prev-next">
       
-      
-        <a class='next' href='/2022/03/28/study/Math/SummerCamp/Algebra/'>
-          <p class='title'>面向夏令营的抽象代数整理<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>待完善
-
-TODO
+        <a class='prev' href='/2022/04/10/CG/Libigl/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>libigl 简述</p>
+          <p class='content'>TODO: Libigl 教程（翻译和解释）
+现挖个坑，后面补上。 
+libigl Tutorial
 
 </p>
+        </a>
+      
+      
+        <a class='next' href='/2022/03/28/CG/ContactDetection/BroadPhase/'>
+          <p class='title'>Collision Detection 整理 2 - Broad Phase 阶段<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>介绍几种在各类代码库中应用的 Broad Phase 算法
+
+
+来源包括但不限于：
+
+Unity
+UE
+Nvidia
+PhyX
+各大博客
+论文
+
+
+Broad Phase Algorithms
+...</p>
         </a>
       
     </div>
@@ -2983,8 +3002,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649573244315')
-      volantis.js('/js/message.js?time=1649573244315', () => {
+      volantis.css('/css/message.css?time=1649767464211')
+      volantis.js('/js/message.js?time=1649767464211', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3029,8 +3048,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649573244315')
-      volantis.js('/js/message.js?time=1649573244315', () => {
+      volantis.css('/css/message.css?time=1649767464211')
+      volantis.js('/js/message.js?time=1649767464211', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3089,8 +3108,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649573244315')
-      volantis.js('/js/message.js?time=1649573244315', () => {
+      volantis.css('/css/message.css?time=1649767464211')
+      volantis.js('/js/message.js?time=1649767464211', () => {
         hideMessage(done);
       });
     } else {
@@ -3235,19 +3254,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649573244315")
+        volantis.js("/js/plugins/sites.js?time=1649767464211")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649573244315")
+        volantis.js("/js/plugins/friends.js?time=1649767464211")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649573244315")
+        volantis.js("/js/plugins/contributors.js?time=1649767464211")
       }
     
   };
@@ -3348,7 +3367,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1649573244315').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1649767464211').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3357,7 +3376,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1649573244315.js"></script>
+<script src="/js/app.js?time=1649767464211.js"></script>
 
 
 <!-- optional -->
@@ -3370,7 +3389,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649573244315");
+    return volantis.js("/js/search/hexo.js?time=1649767464211");
   }
 
   function loadSearchService() {

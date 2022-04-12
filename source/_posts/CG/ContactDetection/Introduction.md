@@ -22,7 +22,7 @@ hide: false
 
 碰撞检测的主要流程是 [^1]：
 
-![GAMES 103- Collision Handling](ContactDetection/2022-04-05-17-32-22.png)
+![GAMES 103- Collision Handling](2022-04-05-17-32-22.png)
 
 其中：
 
@@ -72,7 +72,7 @@ hide: false
 
 ##### 排序
 
-![排序](ContactDetection/image-20220409103734403.png)
+![排序](image-20220409103734403.png)
 
 **目的**：所有的Pair都按照格子的编号排列（类似于稀疏矩阵压缩），从而节约内存开销。
 
@@ -84,7 +84,7 @@ hide: false
 
 递归的建立一棵树，例如：
 
-![BVH](ContactDetection/image-20220409104753151.png)
+![BVH](image-20220409104753151.png)
 
 Idea：把包围盒组合成新的包围盒
 
@@ -158,7 +158,7 @@ t = \frac{x_{0a}\cdot x_{10} \times x_{20}}{x_{ba}\cdot x_{10} \times x_{20}}
 $$
 若解出来的 $t\in [0, 1]$ 则能够判断出在 $t$ 处相交
 
-![DCD](ContactDetection/image-20220409111138061.png)
+![DCD](image-20220409111138061.png)
 
 #### 问题
 
@@ -172,9 +172,9 @@ $$
 
 一般是做 VT 和 EE 的检测：
 
-![V-T测试](ContactDetection/image-20220409111542472.png)
+![V-T测试](image-20220409111542472.png)
 
-![EE测试](ContactDetection/image-20220409111601254.png)
+![EE测试](image-20220409111601254.png)
 
 共同点：
 
@@ -191,13 +191,13 @@ $$
 
 # 碰撞处理
 
-![image-20220409112929873](ContactDetection/image-20220409112929873.png)
+![IPM / IZO](image-20220409112929873.png)
 
 ### 内点法
 
 > 截断 – IPC
 
-![内点法](ContactDetection/image-20220409112859592.png)
+![内点法](image-20220409112859592.png)
 
 反复进行碰撞检测
 
@@ -209,7 +209,7 @@ $$
 
 1. Rigid Impact Zone 
 
-![一个常见的思路为](ContactDetection/image-20220409113154440.png)
+![一个常见的思路为](image-20220409113154440.png)
 
 # 相交解除
 

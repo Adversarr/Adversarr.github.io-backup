@@ -25,7 +25,7 @@ hide: false
 > 5. 各大博客
 > 6. 论文
 
-# Broad Phase Algorithms
+## Broad Phase Algorithms
 
 根据 Nvidia-GPU Gems 3[^1]的描述，Broad Phase最主要的还是依靠一些最基础的`观察`来降低时间复杂度。主要的算法有：
 
@@ -94,7 +94,7 @@ hide: false
 
 
 
- BVH 和 Spatial Hashing 来实现
+BVH 和 Spatial Hashing 来实现
 
 
 

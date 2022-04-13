@@ -138,7 +138,7 @@ article:
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [author, category, date, counter] #启用评论数量需在此添加
+    top_meta: [author, category, date, counter, wordcount] #启用评论数量需在此添加
     # ----------------
     # 文章页脚组件
     footer_widget:
@@ -215,6 +215,7 @@ article:
         desc: '' # 条评论
       # 文章字数和阅读时长
       wordcount:
+        enable: true
         icon_wordcount: fas fa-keyboard
         icon_duration: fas fa-hourglass-half
       # 文章标签
@@ -409,7 +410,7 @@ sidebar:
         - icon: fas fa-envelope
           url: mailto:yangzherui2001@foxmail.com
         - icon: fab fa-github
-          url: https://github.com/Jerryyang2001/
+          url: https://github.com/adversarr
         - icon: fas fa-headphones-alt
           url: /
     # ---------------------------------------
@@ -516,13 +517,13 @@ sidebar:
         icon: fa fa-book
         title: 数值分析
 
-    group-cg-intro:
+    group-games:
       class: group
       display: [desktop, mobile]
-      seo_title: 计算机图形学入门-GAMES 101
+      seo_title: GAMES 系列课程
       header:
         icon: fa fa-book
-        title: 计算机图形学入门-GAMES 101
+        title: GAMES 系列课程
 
     group-adv-math:
       class: group
@@ -671,7 +672,7 @@ plugins:
   ######## Plugins for SEO:
   # npm i hexo-wordcount
   wordcount:
-    enable: #true
+    enable: true
 
   ######## Plugins for ...
   # Button Ripple Effect
@@ -891,10 +892,10 @@ plugins:
 ############################### Rightmenu ############################### > start
 # 自定义右键菜单
 rightmenu:
-  enable: false
+  enable: true
   faicon: fa              # 公共图标类型 fa fal fas fad
   # hr: 分割线, music: 音乐控制器
-  layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]
+  layout: [home, hr, source_docs, source_theme, hr, print, darkmode, reading, music]
   ### 可选功能项 ###
   print:                  # 只有文章页才允许自定义打印
     name: 打印页面
@@ -913,22 +914,22 @@ rightmenu:
     old: #https://static.inkss.cn/img/article/
     new: #https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@master/img/article/
   ### 自定义菜单 ###
-  help:
-    name: 常见问题
-    icon: fa fa-question
-    url: https://volantis.js.org/faqs/
-  examples:
-    name: 示例博客
-    icon: fa fa-rss
-    url: https://volantis.js.org/examples/
-  contributors:
-    name: 加入社区
-    icon: fa fa-fan fa-spin
-    url: https://volantis.js.org/contributors/
+  # help:
+  #   name: 常见问题
+  #   icon: fa fa-question
+  #   url: https://volantis.js.org/faqs/
+  # examples:
+  #   name: 示例博客
+  #   icon: fa fa-rss
+  #   url: https://volantis.js.org/examples/
+  # contributors:
+  #   name: 加入社区
+  #   icon: fa fa-fan fa-spin
+  #   url: https://volantis.js.org/contributors/
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
-    url: https://github.com/volantis-x/volantis-docs/
+    url: https://github.com/adversarr/adversarr.github.io/
   source_theme:
     name: 主题源码
     icon: fa fa-code-branch

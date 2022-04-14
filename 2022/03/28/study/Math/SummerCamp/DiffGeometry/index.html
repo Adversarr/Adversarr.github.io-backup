@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649858979871" as="style">
+  <link rel="preload" href="/css/style.css?time=1649925037386" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -35,8 +35,8 @@
 <meta property="og:description" content="待完善">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-03-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-28T03:49:02.444Z">
+<meta property="article:published_time" content="2022-03-28T03:44:29.465Z">
+<meta property="article:modified_time" content="2022-04-14T06:55:54.173Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="夏令营">
@@ -1814,8 +1814,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649858979871" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649858979871"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1649925037386" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1649925037386"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2595,7 +2595,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-03-28T00:00:00+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-03-28T11:44:29+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2022年3月28日</p>
@@ -2633,8 +2633,106 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p><em>待完善</em></p>
 <span id="more"></span>
 <p>TODO</p>
+<h2 id="测地曲率和测地线">测地曲率和测地线</h2><div class="story post-story">
+<p>根据 Gauss 绝妙定理，<span class="math inline">\(K\)</span>
+只决定于曲面的第一基本形式，在保长对应下不变，
+是曲面的内蕴性质。在这里继续研究曲面内蕴几何的主要研究对象。</p>
+<h3 id="测地曲率和测地线-1">测地曲率和测地线</h3>
+<p>我们考虑正则曲面<span class="math inline">\(S:\mathbf r = \mathbf
+r(u^1, u^2)\)</span>，设有曲线<span class="math inline">\(u^\alpha =
+u^\alpha (s)\)</span> 是一条弧长参数曲线。其作为空间中的曲线参数方程为：
+<span class="math display">\[
+\mathbf r = \mathbf r(s) = \mathbf r (u^1, u^2)
+\]</span> 建立新的正交标架： <span class="math display">\[
+\begin{aligned}
+\mathbf e_1  &amp;= \frac {d\mathbf r(s)}{ds} = \alpha(s)\\
+\mathbf e_2 &amp;= \mathbf n(s)\times \alpha(s) \\
+\mathbf  e_3 &amp;= \mathbf n(s)
+\end{aligned}
+\]</span> 对于该曲线来考察原曲面的性质： <span class="math display">\[
+\begin{cases}
+\frac{d\mathbf r}{ds} &amp;= \mathbf e_1&amp;\\
+\frac{d\mathbf e_1}{ds} &amp;= &amp; +\kappa _g\mathbf e_2 &amp; +
+\kappa_n\mathbf e_3\\
+\frac{d\mathbf e_2}{ds} &amp;= -\kappa_g\mathbf e_1 &amp;&amp;+\tau_g
+\mathbf e_3 \\
+\frac{d\mathbf e_3}{ds} &amp;= -\kappa_n \mathbf e_1 &amp; +\tau_g
+\mathbf e_2\\
+\end{cases}
+\]</span> 显然，式中的：</p>
+<ul>
+<li><span class="math inline">\(\kappa_n\)</span> 就是曲面<span
+class="math inline">\(S\)</span>沿着曲线<span
+class="math inline">\(C\)</span>的切方向的法曲率；</li>
+</ul>
+<p>而也可以求解出其他的参数： <span class="math display">\[
+\kappa_g = \left( \mathbf n, \mathbf r&#39;, \mathbf r&#39;&#39; \right)
+\]</span> 是曲面上曲线 <span class="math inline">\(C\)</span>
+的<strong>测地曲率</strong>； <span class="math display">\[
+\tau_g = \left( \mathbf n, \mathbf n&#39;,\mathbf r&#39;\right)
+\]</span> 是曲面上曲线 <span class="math inline">\(C\)</span>
+的<strong>测地挠率</strong>。</p>
+<p>下面的定理描述了测地曲率和测地挠率的几何意义：</p>
+<dl>
+<dt><strong>Theo</strong></dt>
+<dd>
+设 <span class="math inline">\(C\)</span> 是曲面 <span
+class="math inline">\(S\)</span> 上的一条正则曲线，其在 <span
+class="math inline">\(p\)</span>
+处的测地曲率等于将其投影到切平面上的曲线的相对曲率，其平面的正向由曲面
+<span class="math inline">\(S\)</span> 在点 <span
+class="math inline">\(p\)</span> 的法向量给出。
+</dd>
+<dt><strong>Theo</strong></dt>
+<dd>
+曲面<span class="math inline">\(S\)</span>上任一条曲线<span
+class="math inline">\(C\)</span>的测地曲率是保长对应的不变量，即：<strong>测地曲率是内蕴量</strong>。
+</dd>
+</dl>
+<p>在取正交参数系的情况下，计算测地曲率有如下的<strong>Liouville
+公式</strong>：</p>
+<dl>
+<dt><strong>Theo</strong></dt>
+<dd>
+设<span class="math inline">\((u,v)\)</span>是<span
+class="math inline">\(S\)</span>上的正交参数系，从而<span
+class="math inline">\(S\)</span>的第一基本形式为 <span
+class="math display">\[
+I = E(du)^2 + G(dv)^2
+\]</span> 假设<span class="math inline">\(C\)</span>与<span
+class="math inline">\(u\)</span>曲线的夹角为<span
+class="math inline">\(\theta\)</span>，那么其测地曲率是 <span
+class="math display">\[
+\kappa_g = \frac{d\theta}{ds} - \frac{1}{2\sqrt G} \frac{\partial \log
+E}{\partial v} \cos \theta + \frac{1}{2\sqrt E} \frac{\partial \log
+G}{\partial u}\sin \theta
+\]</span>
+</dd>
+</dl>
+<p>最后我们讨论测地挠率，从自然标架的运动公式可以得出： <span
+class="math display">\[
+\tau _ g = \frac{1} {\sqrt g}
+\begin{vmatrix}
+&amp;\left(\frac{du^2}{ds} \right)^2 &amp; - \frac{du^1du^2}{dsds} &amp;
+\left(\frac{du^1}{ds} \right)^2 \\
+&amp;g_{11} &amp;g_{12} &amp; g_{22}\\
+&amp;b_{11} &amp;b_{22} &amp; b_{22}
+\end{vmatrix}
+\]</span> 故测地挠率和测地曲率一样，是<span
+class="math inline">\(S\)</span>上切方向的函数，反映的是曲面<span
+class="math inline">\(S\)</span>本身的性质，但其不是内蕴量。</p>
+<p>对比主方向的方程，主方向恰好是测地挠率为 0
+的切方向。同时也有如下定理成立：</p>
+<dl>
+<dt>Theo</dt>
+<dd>
+在曲面上非直线的渐进曲线<span class="math inline">\(C\)</span>
+的挠率是<span class="math inline">\(S\)</span>沿着曲面<span
+class="math inline">\(C\)</span>的切方向的测地挠率。
+</dd>
+</dl>
 
-
+</div>
   </div>
   
   
@@ -2654,10 +2752,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-03-28T11:49:02+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-14T14:55:54+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年3月28日</p>
+    <p>更新于：2022年4月14日</p>
   </a>
 </div>
 
@@ -2685,23 +2783,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/03/28/study/Math/SummerCamp/ComplexAnalysis/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>面向夏令营的复变函数整理</p>
-          <p class='content'>待完善
+        <a class='prev' href='/2022/04/09/CG/GAMES/g102-08/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>102-08-离散微分几何</p>
+          <p class='content'>Games 102 - 离散微分几何
 
-TODO
+三角网格存储
+常用的是半边数据结构（Half-Edge）数据结构
 
-</p>
+将网络连接关系存储在边上，表达为两条半边
+目的：提高点线面和查找效率
+
+曲线、曲面微分...</p>
         </a>
       
       
-        <a class='next' href='/2022/03/28/study/Math/SummerCamp/RealAnalysis/'>
-          <p class='title'>面向夏令营的实变函数整理<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>待完善
+        <a class='next' href='/2022/03/28/CG/ContactDetection/Deformed/'>
+          <p class='title'>Collision Detection 整理 4 - Deformed Object<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>碰撞检测 4 - Deformed Object
 
-TODO
+90-00初
+变形体和三角网格的处理的经典论文是：
 
-</p>
+[Bridson02] Robust Treatment of Collisions, ...</p>
         </a>
       
     </div>
@@ -2815,9 +2918,19 @@ TODO
 
 
 
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E5%9C%B0%E6%9B%B2%E7%8E%87%E5%92%8C%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="toc-text">测地曲率和测地线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E5%9C%B0%E6%9B%B2%E7%8E%87%E5%92%8C%E6%B5%8B%E5%9C%B0%E7%BA%BF-1"><span class="toc-text">测地曲率和测地线</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2996,8 +3109,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649858979871')
-      volantis.js('/js/message.js?time=1649858979871', () => {
+      volantis.css('/css/message.css?time=1649925037386')
+      volantis.js('/js/message.js?time=1649925037386', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3042,8 +3155,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649858979871')
-      volantis.js('/js/message.js?time=1649858979871', () => {
+      volantis.css('/css/message.css?time=1649925037386')
+      volantis.js('/js/message.js?time=1649925037386', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3102,8 +3215,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649858979871')
-      volantis.js('/js/message.js?time=1649858979871', () => {
+      volantis.css('/css/message.css?time=1649925037386')
+      volantis.js('/js/message.js?time=1649925037386', () => {
         hideMessage(done);
       });
     } else {
@@ -3137,6 +3250,137 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 </script>
 
 
+
+
+  
+  
+  
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='navigation menuNavigation-Content'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <li class='option menuOption-Content'>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyText'>
+          
+          <i class='fa fa-copy fa-fw'></i> 复制文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyPaste'>
+          
+          <i class='fa fa-paste fa-fw mR12'></i> 粘贴文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copySelect'>
+          
+          <i class='fa fa-object-ungroup fa-fw mR12'></i> 全选文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyCut'>
+          
+          <i class='fa fa-cut fa-fw mR12'></i> 剪切文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='openTab'>
+          
+          <i class='fa fa-external-link-square-alt fa-fw mR12'></i> 在新标签页打开
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copySrc'>
+          
+          <i class='fa fa-image fa-fw mR12'></i> 复制图片地址
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyImg'>
+          
+          <i class='fa fa-images fa-fw mR12'></i> 复制图片文件
+        </span>
+      </li>
+      
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/adversarr/adversarr.github.io/
+        
+        
+        
+        
+          id="https:githubcomadversarradversarrgithubio"
+        
+      >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        
+      >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default' id='printHtml'>
+              <i class='fa fa-print fa-fw '></i> 打印页面
+            </span>
+          </li>  
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default toggle-mode-btn' id='menuDarkBtn'>
+              <i class='fa fa-moon fa-fw '></i> 暗黑模式
+            </span>
+          </li>
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default' id='readingModel'>
+              <i class='fa fa-book-open fa-fw '></i> 阅读模式
+            </span>
+          </li>  
+        
+      
+        
+      
+    </ul>
+  </div>
+  <script>
+    volantis.rightMenu = {};
+    volantis.rightMenu.faicon = 'fa' || 'fa';
+    
+    
+      volantis.rightMenu.defaultStyles = true;
+    
+    
+    
+    
+    
+      volantis.APlayerController = {};
+    
+    volantis.js('/js/rightMenu.js?time=1649925037386')
+  </script>
 
 
 
@@ -3248,19 +3492,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649858979871")
+        volantis.js("/js/plugins/sites.js?time=1649925037386")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649858979871")
+        volantis.js("/js/plugins/friends.js?time=1649925037386")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649858979871")
+        volantis.js("/js/plugins/contributors.js?time=1649925037386")
       }
     
   };
@@ -3361,7 +3605,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1649858979871').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1649925037386').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3370,7 +3614,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1649858979871.js"></script>
+<script src="/js/app.js?time=1649925037386.js"></script>
 
 
 <!-- optional -->
@@ -3383,7 +3627,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649858979871");
+    return volantis.js("/js/search/hexo.js?time=1649925037386");
   }
 
   function loadSearchService() {
@@ -3660,6 +3904,60 @@ volantis.pjax.push(bindToggleButton);
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+    <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
+
 </pjax>
 
 <script>
@@ -3839,7 +4137,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/DiffGeometry/","name":"面向夏令营的微分几何整理"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"面向夏令营的微分几何整理","description":"待完善","datePublished":"2022-03-27T16:00:00.000Z","dateModified":"2022-03-28T03:49:02.444Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/DiffGeometry/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/DiffGeometry/","wordCount":3,"articleSection":"数学","keywords":"数学,夏令营,微分几何","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/DiffGeometry/","name":"面向夏令营的微分几何整理"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"面向夏令营的微分几何整理","description":"待完善","datePublished":"2022-03-28T03:44:29.465Z","dateModified":"2022-04-14T06:55:54.173Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/DiffGeometry/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/DiffGeometry/","wordCount":3,"articleSection":"数学","keywords":"数学,夏令营,微分几何","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649858979855" as="style">
+  <link rel="preload" href="/css/style.css?time=1649925037370" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-13T14:09:07.756Z">
+<meta property="article:modified_time" content="2022-04-14T08:30:28.351Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="计算机图形学">
 <meta property="article:tag" content="几何">
@@ -1813,8 +1813,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649858979855" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649858979855"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1649925037370" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1649925037370"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2690,13 +2690,13 @@ PBD，约束为任何物体不能穿透布料表面，也适用于自身，所�
 <p>就如之前提到的，Broad-Phase主要是使用<strong>空间数据结构</strong>来加速碰撞检查，这类数据结构按照欧氏空间的坐标来对于整个空间进行索引加速，从而实现快速查找近邻的目的。</p>
 <h4 id="oct-treekdtree">OCT-tree/kdTree</h4>
 <ul>
-<li><p><strong>八叉树</strong>：将一个Box按照点 <span
-class="math inline">\(P\)</span> 和经过 <span
-class="math inline">\(P\)</span> 平行于 <span
-class="math inline">\(xOy,yOz,zOx\)</span> 的平面划分。</p></li>
-<li><p><strong>kd树</strong>：每一次选择一个超平面划分所有点，超平面的选择依照
-<span class="math inline">\(xOy, yOz, zOx,xOy,yOz,\cdots\)</span>
-的顺序选择。</p></li>
+<li><p><strong>八叉树</strong>：将一个Box按照点<span
+class="math inline">\(P\)</span>和经过<span
+class="math inline">\(P\)</span>平行于<span
+class="math inline">\(xOy,yOz,zOx\)</span>的平面划分。</p></li>
+<li><p><strong>kd树</strong>：每一次选择一个超平面划分所有点，超平面的选择依照<span
+class="math inline">\(xOy, yOz,
+zOx,xOy,yOz,\cdots\)</span>的顺序选择。</p></li>
 </ul>
 <p>可能碰撞转化为查询轨迹和物体是否相交，等价于查询是否和当前节点的覆盖范围相交，若检查到轨迹和结点覆盖范围</p>
 <ol type="1">
@@ -2743,44 +2743,140 @@ alt="Spatial Partitioning" />
 <p>之所以把Mid-Phase放在BroadPhase中是因为它用的算法和数据结构实际上和BroadPhase几乎是一致的。</p>
 <p>Mid-Phase会对Broad-Phase筛选出的pair进行进一步筛选，针对每一个物体，其通过细分为更小的物体块（如凸包，面元组等），然后继续应用加速结构进行筛选。</p>
 <blockquote>
-<p>好吧。实际上还有一些，在这个的基础上还有一些 local
-的加速方法，但这也不能算是 Broad-Phase 的方法，因为这个方法针对于
-<em>Deformed</em>
+<p>在这个的基础上还有一些 local 的加速方法，但这也不能算是 Broad-Phase
+的方法，因为这个方法针对于 <em>Deformed</em>
 的物体进行计算的效率较高。这些方法在曲面上进行划分，相当于在曲面上定义了一个空间划分。比如通过形变能量来指导在其上的空间划分，最后精细化求解使用三次方程法求解。例如：该论文提出，可以依照形变能量，在曲面的表面上建立BVH，来指导Culling进行。</p>
 </blockquote>
 <figure>
-<img src="image-20220413220403382.png"
+<img src="Survey/image-20220413220403382.png"
 alt="Energy-based Self-Collision Culling for Arbitrary Mesh Deformations" />
 <figcaption aria-hidden="true">Energy-based Self-Collision Culling for
 Arbitrary Mesh Deformations</figcaption>
 </figure>
-</div><h2 id="narrow-phase">Narrow-phase</h2><div class="story post-story">
-<h3 id="刚体碰撞检测">刚体碰撞检测</h3>
-<p>刚体的碰撞检测算法大致有如下几类：</p>
+</div><h2 id="narrow-phase-1-刚体">Narrow-phase 1 刚体</h2><div class="story post-story">
+<h3 id="dcd">DCD</h3>
+<h4 id="signed-distance-function">Signed Distance Function</h4>
+<p>如果我们能为刚体定义一个连续函数，使得对于<span
+class="math inline">\(\mathbf x \in \Omega -\partial
+\Omega\)</span>有<span class="math inline">\(\phi(\mathbf x) &lt;
+0\)</span>对于所有<span class="math inline">\(x\not \in \overline
+\Omega\)</span>，有<span class="math inline">\(\phi(x) &gt;
+0\)</span>，则可以很简单的通过函数零点的存在性来判断是否碰撞。</p>
+<p>但对于一般的网格，难以定义这样一个带符号的距离函数。</p>
+<h4 id="凸包刚体的dcd计算">凸包/刚体的DCD计算</h4>
+<p>对于一般的刚体之间的碰撞检测，一般采用分解为凸包的算法来进行精准的碰撞检测。因此，最基础的针对凸物体的碰撞检测算法（即凸物体之间的碰撞检测）</p>
+<h5 id="gjk算法">GJK算法</h5>
+<h6 id="idea">Idea</h6>
+<p>设<span class="math inline">\(\mathcal A = \{\mathbf
+x\}\)</span>，<span class="math inline">\(\mathcal B = \{\mathbf
+x\}\)</span>是两个凸集，定义其 Minkowski 差为： <span
+class="math display">\[
+\mathcal A - \mathcal B :=\{\mathbf x_1 - \mathbf x_2| \mathbf x_1 \in
+\mathcal A, \mathbf x_2 \in \mathcal B \}
+\]</span> 不难证明，<span class="math inline">\(\mathcal
+A\)</span>和<span class="math inline">\(\mathcal
+B\)</span>碰撞，当且仅当<span class="math inline">\(0 \in \mathcal A -
+\mathcal B\)</span>。</p>
+<p>问题在于，我们不可能遍历所有的点对来判断原点是否属于该集合。但是基于这样的基本思路，对于<strong>凸物体</strong>，我们可以有快速算法实现。</p>
+<h6 id="support-函数和-simplex-单纯形">Support 函数和 Simplex
+单纯形</h6>
+<p>其实我们要判断原点是否属于 Minkowski 差，就是要判断是否 Minkowski
+差的一个子集包含了<span
+class="math inline">\(0\)</span>，这样的操作可以在物体是凸的的时候要求其形成的单纯形。对于二维的情况，使用三角形；对于三维情况，使用四面体。</p>
+<p>为了生成这样的单纯形，我们计算 support
+函数来快速获取给定方向上的支撑点，如图所示[^1]。</p>
+<p><img
+src="Survey/v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" /></p>
+<h6 id="迭代求解">迭代求解</h6>
+<p>有了如上的论述，我们可以通过如此构造单纯形：</p>
+<ol type="1">
+<li>随机生成一个单纯形</li>
+<li>假定当前的单纯形为<span
+class="math inline">\(\{v\}\)</span>则选择距离原点最远的抛弃，对于 n - 1
+维单纯形求法向量，求support（两个）</li>
+<li>直到
+<ol type="1">
+<li>检查到 0 =&gt; 碰撞</li>
+<li>如果新的support点，在迭代方向上的投影小于等于0 =&gt; 不碰撞</li>
+</ol></li>
+</ol>
+<p>可以证明，这样的算法一定在有限步内结束。</p>
+<h5 id="sat算法">SAT算法</h5>
+<p>一个更朴素的思想是：（类似于SVM）两个凸集合不交，当且仅当存在一个<span
+class="math inline">\(n - 1\)</span>维的超平面能够完全分开这两个凸集合。
+遍历所有的边（三维则是面），投影到其正交补空间上。若<strong>存在</strong>一个边，能使得投影完全分离，则其是不相交的，反之相交。具体实现为遍历所有的边来进行判断。</p>
+<h5 id="凸包分解和碰撞检测">凸包分解和碰撞检测</h5>
+<p>对于一般的刚体，我们可以选择使用<strong>凸包分解（V-HACD）</strong>，将刚体“拆分”成小的凸包。并使用适用于凸包的
+Collision Detect 来进行碰撞的判断。</p>
+<h3 id="ccd">CCD</h3>
+<p>刚体的CCD算法大致有如下几类：</p>
 <ol type="1">
 <li>求解代数方程</li>
-<li>滑动体积法</li>
+<li>滑动体积法（Swept Volume）</li>
 <li>二分搜索</li>
-<li>Minkowski和</li>
 <li>Conservative Advancement</li>
 </ol>
 <p>上述大部分都难以处理一般的多面体情况。但也有一些特殊情况。</p>
 <!-- 也可以使用分离轴定理计算CCD -->
-<h4 id="signed-distance-function">Signed Distance Function</h4>
-<p>如果我们能为刚体定义一个连续函数，使得对于 <span
-class="math inline">\(\mathbf x \in \Omega -\partial \Omega\)</span> 有
-<span class="math inline">\(\phi(\mathbf x) &lt; 0\)</span> 对于所有
-<span class="math inline">\(x\not \in \overline \Omega\)</span> ，有
-<span class="math inline">\(\phi(x) &gt;
-0\)</span>，则可以很简单的通过函数零点的存在性来判断是否碰撞。</p>
-<p>但对于一般的网格，难以定义这样一个带符号的距离函数。</p>
-<h4 id="基于凸包的计算加速">基于凸包的计算加速</h4>
-<p>在几何上</p>
-<h5 id="gjk算法">GJK算法</h5>
-<h5 id="sat算法">SAT算法</h5>
-<h3 id="deformed-dcd-离散碰撞检测">Deformed DCD —— 离散碰撞检测</h3>
-<p>这一部分基本很少有人做。</p>
-<h3 id="deformed-ccd-连续碰撞检测">Deformed CCD —— 连续碰撞检测</h3>
+<h4 id="代数方程求解">代数方程求解</h4>
+<p>这种方法仅适用于简单而特殊的情况，例如<a
+target="_blank" rel="noopener" href="http://www.realtimerendering.com/intersections.html">Ref</a>：</p>
+<ol type="1">
+<li>光线</li>
+<li>平面</li>
+<li>球体、圆柱、圆锥、视锥</li>
+<li>AABB、OBB、kDOP</li>
+<li>凸包</li>
+</ol>
+<h4 id="近似ccd">“近似CCD”</h4>
+<p>通过减小模拟的时间步长，可以将 DCD 近似为 CCD。</p>
+<h4 id="二分搜索">二分搜索</h4>
+<p>这个方法仅仅用于确定 TOI</p>
+<p>物理模拟中有时会使用二分法（二分搜索）来查找撞击时间：使用这种方案，可以非常快速地到达撞击时间，但我们不涉及Tunnel问题，因为如果在第
+i 帧和第 i + 1 帧没有碰撞，二分就不会开始。</p>
+<h4 id="swept-volumn">Swept Volumn</h4>
+<p>考察<span class="math inline">\(t\)</span>和<span
+class="math inline">\(t+1\)</span>时刻物体对应点连线（按物体形状、沿直线执行扫描）构成的体积区域，不难发现，如果有相交，则可能会出现碰撞。计算TOI（碰撞时间）后将物体移动到改时间，执行碰撞处理（如计算速度等）然后重新扫描。</p>
+<p>在物体角速度很大的情况下会产生不精确的结果 <a
+target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html">Ref</a>：</p>
+<figure>
+<img src="Survey/2022-04-14-15-52-26.png" class="lazyload" data-srcset="Survey/2022-04-14-15-52-26.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Unity 3D" />
+<figcaption aria-hidden="true">Unity 3D</figcaption>
+</figure>
+<h4 id="speculative-ccd">Speculative CCD</h4>
+<p>Speculative CCD
+的工作原理是根据物体的速度和角速度，计算物体的AABB，从而推测出下一个物理步骤中所有潜在的接触。然后将所有可能接触送入求解器，以确保满足所有接触约束，以便对象不会通过任何穿模（Tunnel）的情况。求解器使用速度、体积来精确计算CCD。</p>
+<p><img src="Survey/2022-04-14-15-55-41.png" class="lazyload" data-srcset="Survey/2022-04-14-15-55-41.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<p>但该方法并不能完全解决所有碰撞问题。考虑如下的情况，小球因为被杆击打而获得更大的速度，先前计算的AABB并不能检测到这样的速度变化：</p>
+<p><img src="Survey/2022-04-14-16-00-14.png" class="lazyload" data-srcset="Survey/2022-04-14-16-00-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<h4 id="ray-cast">Ray-cast</h4>
+<p>小而高速和大而低速物体之间的碰撞检测中可以视作光投射到低速物体上的过程，该方法在
+Unreal Engine
+中被作为试验性功能提供（支持GPU加速）。算法将光线从对象中心点投射到低速物体上，在高速物体中放置更多的采样点并投射出多条光线，可以获得更好的结果。缺点在于，由于假设了其速度差距极大，该方法不适合计算两个运动的物体的碰撞检测。</p>
+</div><h2 id="narrow-phase-2-变形体">Narrow-Phase 2 变形体</h2><div class="story post-story">
+<h3 id="dcd-1">DCD</h3>
+<p>DCD检查的是如下的方程的解的问题（考察 V-E)：</p>
+<p><span class="math display">\[
+\begin{cases}
+   \left( ((1-t)\mathbf{x}_a + t \mathbf x _ b - \mathbf x_0 ) \quad
+\mathbf x _{10} \quad x_{20}\right) = 0\\
+   t = (\mathbf x_{0a} \mathbf x_{10}\mathbf  x_{20}) / (\mathbf x_{ba}
+\mathbf
+   x_{10} \mathbf x_{20})\\
+   t \in [0, 1]\\
+   \mathbf x(t) \text{ inside } \triangle
+\end{cases}
+\]</span></p>
+<p>分为三步求解：</p>
+<ol type="1">
+<li>求解前两行的方程</li>
+<li>判断<span class="math inline">\(t\)</span>是否在<span
+class="math inline">\([0, 1]\)</span></li>
+<li>判断<span class="math inline">\(\mathbf
+x(t)\)</span>是否在三角形内</li>
+</ol>
+<p>这一部分基本很少有人做，原因在于现代的模拟算法越来越追求计算效率，使用较大的时间步长来进行模拟计算。若仅仅使用DCD，容易产生“穿模”的问题。</p>
+<h3 id="ccd-1">CCD</h3>
 <h4 id="preliminaries">Preliminaries</h4>
 <p>沿用IPC中的记号。对于碰撞检测而言，最基本的模型是假设其在两个迭代步骤之间是线性的，即</p>
 <p><span class="math display">\[
@@ -2788,23 +2884,21 @@ class="math inline">\(\mathbf x \in \Omega -\partial \Omega\)</span> 有
 ^{i}
 \]</span></p>
 <p>其中：</p>
-<ul>
-<li><span class="math inline">\(t\)</span> 为归一化后的时间，即 <span
-class="math inline">\(t = (t - t_{i}) / (t_{i + 1} - t _i )\)</span>
-其中右侧的 <span class="math inline">\(t\)</span> 是模拟运行时间</li>
-<li><span class="math inline">\(\mathbf x\)</span>
-是坐标，是关于时间的函数。上标表示迭代代数</li>
-</ul>
-<p>为了简单期间，用 <span class="math inline">\(\mathcal A = \mathbf
-x_1\cdots \mathbf x_i\)</span> 来表示一个 <span
-class="math inline">\(n\)</span> 维单纯形，用 <span
-class="math inline">\(\mathbf x_{ij}\)</span> 来表示 <span
+<p>-<span class="math inline">\(t\)</span>为归一化后的时间，即<span
+class="math inline">\(t = (t - t_{i}) / (t_{i + 1} - t _i
+)\)</span>其中右侧的<span class="math inline">\(t\)</span>是模拟运行时间
+-<span class="math inline">\(\mathbf
+x\)</span>是坐标，是关于时间的函数。上标表示迭代代数</p>
+<p>为了简单期间，用<span class="math inline">\(\mathcal A = \mathbf
+x_1\cdots \mathbf x_i\)</span>来表示一个<span
+class="math inline">\(n\)</span>维单纯形，用<span
+class="math inline">\(\mathbf x_{ij}\)</span>来表示<span
 class="math inline">\(\mathbf x_{i} - \mathbf x_{j}\)</span>。</p>
-<p>在这样的记号下，碰撞可以用 <span class="math inline">\(t\)</span>
-来描述，即：</p>
-<p>单纯形 <span class="math inline">\(\mathcal A = \{\mathbf x_1
-\cdots\mathbf x_n\}\)</span> 和 <span class="math inline">\(\mathcal B =
-\{\mathbf x_1 \cdots \mathbf x_m\}\)</span> 碰撞，当且仅当：</p>
+<p>在这样的记号下，碰撞可以用<span
+class="math inline">\(t\)</span>来描述，即：</p>
+<p>单纯形<span class="math inline">\(\mathcal A = \{\mathbf x_1
+\cdots\mathbf x_n\}\)</span>和<span class="math inline">\(\mathcal B =
+\{\mathbf x_1 \cdots \mathbf x_m\}\)</span>碰撞，当且仅当：</p>
 <p><span class="math display">\[
 \exists t\in[0, 1]\quad s.t. \  \mathcal A(t) \cap \mathcal B(t) \ne
 \emptyset
@@ -2813,11 +2907,11 @@ class="math inline">\(\mathbf x_{i} - \mathbf x_{j}\)</span>。</p>
 <ol type="1">
 <li>和求出凸包交点的思路一致，进行 Minkowski
 差操作，然后二分查找一下根的情况。</li>
-<li>二分搜索，找可能的碰撞时间 <span
+<li>二分搜索，找可能的碰撞时间<span
 class="math inline">\(t\)</span></li>
 <li>约束为三角网格再：
 <ol type="1">
-<li>求解重心坐标<span class="math inline">\((u,v)\)</span> 和 <span
+<li>求解重心坐标<span class="math inline">\((u,v)\)</span>和<span
 class="math inline">\(t\)</span></li>
 <li>简化为三次方程求根</li>
 </ol></li>
@@ -2840,7 +2934,7 @@ VT\iff \exists t\in [0, 1]\quad \begin{cases}
 \end{cases}
 \]</span></p>
 <p>其中：<span class="math inline">\(1,2,3\)</span>为三角形顶点，<span
-class="math inline">\(4\)</span> 为顶点</p>
+class="math inline">\(4\)</span>为顶点</p>
 <p><span class="math display">\[
 EE\iff \exists t\in [0, 1] \quad \begin{cases}
 \left(\mathbf x_{12} \mathbf x_{13}\mathbf x_{14}\right) = 0\\
@@ -2848,12 +2942,12 @@ EE\iff \exists t\in [0, 1] \quad \begin{cases}
 x_4\right\} \ne \emptyset
 \end{cases}
 \]</span></p>
-<p>对于上述两种做法，我们观察到条件中都有一个关于 <span
-class="math inline">\(t\)</span> 的三次方程（因为每一个 <span
-class="math inline">\(\mathbf x_i\)</span> 都是关于 <span
-class="math inline">\(t\)</span> 仿射），因此我们的解决思路就是：</p>
+<p>对于上述两种做法，我们观察到条件中都有一个关于<span
+class="math inline">\(t\)</span>的三次方程（因为每一个<span
+class="math inline">\(\mathbf x_i\)</span>都是关于<span
+class="math inline">\(t\)</span>仿射），因此我们的解决思路就是：</p>
 <ol type="1">
-<li>求三次方程在 <span class="math inline">\([0, 1]\)</span> 内的根</li>
+<li>求三次方程在<span class="math inline">\([0, 1]\)</span>内的根</li>
 <li>检查这个根是否满足第二个条件</li>
 </ol>
 <p><strong>数值精度</strong>在这个问题中体现很多：</p>
@@ -2870,21 +2964,6 @@ class="math inline">\(t\)</span> 仿射），因此我们的解决思路就是�
 <h4 id="impact-zone-optimization">Impact Zone Optimization</h4>
 <h4 id="相交解除-untangle-cloth">相交解除 —— Untangle Cloth</h4>
 </div><h2 id="ipc和其他非接触方法">IPC和其他非接触方法</h2><div class="story post-story">
-<p>TODOs</p>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" />
-超采样 + DCD</li>
-<li><input type="checkbox" disabled="" />
-二分搜索：不适合解决隧穿问题</li>
-<li><input type="checkbox" disabled="" />
-光线投射：适合高速-低速的问题（处理子弹）</li>
-<li><input type="checkbox" disabled="" />
-求解精确解：适合简单物体(AABB、球体）</li>
-<li><input type="checkbox" disabled="" />
-针对凸物体：</li>
-<li><input type="checkbox" disabled="" />
-保守前进法</li>
-</ul>
 
 </div>
   </div>
@@ -2906,10 +2985,10 @@ class="math inline">\(t\)</span> 仿射），因此我们的解决思路就是�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-13T22:09:07+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-14T16:30:28+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月13日</p>
+    <p>更新于：2022年4月14日</p>
   </a>
 </div>
 
@@ -2993,7 +3072,7 @@ class="math inline">\(t\)</span> 仿射），因此我们的解决思路就是�
 
     <div class='content'>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#broad-phase"><span class="toc-text">Broad-Phase</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E9%80%9F%E7%BB%93%E6%9E%84"><span class="toc-text">加速结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#oct-treekdtree"><span class="toc-text">OCT-tree&#x2F;kdTree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bvh"><span class="toc-text">BVH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#spatial-hashing-spatial-partitioning"><span class="toc-text">Spatial Hashing &#x2F; Spatial
-Partitioning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mid-phase"><span class="toc-text">Mid-Phase</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase"><span class="toc-text">Narrow-phase</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9A%E4%BD%93%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">刚体碰撞检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#signed-distance-function"><span class="toc-text">Signed Distance Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%87%B8%E5%8C%85%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8A%A0%E9%80%9F"><span class="toc-text">基于凸包的计算加速</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gjk%E7%AE%97%E6%B3%95"><span class="toc-text">GJK算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sat%E7%AE%97%E6%B3%95"><span class="toc-text">SAT算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deformed-dcd-%E7%A6%BB%E6%95%A3%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">Deformed DCD —— 离散碰撞检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deformed-ccd-%E8%BF%9E%E7%BB%AD%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">Deformed CCD —— 连续碰撞检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#preliminaries"><span class="toc-text">Preliminaries</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E4%B8%89%E8%A7%92%E7%BD%91%E6%A0%BC%E7%9A%84%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">针对三角网格的三次方程求解方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E5%A4%84%E7%90%86"><span class="toc-text">碰撞处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#interior-point-method"><span class="toc-text">Interior Point Method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#impact-zone-optimization"><span class="toc-text">Impact Zone Optimization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BA%A4%E8%A7%A3%E9%99%A4-untangle-cloth"><span class="toc-text">相交解除 —— Untangle Cloth</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipc%E5%92%8C%E5%85%B6%E4%BB%96%E9%9D%9E%E6%8E%A5%E8%A7%A6%E6%96%B9%E6%B3%95"><span class="toc-text">IPC和其他非接触方法</span></a></li></ol>
+Partitioning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mid-phase"><span class="toc-text">Mid-Phase</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase-1-%E5%88%9A%E4%BD%93"><span class="toc-text">Narrow-phase 1 刚体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dcd"><span class="toc-text">DCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#signed-distance-function"><span class="toc-text">Signed Distance Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%B8%E5%8C%85%E5%88%9A%E4%BD%93%E7%9A%84dcd%E8%AE%A1%E7%AE%97"><span class="toc-text">凸包&#x2F;刚体的DCD计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gjk%E7%AE%97%E6%B3%95"><span class="toc-text">GJK算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sat%E7%AE%97%E6%B3%95"><span class="toc-text">SAT算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%B8%E5%8C%85%E5%88%86%E8%A7%A3%E5%92%8C%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">凸包分解和碰撞检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd"><span class="toc-text">CCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3"><span class="toc-text">代数方程求解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%91%E4%BC%BCccd"><span class="toc-text">“近似CCD”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2"><span class="toc-text">二分搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#swept-volumn"><span class="toc-text">Swept Volumn</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#speculative-ccd"><span class="toc-text">Speculative CCD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ray-cast"><span class="toc-text">Ray-cast</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase-2-%E5%8F%98%E5%BD%A2%E4%BD%93"><span class="toc-text">Narrow-Phase 2 变形体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dcd-1"><span class="toc-text">DCD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd-1"><span class="toc-text">CCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#preliminaries"><span class="toc-text">Preliminaries</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E4%B8%89%E8%A7%92%E7%BD%91%E6%A0%BC%E7%9A%84%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">针对三角网格的三次方程求解方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E5%A4%84%E7%90%86"><span class="toc-text">碰撞处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#interior-point-method"><span class="toc-text">Interior Point Method</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#impact-zone-optimization"><span class="toc-text">Impact Zone Optimization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BA%A4%E8%A7%A3%E9%99%A4-untangle-cloth"><span class="toc-text">相交解除 —— Untangle Cloth</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipc%E5%92%8C%E5%85%B6%E4%BB%96%E9%9D%9E%E6%8E%A5%E8%A7%A6%E6%96%B9%E6%B3%95"><span class="toc-text">IPC和其他非接触方法</span></a></li></ol>
     </div>
   </section>
 
@@ -3178,8 +3257,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649858979855')
-      volantis.js('/js/message.js?time=1649858979855', () => {
+      volantis.css('/css/message.css?time=1649925037370')
+      volantis.js('/js/message.js?time=1649925037370', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3224,8 +3303,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649858979855')
-      volantis.js('/js/message.js?time=1649858979855', () => {
+      volantis.css('/css/message.css?time=1649925037370')
+      volantis.js('/js/message.js?time=1649925037370', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3284,8 +3363,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649858979855')
-      volantis.js('/js/message.js?time=1649858979855', () => {
+      volantis.css('/css/message.css?time=1649925037370')
+      volantis.js('/js/message.js?time=1649925037370', () => {
         hideMessage(done);
       });
     } else {
@@ -3319,6 +3398,137 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 </script>
 
 
+
+
+  
+  
+  
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='navigation menuNavigation-Content'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <li class='option menuOption-Content'>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyText'>
+          
+          <i class='fa fa-copy fa-fw'></i> 复制文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyPaste'>
+          
+          <i class='fa fa-paste fa-fw mR12'></i> 粘贴文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copySelect'>
+          
+          <i class='fa fa-object-ungroup fa-fw mR12'></i> 全选文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyCut'>
+          
+          <i class='fa fa-cut fa-fw mR12'></i> 剪切文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='openTab'>
+          
+          <i class='fa fa-external-link-square-alt fa-fw mR12'></i> 在新标签页打开
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copySrc'>
+          
+          <i class='fa fa-image fa-fw mR12'></i> 复制图片地址
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyImg'>
+          
+          <i class='fa fa-images fa-fw mR12'></i> 复制图片文件
+        </span>
+      </li>
+      
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/adversarr/adversarr.github.io/
+        
+        
+        
+        
+          id="https:githubcomadversarradversarrgithubio"
+        
+      >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        
+      >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default' id='printHtml'>
+              <i class='fa fa-print fa-fw '></i> 打印页面
+            </span>
+          </li>  
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default toggle-mode-btn' id='menuDarkBtn'>
+              <i class='fa fa-moon fa-fw '></i> 暗黑模式
+            </span>
+          </li>
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default' id='readingModel'>
+              <i class='fa fa-book-open fa-fw '></i> 阅读模式
+            </span>
+          </li>  
+        
+      
+        
+      
+    </ul>
+  </div>
+  <script>
+    volantis.rightMenu = {};
+    volantis.rightMenu.faicon = 'fa' || 'fa';
+    
+    
+      volantis.rightMenu.defaultStyles = true;
+    
+    
+    
+    
+    
+      volantis.APlayerController = {};
+    
+    volantis.js('/js/rightMenu.js?time=1649925037370')
+  </script>
 
 
 
@@ -3430,19 +3640,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649858979855")
+        volantis.js("/js/plugins/sites.js?time=1649925037370")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649858979855")
+        volantis.js("/js/plugins/friends.js?time=1649925037370")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649858979855")
+        volantis.js("/js/plugins/contributors.js?time=1649925037370")
       }
     
   };
@@ -3543,7 +3753,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1649858979855').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1649925037370').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3552,7 +3762,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1649858979855.js"></script>
+<script src="/js/app.js?time=1649925037370.js"></script>
 
 
 <!-- optional -->
@@ -3565,7 +3775,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649858979855");
+    return volantis.js("/js/search/hexo.js?time=1649925037370");
   }
 
   function loadSearchService() {
@@ -4088,7 +4298,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","name":"Collision Detection 整理 6 - 综述"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 6 - 综述","description":"终于到了综述了。","datePublished":"2022-04-11T16:00:00.000Z","dateModified":"2022-04-13T14:09:07.756Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","wordCount":8,"articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","name":"Collision Detection 整理 6 - 综述"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 6 - 综述","description":"终于到了综述了。","datePublished":"2022-04-11T16:00:00.000Z","dateModified":"2022-04-14T08:30:28.351Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","wordCount":8,"articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

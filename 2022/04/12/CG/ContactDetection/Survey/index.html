@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649950160252" as="style">
+  <link rel="preload" href="/css/style.css?time=1649993396327" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-14T15:25:55.310Z">
+<meta property="article:modified_time" content="2022-04-15T03:21:33.085Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="计算机图形学">
 <meta property="article:tag" content="几何">
@@ -1813,8 +1813,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649950160252" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649950160252"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1649993396327" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1649993396327"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2624,13 +2624,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.4k 字</p>
+      <p>字数：6.4k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：20 分钟</p>
+      <p>时长：24 分钟</p>
     </a>
   </div>
 
@@ -2652,7 +2652,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="碰撞处理简述">碰撞处理简述</h2><div class="story post-story">
 <p>碰撞处理的难度是不大的，主要问题是如何进行快速、准确的碰撞检测。碰撞检测主要算法执行流程如下图：</p>
 <figure>
-<img src="Survey/2022-04-05-17-32-22.png" class="lazyload" data-srcset="Survey/2022-04-05-17-32-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GAMES-103-Wang" />
+<img src="2022-04-05-17-32-22.png" class="lazyload" data-srcset="2022-04-05-17-32-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GAMES-103-Wang" />
 <figcaption aria-hidden="true">GAMES-103-Wang</figcaption>
 </figure>
 </div><h2 id="碰撞检测----introduction">碰撞检测 -- Introduction</h2><div class="story post-story">
@@ -2757,8 +2757,7 @@ Partitioning</h4>
 Spatial Hashing
 在为每一个格子建立列表，列表中存放所有和该格子有重合区域的物体（即一个物体可能出现在多个格子内），在查询碰撞时即对于同一列表中的不同物体进行查询即可。</p>
 <figure>
-<img src="Survey/image-20220409103734403.png"
-alt="Spatial Partitioning" />
+<img src="image-20220409103734403.png" class="lazyload" data-srcset="image-20220409103734403.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Spatial Partitioning" />
 <figcaption aria-hidden="true">Spatial Partitioning</figcaption>
 </figure>
 <p>如图所示，其将全空间划分为16个格子。考虑到减少空间浪费的问题，将这些物体的按id进行排序，即可在不为每一个id建立表格的情况下完成筛选。</p>
@@ -2773,7 +2772,7 @@ alt="Spatial Partitioning" />
 的物体进行计算的效率较高。这些方法在曲面上进行划分，相当于在曲面上定义了一个空间划分。比如通过形变能量来指导在其上的空间划分，最后精细化求解使用三次方程法求解。例如：该论文提出，可以依照形变能量，在曲面的表面上建立BVH，来指导Culling进行。</p>
 </blockquote>
 <figure>
-<img src="Survey/image-20220413220403382.png"
+<img src="image-20220413220403382.png"
 alt="Energy-based Self-Collision Culling for Arbitrary Mesh Deformations" />
 <figcaption aria-hidden="true">Energy-based Self-Collision Culling for
 Arbitrary Mesh Deformations</figcaption>
@@ -2811,8 +2810,7 @@ B\)</span>碰撞，当且仅当<span class="math inline">\(0 \in \mathcal A -
 class="math inline">\(0\)</span>，这样的操作可以在物体是凸的的时候要求其形成的单纯形。对于二维的情况，使用三角形；对于三维情况，使用四面体。</p>
 <p>为了生成这样的单纯形，我们计算 support
 函数来快速获取给定方向上的支撑点，如图所示[^1]。</p>
-<p><img
-src="Survey/v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" /></p>
+<p><img src="v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" class="lazyload" data-srcset="v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
 <h6 id="迭代求解">迭代求解</h6>
 <p>有了如上的论述，我们可以通过如此构造单纯形：</p>
 <ol type="1">
@@ -2866,15 +2864,15 @@ class="math inline">\(t+1\)</span>时刻物体对应点连线（按物体形状�
 <p>在物体角速度很大的情况下会产生不精确的结果 <a
 target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html">Ref</a>：</p>
 <figure>
-<img src="Survey/2022-04-14-15-52-26.png" class="lazyload" data-srcset="Survey/2022-04-14-15-52-26.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Unity 3D" />
+<img src="2022-04-14-15-52-26.png" class="lazyload" data-srcset="2022-04-14-15-52-26.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Unity 3D" />
 <figcaption aria-hidden="true">Unity 3D</figcaption>
 </figure>
 <h4 id="speculative-ccd">Speculative CCD</h4>
 <p>Speculative CCD
 的工作原理是根据物体的速度和角速度，计算物体的AABB，从而推测出下一个物理步骤中所有潜在的接触。然后将所有可能接触送入求解器，以确保满足所有接触约束，以便对象不会通过任何穿模（Tunnel）的情况。求解器使用速度、体积来精确计算CCD。</p>
-<p><img src="Survey/2022-04-14-15-55-41.png" class="lazyload" data-srcset="Survey/2022-04-14-15-55-41.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<p><img src="2022-04-14-15-55-41.png" class="lazyload" data-srcset="2022-04-14-15-55-41.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
 <p>但该方法并不能完全解决所有碰撞问题。考虑如下的情况，小球因为被杆击打而获得更大的速度，先前计算的AABB并不能检测到这样的速度变化：</p>
-<p><img src="Survey/2022-04-14-16-00-14.png" class="lazyload" data-srcset="Survey/2022-04-14-16-00-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<p><img src="2022-04-14-16-00-14.png" class="lazyload" data-srcset="2022-04-14-16-00-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
 <h4 id="ray-cast">Ray-cast</h4>
 <p>小而高速和大而低速物体之间的碰撞检测中可以视作光投射到低速物体上的过程，该方法在
 Unreal Engine
@@ -3084,7 +3082,7 @@ Tight Error Bounds</li>
 <p><span class="math display">\[
 Y(0),Y&#39;(0),Y&#39;(1),Y&#39;&#39;(0),Y&#39;&#39;(1)
 \]</span></p>
-<p><img src="Survey/2022-04-14-19-56-39.png" class="lazyload" data-srcset="Survey/2022-04-14-19-56-39.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<p><img src="2022-04-14-19-56-39.png" class="lazyload" data-srcset="2022-04-14-19-56-39.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
 <p>优点：</p>
 <ol type="1">
 <li>速度快，准确率也高，几乎是最好的算法</li>
@@ -3115,7 +3113,7 @@ classification</li>
 </blockquote>
 <p>原理上：给定一个三次函数 <span class="math inline">\(Y(t)\)</span>
 用伯恩斯坦多项式唯一分解，对应了一个三次贝塞尔曲线，而每一个三次贝塞尔曲线可以被分类为</p>
-<p><img src="Survey/image-20220412105920274.png" class="lazyload" data-srcset="Survey/image-20220412105920274.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<p><img src="image-20220412105920274.png" class="lazyload" data-srcset="image-20220412105920274.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
 <p>从而通过观察：</p>
 <p><span class="math display">\[
 Y(0), Y(1/3), Y(2/3), Y(1)
@@ -3137,7 +3135,8 @@ t]\)</span> 内有 2 解</li>
 <p>根据 Brouwer topological degree theory：</p>
 <p>假设 <span class="math inline">\(\Omega\)</span> 是一个 <span
 class="math inline">\(n\)</span> 多面体，设 <span
-class="math inline">\(F:\Omega \rarr \mathbb R^{n}\)</span>满足 <span
+class="math inline">\(F:\Omega \rightarrow \mathbb R^{n}\)</span>满足
+<span
 class="math inline">\(C^2\)</span>，且有有限多个根，且没有在边界<span
 class="math inline">\(\Gamma=\partial \Omega\)</span>
 上的根，在每一个根处的 Jacobian 都非奇异，则若有光线从 <span
@@ -3159,8 +3158,7 @@ Animation</li>
 <p>根据王老师在GAMES103和2021图形学大会讲的内容（Real-Time Cloth
 Simulation on GPUs），其程序流程如下：</p>
 <figure>
-<img src="Survey/image-20220414221444102.png"
-alt="A Practical System" />
+<img src="image-20220414221444102.png" class="lazyload" data-srcset="image-20220414221444102.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="A Practical System" />
 <figcaption aria-hidden="true">A Practical System</figcaption>
 </figure>
 <p>前两种方法都是基于如下公式： <span class="math display">\[
@@ -3180,16 +3178,14 @@ class="math inline">\(\log\)</span>边界函数，保持在可行域内，逐步
 <li>小步长 — 速度慢</li>
 </ul>
 <figure>
-<img src="Survey/image-20220414221940838.png"
-alt="Interior Point Method" />
+<img src="image-20220414221940838.png" class="lazyload" data-srcset="image-20220414221940838.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Interior Point Method" />
 <figcaption aria-hidden="true">Interior Point Method</figcaption>
 </figure>
 <h4 id="impact-zone-optimization">Impact Zone Optimization</h4>
 <p>思想：直接从 <span class="math inline">\(\mathbf x^*\)</span>
 开始迭代，逐步逼进可行域，如下图</p>
 <figure>
-<img src="Survey/image-20220414222918767.png"
-alt="Impact Zone Optimization" />
+<img src="image-20220414222918767.png" class="lazyload" data-srcset="image-20220414222918767.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Impact Zone Optimization" />
 <figcaption aria-hidden="true">Impact Zone Optimization</figcaption>
 </figure>
 <p>优点：</p>
@@ -3225,7 +3221,8 @@ Minimization</li>
 <h4 id="rigid-impact-zone">Rigid Impact Zone</h4>
 <p>如果上述方法都失败了，那么就考虑使用该方法，其对于不满足要求的点，直接回退到上一模拟步的状态（无相交的状态）。</p>
 </div><h2 id="非接触方法">非接触方法</h2><div class="story post-story">
-<p>这一类方法都将原有的碰撞条件增强为保持一些点/面之间的距离大于一定值。正如zhihu上所说：</p>
+<p>这一类方法都将原有的碰撞条件增强为保持一些点/面之间的距离大于一定值，从而避免
+CCD 过程。正如zhihu上所说：</p>
 <blockquote>
 <p>之前大家试过很多方法，比如定义物体表面距离很近的“点-三角”对和“边-边”对（接触元对）组成的四面体的有符号体积要恒大于0；或者在每个时间歩开始时，找到距离近的每个接触元对上距离最近的点对，限定这些点对的距离大于0等。这些定义的问题在于，如果物体在某个时间歩移动比较多，他们可能无法正确描述无穿透这件事。另外这类方法大多基于sequential
 quadratic
@@ -3246,8 +3243,139 @@ elastics</li>
 Contact</li>
 </ol>
 </blockquote>
-<p>其</p>
-<h3 id="siggraph-2021----gpu-based">SIGGRAPH 2021 -- GPU-Based</h3>
+<p>主要思路：迭代的每一步，都把所有 primitive pair 分成两类：</p>
+<ol type="1">
+<li><span class="math inline">\(0&lt;\min \mathrm{distance} \le \hat
+d\)</span>：设置 <span class="math inline">\(\log\)</span>-barrier
+函数，防止直接碰撞</li>
+<li><span class="math inline">\(\min \mathrm{distance} &gt; \hat
+d\)</span>：设置迭代最大步长，避免距离在迭代路径上碰撞（穿透）</li>
+</ol>
+<p>依据这两个基本假设来避免 CCD。</p>
+<p>首先，其主要处理的是如何<strong>避免连续碰撞检测</strong>，在论文中，其提出：</p>
+<blockquote>
+<p>我们称一个状态是可接受的，当且仅当存在一条可行路径，到达该状态，或以该状态为极限。</p>
+<p>一个迭代路径是可接受的，当且仅当其可以作为上述的极限过程中的状态序列</p>
+</blockquote>
+<p><span class="math display">\[
+\mathbf x \in \Omega \iff \exists \mathbf x_i \in \Omega.\
+\lim_{i\rightarrow \infty} = \mathbf x
+\]</span></p>
+<p>那么，基于以上假设，我们完全可以不去度量是否<strong>产生了</strong>碰撞，而把约束换成</p>
+<p><span class="math display">\[
+\|\mathbf x - \mathbf x&#39;\| &gt; 0,\quad \forall \mathbf x&#39; \in
+\partial \Omega
+\]</span></p>
+<p>这样，我们可以将问题转化为：</p>
+<p><span class="math display">\[
+\|\mathbf x - \mathbf y\| \ge \epsilon, \forall \mathbf x ,\mathbf
+y\text{ from different primitives}
+\]</span></p>
+<p>那么，可以将动力学方程和约束放在一起求解即：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\min_{\mathbf x}\quad &amp;F(\mathbf x) + G(\min
+\mathrm{distance}(\mathbf x))\\
+\text{s.t.}\quad &amp;\mathbf x \text{ is feasible}
+\end{aligned}
+\]</span></p>
+<p>其中：</p>
+<ul>
+<li><span class="math inline">\(F\)</span> 为动力学方程中的能量</li>
+<li><span class="math inline">\(G\)</span> 为障碍函数</li>
+</ul>
+<p>这是一个几乎没有约束的优化问题：因为原来的碰撞处理的全套流程转化为在迭代求解过程中，保证迭代路径是可接受的！</p>
+<p>具体而言，Log函数为了避免在不充分接近时也出现“抵抗力”，其在保证<span
+class="math inline">\(C^2\)</span>的情况下，构造了如下的“log-barrier”：</p>
+<p><img src="2022-04-15-08-56-06.png" class="lazyload" data-srcset="2022-04-15-08-56-06.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
+<blockquote>
+<p>该方法可以看作是一个“内点法”</p>
+</blockquote>
+<h4 id="如何计算-距离">如何计算 “距离”</h4>
+<p>IPC方法中并不限于三角网格等具体的空间结构，因此距离的计算并不需要依赖于物体表示的维数。基本思路是通过重心坐标构造两个
+primitive 上的点<span class="math inline">\(\mathbf x\)</span>和<span
+class="math inline">\(\mathbf y\)</span>，从而计算</p>
+<p><span class="math display">\[
+d(\mathbf x, \mathbf y) = \min \|\mathbf x - \mathbf y\|
+\]</span></p>
+<p>来得到距离。</p>
+<h4 id="constraint-set">Constraint Set</h4>
+<p>通过 Spatial Hashing 算法来加速 Constraint Set 计算，定义为：</p>
+<p><span class="math display">\[
+\{\langle i , j \rangle | d(\mathbf x_i, \mathbf x_j) \le \hat d \}
+\]</span></p>
+<h4 id="迭代过程中如何保证约束">迭代过程中如何保证约束</h4>
+<p>算法使用 Intersection-Aware
+Line-Search（回溯线搜索）来进行迭代。并且在每次执行搜索之前，重新计算
+Constraint Set。而观察到对于：</p>
+<ol type="1">
+<li>Constraint Set
+中的元素对：一定出现在优化的能量函数中，通过barrier函数避免碰撞</li>
+<li>不在其中的元素对：初始距离<span class="math inline">\(&gt;\hat
+d\)</span></li>
+</ol>
+<p>从而可以通过 <span class="math inline">\(\hat d\)</span>
+指导迭代的最大步长。</p>
+<p>从而将原本难以解决的CCD问题避免。</p>
+<h4 id="总结">总结</h4>
+<p>优点：</p>
+<ol type="1">
+<li>不需要繁琐的 CCD -- 速度、精度都有保证</li>
+<li>嵌入到 Dynamic Solver 迭代过程中</li>
+<li>容易在GPU上实现</li>
+</ol>
+<p>缺点：</p>
+<ol type="1">
+<li>非接触方法，摩擦难以解决</li>
+</ol>
+<h3 id="siggraph-2021----repulsion-method">SIGGRAPH 2021 -- Repulsion
+Method</h3>
+<blockquote>
+<p>Ref:</p>
+<ol type="1">
+<li>A Safe and Fast Repulsion Method for GPU-based Cloth Self
+Collisions</li>
+</ol>
+</blockquote>
+<p>思路：找到使不产生VT/EE碰撞的充分条件，且该充分条件仅需要考虑顶点之间的距离，而和三角网格无关。</p>
+<p><span class="math display">\[
+\min d(\mathbf v_i, \mathbf v_j) \ge \hat d = L / 2
+\]</span></p>
+<p>其中<span class="math inline">\(L\)</span>为三角网格的最大边长。</p>
+<p>求解过程分为两部分：</p>
+<ol type="1">
+<li>Soft-Phase</li>
+<li>Hard-Phase</li>
+</ol>
+<p>并且为了避免约束过强，使用了自适应的重采样方法。</p>
+<h4 id="soft-phase">Soft-Phase</h4>
+<p><span class="math display">\[
+\mathbf x^{k+1} = \arg \min\left\{ \|\mathbf x − \mathbf x^{\mathrm
+{init}} \| − \rho \min \left\{c_{ij} (\mathbf x) − \varepsilon_{slack} ,
+0  \right\}\right\}
+\]</span></p>
+<h4 id="hard-phase">Hard-Phase</h4>
+<p><span class="math display">\[
+\mathbf x^{k+1} = \arg \min\left\{ \|\mathbf x − \mathbf x^{\mathrm
+{init}} \| − \mu \sum {
+\log (f(c_{ij}(x), \varepsilon_{slack}))
+}\right\}
+\]</span></p>
+<p>其中的 <span class="math inline">\(f\)</span> 是满足 <span
+class="math inline">\(C^1\)</span> 的分段函数：</p>
+<p><span class="math display">\[
+f = \begin{cases}
+   x &amp; x\le 0\\
+   ax^3 + bx^2 + cx + d &amp; 0 &lt;x \le \varepsilon\\
+   \varepsilon&amp; \text{otherwise}
+\end{cases}
+\]</span></p>
+<h4 id="adaptive-resampling">Adaptive Resampling</h4>
+<p>由于要求所有距离大于 <span class="math inline">\(L /
+2\)</span>，为了使得这个条件不是过于充分的，要求最小边长和最大边长<span
+class="math inline">\(l\)</span>与<span
+class="math inline">\(L\)</span>的比例大于一定值。</p>
+<p><img src="2022-04-15-11-19-43.png" class="lazyload" data-srcset="2022-04-15-11-19-43.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="This is a picture without description" /></p>
 
 </div>
   </div>
@@ -3269,10 +3397,10 @@ Contact</li>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-14T23:25:55+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-15T11:21:33+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月14日</p>
+    <p>更新于：2022年4月15日</p>
   </a>
 </div>
 
@@ -3311,12 +3439,22 @@ High res...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/11/CG/ContactDetection/Benchmark/'>
-          <p class='title'>Collision Detection 整理 5 - 2021 A large scale benchmark and an Inclusion-based Algorithm<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Collision Detection 整理5 – CCD 算法对比
+        <a class='next' href='/2022/04/11/CG/GAMES/g201-02/'>
+          <p class='title'>201-02-拉格朗日视角1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>games201 拉格朗日视角
 
-准确说，这篇blog是一篇论文的整理emmm，但由于老板的任务就是做 collsion
-的汇总，这篇论文的涉及面也算是相对...</p>
+拉格朗日视角简介
+两种视角：
+
+拉格朗日视角 – 粒子，携带位置、速度等
+
+MPM、弹簧质点模型……
+
+欧拉视角 – 通过固定的“传感器”来表示
+
+烟雾模拟
+
+...</p>
         </a>
       
     </div>
@@ -3366,7 +3504,8 @@ High res...</p>
 
     <div class='content'>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E5%A4%84%E7%90%86%E7%AE%80%E8%BF%B0"><span class="toc-text">碰撞处理简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B----introduction"><span class="toc-text">碰撞检测 -- Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#broad-phase"><span class="toc-text">Broad-Phase</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E9%80%9F%E7%BB%93%E6%9E%84"><span class="toc-text">加速结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#oct-treekdtree"><span class="toc-text">OCT-tree&#x2F;kdTree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bvh"><span class="toc-text">BVH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#spatial-hashing-spatial-partitioning"><span class="toc-text">Spatial Hashing &#x2F; Spatial
-Partitioning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mid-phase"><span class="toc-text">Mid-Phase</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase-1-%E5%88%9A%E4%BD%93"><span class="toc-text">Narrow-phase 1 刚体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dcd"><span class="toc-text">DCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#signed-distance-function"><span class="toc-text">Signed Distance Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%B8%E5%8C%85%E5%88%9A%E4%BD%93%E7%9A%84dcd%E8%AE%A1%E7%AE%97"><span class="toc-text">凸包&#x2F;刚体的DCD计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gjk%E7%AE%97%E6%B3%95"><span class="toc-text">GJK算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sat%E7%AE%97%E6%B3%95"><span class="toc-text">SAT算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%B8%E5%8C%85%E5%88%86%E8%A7%A3%E5%92%8C%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">凸包分解和碰撞检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd"><span class="toc-text">CCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3"><span class="toc-text">代数方程求解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%91%E4%BC%BCccd"><span class="toc-text">“近似CCD”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2"><span class="toc-text">二分搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#swept-volumn"><span class="toc-text">Swept Volumn</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#speculative-ccd"><span class="toc-text">Speculative CCD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ray-cast"><span class="toc-text">Ray-cast</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#conservasive-advancement"><span class="toc-text">Conservasive Advancement</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase-2-%E5%8F%98%E5%BD%A2%E4%BD%93"><span class="toc-text">Narrow-Phase 2 变形体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dcd-1"><span class="toc-text">DCD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd-1"><span class="toc-text">CCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#preliminaries"><span class="toc-text">Preliminaries</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95"><span class="toc-text">二分法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#irf"><span class="toc-text">IRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uirf"><span class="toc-text">UIRF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E4%B8%89%E8%A7%92%E7%BD%91%E6%A0%BC%E7%9A%84%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">针对三角网格的三次方程求解方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#fprf"><span class="toc-text">FPRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tightccd"><span class="toc-text">TightCCD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#bsc"><span class="toc-text">BSC</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%E6%8A%95%E5%B0%84-rp-rrp"><span class="toc-text">光线投射 RP &#x2F; RRP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E5%A4%84%E7%90%86"><span class="toc-text">碰撞处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#interior-point-method-%E5%86%85%E7%82%B9%E6%B3%95"><span class="toc-text">Interior Point Method 内点法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#impact-zone-optimization"><span class="toc-text">Impact Zone Optimization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BA%A4%E8%A7%A3%E9%99%A4-untangle-cloth"><span class="toc-text">相交解除 — Untangle Cloth</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rigid-impact-zone"><span class="toc-text">Rigid Impact Zone</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%8E%A5%E8%A7%A6%E6%96%B9%E6%B3%95"><span class="toc-text">非接触方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ipc"><span class="toc-text">IPC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#siggraph-2021----gpu-based"><span class="toc-text">SIGGRAPH 2021 -- GPU-Based</span></a></li></ol></li></ol>
+Partitioning</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mid-phase"><span class="toc-text">Mid-Phase</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase-1-%E5%88%9A%E4%BD%93"><span class="toc-text">Narrow-phase 1 刚体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dcd"><span class="toc-text">DCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#signed-distance-function"><span class="toc-text">Signed Distance Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%B8%E5%8C%85%E5%88%9A%E4%BD%93%E7%9A%84dcd%E8%AE%A1%E7%AE%97"><span class="toc-text">凸包&#x2F;刚体的DCD计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gjk%E7%AE%97%E6%B3%95"><span class="toc-text">GJK算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sat%E7%AE%97%E6%B3%95"><span class="toc-text">SAT算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%B8%E5%8C%85%E5%88%86%E8%A7%A3%E5%92%8C%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">凸包分解和碰撞检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd"><span class="toc-text">CCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3"><span class="toc-text">代数方程求解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%91%E4%BC%BCccd"><span class="toc-text">“近似CCD”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2"><span class="toc-text">二分搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#swept-volumn"><span class="toc-text">Swept Volumn</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#speculative-ccd"><span class="toc-text">Speculative CCD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ray-cast"><span class="toc-text">Ray-cast</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#conservasive-advancement"><span class="toc-text">Conservasive Advancement</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#narrow-phase-2-%E5%8F%98%E5%BD%A2%E4%BD%93"><span class="toc-text">Narrow-Phase 2 变形体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dcd-1"><span class="toc-text">DCD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd-1"><span class="toc-text">CCD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#preliminaries"><span class="toc-text">Preliminaries</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95"><span class="toc-text">二分法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#irf"><span class="toc-text">IRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#uirf"><span class="toc-text">UIRF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E4%B8%89%E8%A7%92%E7%BD%91%E6%A0%BC%E7%9A%84%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-text">针对三角网格的三次方程求解方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#fprf"><span class="toc-text">FPRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tightccd"><span class="toc-text">TightCCD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#bsc"><span class="toc-text">BSC</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%E6%8A%95%E5%B0%84-rp-rrp"><span class="toc-text">光线投射 RP &#x2F; RRP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E%E5%A4%84%E7%90%86"><span class="toc-text">碰撞处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#interior-point-method-%E5%86%85%E7%82%B9%E6%B3%95"><span class="toc-text">Interior Point Method 内点法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#impact-zone-optimization"><span class="toc-text">Impact Zone Optimization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BA%A4%E8%A7%A3%E9%99%A4-untangle-cloth"><span class="toc-text">相交解除 — Untangle Cloth</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rigid-impact-zone"><span class="toc-text">Rigid Impact Zone</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%8E%A5%E8%A7%A6%E6%96%B9%E6%B3%95"><span class="toc-text">非接触方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ipc"><span class="toc-text">IPC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97-%E8%B7%9D%E7%A6%BB"><span class="toc-text">如何计算 “距离”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#constraint-set"><span class="toc-text">Constraint Set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E7%BA%A6%E6%9D%9F"><span class="toc-text">迭代过程中如何保证约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#siggraph-2021----repulsion-method"><span class="toc-text">SIGGRAPH 2021 -- Repulsion
+Method</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#soft-phase"><span class="toc-text">Soft-Phase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hard-phase"><span class="toc-text">Hard-Phase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#adaptive-resampling"><span class="toc-text">Adaptive Resampling</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -3551,8 +3690,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649950160252')
-      volantis.js('/js/message.js?time=1649950160252', () => {
+      volantis.css('/css/message.css?time=1649993396327')
+      volantis.js('/js/message.js?time=1649993396327', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3597,8 +3736,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649950160252')
-      volantis.js('/js/message.js?time=1649950160252', () => {
+      volantis.css('/css/message.css?time=1649993396327')
+      volantis.js('/js/message.js?time=1649993396327', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3657,8 +3796,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649950160252')
-      volantis.js('/js/message.js?time=1649950160252', () => {
+      volantis.css('/css/message.css?time=1649993396327')
+      volantis.js('/js/message.js?time=1649993396327', () => {
         hideMessage(done);
       });
     } else {
@@ -3821,7 +3960,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1649950160252')
+    volantis.js('/js/rightMenu.js?time=1649993396327')
   </script>
 
 
@@ -3934,19 +4073,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649950160252")
+        volantis.js("/js/plugins/sites.js?time=1649993396327")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649950160252")
+        volantis.js("/js/plugins/friends.js?time=1649993396327")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649950160252")
+        volantis.js("/js/plugins/contributors.js?time=1649993396327")
       }
     
   };
@@ -4047,7 +4186,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1649950160252').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1649993396327').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4056,7 +4195,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1649950160252.js"></script>
+<script src="/js/app.js?time=1649993396327.js"></script>
 
 
 <!-- optional -->
@@ -4069,7 +4208,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649950160252");
+    return volantis.js("/js/search/hexo.js?time=1649993396327");
   }
 
   function loadSearchService() {
@@ -4592,7 +4731,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","name":"Collision Detection 整理 6 - 综述"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 6 - 综述","description":"终于到了综述了。","datePublished":"2022-04-11T16:00:00.000Z","dateModified":"2022-04-14T15:25:55.310Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","wordCount":8,"articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","name":"Collision Detection 整理 6 - 综述"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 6 - 综述","description":"终于到了综述了。","datePublished":"2022-04-11T16:00:00.000Z","dateModified":"2022-04-15T03:21:33.085Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/12/CG/ContactDetection/Survey/","wordCount":8,"articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

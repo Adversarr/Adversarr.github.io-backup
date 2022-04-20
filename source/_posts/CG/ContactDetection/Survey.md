@@ -22,7 +22,7 @@ hide: false
 
 碰撞处理的难度是不大的，主要问题是如何进行快速、准确的碰撞检测。碰撞检测主要算法执行流程如下图：
 
-![GAMES-103-Wang](Survey/2022-04-05-17-32-22.png)
+![GAMES-103-Wang](2022-04-05-17-32-22.png)
 
 ## 碰撞检测 -- Introduction
 
@@ -105,7 +105,7 @@ BVH可以看作是OCT-Tree和kdTree的一个推广：Bounding Volumn Hierarchy�
 
 Spatial Hashing 的思想是为每一个空间一个编号。最简单的方法是均匀的使用格点来对于全空间进行划分。最基础的 Spatial Hashing 在为每一个格子建立列表，列表中存放所有和该格子有重合区域的物体（即一个物体可能出现在多个格子内），在查询碰撞时即对于同一列表中的不同物体进行查询即可。
 
-![Spatial Partitioning](Survey/image-20220409103734403.png)
+![Spatial Partitioning](image-20220409103734403.png)
 
 如图所示，其将全空间划分为16个格子。考虑到减少空间浪费的问题，将这些物体的按id进行排序，即可在不为每一个id建立表格的情况下完成筛选。
 
@@ -121,7 +121,7 @@ Mid-Phase会对Broad-Phase筛选出的pair进行进一步筛选，针对每一�
 
 > 在这个的基础上还有一些 local 的加速方法，但这也不能算是 Broad-Phase 的方法，因为这个方法针对于 *Deformed* 的物体进行计算的效率较高。这些方法在曲面上进行划分，相当于在曲面上定义了一个空间划分。比如通过形变能量来指导在其上的空间划分，最后精细化求解使用三次方程法求解。例如：该论文提出，可以依照形变能量，在曲面的表面上建立BVH，来指导Culling进行。
 
-![Energy-based Self-Collision Culling for Arbitrary Mesh Deformations](Survey/image-20220413220403382.png)
+![Energy-based Self-Collision Culling for Arbitrary Mesh Deformations](image-20220413220403382.png)
 
 ## Narrow-phase 1 刚体
 
@@ -156,7 +156,7 @@ $$
 
 为了生成这样的单纯形，我们计算 support 函数来快速获取给定方向上的支撑点，如图所示[^1]。
 
-![](Survey/v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg)
+![](v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg)
 
 ###### 迭代求解
 
@@ -192,7 +192,7 @@ $$
 
 #### 代数方程求解
 
-这种方法仅适用于简单而特殊的情况，例如[Ref](Survey/http://www.realtimerendering.com/intersections.html)：
+这种方法仅适用于简单而特殊的情况，例如[Ref](http://www.realtimerendering.com/intersections.html)：
 
 1. 光线
 2. 平面
@@ -214,19 +214,19 @@ $$
 
 考察$t$和$t+1$时刻物体对应点连线（按物体形状、沿直线执行扫描）构成的体积区域，不难发现，如果有相交，则可能会出现碰撞。计算TOI（碰撞时间）后将物体移动到改时间，执行碰撞处理（如计算速度等）然后重新扫描。
 
-在物体角速度很大的情况下会产生不精确的结果 [Ref](Survey/https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html)：
+在物体角速度很大的情况下会产生不精确的结果 [Ref](https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html)：
 
-![Unity 3D](Survey/2022-04-14-15-52-26.png)
+![Unity 3D](2022-04-14-15-52-26.png)
 
 #### Speculative CCD
 
 Speculative CCD 的工作原理是根据物体的速度和角速度，计算物体的AABB，从而推测出下一个物理步骤中所有潜在的接触。然后将所有可能接触送入求解器，以确保满足所有接触约束，以便对象不会通过任何穿模（Tunnel）的情况。求解器使用速度、体积来精确计算CCD。
 
-![](Survey/2022-04-14-15-55-41.png)
+![](2022-04-14-15-55-41.png)
 
 但该方法并不能完全解决所有碰撞问题。考虑如下的情况，小球因为被杆击打而获得更大的速度，先前计算的AABB并不能检测到这样的速度变化：
 
-![](Survey/2022-04-14-16-00-14.png)
+![](2022-04-14-16-00-14.png)
 
 #### Ray-cast
 
@@ -421,7 +421,7 @@ $$
 Y(0),Y'(0),Y'(1),Y''(0),Y''(1)
 $$
 
-![](Survey/2022-04-14-19-56-39.png)
+![](2022-04-14-19-56-39.png)
 
 优点：
 
@@ -453,7 +453,7 @@ $$
 
 原理上：给定一个三次函数 $Y(t)$ 用伯恩斯坦多项式唯一分解，对应了一个三次贝塞尔曲线，而每一个三次贝塞尔曲线可以被分类为
 
-![](Survey/image-20220412105920274.png)
+![](image-20220412105920274.png)
 
 从而通过观察：
 
@@ -491,7 +491,7 @@ $$
 
 根据王老师在GAMES103和2021图形学大会讲的内容（Real-Time Cloth Simulation on GPUs），其程序流程如下：
 
-![A Practical System](Survey/image-20220414221444102.png)
+![A Practical System](image-20220414221444102.png)
 
 前两种方法都是基于如下公式：
 $$
@@ -513,13 +513,13 @@ $$
 - 需要计算所有的顶点来迭代
 - 小步长 — 速度慢
 
-![Interior Point Method](Survey/image-20220414221940838.png)
+![Interior Point Method](image-20220414221940838.png)
 
 #### Impact Zone Optimization
 
 思想：直接从 $\mathbf x^*$ 开始迭代，逐步逼进可行域，如下图
 
-![Impact Zone Optimization](Survey/image-20220414222918767.png)
+![Impact Zone Optimization](image-20220414222918767.png)
 
 优点：
 
@@ -619,7 +619,7 @@ $$
 
 具体而言，Log函数为了避免在不充分接近时也出现“抵抗力”，其在保证$C^2$的情况下，构造了如下的“log-barrier”：
 
-![](Survey/2022-04-15-08-56-06.png)
+![](2022-04-15-08-56-06.png)
 
 > 该方法可以看作是一个“内点法”
 
@@ -714,4 +714,4 @@ $$
 
 由于要求所有距离大于 $L / 2$，为了使得这个条件不是过于充分的，要求最小边长和最大边长$l$与$L$的比例大于一定值。
 
-![](Survey/2022-04-15-11-19-43.png)
+![](2022-04-15-11-19-43.png)

@@ -93,7 +93,7 @@
 
     "Underline": {
         "scope": "markdown",
-        "prefix": ["underline", "{% u"],
+        "prefix": ["{% u"],
         "body": "{% u ${1:text} %}",
         "description": "Volantis Underline"
     },
@@ -104,13 +104,6 @@
         "body": "{% emp ${1:text} %}",
         "description": "Volantis Emphasize"
     },
-
-	"Theorem": {
-		"scope": "markdown",
-		"prefix": ["Thm", "thm"],
-		"body": "{% p blue, Theorem ${1:text} %}",
-		"description": "Make a Theorem here"
-	},
 
     "Folding": {
         "scope": "markdown",
@@ -123,5 +116,16 @@
             "{% endfolding %}"
 		],
 		"description": "Volantis Folding"
+    },
+
+    "RR": {
+        "scope": "markdown",
+		"prefix": ["\\R"],
+		"body": [
+			"{\\mathbb R}"
+		],
+		"description": "Tex -- \\R"
     }
+
+
 }

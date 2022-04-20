@@ -7223,6 +7223,11 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
   :root:not([color-scheme]) dt {
     color: #c7733a;
   }
+  :root:not([color-scheme]) dl {
+    border: #556b2f;
+    border-style: dotted;
+    background: transparent;
+  }
 }
 [color-scheme='dark'] {
   --block-hover: #1c1c1c;
@@ -7309,6 +7314,11 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
 [color-scheme='dark'] dt {
   color: #c7733a;
 }
+[color-scheme='dark'] dl {
+  border: #556b2f;
+  border-style: dotted;
+  background: transparent;
+}
 dt {
   color: #2196f3;
   font-weight: bold;
@@ -7321,6 +7331,11 @@ dt:after {
 }
 dd {
   margin-left: 1em;
+}
+dl {
+  border: #fff0f5;
+  border-style: dotted;
+  background-color: #f0f8ff;
 }
 .md ol {
   margin-left: 32px;

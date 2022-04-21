@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650524833144" as="style">
+  <link rel="preload" href="/css/style.css?time=1650552878401" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1813,8 +1813,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650524833144" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650524833144"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650552878401" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650552878401"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2779,17 +2779,12 @@ Broad Phase Algorithms
         </a>
       
       
-        <a class='next' href='/2022/03/28/CG/ContactDetection/Introduction/'>
-          <p class='title'>Collision Detection 整理 1 - Introduction<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>碰撞检测相关介绍
+        <a class='next' href='/2022/03/28/CG/ContactDetection/NarrowPhase/'>
+          <p class='title'>Collision Detection 整理 3 - Narrow Phase 阶段<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>碰撞检测笔记 3 — Narrow Phase
 
-碰撞检测
-众所又周知啊，碰撞检测是一个老大难的问题，在很多的仿真模拟、游戏引擎中间都会用哈
-碰撞检测的主要流程是 1：
-
-
-GAMES 103- Collision
-Hand...</p>
+一般而言的 Narrow Phase
+是基于点线面的关系推导得到的。而且在很多情况下，我们不需要知道碰撞在两个插值点之间的具体位置，而只需要知道...</p>
         </a>
       
     </div>
@@ -3023,8 +3018,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650524833144')
-      volantis.js('/js/message.js?time=1650524833144', () => {
+      volantis.css('/css/message.css?time=1650552878401')
+      volantis.js('/js/message.js?time=1650552878401', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3069,8 +3064,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650524833144')
-      volantis.js('/js/message.js?time=1650524833144', () => {
+      volantis.css('/css/message.css?time=1650552878401')
+      volantis.js('/js/message.js?time=1650552878401', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3129,8 +3124,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650524833144')
-      volantis.js('/js/message.js?time=1650524833144', () => {
+      volantis.css('/css/message.css?time=1650552878401')
+      volantis.js('/js/message.js?time=1650552878401', () => {
         hideMessage(done);
       });
     } else {
@@ -3293,7 +3288,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650524833144')
+    volantis.js('/js/rightMenu.js?time=1650552878401')
   </script>
 
 
@@ -3406,19 +3401,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650524833144")
+        volantis.js("/js/plugins/sites.js?time=1650552878401")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650524833144")
+        volantis.js("/js/plugins/friends.js?time=1650552878401")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650524833144")
+        volantis.js("/js/plugins/contributors.js?time=1650552878401")
       }
     
   };
@@ -3519,7 +3514,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650524833144').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1650552878401').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3528,7 +3523,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650524833144.js"></script>
+<script src="/js/app.js?time=1650552878401.js"></script>
 
 
 <!-- optional -->
@@ -3541,7 +3536,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650524833144");
+    return volantis.js("/js/search/hexo.js?time=1650552878401");
   }
 
   function loadSearchService() {

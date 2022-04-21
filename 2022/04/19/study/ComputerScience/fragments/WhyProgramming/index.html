@@ -20,23 +20,23 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650427758067" as="style">
+  <link rel="preload" href="/css/style.css?time=1650524833126" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>Programming - 逆版本战士の部落格</title>
   <meta name="keywords" content="study">
-  <meta name="description" content="范式 第一公民。 逻辑、表达能力 词法、语法、解析与执行 NFL 简单 + 舒适 复杂 + 舒适 简单 + 难受 复杂 + 难受">
+  <meta name="description" content="占坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Programming">
 <meta property="og:url" content="http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/index.html">
 <meta property="og:site_name" content="逆版本战士の部落格">
-<meta property="og:description" content="范式 第一公民。 逻辑、表达能力 词法、语法、解析与执行 NFL 简单 + 舒适 复杂 + 舒适 简单 + 难受 复杂 + 难受">
+<meta property="og:description" content="占坑">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-19T15:25:31.924Z">
-<meta property="article:modified_time" content="2022-04-19T15:28:52.722Z">
+<meta property="article:modified_time" content="2022-04-20T12:04:54.468Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -1812,8 +1812,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650427758067" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650427758067"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650524833126" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650524833126"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2613,13 +2613,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：38 字</p>
+      <p>字数：760 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：3 分钟</p>
     </a>
   </div>
 
@@ -2636,13 +2636,66 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="范式">范式</h3>
-<p>第一公民。</p>
-<p>逻辑、表达能力</p>
+    <p>占坑</p>
+<span id="more"></span>
+<h3 id="为什么要研究语言">为什么要研究语言</h3>
+<p>很多时候，我们会在网络上看到一些没有意义的问题：</p>
+<blockquote>
+<p>Q: 什么是世界上最好的语言？</p>
+</blockquote>
+<details ><summary> anwser </summary>
+              <div class='content'>
+              <p>肯定不是php。</p>
+              </div>
+            </details>
+<p>这类问题是怎么产生的呢？我们日常开发中经常见到的一个场景是：</p>
+<div class="note "><p><strong>Why????</strong></p><ol type="1"><li>写 C++：<ol type="1"><li>为什么这个文件无法通过编译！</li><li>为什么别人的代码无法在我的机器上运行！</li><li>为什么别人的代码和我学过的完全不是一个东西！</li><li>xxxx……</li></ol></li><li>写 Python：<ol type="1"><li>为什么这个变量传递进去就是错的！</li><li>为什么没有自动补全</li><li>为什么这么慢！</li><li>这是个什么神奇的语法？</li><li>为什么这个变量不变/变了！！！</li></ol></li><li>写函数式：<ol type="1"><li>为什么我要写/学这个东西？！</li></ol></li><li>写 Java / C#：<ol type="1"><li>为什么能够有人不用ide就开发！</li></ol></li><li>写 Swift：<ol type="1"><li>为什么这个语法如此的丑陋！</li></ol></li></ol></div>
+<p>诸如此类，这些乱七八糟问题都会促使工程师们（码农们）去想要用别的语言来处理当前/原有的业务。</p>
+<h3 id="语言逻辑表达能力">语言逻辑、表达能力</h3>
+<p>好吧，我们这里根本不考虑所谓<strong>程序</strong>，因为我们绝大多数人从来都不是直接写二进制程序的！因此我们这里考虑的是语言的<strong>表达能力</strong>。（虽然我们在后文中不太考虑程序和代码的区别）</p>
+<p>实际上我们已经知道答案了 —— <strong>图灵完备</strong>：</p>
+<blockquote>
+<p>In computability theory, a system of data-manipulation rules (such as
+a computer's instruction set, a programming language, or a cellular
+automaton) is said to be Turing-complete or computationally universal if
+it can be used to simulate any Turing machine (devised by English
+mathematician and computer scientist Alan Turing). This means that this
+system is able to recognize or decide other data-manipulation rule sets.
+Turing completeness is used as a way to express the power of such a
+data-manipulation rule set. Virtually all programming languages today
+are Turing-complete.</p>
+</blockquote>
+<p>TLDR：从理论上说，我们使用的所有语言都有相同的表达能力！</p>
+<p>那么问题是，为什么我们还需要考虑一个编程语言的表达能力呢？从我的理解来看，回答这个问题就和
+Hello World 一样简单：</p>
+<p>对于 Python：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="string">&quot;Hello World&quot;</span>  <span class="comment"># py2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World&quot;</span>) <span class="comment"># py3</span></span><br></pre></td></tr></table></figure>
+<p>对于 C：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者 C++： <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span> &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于 Racket（一种函数式编程语言）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(print &quot;Hello World&quot;)</span><br></pre></td></tr></table></figure>
+<p>从这里我们就能看出问题了，为了实现相同的功能，三种语言体现出完全不同的复杂、直观程度。</p>
+<ol type="1">
+<li>Python：直观的、简单 -- 很简单</li>
+<li>C：直观的、不简单 -- 至少函数叫做 <code>print</code></li>
+<li>C++：不直观的、不简单 -- 什么是 <code>cout</code>？什么是
+<code>&lt;&lt;</code>？为什么是 <code>&lt;&lt;</code>？</li>
+<li>Racket：不直观、简单 -- 问题在于为什么需要这个括号？</li>
+</ol>
+<!-- TODO -->
+<h3 id="程序数据函数">程序=数据+函数</h3>
+<h3 id="范式">范式</h3>
+<p>函数是第一公民</p>
+<p>ASYNC</p>
 <h3 id="词法语法解析与执行">词法、语法、解析与执行</h3>
 <h3 id="nfl">NFL</h3>
-<p>简单 + 舒适 复杂 + 舒适 简单 + 难受 复杂 + 难受</p>
-<h3 id="section"></h3>
+<ol type="1">
+<li>简单 + 舒适</li>
+<li>复杂 + 舒适</li>
+<li>简单 + 难受</li>
+<li>复杂 + 难受</li>
+</ol>
 
 
   </div>
@@ -2664,10 +2717,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-19T23:28:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-20T20:04:54+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月19日</p>
+    <p>更新于：2022年4月20日</p>
   </a>
 </div>
 
@@ -2690,6 +2743,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2022/04/20/CG/GAMES/g102-05/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>102-04-B样条曲线</p>
+          <p class='content'>GAMES 102 -- 5 B样条曲线
+
+
+
+</p>
+        </a>
       
       
         <a class='next' href='/2022/04/19/CG/GAMES/g102-03/'>
@@ -2756,7 +2818,7 @@ f:\R ^n \rightarrow \R
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-text">范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E8%AF%AD%E6%B3%95%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%89%A7%E8%A1%8C"><span class="toc-text">词法、语法、解析与执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nfl"><span class="toc-text">NFL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#section"><span class="toc-text"></span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%A0%94%E7%A9%B6%E8%AF%AD%E8%A8%80"><span class="toc-text">为什么要研究语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80%E9%80%BB%E8%BE%91%E8%A1%A8%E8%BE%BE%E8%83%BD%E5%8A%9B"><span class="toc-text">语言逻辑、表达能力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%87%BD%E6%95%B0"><span class="toc-text">程序&#x3D;数据+函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-text">范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E8%AF%AD%E6%B3%95%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%89%A7%E8%A1%8C"><span class="toc-text">词法、语法、解析与执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nfl"><span class="toc-text">NFL</span></a></li></ol>
     </div>
   </section>
 
@@ -2941,8 +3003,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650427758067')
-      volantis.js('/js/message.js?time=1650427758067', () => {
+      volantis.css('/css/message.css?time=1650524833126')
+      volantis.js('/js/message.js?time=1650524833126', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2987,8 +3049,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650427758067')
-      volantis.js('/js/message.js?time=1650427758067', () => {
+      volantis.css('/css/message.css?time=1650524833126')
+      volantis.js('/js/message.js?time=1650524833126', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3047,8 +3109,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650427758067')
-      volantis.js('/js/message.js?time=1650427758067', () => {
+      volantis.css('/css/message.css?time=1650524833126')
+      volantis.js('/js/message.js?time=1650524833126', () => {
         hideMessage(done);
       });
     } else {
@@ -3211,7 +3273,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650427758067')
+    volantis.js('/js/rightMenu.js?time=1650524833126')
   </script>
 
 
@@ -3324,19 +3386,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650427758067")
+        volantis.js("/js/plugins/sites.js?time=1650524833126")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650427758067")
+        volantis.js("/js/plugins/friends.js?time=1650524833126")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650427758067")
+        volantis.js("/js/plugins/contributors.js?time=1650524833126")
       }
     
   };
@@ -3437,7 +3499,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650427758067').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1650524833126').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3446,7 +3508,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650427758067.js"></script>
+<script src="/js/app.js?time=1650524833126.js"></script>
 
 
 <!-- optional -->
@@ -3459,7 +3521,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650427758067");
+    return volantis.js("/js/search/hexo.js?time=1650524833126");
   }
 
   function loadSearchService() {
@@ -3915,7 +3977,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/","name":"Programming"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Programming","description":"","datePublished":"2022-04-19T15:25:31.924Z","dateModified":"2022-04-19T15:28:52.722Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/","wordCount":0,"image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/","name":"Programming"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Programming","description":"占坑","datePublished":"2022-04-19T15:25:31.924Z","dateModified":"2022-04-20T12:04:54.468Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/19/study/ComputerScience/fragments/WhyProgramming/","wordCount":2,"image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

@@ -20,23 +20,23 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650552878382" as="style">
+  <link rel="preload" href="/css/style.css?time=1650618822765" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>102-04-B样条曲线 - 逆版本战士の部落格</title>
+  <title>102-05-B样条曲线 - 逆版本战士の部落格</title>
   <meta name="keywords" content="GAMES 在线课,study">
   <meta name="description" content="GAMES 102 -- 5 B样条曲线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="102-04-B样条曲线">
+<meta property="og:title" content="102-05-B样条曲线">
 <meta property="og:url" content="http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/index.html">
 <meta property="og:site_name" content="逆版本战士の部落格">
 <meta property="og:description" content="GAMES 102 -- 5 B样条曲线">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-20T12:13:10.940Z">
+<meta property="article:modified_time" content="2022-04-21T15:47:23.923Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="GAMES 在线课">
 <meta name="twitter:card" content="summary">
@@ -1812,8 +1812,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650552878382" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650552878382"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650618822765" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650618822765"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2562,7 +2562,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        102-04-B样条曲线
+        102-05-B样条曲线
       </h1>
       <div class='new-meta-box'>
         
@@ -2607,7 +2607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       
-      <div id="lc-pv" data-title="102-04-B样条曲线" data-path="/2022/04/20/CG/GAMES/g102-05/">
+      <div id="lc-pv" data-title="102-05-B样条曲线" data-path="/2022/04/20/CG/GAMES/g102-05/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -2623,7 +2623,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：8 字</p>
+      <p>字数：294 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2648,7 +2648,52 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>GAMES 102 -- 5 B样条曲线</p>
 <span id="more"></span>
-<h2 id="section"></h2><div class="story post-story">
+<h2 id="b-样条曲线">B 样条曲线</h2><div class="story post-story">
+<h3 id="建模的两种形式">建模的两种形式</h3>
+<ol type="1">
+<li>重建 – 形状已经有了，猜出来– 基函数组合</li>
+<li>设计 – 产生 – 自行组合权系数</li>
+</ol>
+<h3 id="如果用-bernstein-基函数">如果用 Bernstein 基函数？</h3>
+<p>顶点和曲线的关联性强，具有较高的几何意义</p>
+<p><span class="math inline">\(n\)</span> 次Bernstein基函数 <span
+class="math display">\[
+B_i ^{(n)} (t) = C_n ^ i t ^ i ( 1- t ) ^{n - i}
+\]</span> 从而： <span class="math display">\[
+\mathbf f ( t ) = \sum_{i = 1} ^ n b_i ( t )\mathbf p_i, \quad t \in [0,
+1]
+\]</span> 我们使用Bernstein基函数替代权函数： <span
+class="math display">\[
+x(t) = \sum_{i=0}^n B_i^n(t) b_i
+\]</span> <img src="g102-05/image-20220421233511284.png"
+alt="使用 Bernstein 基函数构造的曲线" /></p>
+</div><h2 id="b曲线的性质">B曲线的性质</h2><div class="story post-story">
+<p>观察基函数：</p>
+<ol type="1">
+<li>具有对称性（关于 <span class="math inline">\(i\)</span>）</li>
+<li>当 <span class="math inline">\(t = i/n\)</span> 最大</li>
+<li>非负性 + 权性（加和为1）— 具有凸包性
+<ol type="1">
+<li>曲线始终在凸包内</li>
+</ol></li>
+<li>基性 – 是<span class="math inline">\(n\)</span>次多项式空间的基</li>
+<li>递推公式（从组合系数证明）</li>
+<li>端点差值 – 经过始末顶点</li>
+<li>端点性质 –
+<ol type="1">
+<li>插值</li>
+<li>切线方向和边相同</li>
+</ol></li>
+<li>升阶 — 通过递推公式来推导</li>
+</ol>
+</div><h2 id="de-casteljau-算法">de Casteljau 算法</h2><div class="story post-story">
+<p>输入：点</p>
+<p>输出：在 <span class="math inline">\(t\)</span> 位置的值</p>
+<p>思想：反复用 <span class="math inline">\(t \mathbf x + (1-t)\mathbf
+y\)</span> 作用在相邻点上</p>
+<p>复杂度 – <span class="math inline">\(O(n^2)\)</span></p>
+<p>算法只有线性运算，计算稳定</p>
+<p>应用：离散、求根</p>
 
 </div>
   </div>
@@ -2670,10 +2715,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-20T20:13:10+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-21T23:47:23+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月20日</p>
+    <p>更新于：2022年4月21日</p>
   </a>
 </div>
 
@@ -2713,18 +2758,11 @@ The classical FEM method and discre...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/19/study/ComputerScience/fragments/WhyProgramming/'>
-          <p class='title'>Programming<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>占坑
+        <a class='next' href='/2022/04/20/CG/GAMES/g102-06/'>
+          <p class='title'>102-04-B样条曲线<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
 
-为什么要研究语言
-很多时候，我们会在网络上看到一些没有意义的问题：
-
-Q: 什么是世界上最好的语言？
-
- anwser 
-              
-              肯定不...</p>
+</p>
         </a>
       
     </div>
@@ -2776,18 +2814,6 @@ Q: 什么是世界上最好的语言？
   <div class='content'>
     <ul class="list entry navigation">
       
-        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
-          
-          
-          active-action="action-20220419CGGAMESg102-03"
-          >
-          <div class='name'>
-            
-            102-03-参数曲线拟合
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-05/" href="/2022/04/20/CG/GAMES/g102-05/"
           
           
@@ -2795,7 +2821,7 @@ Q: 什么是世界上最好的语言？
           >
           <div class='name'>
             
-            102-04-B样条曲线
+            102-05-B样条曲线
           </div>
           
         </a></li>
@@ -2808,6 +2834,18 @@ Q: 什么是世界上最好的语言？
           <div class='name'>
             
             102-04-三次样条函数
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
+          
+          
+          active-action="action-20220419CGGAMESg102-03"
+          >
+          <div class='name'>
+            
+            102-03-参数曲线拟合
           </div>
           
         </a></li>
@@ -2832,6 +2870,18 @@ Q: 什么是世界上最好的语言？
           <div class='name'>
             
             201-02-拉格朗日视角1
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-06/" href="/2022/04/20/CG/GAMES/g102-06/"
+          
+          
+          active-action="action-20220420CGGAMESg102-06"
+          >
+          <div class='name'>
+            
+            102-04-B样条曲线
           </div>
           
         </a></li>
@@ -2872,7 +2922,7 @@ Q: 什么是世界上最好的语言？
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#section"><span class="toc-text"></span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="toc-text">B 样条曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E6%A8%A1%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-text">建模的两种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E7%94%A8-bernstein-%E5%9F%BA%E5%87%BD%E6%95%B0"><span class="toc-text">如果用 Bernstein 基函数？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">B曲线的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#de-casteljau-%E7%AE%97%E6%B3%95"><span class="toc-text">de Casteljau 算法</span></a></li></ol>
     </div>
   </section>
 
@@ -2940,7 +2990,7 @@ Q: 什么是世界上最好的语言？
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="102-04-B样条曲线";
+  pdata.postTitle="102-05-B样条曲线";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3053,8 +3103,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650552878382')
-      volantis.js('/js/message.js?time=1650552878382', () => {
+      volantis.css('/css/message.css?time=1650618822765')
+      volantis.js('/js/message.js?time=1650618822765', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3099,8 +3149,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650552878382')
-      volantis.js('/js/message.js?time=1650552878382', () => {
+      volantis.css('/css/message.css?time=1650618822765')
+      volantis.js('/js/message.js?time=1650618822765', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3159,8 +3209,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650552878382')
-      volantis.js('/js/message.js?time=1650552878382', () => {
+      volantis.css('/css/message.css?time=1650618822765')
+      volantis.js('/js/message.js?time=1650618822765', () => {
         hideMessage(done);
       });
     } else {
@@ -3323,7 +3373,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650552878382')
+    volantis.js('/js/rightMenu.js?time=1650618822765')
   </script>
 
 
@@ -3436,19 +3486,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650552878382")
+        volantis.js("/js/plugins/sites.js?time=1650618822765")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650552878382")
+        volantis.js("/js/plugins/friends.js?time=1650618822765")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650552878382")
+        volantis.js("/js/plugins/contributors.js?time=1650618822765")
       }
     
   };
@@ -3549,7 +3599,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650552878382').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1650618822765').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3558,7 +3608,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650552878382.js"></script>
+<script src="/js/app.js?time=1650618822765.js"></script>
 
 
 <!-- optional -->
@@ -3571,7 +3621,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650552878382");
+    return volantis.js("/js/search/hexo.js?time=1650618822765");
   }
 
   function loadSearchService() {
@@ -4094,7 +4144,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","name":"102-04-B样条曲线"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"102-04-B样条曲线","description":"GAMES 102 -- 5 B样条曲线","datePublished":"2022-04-19T16:00:00.000Z","dateModified":"2022-04-20T12:13:10.940Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","wordCount":20,"articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","name":"102-05-B样条曲线"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"102-05-B样条曲线","description":"GAMES 102 -- 5 B样条曲线","datePublished":"2022-04-19T16:00:00.000Z","dateModified":"2022-04-21T15:47:23.923Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","wordCount":20,"articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

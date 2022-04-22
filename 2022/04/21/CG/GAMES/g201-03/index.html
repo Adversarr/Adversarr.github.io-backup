@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650552878379" as="style">
+  <link rel="preload" href="/css/style.css?time=1650618822761" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1812,8 +1812,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650552878379" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650552878379"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650618822761" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650618822761"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2782,12 +2782,16 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
       
       
         <a class='next' href='/2022/04/20/CG/GAMES/g102-05/'>
-          <p class='title'>102-04-B样条曲线<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='title'>102-05-B样条曲线<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>GAMES 102 -- 5 B样条曲线
 
+B 样条曲线
+建模的两种形式
 
+重建 – 形状已经有了，猜出来– 基函数组合
+设计 – 产生 – 自行组合权系数
 
-</p>
+如果用 Bernstein 基函数...</p>
         </a>
       
     </div>
@@ -2839,18 +2843,6 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
   <div class='content'>
     <ul class="list entry navigation">
       
-        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
-          
-          
-          active-action="action-20220419CGGAMESg102-03"
-          >
-          <div class='name'>
-            
-            102-03-参数曲线拟合
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-05/" href="/2022/04/20/CG/GAMES/g102-05/"
           
           
@@ -2858,7 +2850,7 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
           >
           <div class='name'>
             
-            102-04-B样条曲线
+            102-05-B样条曲线
           </div>
           
         </a></li>
@@ -2871,6 +2863,18 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
           <div class='name'>
             
             102-04-三次样条函数
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
+          
+          
+          active-action="action-20220419CGGAMESg102-03"
+          >
+          <div class='name'>
+            
+            102-03-参数曲线拟合
           </div>
           
         </a></li>
@@ -2895,6 +2899,18 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
           <div class='name'>
             
             201-02-拉格朗日视角1
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-06/" href="/2022/04/20/CG/GAMES/g102-06/"
+          
+          
+          active-action="action-20220420CGGAMESg102-06"
+          >
+          <div class='name'>
+            
+            102-04-B样条曲线
           </div>
           
         </a></li>
@@ -3116,8 +3132,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650552878379')
-      volantis.js('/js/message.js?time=1650552878379', () => {
+      volantis.css('/css/message.css?time=1650618822760')
+      volantis.js('/js/message.js?time=1650618822760', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3162,8 +3178,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650552878379')
-      volantis.js('/js/message.js?time=1650552878379', () => {
+      volantis.css('/css/message.css?time=1650618822760')
+      volantis.js('/js/message.js?time=1650618822760', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3222,8 +3238,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650552878379')
-      volantis.js('/js/message.js?time=1650552878379', () => {
+      volantis.css('/css/message.css?time=1650618822760')
+      volantis.js('/js/message.js?time=1650618822760', () => {
         hideMessage(done);
       });
     } else {
@@ -3386,7 +3402,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650552878379')
+    volantis.js('/js/rightMenu.js?time=1650618822760')
   </script>
 
 
@@ -3499,19 +3515,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650552878379")
+        volantis.js("/js/plugins/sites.js?time=1650618822761")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650552878379")
+        volantis.js("/js/plugins/friends.js?time=1650618822761")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650552878379")
+        volantis.js("/js/plugins/contributors.js?time=1650618822761")
       }
     
   };
@@ -3612,7 +3628,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650552878379').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1650618822761').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3621,7 +3637,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650552878379.js"></script>
+<script src="/js/app.js?time=1650618822761.js"></script>
 
 
 <!-- optional -->
@@ -3634,7 +3650,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650552878379");
+    return volantis.js("/js/search/hexo.js?time=1650618822761");
   }
 
   function loadSearchService() {

@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650695793599" as="style">
+  <link rel="preload" href="/css/style.css?time=1650858354736" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1813,8 +1813,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650695793599" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650695793599"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650858354736" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650858354736"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2759,16 +2759,23 @@ class="math display">\[
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/03/28/study/Math/SummerCamp/DiffGeometry/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>面向夏令营的微分几何整理</p>
-          <p class='content'>待完善
+        <a class='prev' href='/2022/03/28/CG/ContactDetection/BroadPhase/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Collision Detection 整理 2 - Broad Phase 阶段</p>
+          <p class='content'>介绍几种在各类代码库中应用的 Broad Phase 算法
 
-TODO
-测地曲率和测地线
-根据 Gauss 绝妙定理，\(K\)
-只决定于曲面的第一基本形式，在保长对应下不变，
-是曲面的内蕴性质。在这里继续研究曲面内蕴几何的主要研究对象。
-测地曲...</p>
+
+来源包括但不限于：
+
+Unity
+UE
+Nvidia
+PhyX
+各大博客
+论文
+
+
+Broad Phase Algorithms
+...</p>
         </a>
       
       
@@ -3016,8 +3023,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650695793599')
-      volantis.js('/js/message.js?time=1650695793599', () => {
+      volantis.css('/css/message.css?time=1650858354736')
+      volantis.js('/js/message.js?time=1650858354736', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3062,8 +3069,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650695793599')
-      volantis.js('/js/message.js?time=1650695793599', () => {
+      volantis.css('/css/message.css?time=1650858354736')
+      volantis.js('/js/message.js?time=1650858354736', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3122,8 +3129,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650695793599')
-      volantis.js('/js/message.js?time=1650695793599', () => {
+      volantis.css('/css/message.css?time=1650858354736')
+      volantis.js('/js/message.js?time=1650858354736', () => {
         hideMessage(done);
       });
     } else {
@@ -3286,7 +3293,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650695793599')
+    volantis.js('/js/rightMenu.js?time=1650858354736')
   </script>
 
 
@@ -3399,19 +3406,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650695793599")
+        volantis.js("/js/plugins/sites.js?time=1650858354736")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650695793599")
+        volantis.js("/js/plugins/friends.js?time=1650858354736")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650695793599")
+        volantis.js("/js/plugins/contributors.js?time=1650858354736")
       }
     
   };
@@ -3512,7 +3519,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650695793599').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1650858354736').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3521,7 +3528,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650695793599.js"></script>
+<script src="/js/app.js?time=1650858354736.js"></script>
 
 
 <!-- optional -->
@@ -3534,7 +3541,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650695793599");
+    return volantis.js("/js/search/hexo.js?time=1650858354736");
   }
 
   function loadSearchService() {

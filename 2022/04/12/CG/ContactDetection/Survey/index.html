@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650858354726" as="style">
+  <link rel="preload" href="/css/style.css?time=1651034958701" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1813,8 +1813,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650858354726" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650858354726"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1651034958701" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1651034958701"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -3439,12 +3439,22 @@ High res...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/11/CG/ContactDetection/Benchmark/'>
-          <p class='title'>Collision Detection 整理 5 - 2021 A large scale benchmark and an Inclusion-based Algorithm<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Collision Detection 整理5 – CCD 算法对比
+        <a class='next' href='/2022/04/11/CG/GAMES/g201-02/'>
+          <p class='title'>201-02-拉格朗日视角1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>games201 拉格朗日视角
 
-准确说，这篇blog是一篇论文的整理emmm，但由于老板的任务就是做 collsion
-的汇总，这篇论文的涉及面也算是相对...</p>
+拉格朗日视角简介
+两种视角：
+
+拉格朗日视角 – 粒子，携带位置、速度等
+
+MPM、弹簧质点模型……
+
+欧拉视角 – 通过固定的“传感器”来表示
+
+烟雾模拟
+
+...</p>
         </a>
       
     </div>
@@ -3680,8 +3690,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650858354726')
-      volantis.js('/js/message.js?time=1650858354726', () => {
+      volantis.css('/css/message.css?time=1651034958701')
+      volantis.js('/js/message.js?time=1651034958701', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3726,8 +3736,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650858354726')
-      volantis.js('/js/message.js?time=1650858354726', () => {
+      volantis.css('/css/message.css?time=1651034958701')
+      volantis.js('/js/message.js?time=1651034958701', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3786,8 +3796,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650858354726')
-      volantis.js('/js/message.js?time=1650858354726', () => {
+      volantis.css('/css/message.css?time=1651034958701')
+      volantis.js('/js/message.js?time=1651034958701', () => {
         hideMessage(done);
       });
     } else {
@@ -3950,7 +3960,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650858354726')
+    volantis.js('/js/rightMenu.js?time=1651034958701')
   </script>
 
 
@@ -4063,19 +4073,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650858354726")
+        volantis.js("/js/plugins/sites.js?time=1651034958701")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650858354726")
+        volantis.js("/js/plugins/friends.js?time=1651034958701")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650858354726")
+        volantis.js("/js/plugins/contributors.js?time=1651034958701")
       }
     
   };
@@ -4176,7 +4186,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650858354726').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1651034958701').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4185,7 +4195,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650858354726.js"></script>
+<script src="/js/app.js?time=1651034958701.js"></script>
 
 
 <!-- optional -->
@@ -4198,7 +4208,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650858354726");
+    return volantis.js("/js/search/hexo.js?time=1651034958701");
   }
 
   function loadSearchService() {

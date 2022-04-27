@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650858354717" as="style">
+  <link rel="preload" href="/css/style.css?time=1651034958690" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-23T15:24:56.074Z">
+<meta property="article:modified_time" content="2022-04-26T13:29:00.253Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="GAMES 在线课">
 <meta name="twitter:card" content="summary">
@@ -1812,8 +1812,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650858354717" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650858354717"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1651034958690" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1651034958690"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2623,13 +2623,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：445 字</p>
+      <p>字数：631 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：2 分钟</p>
     </a>
   </div>
 
@@ -2718,6 +2718,44 @@ x(t) = \sum N_{i, k}(t) \cdot d_i
 <li>局部类似，由一个基函数平移得到</li>
 <li>高阶的由两个低阶的基函数升阶得到</li>
 </ol>
+<h3 id="b-样条-1">B-样条</h3>
+<p>对于均匀节点<span
+class="math inline">\(\cdots,i,i+1,\cdots\)</span></p>
+<p>定义如下： <span class="math display">\[
+N_i^1(t) = \begin{cases}
+1, &amp; i \le t &lt; i + 1\\
+0
+\end{cases}
+\]</span> 那么： <span class="math display">\[
+N_i^k= \frac{t-i}{k-1}N_i^{k-1} + \frac{i+k-t}{k-1}N_{i+1}^{k-1}
+\]</span> 对于非均匀节点：<span class="math inline">\(t_0&lt; t_1 &lt;
+\cdots&lt;t_n\)</span> <span class="math display">\[
+N_i^1(t) = \begin{cases}
+1, &amp; t_i \le t &lt; t_{i + 1}\\
+0
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+N_i^k= \frac{t-t_i}{t_{i+k-1}-t_i}N_i^{k-1} + \frac{t_{i+k}-t}{t_{i + k}
+- t_{i + 1}}N_{i+1}^{k-1}
+\]</span></p>
+<h3 id="样条曲线">样条曲线</h3>
+<p>从而根据上述基函数，可以定义样条曲线。</p>
+<p>设置重数：</p>
+<figure>
+<img src="g102-05/image-20220425162243893.png"
+alt="设置重数来避免始末点不重合" />
+<figcaption aria-hidden="true">设置重数来避免始末点不重合</figcaption>
+</figure>
+<h3 id="其他理论知识">其他理论知识</h3>
+<p>性质很多：</p>
+<ol type="1">
+<li>局部凸包性</li>
+<li>变分缩减性</li>
+<li>包络性</li>
+<li>导数、积分</li>
+<li>几何作图</li>
+</ol>
 
 </div>
   </div>
@@ -2739,10 +2777,10 @@ x(t) = \sum N_{i, k}(t) \cdot d_i
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-23T23:24:56+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-26T21:29:00+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月23日</p>
+    <p>更新于：2022年4月26日</p>
   </a>
 </div>
 
@@ -2874,18 +2912,6 @@ The classical FEM method and discre...</p>
           
         </a></li>
       
-        <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-06/" href="/2022/04/20/CG/GAMES/g102-06/"
-          
-          
-          active-action="action-20220420CGGAMESg102-06"
-          >
-          <div class='name'>
-            
-            102-04-B样条曲线
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/09/CG/GAMES/g102-08/" href="/2022/04/09/CG/GAMES/g102-08/"
           
           
@@ -2894,6 +2920,18 @@ The classical FEM method and discre...</p>
           <div class='name'>
             
             102-08-离散微分几何
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-06/" href="/2022/04/20/CG/GAMES/g102-06/"
+          
+          
+          active-action="action-20220420CGGAMESg102-06"
+          >
+          <div class='name'>
+            
+            102-04-B样条曲线
           </div>
           
         </a></li>
@@ -2910,18 +2948,6 @@ The classical FEM method and discre...</p>
           
         </a></li>
       
-        <li><a class="flat-box" title="/2022/04/21/CG/GAMES/g201-03/" href="/2022/04/21/CG/GAMES/g201-03/"
-          
-          
-          active-action="action-20220421CGGAMESg201-03"
-          >
-          <div class='name'>
-            
-            201-03-拉格朗日视角2
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/25/CG/GAMES/g201-04/" href="/2022/04/25/CG/GAMES/g201-04/"
           
           
@@ -2930,6 +2956,18 @@ The classical FEM method and discre...</p>
           <div class='name'>
             
             201-04-欧拉视角
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/21/CG/GAMES/g201-03/" href="/2022/04/21/CG/GAMES/g201-03/"
+          
+          
+          active-action="action-20220421CGGAMESg201-03"
+          >
+          <div class='name'>
+            
+            201-03-拉格朗日视角2
           </div>
           
         </a></li>
@@ -2958,7 +2996,7 @@ The classical FEM method and discre...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="toc-text">B 样条曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E6%A8%A1%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-text">建模的两种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E7%94%A8-bernstein-%E5%9F%BA%E5%87%BD%E6%95%B0"><span class="toc-text">如果用 Bernstein 基函数？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">B曲线的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#de-casteljau-%E7%AE%97%E6%B3%95"><span class="toc-text">de Casteljau 算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4bezier%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%BC%E6%8E%A5%E6%9D%A1%E4%BB%B6"><span class="toc-text">两Bezier曲线的拼接条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="toc-text">广义样条曲线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E6%A0%B7%E6%9D%A1"><span class="toc-text">B 样条</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="toc-text">B 样条曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E6%A8%A1%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-text">建模的两种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E7%94%A8-bernstein-%E5%9F%BA%E5%87%BD%E6%95%B0"><span class="toc-text">如果用 Bernstein 基函数？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">B曲线的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#de-casteljau-%E7%AE%97%E6%B3%95"><span class="toc-text">de Casteljau 算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4bezier%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%BC%E6%8E%A5%E6%9D%A1%E4%BB%B6"><span class="toc-text">两Bezier曲线的拼接条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="toc-text">广义样条曲线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E6%A0%B7%E6%9D%A1"><span class="toc-text">B 样条</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#b-%E6%A0%B7%E6%9D%A1-1"><span class="toc-text">B-样条</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E6%9D%A1%E6%9B%B2%E7%BA%BF"><span class="toc-text">样条曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><span class="toc-text">其他理论知识</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3139,8 +3177,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650858354717')
-      volantis.js('/js/message.js?time=1650858354717', () => {
+      volantis.css('/css/message.css?time=1651034958690')
+      volantis.js('/js/message.js?time=1651034958690', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3185,8 +3223,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650858354717')
-      volantis.js('/js/message.js?time=1650858354717', () => {
+      volantis.css('/css/message.css?time=1651034958690')
+      volantis.js('/js/message.js?time=1651034958690', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3245,8 +3283,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1650858354717')
-      volantis.js('/js/message.js?time=1650858354717', () => {
+      volantis.css('/css/message.css?time=1651034958690')
+      volantis.js('/js/message.js?time=1651034958690', () => {
         hideMessage(done);
       });
     } else {
@@ -3409,7 +3447,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1650858354717')
+    volantis.js('/js/rightMenu.js?time=1651034958690')
   </script>
 
 
@@ -3522,19 +3560,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650858354717")
+        volantis.js("/js/plugins/sites.js?time=1651034958690")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650858354717")
+        volantis.js("/js/plugins/friends.js?time=1651034958690")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650858354717")
+        volantis.js("/js/plugins/contributors.js?time=1651034958690")
       }
     
   };
@@ -3635,7 +3673,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1650858354717').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1651034958690').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3644,7 +3682,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1650858354717.js"></script>
+<script src="/js/app.js?time=1651034958690.js"></script>
 
 
 <!-- optional -->
@@ -3657,7 +3695,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650858354717");
+    return volantis.js("/js/search/hexo.js?time=1651034958690");
   }
 
   function loadSearchService() {
@@ -4180,7 +4218,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","name":"102-05-B样条曲线"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"102-05-B样条曲线","description":"GAMES 102 -- 5 B样条曲线","datePublished":"2022-04-19T16:00:00.000Z","dateModified":"2022-04-23T15:24:56.074Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","wordCount":20,"articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","name":"102-05-B样条曲线"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"102-05-B样条曲线","description":"GAMES 102 -- 5 B样条曲线","datePublished":"2022-04-19T16:00:00.000Z","dateModified":"2022-04-26T13:29:00.253Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/","wordCount":20,"articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

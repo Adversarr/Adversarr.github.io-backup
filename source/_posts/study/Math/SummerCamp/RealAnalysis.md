@@ -32,7 +32,7 @@ sidebar: [group-adv-math, toc]
     - [基本定理](#基本定理)
 - [勒贝格测度](#勒贝格测度)
   - [外测度、可测集](#外测度可测集)
-    - [外侧度](#外侧度)
+    - [外测度](#外测度)
     - [Lebesgue可测集](#lebesgue可测集)
     - [测度空间](#测度空间)
   - [可测函数](#可测函数)
@@ -43,6 +43,17 @@ sidebar: [group-adv-math, toc]
     - [依测度收敛](#依测度收敛)
     - [可测函数和连续函数的关系](#可测函数和连续函数的关系)
 - [Lebesgue 积分](#lebesgue-积分)
+  - [Lebesgue 可测函数的积分](#lebesgue-可测函数的积分)
+    - [非负可测函数的积分](#非负可测函数的积分)
+    - [一般可测函数](#一般可测函数)
+    - [Riemann积分和Lebesgue积分的关系](#riemann积分和lebesgue积分的关系)
+    - [测度空间上的可测函数积分](#测度空间上的可测函数积分)
+  - [极限定理](#极限定理)
+    - [Riemann 可积的刻画](#riemann-可积的刻画)
+  - [重积分和累次积分](#重积分和累次积分)
+    - [Fubini 定理](#fubini-定理)
+- [微分和不定积分](#微分和不定积分)
+  - [单调函数的可微性](#单调函数的可微性)
 
 {% endfolding %}
 
@@ -145,7 +156,7 @@ Theo
 
 ### 外测度、可测集
 
-#### 外侧度
+#### 外测度
 
 外测度
 : 设 $E$ 是 ${\mathbb R} ^ n$ 中的点集，若$\{I_k\}$是一列开矩体，且为$E$的一个开覆盖，确定了一个实数：$u = \sum _{k} I_k$，令：
@@ -163,6 +174,21 @@ $$
 > 1. 单点集、可数点集的外测度都为 0
 > 2. $n-1$ 维超平面测度为0
 > 3. 康托集外测度为0
+
+{% folding 题目 %}
+
+1. 求证$m^* = \sup / \inf$ 这一类
+   1. 一般一边好证明（直接用单调性）
+   2. 另一边用次可加性+$\varepsilon$的任意性来描述
+2. 求证有子集满足 xxx 条件
+   1. 设函数，利用连续性
+
+
+{% endfolding %}
+
+
+
+
 
 #### Lebesgue可测集
 
@@ -212,6 +238,13 @@ Theo
 : 若$E$可测，则存在 Borel 集$G, F$，使得$F\subset E\subset G$ 且 $m(F) = m(E) = m(G)$
 换句话说，对于任意可测集，存在 Borel 集来从两侧（在测度意义上）逼近。
 
+{% folding 题目 %}
+
+TODO
+
+{% endfolding %}
+
+
 #### 测度空间
 
 > TODO
@@ -229,6 +262,13 @@ $$
 
 1. 对于上述定理中的$t\in E$，只需要考察稠密的$t\in E'\subset E$即可
 2. 对于 $>$，可以等价替换为 $\ge, \le , <$
+
+对于以上的定义，我们还有一些基础的结论：
+
+1. 可测函数列的收敛点集和发散点集是可测的。
+2. 若$f,g$都可测，则$E[f>g], E[f\ne g]$可测（用有理数集插在$f,g$之间）
+
+
 
 我们考察在这个定义下的简单函数，他们通过特征函数来定义：
 
@@ -367,36 +407,284 @@ Theo
 
 至此，我们得到了可测函数优秀的极限性质，我们开始考虑一类特殊的极限 -- 积分，这也是实变函数论目的：给积分 - 极限之间的互换关系一个完备的解释。
 
+### Lebesgue 可测函数的积分
 
+#### 非负可测函数的积分
 
+非负简单函数的积分
+: 设 $h(x)$ 是可测集 $E$ 上的非负可测函数，定义
+$$
+h(x) = \sum_{j = 1} ^ m a_j m(E_j) \Longrightarrow \int _ E h(x) \mathrm dx = \sum _{j = 1} ^ m a_j m ( E _ j )
+$$
+为 $h(x)$ 在可测集$E$傻姑娘的积分。
 
+关于上面定义的积分，其满足：
 
+1. 线性性质
+2. 对定义域的连续性：
+$$
+\lim E_k = E \Rightarrow \lim \int _{E_k} h(x)\mathrm dx = \int _ E h(x) \mathrm dx
+$$
 
+其中的 $\mathrm d$仅仅是一个记号，并不代表自变量的微元。
 
+从而我们可以定义：
 
+非负可测函数的积分
+: 对于 $f\in \mathcal M ( E)$ 定义
+$$
+\int _ E f(x) \mathrm dx = \sup \left\{ \int _ E h(x) \mathrm dx | h(x) \le f(x), h(x) 是简单函数 \right\}
+$$
+若上式有限，则称$f$在$E$上可积。
 
+综合上面的定义可以看出：
 
+1. 对于一个零测集，任何函数的积分都为 0 （因为在实变函数中我们是中认为$0 \cdot \infty = 0$）
+2. 对于一个非负可测函数，我们通过和特征函数内积来确定在子集上的积分：
+   $$
+   \int _A f = \int _E f \cdot \chi _ A
+   $$
+3. 积分具有保序性
 
+同时，由于上述的定义中 **可积** 这个条件实际上非常宽泛，所以我们很容易得到这样的结论：
 
+Theo
+: 有限测度集上的几乎处处有界函数必可积。
 
+这是区别于 Riemann 积分很大的一个地方，因为在 Riemann 积分中，我们甚至连 dirichlet 函数的积分都无法定义！
 
+下面介绍一个著名的定理，它揭示了可测函数积分在极限过程中体现出的性质：
 
+Levi Theo
+: 设$\{ f _ k \}$是可测集$E$上的非负可测函数，满足 $f_1 \le f_2 \le \cdots$ 且有
+$$
+\lim _ {k \rightarrow \infty} f_k ( x) = f(x), \quad \forall x \in E
+$$
+则有
+$$
+\lim _ {k \rightarrow \infty} \int _ E f_k (x)\mathrm dx = \int _ E f(x) \mathrm dx
+$$
 
+这个定理说明，对于单调、收敛的可测函数，其积分的极限就是极限的积分。
 
+#### 一般可测函数
 
+通过非负可测函数的积分、将可测函数分为正负两部分，我们可以定义：
 
+可测函数积分
+: 设 $f$ 是可测函数，$f^+$和$f^-$至少有一个是可积的，则称
+$$
+\int_E f(x) \mathrm dx = \int _ E f ^+ (x)\mathrm dx - \int _ E f ^ - (x) \mathrm dx
+$$
+是$f$在$E$上的积分，如果右端两个积分都有限，则称该函数可积$f\in \mathcal L(E)$。
 
+显然，其具有这样的简单性质：
+$$
+f\in \mathcal L ( E ) \rightarrow | \int_E f(x)\mathrm dx| \le \int _ E | f(x) | \mathrm dx
+$$
 
+Theo Lebesgue可测函数积分性质
+: 对于积分：
+1. $|f| < \infty,\quad a.e.$
+2. 如果其中一个可积，$f = g\quad a.e.\implies \int f = \int g$
+3. （控制性）若存在 $|f| < |g|\in \mathcal L$，则 $f\in \mathcal L$，且$|\int f| \le \int |g|$
+4. 对于有限测度集，有界函数都可积
 
+Theo
+: Lebesgue积分具有线性性
 
+下面给出 Lebesgue 积分的等价描述
 
+Theo 可积/积分的等价描述
+: 设 $f$ 是**有限测度集**上的**有界可测**函数，$|f| \le M$，作$[-M, M]$的划分，
+$$
+-M = \alpha_0 < \cdots < \alpha_k = M
+$$
+设$E_j= E(\alpha_{j-1} < f < \alpha_j)$，对于任意的
+$$
+\eta_j \in [\alpha_{j - 1}, \alpha _ j]
+$$
+极限
+$$
+\lim_{\max \alpha_j - \alpha_{j-1} \rightarrow 0} \sum_{j = 1} ^ k \eta_j m(E_j)
+$$
+存在，则该极限就是Lebesgue积分。
 
+对于Lebesgue积分，其具有绝对连续性（定义域测度充分小，则积分值充分小）：
 
+Theo 绝对连续性
+: 设$f\in \mathcal L$，则对于任意的$\varepsilon > 0$，存在$\delta > 0$，使得对于**任何**的子集$A$，当$m(A) < \delta$时，
+$$
+|\int_A f(x) \mathrm dx | \le \int_A |f(x)|\mathrm dx \le \varepsilon
+$$
 
+当然，对于Lebesgue积分，也有平移不变性。
 
+我们之前考察了可测和连续的关系，在这里我们也有类似的结论：
 
+Theo
+: 对于任意Lebesgue可积函数，对于任意 $\varepsilon > 0$，存在一个具有紧支集的连续函数$g$使得
+$$
+\int_ E| f(x) - g(x) | \mathrm dx < \varepsilon
+$$
+。因此，可以构造具有紧支集的连续函数列$g_k$，使得
+$$
+\lim_{k\rightarrow \infty}\int_ E| f(x) - g_k(x) | \mathrm dx < \varepsilon, \quad 即 g_k \rightarrow f\quad a.e.
+$$
 
+#### Riemann积分和Lebesgue积分的关系
 
+Theo Riemann积分和Lebesgue积分值的相等性
+: 闭区间上有界函数$f(x)$ Riemann 可积，则它时 Lebesgue 可积的且其积分值相等。
+
+#### 测度空间上的可测函数积分
+
+### 极限定理
+
+这一节我们考虑极限和Lebesgue积分的互换关系。
+
+Lebesgue 基本定理
+: 设$f_n$是可测集$E$上的非负可测函数列，
+$$
+f(x) = \sum_{n = 1} ^ \infty f_n(x) 
+$$
+则
+$$
+\int _ E f(x) \mathrm dx = \sum _ {n = 1} ^ \infty \int _ E f_n (x) \mathrm dx
+$$
+
+> 正函数项级数，和函数积分为积分的和。（积分与求和交换）
+
+从上述定理，我们可以应用到定义域上：
+
+Col
+: 设 $E = \bigsqcup E_n$，若$f(x)$在$E$上有积分时，$f(x)$在每一个子集$E_n$时有积分的，且
+$$
+\int _ E f(x) \mathrm dx = \sum _ {n = 1} ^ \infty \int _{E_n} f(x) \mathrm dx
+$$
+
+我们始终不希望只考虑单调的函数列
+
+Fatou 引理
+: 对于非负可测函数列$f_n$，有
+$$
+\int _ E \lim \inf f_n(x) \mathrm dx \le \lim \inf \int _ E f_n(x)\mathrm dx
+$$
+
+得到这样一个定理是不够的，我们希望得到更好的结论，而不局限于下确界和不等号：
+
+控制收敛定理
+: 给定可测集$E$，设$f_n\subset \mathcal M$，且有
+$$
+f_n (x) \rightarrow f(x)\quad a.e.[E]
+$$
+如果存在函数 $F(x) \in \mathcal L(E)$，控制了$|f_n| \le F\quad, a.e.[E]$，那么，$f\in \mathcal L(E)$且
+$$
+\lim _ {n \rightarrow \infty} \int_{E} f_n (x) \mathrm dx = \int_ E f(x) \mathrm dx
+$$
+
+从而，我们有如下几个定理：
+
+Theo
+: 设$E$是可测集，$f_n$是 $E$上的可测函数列，该函数列依测度收敛到 $f$ ，若存在$F\in \mathcal L(E)$使得$|f_n| \le F, a.e.[E]$ 则$f_n, f$都在$E$上 Lebesgue可积，且积分和极限可换。
+
+当然，对于有界函数，其在有限测度集上积分有很好的性质：
+
+Theo 有界收敛原理
+: 设$m(E)< \infty$，$\{f_n\} \subset L(E)$且一致有界，则当其依测度收敛时，其积分和极限可换。
+
+对于函数项级数，有类似的定理：
+
+Theo
+: 对于可积函数列，若
+$$
+\sum _ {n = 1} ^ \infty \int _ E | f_n ( x ) | \mathrm dx < \infty
+$$
+则级数$\sum f_n (x)$ 在 $E$上几乎处处收敛，且和函数的积分是各函数积分的和。
+
+#### Riemann 可积的刻画
+
+首先，我们使用振幅函数来入手描述 Riemann 可积性
+
+Theo
+: 对于区间上的有界函数$f$，有
+$$
+\int _ I \omega _f (x) \mathrm dx = \bar \int _ a ^ b f - 
+\underline{\int}_{a}^b f
+$$
+
+与此同时，我们揭示了Riemann可积的充要条件：
+
+Riemann可积
+: 对闭区间上的有界函数 $f$ ：Riemann可积，当且仅当不连续点集是零测的
+
+### 重积分和累次积分
+
+> 重积分的交换就是极限过程的交换。
+
+#### Fubini 定理
+
+截口
+: 设$E\subset {\mathbb R}^{p+q}$，对于任意的$x\in {\mathbb R}^p$，令
+$$
+E_x = \{ y \in {\mathbb R}^ q| (x, y) \in E\}
+$$
+对于任意的$y$，对应定义$E_y$。其中，$E_x$称为$E$的$x$截口
+
+显然：
+$$
+m(E) = \int _ {\mathbb R ^ p} m(E_x)\mathrm dx = \int _ {\mathbb R ^ q} m(E_y)\mathrm dy 
+$$
+
+Theo
+: 设$n = p + q$，$E \in \mathcal M _ n$则
+1. 对几乎处处的$x\in \mathbb R ^ p$，有$E_x \in \mathbb R^q$
+2. $m(E_x)$在$\mathbb R^q$上几乎处处有定义，且是非负可测函数
+
+借助截口，我们一步步引入Fubini定理，来解决重积分和累次积分关系的问题：
+
+Theo
+: 假设$E_1$和$E_2$是$\mathbb R^p$和$\mathbb R^q$中的可测集则$E_1\times E_2 \in M_n$ 且有
+$$
+m(E_1\times E_2) = m(E_1)m(E_2)
+$$
+
+借助该定理，以及测度、积分在极限下的交换关系，我们有：
+
+Toneli
+: 设$n = p + q$，$f(x,y)\in \mathcal M (\mathbb R ^ {p + q})$且非负，则
+1. 对于几乎处处的$x\in \mathbb R ^ p$，$f(x, \cdot )$是非负可测函数；
+2. 积分$F_f(x) = \int _ {\mathbb R^q}f(x, y) \mathrm dy$ 几乎处处有定义，是非负可测函数；
+3. 重积分和累次积分相等。
+
+对于上述定理，我们可以将条件加强为`可积`，得到：
+
+Fubini 定理
+: 设$n = p + q$，$f(x,y)\in \mathcal L (\mathbb R ^ {p + q})$，则
+1. 对于几乎处处的$x\in \mathbb R ^ p$，$f(x, \cdot )$可积；
+2. 积分$F_f(x) = \int _ {\mathbb R^q}f(x, y) \mathrm dy$ 几乎处处有定义，且可积；
+3. 重积分和累次积分相等。
+
+至此，我们已经几乎研究完了定积分的极限性质，下面将研究微积分基本定理的成立条件
+
+## 微分和不定积分
+
+### 单调函数的可微性
+
+我们先研究单调函数，它是一个性质好（有界变差）的函数！
+
+Vitali 覆盖
+: 设$E \subset \mathbb R$，设$\tau = \{ I _ \alpha \}$是一个区间族，若对于任意的$x\in E$和$\varepsilon > 0$，存在一个$I_\alpha \in \tau$，使得$x\in I _ \alpha$ 且 $|I_\alpha| < \varepsilon$，则称$E$是在Vitali意义下的覆盖。
+
+研究Vitali覆盖，一方面是因为其对于任意点都可以找到充分小的区间覆盖，另一方面是其可以任意有限外测度集合，都能找到误差充分笑的有限覆盖：
+
+Vitali 覆盖定理
+: 设$E \subset \mathbb{R}$，且$m^*(E)<\infty$，则对于任意的$\varepsilon > 0$存在有限个互不相交的$I_j\in \tau$使得
+$$
+m^*(E -\cup_{j=1}^n I_j) < \varepsilon
+$$
+
+srds，这个东西用的也不多。
 
 
 

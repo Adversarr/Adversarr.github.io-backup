@@ -120,12 +120,23 @@
 
     "RR": {
         "scope": "markdown",
-		"prefix": ["\\R"],
+		"prefix": ["\\RR"],
 		"body": [
 			"{\\mathbb R}"
 		],
 		"description": "Tex -- \\R"
-    }
+    },
+
+
+	"MD Definition": {
+		"scope": "markdown",
+		"prefix": ["def", "theo", "Theo"],
+		"body": [
+			"${1:def}",
+			": $2",
+			""
+		]
+	}
 
 
 }

@@ -20,7 +20,7 @@
   <meta content="逆版本战士の部落格" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1653636008842" as="style">
+  <link rel="preload" href="/css/style.css?time=1653636600614" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-05-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-27T07:19:45.624Z">
+<meta property="article:modified_time" content="2022-05-27T07:29:55.952Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -1812,8 +1812,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1653636008842" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1653636008842"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1653636600614" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1653636600614"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2613,7 +2613,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：429 字</p>
+      <p>字数：382 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2647,7 +2647,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>可变参数模版</li>
 <li>……（todo...）</li>
 </ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Hash</span> &#123;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">  <span class="keyword">typename</span> enable_if&lt;!is_class&lt;T&gt;::value, <span class="type">size_t</span>&gt;::<span class="function">type</span></span><br><span class="line"><span class="function">  <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> T &amp;v)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> hash&lt;T&gt;&#123;&#125;(v);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="type">size_t</span> __hash_reduce(<span class="type">size_t</span> h) <span class="type">const</span> &#123; <span class="keyword">return</span> h; &#125;</span><br><span class="line">  <span class="type">size_t</span> __hash_reduce(<span class="type">size_t</span> h, <span class="type">size_t</span> t...) <span class="type">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> __hash_combine(h, __hash_reduce(t));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="type">size_t</span> <span class="title">comb</span><span class="params">(<span class="type">const</span> T &amp;t)</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> Hash&#123;&#125;(t); &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</span><br><span class="line">  <span class="function"><span class="type">size_t</span> <span class="title">comb</span><span class="params">(<span class="type">const</span> T &amp;t, <span class="type">const</span> Args &amp;...args)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __hash_reduce(Hash&#123;&#125;(t), <span class="built_in">comb</span>(args...));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">struct</span> <span class="title class_">__has_hash_fn</span> &#123;</span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="keyword">auto</span> <span class="title">check</span><span class="params">(<span class="type">int</span>)</span> -&gt; <span class="title">decltype</span><span class="params">(std::declval&lt;U&gt;().hash(), std::true_type())</span></span>;</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt; <span class="function"><span class="type">static</span> <span class="keyword">auto</span> <span class="title">check</span><span class="params">(...)</span> -&gt; <span class="title">decltype</span><span class="params">(std::false_type())</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">bool</span> value =</span><br><span class="line">        std::is_same&lt;<span class="keyword">decltype</span>(<span class="built_in">check</span>&lt;T&gt;(<span class="number">0</span>)), std::true_type&gt;::value;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2, <span class="keyword">typename</span>... Args&gt;</span><br><span class="line">  <span class="function"><span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> T1 &amp;t1, <span class="type">const</span> T2 &amp;t2, <span class="type">const</span> Args &amp;...args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">comb</span>(t1, t2, args...);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> L, <span class="keyword">typename</span> R&gt;</span><br><span class="line">  <span class="function"><span class="keyword">constexpr</span> <span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> pair&lt;L, R&gt; p)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Hash&#123;&#125;(p.first, p.second);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> I, <span class="keyword">typename</span> C = <span class="keyword">typename</span> I::const_iterator&gt;</span><br><span class="line">  <span class="keyword">constexpr</span> <span class="type">size_t</span> <span class="built_in">operator</span>()(<span class="type">const</span> I &amp;it) <span class="type">const</span> &#123;</span><br><span class="line">    <span class="type">size_t</span> hv = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;v : it) &#123;</span><br><span class="line">      hv = __hash_combine(hv, Hash&#123;&#125;(v));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hv;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">constexpr</span> <span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">bool</span>&gt; &amp;bs)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="type">size_t</span> hv = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; bs.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">      hv = __hash_combine(hv, Hash&#123;&#125;((<span class="type">int</span>)bs[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hv;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt; <span class="function"><span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> tuple&lt;Args...&gt; &amp;tup)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">apply</span>([](Args... v) -&gt; <span class="type">size_t</span> &#123; <span class="keyword">return</span> Hash&#123;&#125;.<span class="built_in">comb</span>&lt;Args...&gt;(v...); &#125;,</span><br><span class="line">                 tup);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Hashable,</span><br><span class="line">    <span class="keyword">typename</span> = is_same&lt;<span class="keyword">decltype</span>(std::<span class="built_in">declval</span>&lt;Hashable&gt;().<span class="built_in">hash</span>()), <span class="type">size_t</span>&gt;&gt;</span><br><span class="line">  <span class="type">size_t</span> <span class="built_in">operator</span>()(<span class="type">const</span> Hashable &amp;v) &#123;</span><br><span class="line">    <span class="keyword">return</span> v.<span class="built_in">hash</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Hash</span> &#123;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">  <span class="keyword">typename</span> enable_if&lt;!is_class&lt;T&gt;::value, <span class="type">size_t</span>&gt;::<span class="function">type</span></span><br><span class="line"><span class="function">  <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> T &amp;v)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> hash&lt;T&gt;&#123;&#125;(v);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="type">size_t</span> __hash_reduce(<span class="type">size_t</span> h) <span class="type">const</span> &#123; <span class="keyword">return</span> h; &#125;</span><br><span class="line">  <span class="type">size_t</span> __hash_combine(<span class="type">size_t</span> l, <span class="type">size_t</span> r) <span class="type">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (l &lt;&lt; <span class="number">1</span>) ^ r;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">size_t</span> __hash_reduce(<span class="type">size_t</span> h, <span class="type">size_t</span> t...) <span class="type">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> __hash_combine(h, __hash_reduce(t));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="type">size_t</span> <span class="title">comb</span><span class="params">(<span class="type">const</span> T &amp;t)</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> Hash&#123;&#125;(t); &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</span><br><span class="line">  <span class="function"><span class="type">size_t</span> <span class="title">comb</span><span class="params">(<span class="type">const</span> T &amp;t, <span class="type">const</span> Args &amp;...args)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __hash_reduce(Hash&#123;&#125;(t), <span class="built_in">comb</span>(args...));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2, <span class="keyword">typename</span>... Args&gt;</span><br><span class="line">  <span class="function"><span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> T1 &amp;t1, <span class="type">const</span> T2 &amp;t2, <span class="type">const</span> Args &amp;...args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">comb</span>(t1, t2, args...);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> L, <span class="keyword">typename</span> R&gt;</span><br><span class="line">  <span class="function"><span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> pair&lt;L, R&gt; p)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Hash&#123;&#125;(p.first, p.second);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> I, <span class="keyword">typename</span> C = <span class="keyword">typename</span> I::const_iterator&gt;</span><br><span class="line">  <span class="type">size_t</span> <span class="built_in">operator</span>()(<span class="type">const</span> I &amp;it) <span class="type">const</span> &#123;</span><br><span class="line">    <span class="type">size_t</span> hv = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;v : it) &#123;</span><br><span class="line">      hv = __hash_combine(hv, Hash&#123;&#125;(v));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hv;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">bool</span>&gt; &amp;bs)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="type">size_t</span> hv = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; bs.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">      hv = __hash_combine(hv, Hash&#123;&#125;((<span class="type">int</span>)bs[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hv;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt; <span class="function"><span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> tuple&lt;Args...&gt; &amp;tup)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">apply</span>([](Args... v) -&gt; <span class="type">size_t</span> &#123; <span class="keyword">return</span> Hash&#123;&#125;.<span class="built_in">comb</span>&lt;Args...&gt;(v...); &#125;,</span><br><span class="line">                 tup);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Hashable,</span><br><span class="line">    <span class="keyword">typename</span> = is_same&lt;<span class="keyword">decltype</span>(std::<span class="built_in">declval</span>&lt;Hashable&gt;().<span class="built_in">hash</span>()), <span class="type">size_t</span>&gt;&gt;</span><br><span class="line">  <span class="type">size_t</span> <span class="built_in">operator</span>()(<span class="type">const</span> Hashable &amp;v) &#123;</span><br><span class="line">    <span class="keyword">return</span> v.<span class="built_in">hash</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
   </div>
@@ -2669,7 +2669,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-27T15:19:45+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-27T15:29:55+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2022年5月27日</p>
@@ -2938,8 +2938,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1653636008842')
-      volantis.js('/js/message.js?time=1653636008842', () => {
+      volantis.css('/css/message.css?time=1653636600614')
+      volantis.js('/js/message.js?time=1653636600614', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2984,8 +2984,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1653636008842')
-      volantis.js('/js/message.js?time=1653636008842', () => {
+      volantis.css('/css/message.css?time=1653636600614')
+      volantis.js('/js/message.js?time=1653636600614', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3044,8 +3044,8 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1653636008842')
-      volantis.js('/js/message.js?time=1653636008842', () => {
+      volantis.css('/css/message.css?time=1653636600614')
+      volantis.js('/js/message.js?time=1653636600614', () => {
         hideMessage(done);
       });
     } else {
@@ -3208,7 +3208,7 @@ id="number"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1653636008842')
+    volantis.js('/js/rightMenu.js?time=1653636600614')
   </script>
 
 
@@ -3321,19 +3321,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1653636008842")
+        volantis.js("/js/plugins/sites.js?time=1653636600614")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1653636008842")
+        volantis.js("/js/plugins/friends.js?time=1653636600614")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1653636008842")
+        volantis.js("/js/plugins/contributors.js?time=1653636600614")
       }
     
   };
@@ -3434,7 +3434,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1653636008842').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1653636600614').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3443,7 +3443,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1653636008842.js"></script>
+<script src="/js/app.js?time=1653636600614.js"></script>
 
 
 <!-- optional -->
@@ -3456,7 +3456,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1653636008842");
+    return volantis.js("/js/search/hexo.js?time=1653636600614");
   }
 
   function loadSearchService() {
@@ -3912,7 +3912,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/05/27/study/ComputerScience/fragments/Snippets/","name":"神奇的 C++ 代码片段（模版元编程）"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"神奇的 C++ 代码片段（模版元编程）","description":"哈希函数","datePublished":"2022-05-26T16:00:00.000Z","dateModified":"2022-05-27T07:19:45.624Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/05/27/study/ComputerScience/fragments/Snippets/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/05/27/study/ComputerScience/fragments/Snippets/","wordCount":4,"image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/05/27/study/ComputerScience/fragments/Snippets/","name":"神奇的 C++ 代码片段（模版元编程）"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"神奇的 C++ 代码片段（模版元编程）","description":"哈希函数","datePublished":"2022-05-26T16:00:00.000Z","dateModified":"2022-05-27T07:29:55.952Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/05/27/study/ComputerScience/fragments/Snippets/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/05/27/study/ComputerScience/fragments/Snippets/","wordCount":4,"image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

@@ -27,6 +27,9 @@ struct Hash {
 
 private:
   size_t __hash_reduce(size_t h) const { return h; }
+  size_t __hash_combine(size_t l, size_t r) const {
+    return (l << 1) ^ r;
+  }
   size_t __hash_reduce(size_t h, size_t t...) const {
     return __hash_combine(h, __hash_reduce(t));
   }
@@ -37,16 +40,6 @@ private:
   size_t comb(const T &t, const Args &...args) const {
     return __hash_reduce(Hash{}(t), comb(args...));
   }
-  template <typename T> struct __has_hash_fn {
-  private:
-    template <typename U>
-    static auto check(int) -> decltype(std::declval<U>().hash(), std::true_type());
-    template <typename U> static auto check(...) -> decltype(std::false_type());
-
-  public:
-    static const bool value =
-        std::is_same<decltype(check<T>(0)), std::true_type>::value;
-  };
 
 public:
   template <typename T1, typename T2, typename... Args>
@@ -55,19 +48,19 @@ public:
   }
 
   template <typename L, typename R>
-  constexpr size_t operator()(const pair<L, R> p) const {
+  size_t operator()(const pair<L, R> p) const {
     return Hash{}(p.first, p.second);
   }
 
   template <typename I, typename C = typename I::const_iterator>
-  constexpr size_t operator()(const I &it) const {
+  size_t operator()(const I &it) const {
     size_t hv = 0;
     for (const auto &v : it) {
       hv = __hash_combine(hv, Hash{}(v));
     }
     return hv;
   }
-  constexpr size_t operator()(const vector<bool> &bs) const {
+  size_t operator()(const vector<bool> &bs) const {
     size_t hv = 0;
     for (int i = 0; i < bs.size(); ++i) {
       hv = __hash_combine(hv, Hash{}((int)bs[i]));

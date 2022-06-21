@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.0.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
   <meta name="Volantis" content="5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -33,19 +33,19 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="逆版本战士の部落格" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>理论力学期末复习 - 逆版本战士の部落格</title>
+  <title>理论力学 -- 静力学和期末复习课 - 逆版本战士の部落格</title>
   <meta name="keywords" content="物理,study">
   <meta desc name="description" content="理论力学复习笔记 - Adversarr - 逆版本战士の部落格">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="理论力学期末复习">
+<meta property="og:title" content="理论力学 -- 静力学和期末复习课">
 <meta property="og:url" content="http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/index.html">
 <meta property="og:site_name" content="逆版本战士の部落格">
 <meta property="og:description" content="理论力学复习笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-06-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-15T05:44:08.784Z">
+<meta property="article:modified_time" content="2022-06-20T08:58:21.823Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="物理">
 <meta name="twitter:card" content="summary">
@@ -1914,7 +1914,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1655349378067),
+    lastupdate: new Date(1655814307138),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2667,7 +2667,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        理论力学期末复习
+        理论力学 -- 静力学和期末复习课
       </h1>
       <div class='new-meta-box'>
         
@@ -2814,6 +2814,254 @@ id="平面汇交力系合成平衡的解析法">平面汇交力系合成、平�
 <p>平衡的充要条件是力系的合力为0</p>
 <h3 id="平面内力对于点的矩">平面内力对于点的矩</h3>
 <h4 id="平面内力对点的矩">平面内力对点的矩</h4>
+<p>合理矩定理：合力对任力系中各力对该点之矩矢的矢量和。 <span
+class="math display">\[
+M_O(F_R) = \sum M_O(F_i)
+\]</span> 适用于有合力的任意力系</p>
+<h4 id="平面力偶系">平面力偶系</h4>
+<dl>
+<dt>力偶</dt>
+<dd>
+<p>大小相等，方向相反，不共线的两个力组成的力系<span
+class="math inline">\((F, F&#39;)\)</span></p>
+</dd>
+</dl>
+<ol type="1">
+<li>力偶作用面、力偶臂</li>
+<li>力偶效应：改变刚体的转动状态
+<ol type="1">
+<li>是力学中的<strong>基本量</strong></li>
+</ol></li>
+</ol>
+<dl>
+<dt>力偶矩</dt>
+<dd>
+度量力偶对物体转动效应的量 – <span class="math inline">\(M= \pm d \cdot
+F\)</span>
+</dd>
+</dl>
+<p>力偶是滑动矢量 – 与矩心的位置无关</p>
+<h5 id="力偶的性质">力偶的性质</h5>
+<ol type="1">
+<li>力偶无合力 – <span class="math inline">\(F_R &#39; = \sum F_i =
+0\)</span></li>
+<li>力偶的效应<strong>只和</strong>力偶矩有关</li>
+<li>力偶只与力偶矩相等的另一力偶等效</li>
+<li>力偶对其作用面上任何一点的矩等于力偶矩</li>
+</ol>
+<blockquote>
+<p>静止时，力偶不能与任一力平衡</p>
+</blockquote>
+<h5 id="平面力偶系合成">平面力偶系合成</h5>
+<p>合成的结果为： <span class="math display">\[
+M = \sum _ i M_i
+\]</span> 即一个合力偶，力偶矩等于原力偶系中所有力偶矩的代数和</p>
+<p>平面力偶系的平衡方程为： <span class="math display">\[
+\sum _i M_i = 0 \quad(i.e. \sum M = 0)
+\]</span></p>
+</div><div class="story post-story"><h2 id="平面任意力系">平面任意力系</h2>
+<h3 id="力系简化">力系简化</h3>
+<h4 id="力的平移定理">力的平移定理</h4>
+<dl>
+<dt>力的平移定理</dt>
+<dd>
+可以把刚体上一点的力向任意点平移，但要附加一个力偶，其力偶矩等于原来力对移动点（新点）的矩。
+</dd>
+</dl>
+<blockquote>
+<p>相当于在目标点作一个力，然后设法使之等效。</p>
+</blockquote>
+<h4 id="平面力系向面内一点简化">平面力系向面内一点简化</h4>
+<p>简化结果是：</p>
+<ol type="1">
+<li>力系主矢 <span class="math inline">\(F_R&#39;= \sum_{i=1}^n
+F_i\)</span></li>
+<li>力系主矩 <span class="math inline">\(M_O=\sum_{i = 1} ^ n
+M_O(F_i)\)</span></li>
+</ol>
+<p>其中 <span class="math inline">\(O\)</span> 是简化中心：</p>
+<ol type="1">
+<li>力系主矢与<span class="math inline">\(O\)</span>无关</li>
+<li>力系主矩<strong>一般</strong>和<span
+class="math inline">\(O\)</span>有关 –
+注意可能最终是一个合力偶的情况</li>
+</ol>
+<h5 id="简化结果的情况">简化结果的情况</h5>
+<ol type="1">
+<li>力偶 – <span class="math inline">\(F_R&#39; = 0, M_O \ne
+0\)</span></li>
+<li>平衡 – <span class="math inline">\(F&#39;_R = 0, M_O =
+0\)</span></li>
+<li>合力 – 其他的情况</li>
+</ol>
+<h4 id="合理矩定理">合理矩定理</h4>
+<dl>
+<dt>合理矩定理</dt>
+<dd>
+平面任意力系的合力对作用面任一点的矩等于力系中各力对同一点的矩的代数和
+<span class="math display">\[
+M_O(F_R) = \sum M_O(F_i)
+\]</span>
+</dd>
+</dl>
+<h3 id="平衡方程和平衡条件">平衡方程和平衡条件</h3>
+<h4 id="平衡的充要条件">平衡的充要条件</h4>
+<p>充要条件是主矢和主矩都为0. <span class="math display">\[
+\begin{cases}
+F_R&#39; = 0\\
+M_O = 0
+\end{cases}
+\]</span> 则最简单的平衡方程为（一矩式） <span class="math display">\[
+\begin{cases}
+\sum F_x = 0\\
+\sum F_y = 0\\
+\sum M_O(F) = 0
+\end{cases}
+\]</span> 三个独立方程 – 三个未知量</p>
+<h4 id="平衡方程的三种形式">平衡方程的三种形式</h4>
+<p>两矩式 <span class="math display">\[
+\begin{cases}
+\sum F_x = 0\\
+\sum M_A(F) = 0\\
+\sum M_B(F) = 0
+\end{cases}
+\]</span></p>
+<blockquote>
+<p>要求<span class="math inline">\(AB\)</span>不垂直于<span
+class="math inline">\(x\)</span>轴</p>
+</blockquote>
+<p>三矩式 <span class="math display">\[
+\begin{cases}
+\sum M_A(F) = 0\\
+\sum M_B(F) = 0\\
+\sum M_C(F) = 0
+\end{cases}
+\]</span></p>
+<blockquote>
+<p>要求<span class="math inline">\(ABC\)</span>不共线</p>
+</blockquote>
+<h3 id="平衡问题">平衡问题</h3>
+<p>特殊情况下，平衡方程可以解的位置量减少：</p>
+<ol type="1">
+<li>汇交力系 — 两个独立方程</li>
+<li>平行力系 — 两个独立方程</li>
+<li>力偶系 — 一个独立方程</li>
+</ol>
+<blockquote>
+<p>其中<span class="math inline">\(x, y\)</span>方向选择具有一定的任意性
+– 线性无关</p>
+</blockquote>
+<h4 id="静定问题和静不定问题">静定问题和静不定问题</h4>
+<ol type="1">
+<li>静定问题 – 平衡方程可以求解所有未知数</li>
+<li>静不定问题 – 平衡方程无法求出所有未知数</li>
+</ol>
+<p>确定方法：</p>
+<ol type="1">
+<li>未知数和方程数比较</li>
+<li>几何分析</li>
+<li>计算自由度</li>
+</ol>
+<h3 id="桁架">桁架</h3>
+<hr />
+</div><div class="story post-story"><h2 id="作业和复习课">作业和复习课</h2>
+<h3 id="静力学">静力学</h3>
+<p><code>受力图</code></p>
+<ol type="1">
+<li>隔离法各个物体单独画</li>
+</ol>
+<p>列方程： <span class="math display">\[
+\begin{aligned}
+\sum F_x = 0 &amp;\quad ... + ... + ... =0\\
+\sum F_y = 0 &amp;\quad ... + ... + ... =0\\
+\sum M_f = 0 &amp;\quad ... + ... + ... =0
+\end{aligned}
+\]</span> <strong>固定端</strong>必考 – 这次必考（作业题2）</p>
+<ul>
+<li>注意约束力偶矩 – 受力图！</li>
+</ul>
+<p>这甜蜜和近代物理老师送分没啥区别。</p>
+<p>二力构件和二力杆 – 填空题、作图题（画受力图 – 3题） –
+只要受到两个力而平衡，就是二力构件。</p>
+<p>三力汇交必考</p>
+<h3 id="运动学">运动学</h3>
+<p>点的合成运动</p>
+<p>8-22 明确写出以谁为动点、以谁为动系 – 3+3分</p>
+<ul>
+<li><span class="math inline">\(v_a\)</span> – 绝对</li>
+<li><span class="math inline">\(v_e\)</span> – 牵连</li>
+<li><span class="math inline">\(v_r\)</span> – 相对</li>
+</ul>
+<p>加速度同理，<span class="math inline">\(a_c\)</span></p>
+<p>8-29 只是求<span class="math inline">\(a_c\)</span> – 相对速度 +
+角速度</p>
+<p>9-</p>
+<h3 id="考试">考试</h3>
+<p>选择、填空（计算）、判断</p>
+<p>做图</p>
+<p>计算题</p>
+<blockquote>
+<p>u1s1-不如报答案</p>
+</blockquote>
+<p>判断</p>
+<ul>
+<li>2个-牵连运动、牵连速度！是否和定义一致？</li>
+<li>质心运动定理一定要理解<span class="math inline">\(m a_c = \sum \vec
+F\)</span> ，包括主动力、约束力都要考虑！</li>
+<li>达朗贝尔原理、惯性力系简化（平移、惯性力偶矩、合力？）
+<ul>
+<li>平移和瞬时平移（平面运动的一个特例）是不同的！</li>
+</ul></li>
+</ul>
+<p>单选填空作图</p>
+<ul>
+<li>作图：受力图 – 明确方向！
+<ul>
+<li>能够看出二力杆：受拉力还是压力？</li>
+</ul></li>
+<li>参考 书本P83图4-13</li>
+<li>空间力系-求对轴的矩？力和轴平行时为0</li>
+<li>重心
+<ul>
+<li>组合法</li>
+<li>负面积法</li>
+</ul></li>
+<li>速度顺心 – 平面运动 – 作图题</li>
+<li>选择填空：
+<ul>
+<li><span class="math inline">\(J_c \alpha = \sum M_c (\vec F)\)</span>–
+对比一下选答案 （所有外力）</li>
+<li>平面运动的动能 <span class="math inline">\(T = \frac 1 2 m v_c ^ 2 +
+\frac 1 2 J_c \omega^2\)</span></li>
+<li>13-5 动量动能动量矩</li>
+<li>p270 – 11-4 串并联、固有频率、求解方法</li>
+</ul></li>
+</ul>
+<p>计算</p>
+<ul>
+<li><p>静力学：有固定端（约束力偶矩），谁是固定端，其他很简单</p>
+<ul>
+<li>要分开画受力图</li>
+<li>协调性原则 – 方向（牛3）、标注（<span class="math inline">\(F
+\rightarrow F&#39;\)</span>）</li>
+</ul></li>
+<li><p>桁架：零力杆（要写理由）截面法、节点法 – 送分</p></li>
+<li><p>动力学：P184
+图8-16、速度合成定理、刚体的平面运动（动点动系记得要写-3分）</p>
+<ul>
+<li>基点法、投影定理、瞬心 – 求加速度只能用基点法</li>
+<li>判断加速度方向</li>
+<li>速度瞬心法 – 如果是又滚又滑</li>
+</ul></li>
+<li><p>动力学：P413 16-24题：</p></li>
+<li><p>达朗贝尔原理 或者用：<span class="math inline">\(J_c \alpha =
+\sum M_c (\vec F)\)</span> （对单个物体成立）和<span
+class="math inline">\(Ma_c = \sum F\)</span></p>
+<ul>
+<li>建立坐标系 – 放在正半轴的一般位置？</li>
+</ul></li>
+</ul>
+<p>复习个xxxxx</p>
 
 </div>
   </div>
@@ -2851,10 +3099,10 @@ id="平面汇交力系合成平衡的解析法">平面汇交力系合成、平�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-15T13:44:08+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-20T16:58:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年6月15日</p>
+    <p>更新于：2022年6月20日</p>
   </a>
 </div>
 
@@ -2877,7 +3125,7 @@ id="平面汇交力系合成平衡的解析法">平面汇交力系合成、平�
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/&title=理论力学期末复习 - 逆版本战士の部落格&summary=理论力学复习笔记"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/&title=理论力学 -- 静力学和期末复习课 - 逆版本战士の部落格&summary=理论力学复习笔记"
           
           >
           
@@ -2889,7 +3137,7 @@ id="平面汇交力系合成平衡的解析法">平面汇交力系合成、平�
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/&title=理论力学期末复习 - 逆版本战士の部落格&summary=理论力学复习笔记"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/&title=理论力学 -- 静力学和期末复习课 - 逆版本战士の部落格&summary=理论力学复习笔记"
           
           >
           
@@ -2901,7 +3149,7 @@ id="平面汇交力系合成平衡的解析法">平面汇交力系合成、平�
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/&title=理论力学期末复习 - 逆版本战士の部落格&summary=理论力学复习笔记"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/&title=理论力学 -- 静力学和期末复习课 - 逆版本战士の部落格&summary=理论力学复习笔记"
           
           >
           
@@ -3007,7 +3255,7 @@ tuple、pair 等固定长模版容器
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E5%8A%9B%E5%AD%A6%E5%85%AC%E7%90%86%E5%92%8C%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90"><span class="toc-text">静力学公理和受力分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E5%8A%9B%E5%AD%A6%E5%85%AC%E7%90%86"><span class="toc-text">静力学公理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E5%92%8C%E7%BA%A6%E6%9D%9F%E5%8A%9B"><span class="toc-text">约束和约束力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%94%E6%80%A7%E7%B4%A2"><span class="toc-text">柔性索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%BB%91%E6%8E%A5%E8%A7%A6%E9%9D%A2"><span class="toc-text">光滑接触面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%BB%91%E5%9C%86%E6%9F%B1%E9%93%B0%E9%93%BE"><span class="toc-text">光滑圆柱铰链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%BB%91%E7%90%83%E9%93%B0%E9%93%BE"><span class="toc-text">光滑球铰链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%B4%E6%89%BF"><span class="toc-text">轴承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%85%E8%80%83%E9%93%BE%E6%9D%86-%E4%BA%8C%E5%8A%9B%E6%9D%86"><span class="toc-text">必考链杆 – 二力杆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90%E5%8F%97%E5%8A%9B%E5%9B%BE"><span class="toc-text">受力分析、受力图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%92%8C%E5%B9%B3%E9%9D%A2%E5%8A%9B%E5%81%B6%E7%B3%BB"><span class="toc-text">平面汇交力系和平面力偶系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB"><span class="toc-text">平面汇交力系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E6%B3%95"><span class="toc-text">几何法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E6%9D%A1%E4%BB%B6"><span class="toc-text">几何条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%90%88%E6%88%90%E5%B9%B3%E8%A1%A1%E7%9A%84%E8%A7%A3%E6%9E%90%E6%B3%95"><span class="toc-text">平面汇交力系合成、平衡的解析法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9B%E5%9C%A8%E5%9D%90%E6%A0%87%E8%BD%B4%E4%B8%8A%E7%9A%84%E6%8A%95%E5%BD%B1"><span class="toc-text">力在坐标轴上的投影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%90%88%E6%88%90%E7%9A%84%E8%A7%A3%E6%9E%90%E6%B3%95"><span class="toc-text">汇交力系合成的解析法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%B9%B3%E8%A1%A1%E6%96%B9%E7%A8%8B"><span class="toc-text">平面汇交力系平衡方程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%86%85%E5%8A%9B%E5%AF%B9%E4%BA%8E%E7%82%B9%E7%9A%84%E7%9F%A9"><span class="toc-text">平面内力对于点的矩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%86%85%E5%8A%9B%E5%AF%B9%E7%82%B9%E7%9A%84%E7%9F%A9"><span class="toc-text">平面内力对点的矩</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E5%8A%9B%E5%AD%A6%E5%85%AC%E7%90%86%E5%92%8C%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90"><span class="toc-text">静力学公理和受力分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E5%8A%9B%E5%AD%A6%E5%85%AC%E7%90%86"><span class="toc-text">静力学公理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E5%92%8C%E7%BA%A6%E6%9D%9F%E5%8A%9B"><span class="toc-text">约束和约束力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%94%E6%80%A7%E7%B4%A2"><span class="toc-text">柔性索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%BB%91%E6%8E%A5%E8%A7%A6%E9%9D%A2"><span class="toc-text">光滑接触面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%BB%91%E5%9C%86%E6%9F%B1%E9%93%B0%E9%93%BE"><span class="toc-text">光滑圆柱铰链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%BB%91%E7%90%83%E9%93%B0%E9%93%BE"><span class="toc-text">光滑球铰链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%B4%E6%89%BF"><span class="toc-text">轴承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%85%E8%80%83%E9%93%BE%E6%9D%86-%E4%BA%8C%E5%8A%9B%E6%9D%86"><span class="toc-text">必考链杆 – 二力杆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90%E5%8F%97%E5%8A%9B%E5%9B%BE"><span class="toc-text">受力分析、受力图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%92%8C%E5%B9%B3%E9%9D%A2%E5%8A%9B%E5%81%B6%E7%B3%BB"><span class="toc-text">平面汇交力系和平面力偶系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB"><span class="toc-text">平面汇交力系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E6%B3%95"><span class="toc-text">几何法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E6%9D%A1%E4%BB%B6"><span class="toc-text">几何条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%90%88%E6%88%90%E5%B9%B3%E8%A1%A1%E7%9A%84%E8%A7%A3%E6%9E%90%E6%B3%95"><span class="toc-text">平面汇交力系合成、平衡的解析法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9B%E5%9C%A8%E5%9D%90%E6%A0%87%E8%BD%B4%E4%B8%8A%E7%9A%84%E6%8A%95%E5%BD%B1"><span class="toc-text">力在坐标轴上的投影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%90%88%E6%88%90%E7%9A%84%E8%A7%A3%E6%9E%90%E6%B3%95"><span class="toc-text">汇交力系合成的解析法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B1%87%E4%BA%A4%E5%8A%9B%E7%B3%BB%E5%B9%B3%E8%A1%A1%E6%96%B9%E7%A8%8B"><span class="toc-text">平面汇交力系平衡方程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%86%85%E5%8A%9B%E5%AF%B9%E4%BA%8E%E7%82%B9%E7%9A%84%E7%9F%A9"><span class="toc-text">平面内力对于点的矩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%86%85%E5%8A%9B%E5%AF%B9%E7%82%B9%E7%9A%84%E7%9F%A9"><span class="toc-text">平面内力对点的矩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%8A%9B%E5%81%B6%E7%B3%BB"><span class="toc-text">平面力偶系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%9B%E5%81%B6%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">力偶的性质</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%8A%9B%E5%81%B6%E7%B3%BB%E5%90%88%E6%88%90"><span class="toc-text">平面力偶系合成</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E4%BB%BB%E6%84%8F%E5%8A%9B%E7%B3%BB"><span class="toc-text">平面任意力系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9B%E7%B3%BB%E7%AE%80%E5%8C%96"><span class="toc-text">力系简化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9B%E7%9A%84%E5%B9%B3%E7%A7%BB%E5%AE%9A%E7%90%86"><span class="toc-text">力的平移定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E5%8A%9B%E7%B3%BB%E5%90%91%E9%9D%A2%E5%86%85%E4%B8%80%E7%82%B9%E7%AE%80%E5%8C%96"><span class="toc-text">平面力系向面内一点简化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E7%BB%93%E6%9E%9C%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">简化结果的情况</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E7%90%86%E7%9F%A9%E5%AE%9A%E7%90%86"><span class="toc-text">合理矩定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E6%96%B9%E7%A8%8B%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%9D%A1%E4%BB%B6"><span class="toc-text">平衡方程和平衡条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">平衡的充要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-text">平衡方程的三种形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E9%97%AE%E9%A2%98"><span class="toc-text">平衡问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E5%AE%9A%E9%97%AE%E9%A2%98%E5%92%8C%E9%9D%99%E4%B8%8D%E5%AE%9A%E9%97%AE%E9%A2%98"><span class="toc-text">静定问题和静不定问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%81%E6%9E%B6"><span class="toc-text">桁架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E5%92%8C%E5%A4%8D%E4%B9%A0%E8%AF%BE"><span class="toc-text">作业和复习课</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E5%8A%9B%E5%AD%A6"><span class="toc-text">静力学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E5%AD%A6"><span class="toc-text">运动学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E8%AF%95"><span class="toc-text">考试</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3791,7 +4039,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   function pjax_giscus() {
     const HEAD = check_giscus();
     if (!HEAD) return;
-    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"}},pdata.commentConfig)
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"Adversarr/Adversarr.github.io","repo-id":"xxx","category":"xxx","category-id":"xxx","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
     const script = document.createElement('script');
     script.setAttribute('src', 'https://giscus.app/client.js');
     Object.keys(cfg).forEach(k=>{
@@ -4226,7 +4474,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/课程/","name":"课程"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/","name":"理论力学期末复习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"理论力学期末复习","description":"理论力学复习笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/","wordCount":8,"datePublished":"2022-06-14T16:00:00.000Z","dateModified":"2022-06-15T05:44:08.784Z","articleSection":"课程","keywords":"物理","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/课程/","name":"课程"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/","name":"理论力学 -- 静力学和期末复习课"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"理论力学 -- 静力学和期末复习课","description":"理论力学复习笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/06/15/study/Physics/TheoMechanics/","wordCount":8,"datePublished":"2022-06-14T16:00:00.000Z","dateModified":"2022-06-20T08:58:21.823Z","articleSection":"课程","keywords":"物理","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

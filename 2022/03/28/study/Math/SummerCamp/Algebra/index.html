@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-03-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-28T03:49:07.263Z">
+<meta property="article:modified_time" content="2022-06-24T07:38:51.420Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="抽象代数">
 <meta property="article:tag" content="数学">
@@ -1916,7 +1916,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1655879417974),
+    lastupdate: new Date(1656080355406),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2738,9 +2738,266 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p><em>待完善</em></p>
 <span id="more"></span>
-<p>TODO</p>
+<div class="story post-story"><h2 id="群论初步">群论初步</h2>
+<h3 id="引论">引论</h3>
+<dl>
+<dt>群</dt>
+<dd>
+在一个非空集合上，定义了一个代数运算，其满足 1. 结合 2. 存在幺元 3.
+对每个元素都存在逆元
+</dd>
+</dl>
+<h3 id="群的典型例子">群的典型例子</h3>
+<p>在上述条件中，若只满足 1 ，则称为半群，满足12，称为幺半群</p>
+<p>由群上的代数运算，可以定义<span
+class="math inline">\(n\)</span>次幂运算</p>
+<h4 id="数集">数集</h4>
+<ol type="1">
+<li>x数加群</li>
+<li><span class="math inline">\(\mathbb R^*\)</span>乘法</li>
+<li>（复数域）<span class="math inline">\(n\)</span>次单位根对乘法 --
+循环群</li>
+</ol>
+<p>1和3都有共同的特点：<strong>可以由一个元素生成整个群</strong>，即<strong>存在一个</strong>生成元（可以不唯一）</p>
+<p><span class="math display">\[
+k = k \cdot 1\quad z_k = \left(e^{2 \pi i/ n}\right)^k
+\]</span></p>
+<p>从而可以定义：</p>
+<dl>
+<dt>循环群</dt>
+<dd>
+如果群的每一个元素都是某一个元素的方幂，
+</dd>
+</dl>
+<h4 id="几何">几何</h4>
+<ol type="1">
+<li>某欧式空间中的全体正交变换</li>
+<li>二面体群 -- 正 n 边形的对称群</li>
+</ol>
+<h4 id="代数">代数</h4>
+<ol type="1">
+<li>模 <span class="math inline">\(m\)</span> 剩余类对加法</li>
+<li>模 <span class="math inline">\(p\)</span> 剩余类除去 <span
+class="math inline">\(\bar 0\)</span>，对乘法</li>
+<li>可逆矩阵 -- <span class="math inline">\(GL_n(F)\)</span></li>
+<li>行列式为 1 的矩阵全体 <span
+class="math inline">\(SL_n(F)\)</span></li>
+<li>置换 -- <span class="math inline">\(\Omega\)</span>
+到自身的双射</li>
+</ol>
+<p>一般<span class="math inline">\(n\)</span>元置换可以写成：</p>
+<p><span class="math display">\[
+\sigma = \left(
+\begin{matrix}
+1 &amp; 2 &amp; \cdots &amp; n\\
+a_1 &amp; a_2 &amp; \cdots &amp; a_n
+\end{matrix}
+\right)
+\]</span></p>
+<p>在其上，我们可以分解置换为不相交的轮换的积，在<strong>除顺序外，该分解唯一</strong></p>
+<p><span class="math display">\[
+\left(
+\begin{matrix}
+1 &amp; 2 &amp; 3 &amp; 4\\
+4 &amp; 3 &amp; 2 &amp; 1
+\end{matrix}
+\right)
+=(14)(23)
+\]</span></p>
+<p>即有</p>
+<dl>
+<dt>Theorem</dt>
+<dd>
+每一个置换都可以分解为一些不相交的轮换的乘积，且在不计顺序的情况下该分解唯一。
+</dd>
+</dl>
+<p>除此之外，每一个置换都能分解为对换，考虑： <span
+class="math display">\[
+(1 2 3 4) = (14)(13)(12)
+\]</span> 由此可以定义 1. 奇置换 2. 偶置换</p>
+<h3
+id="子群陪集lagrange定理循环群的子群">子群、陪集、Lagrange定理、循环群的子群</h3>
+<h4 id="子群">子群</h4>
+<dl>
+<dt>子群</dt>
+<dd>
+群的一个非空子集，若满足群的要求，则称为子群
+</dd>
+<dt>子群判定方法</dt>
+<dd>
+若 <span class="math inline">\(\forall a, b\in H, \quad ab^{-1} \in
+H\)</span>则 <span class="math inline">\(H\)</span>是子群。
+</dd>
+</dl>
+<p>从另一个层面上，我们可以考虑生成子群 <span
+class="math inline">\(\langle S\rangle\)</span> 即 <span
+class="math inline">\(G\)</span> 中包含 <span
+class="math inline">\(S\)</span>
+的最小子群，反之，对任意一个群，我们可以找这样的生成元集。</p>
+<p>我们考虑可以通过元素生成的子群，来观察元素的性质：</p>
+<dl>
+<dt>阶</dt>
+<dd>
+一个元素生成的群 <span class="math inline">\(\langle a \rangle\)</span>
+是循环群，把这个群的阶定义为这个元素的阶（群元素个数）
+</dd>
+</dl>
+<p>对于元素的阶 <span class="math inline">\(n\)</span> 有如下定理</p>
+<ol type="1">
+<li><span class="math inline">\(a^m = e \iff n | m\)</span></li>
+<li>对任意正整数 <span class="math inline">\(k\)</span>，其<span
+class="math inline">\(|a^k| = n / (n, k)\)</span></li>
+</ol>
+<h4 id="陪集">陪集</h4>
+<p>利用子群，可以得到群的一个<strong>划分</strong>：</p>
+<dl>
+<dt>左陪集</dt>
+<dd>
+给定子群 <span class="math inline">\(H\)</span>，对任意元素<span
+class="math inline">\(a\)</span>都能定义左陪集：<span
+class="math inline">\(aH\)</span>
+</dd>
+</dl>
+<p>其具有两个性质：</p>
+<ol type="1">
+<li><span class="math inline">\(aH = bH \iff b^{-1}a \in H\)</span></li>
+<li>两个元素对应的左陪集，要么相等，要么不相交</li>
+</ol>
+<p>左陪集构成的集合称为<strong>左商集</strong></p>
+<blockquote>
+<p>由此可以定义右陪集和右商集</p>
+</blockquote>
+<p>我们观察到，通过映射： <span class="math display">\[
+\varphi :aH \rightarrowtail Ha^{-1}
+\]</span>
+能够在左商集和右商集之间建立一一对应，即我们知道，左商集和右商集有同样的<strong>基数</strong>。</p>
+<p>于是我们猜测：</p>
+<dl>
+<dt>拉格朗日定理</dt>
+<dd>
+<span class="math inline">\(|G| = |H|\cdot[G:H]\)</span>
+</dd>
+</dl>
+<blockquote>
+<p><span class="math inline">\([G:H]\)</span>为商集的基数</p>
+</blockquote>
+<p>利用该定理，我们不难得到：</p>
+<ol type="1">
+<li>素数阶群一定是循环群</li>
+<li>有限群的每一个元素的阶都是<span
+class="math inline">\(|G|\)</span>的因子</li>
+</ol>
+<p>以及：</p>
+<dl>
+<dt>费马小定理</dt>
+<dd>
+若<span class="math inline">\(p\)</span>是素数，<span
+class="math inline">\(a\)</span>不是<span
+class="math inline">\(p\)</span>的倍数，则 <span class="math display">\[
+a^p \equiv a\quad (\mathrm{mod}~p)\label{eq:6}
+\]</span>
+</dd>
+</dl>
+<blockquote>
+<p>证明：考察 <span class="math inline">\(\bar a\)</span> 在<span
+class="math inline">\(Z_p^*\)</span>中的阶。</p>
+</blockquote>
+<p>因此，我们能够完全描述循环群的结构：</p>
+<dl>
+<dt>Theorem</dt>
+<dd>
+一个有限阶循环群同构于<span
+class="math inline">\(Z_m\)</span>，其中<span
+class="math inline">\(m=|G|\)</span>
+</dd>
+<dt>Theorem</dt>
+<dd>
+一个无穷阶循环群同构于<span class="math inline">\(Z\)</span>
+</dd>
+<dt>Theorem</dt>
+<dd>
+设 <span class="math inline">\(G\)</span> 是有限Abel群，则<span
+class="math inline">\(G\)</span>是循环群，当且仅当对于任一正整数<span
+class="math inline">\(m\)</span>，方程<span class="math inline">\(x^m =
+e\)</span> 在 <span class="math inline">\(G\)</span>中的解个数不超过
+<span class="math inline">\(m\)</span>。
+</dd>
+</dl>
+<p>因此：</p>
+<ol type="1">
+<li>有限域<span class="math inline">\(F\)</span>的乘法群<span
+class="math inline">\(F^*\)</span>必为循环群</li>
+<li>设 <span class="math inline">\(p\)</span> 是素数，那么<span
+class="math inline">\((p-1)!=-1\quad(\mathrm{mod} ~p)\)</span></li>
+</ol>
+<h3 id="群同构">群同构</h3>
+<p>同构的定义</p>
+<dl>
+<dt>群的直和</dt>
+<dd>
+在两个群上，定义运算：<span class="math inline">\((g_1, g_1&#39;) \cdot
+(g_2, g_2 &#39;) := (g_1 g_2, g_1&#39;g_2&#39;)\)</span>
+</dd>
+</dl>
+<p>例如Klein四元群是<span class="math inline">\(Z_2 \times
+Z_2\)</span></p>
+<h3 id="群同态正规子群商群可解群">群同态、正规子群、商群、可解群</h3>
+<h4 id="同态正规子群">同态、正规子群</h4>
+<p><strong>群同态</strong>：指一个同态映射，能够让群的运算和映射交换</p>
+<ol type="1">
+<li>保持了幺元、逆元</li>
+<li>可以按照映射，定义单同态（i.e. <strong>嵌入</strong>）、满同态</li>
+</ol>
+<p>利用同态，我们可以研究群的性质：</p>
+<ol type="1">
+<li><span class="math inline">\(Ker(\sigma)\)</span> 是一个子群</li>
+<li>单同态 当且仅当 <span class="math inline">\(Ker =
+\{e\}\)</span></li>
+</ol>
+<p>观察该群的性质，我们发现 <span class="math inline">\(\forall g\in G,
+gHg^{-1} =H\)</span>，定义这样的子群为<strong>正规子群</strong>。</p>
+<p>对于一般的子群，我们也可以定义<span
+class="math inline">\(gHg^{-1}\)</span>，称为<span
+class="math inline">\(H\)</span>的共轭子群。</p>
+<p>对于正规子群，其另一个充要条件是： <span class="math display">\[
+\forall a\in G\quad aH= Ha
+\]</span> 显然，我们有：</p>
+<dl>
+<dt>Theorem</dt>
+<dd>
+若 <span class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的指数为 2 的子群，则<span
+class="math inline">\(H\)</span>是正规的。
+</dd>
+</dl>
+<h4 id="商群">商群</h4>
+<p>利用正规子群<span
+class="math inline">\(N\)</span>，可以定义商群（左右陪集相等！）即<span
+class="math inline">\(G/N\)</span></p>
+<p>我们可以在<span class="math inline">\(G,
+G/N\)</span>之间建立<strong>自然映射</strong> <span
+class="math display">\[
+\pi : a \rightarrowtail aN
+\]</span> 群同态基本定理 : <span class="math inline">\(G/Ker\sigma
+\simeq Im \sigma\)</span></p>
+<p>由该基本定理，我们可以得出2条定理</p>
+<ol type="1">
+<li>第一同构定理：
+<ol type="1">
+<li><span class="math inline">\(HN&lt;G\)</span></li>
+<li><span class="math inline">\(H\cap N \vartriangleleft H, H/(H\cap N)
+\simeq HN/N\)</span></li>
+</ol></li>
+<li>第二同构定理
+<ol type="1">
+<li><span class="math inline">\((G/N_2) / (N_1/N_2) \simeq
+G/N_1\)</span></li>
+<li><span class="math inline">\(N_1/N_2\vartriangleleft
+G/N_2\)</span></li>
+</ol></li>
+</ol>
 
-
+</div>
   </div>
   
   
@@ -2776,10 +3033,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-03-28T11:49:07+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-24T15:38:51+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年3月28日</p>
+    <p>更新于：2022年6月24日</p>
   </a>
 </div>
 
@@ -2988,9 +3245,19 @@ TODO
 
 
 
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E8%AE%BA%E5%88%9D%E6%AD%A5"><span class="toc-text">群论初步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%AE%BA"><span class="toc-text">引论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%9A%84%E5%85%B8%E5%9E%8B%E4%BE%8B%E5%AD%90"><span class="toc-text">群的典型例子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E9%9B%86"><span class="toc-text">数集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%A0%E4%BD%95"><span class="toc-text">几何</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0"><span class="toc-text">代数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BE%A4%E9%99%AA%E9%9B%86lagrange%E5%AE%9A%E7%90%86%E5%BE%AA%E7%8E%AF%E7%BE%A4%E7%9A%84%E5%AD%90%E7%BE%A4"><span class="toc-text">子群、陪集、Lagrange定理、循环群的子群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E7%BE%A4"><span class="toc-text">子群</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%AA%E9%9B%86"><span class="toc-text">陪集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E5%90%8C%E6%9E%84"><span class="toc-text">群同构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E5%90%8C%E6%80%81%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4%E5%95%86%E7%BE%A4%E5%8F%AF%E8%A7%A3%E7%BE%A4"><span class="toc-text">群同态、正规子群、商群、可解群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%80%81%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4"><span class="toc-text">同态、正规子群</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%95%86%E7%BE%A4"><span class="toc-text">商群</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4136,7 +4403,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/Algebra/","name":"面向夏令营的抽象代数整理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"面向夏令营的抽象代数整理","description":"待完善","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/Algebra/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/Algebra/","wordCount":3,"datePublished":"2022-03-27T16:00:00.000Z","dateModified":"2022-03-28T03:49:07.263Z","articleSection":"数学","keywords":"抽象代数,数学,夏令营","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/Algebra/","name":"面向夏令营的抽象代数整理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"面向夏令营的抽象代数整理","description":"待完善","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/Algebra/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/03/28/study/Math/SummerCamp/Algebra/","wordCount":3,"datePublished":"2022-03-27T16:00:00.000Z","dateModified":"2022-06-24T07:38:51.420Z","articleSection":"数学","keywords":"抽象代数,数学,夏令营","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

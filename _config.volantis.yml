@@ -308,14 +308,14 @@ comments:
   # https://github.com/laymonage/giscus
   giscus:
     # 以下配置按照 yml 格式增删填写即可
-    # repo: xxx/xxx
-    # repo-id: xxx
-    # category: xxx
-    # category-id: xxx
-    # mapping: "pathname"
-    # reactions-enabled: "1"
-    # emit-metadata: "0"
-    # lang: "zh-CN"
+    repo: Adversarr/Adversarr.github.io
+    repo-id: xxx
+    category: xxx
+    category-id: xxx
+    mapping: "pathname"
+    reactions-enabled: "1"
+    emit-metadata: "0"
+    lang: "zh-CN"
     # 以上配置按照 yml 格式增删填写即可
     theme:
       light: "light" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
@@ -487,7 +487,7 @@ sidebar:
         icon: fa-solid fa-list
         title: 本文目录
       list_number: false
-      min_depth: 1
+      min_depth: 2
       max_depth: 5
     # ---------------------------------------
     # music

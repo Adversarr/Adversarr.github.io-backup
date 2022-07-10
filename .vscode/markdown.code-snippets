@@ -130,13 +130,32 @@
 
 	"MD Definition": {
 		"scope": "markdown",
-		"prefix": ["def", "theo", "Theo"],
+		"prefix": ["def"],
 		"body": [
 			"${1:def}",
 			": $0",
 			""
 		]
-	}
+	},
 
+  "MD Theorem": {
+		"scope": "markdown",
+		"prefix": ["Theorem"],
+		"body": [
+			"${1:Theorem}",
+			": $0",
+			""
+		]
+	},
+
+  "MD Prop": {
+		"scope": "markdown",
+		"prefix": ["Prop"],
+		"body": [
+			"${1:Prop}",
+			": $0",
+			""
+		]
+	},
 
 }

@@ -26,7 +26,7 @@
   
   <!-- Custom Files headBegin end-->
     <link rel="shortcut icon" type='image/x-icon' href="/image/favicon.webp">
-  <link rel="preload" href="/css/style.1154b99c.css" as="style">
+  <link rel="preload" href="/css/style.!!revision:/css/style.css!!.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-24T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-25T03:33:14.864Z">
+<meta property="article:modified_time" content="2022-08-05T01:18:30.933Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="GAMES 在线课">
 <meta name="twitter:card" content="summary">
@@ -1833,8 +1833,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1154b99c.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1154b99c.css"></noscript>
+  <link rel="stylesheet" href="/css/style.!!revision:/css/style.css!!.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.!!revision:/css/style.css!!.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1912,9 +1912,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
+    cdn: {"js":{"app":"/js/app.!!revision:/js/app.js!!.js","parallax":"/js/plugins/parallax.!!revision:/js/plugins/parallax.js!!.js","rightMenu":"/js/plugins/rightMenu.!!revision:/js/plugins/rightMenu.js!!.js","rightMenus":"/js/plugins/rightMenus.!!revision:/js/plugins/rightMenus.js!!.js","sites":"/js/plugins/tags/sites.!!revision:/js/plugins/tags/sites.js!!.js","friends":"/js/plugins/tags/friends.!!revision:/js/plugins/tags/friends.js!!.js","contributors":"/js/plugins/tags/contributors.!!revision:/js/plugins/tags/contributors.js!!.js","search":"/js/search/hexo.!!revision:/js/search/hexo.js!!.js"},"css":{"style":"/css/style.!!revision:/css/style.css!!.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656080355406),
+    lastupdate: new Date(1659859320877),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2737,12 +2737,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>GAMES 201–欧拉视角</p>
 <span id="more"></span>
 <blockquote>
-<p>Fluid Simulation for computer graphics</p>
+<p>《Fluid Simulation for computer graphics》</p>
 </blockquote>
 <div class="story post-story"><h2 id="overview">Overview</h2>
-<p>Material Derivatives — L. vs E. <span class="math display">\[
+<p>Material Derivatives — L. vs E.</p>
+<p><span class="math display">\[
 \frac{D}{Dt} =\frac{\partial }{\partial t} + \mathbf u \cdot \nabla
-\]</span> 例如，温度<span class="math inline">\(T\)</span>： <span
+\]</span></p>
+<blockquote>
+<p>后一项：物理量随着材料一起移动造成的</p>
+</blockquote>
+<p>例如，温度<span class="math inline">\(T\)</span>： <span
 class="math display">\[
 \frac{DT}{Dt} = \frac{\partial T}{\partial t} + \mathbf u \cdot \nabla T
 \]</span></p>
@@ -2756,24 +2761,148 @@ class="math display">\[
 u_x}{\partial t} + \mathbf u \cdot \nabla \mathbf u_x
 \]</span></p>
 <h3 id="不可压缩的ns方程">（不可压缩的）NS方程</h3>
+<p>流体中速度关于时间的导数有三个成分：</p>
+<ol type="1">
+<li>压强导致</li>
+<li>“黏”性：一般情况下忽略</li>
+<li>重力</li>
+</ol>
 <p><span class="math display">\[
 \frac{D\mathbf u}{Dt} = -\frac 1 \rho \nabla p  +\nu \nabla^2 \mathbf
-u+\mathbf g\\
+u+\mathbf g
+\]</span></p>
+<p>不可压缩：</p>
+<p><span class="math display">\[
 \nabla \cdot \mathbf u = 0
 \]</span></p>
 <ul>
 <li><span class="math inline">\(\mu\)</span> — dynamic viscosity</li>
 </ul>
-<p>分成几份： <span class="math display">\[
-\frac{D\mathbf u}{Dt} = -\frac 1 \rho \nabla p  +\mathbf g\\
+<p>分成几份：（Operator Splitting）</p>
+<p><span class="math display">\[
+\frac{D\mathbf u}{Dt} = -\frac 1 \rho \nabla p  +\mathbf g
+\]</span></p>
+<p><span class="math display">\[
 \nabla \cdot \mathbf u = 0
-\]</span> 变为： <span class="math display">\[
+\]</span></p>
+<p>变为：</p>
+<p><span class="math display">\[
+\begin{aligned}
 \frac{D\mathbf u}{Dt}  = 0\\
 \frac{D\alpha}{Dt}  =0\\
 \frac{\partial \mathbf u}{\partial t} = \mathbf g\\
 \frac{\partial \mathbf u}{\partial t} = - \frac{1}{\rho} \nabla p\quad
 s.t. \nabla \cdot \mathbf u = \mathbf 0
+\end{aligned}
 \]</span></p>
+<p>时间离散后：</p>
+<ol type="1">
+<li>Advection：“移动”流体场 求解<span
+class="math inline">\(u^*\)</span>：<span class="math inline">\(Du/Dt =
+D\alpha / Dt = 0\)</span></li>
+<li>External Forces <span class="math inline">\(u^{**}\)</span></li>
+<li>Projection：添加压强作用：<span class="math inline">\(\partial u /
+\partial t = -1/\rho \nabla p, s.t. \nabla \cdot u^{t+1} =
+0\)</span></li>
+</ol>
+</div><div class="story post-story"><h2 id="使用网格grid进行模拟">使用网格（Grid）进行模拟</h2>
+<p>Staggerd-Grid:</p>
+<ol type="1">
+<li>边 - 存放 <span class="math inline">\(u\)</span> 和 <span
+class="math inline">\(v\)</span></li>
+<li>中心 - 存放 <span class="math inline">\(p\)</span></li>
+</ol>
+<p>使用双线性插值来计算任何一点的压强、速度等属性</p>
+<blockquote>
+<p>双线性插值 - 利用面积相对总面积作为权重。</p>
+</blockquote>
+</div><div class="story post-story"><h2 id="advection">Advection</h2>
+<ul>
+<li>Semi-Langrangian</li>
+<li>MacCormack/BFECC</li>
+<li>BiMocq</li>
+<li>Partical advection</li>
+</ul>
+<h3 id="semi-lagrangian">Semi-Lagrangian</h3>
+<p>如何计算速度场的变化：取上一步在 <span class="math inline">\(x-u(x)
+\Delta t\)</span> 处的值</p>
+<p>假设有顺时针旋转的速度场，那么这个速度场会越来越“小”。</p>
+<p>实际上这一步是一个ODE的求解问题，可以使用RK方法来解决这个问题。</p>
+<p>但会越来越糊 -- 加权平均的问题。</p>
+<h3 id="bfecc-back-and-force-error-compensation-and-corrrection.">BFECC:
+Back and Force Error Compensation and corrrection.</h3>
+<ol type="1">
+<li><span class="math inline">\(x^* = SL(x, dt)\)</span></li>
+<li><span class="math inline">\(x^{**} = SL(x^*, - dt)\)</span></li>
+<li>Estimate error: <span class="math inline">\(e = \frac 1 2 (x ^ {**}
+- x)\)</span></li>
+<li>Apply error: <span class="math inline">\(x^{final} = x^* +
+e\)</span></li>
+</ol>
+</div><div class="story post-story"><h2 id="projection">Projection</h2>
+<p>目标：求出标量场 <span class="math inline">\(u\)</span> 使得</p>
+<p><span class="math display">\[
+\frac{\partial \mathbf u}{\partial t} = - \frac{1}{\rho} \nabla p
+\]</span></p>
+<p>转化为：</p>
+<p><span class="math display">\[
+\nabla \cdot \nabla p = \frac{\rho}{\Delta t} \nabla \cdot u
+\]</span></p>
+<p>这是一个泊松方程。</p>
+<blockquote>
+<p>Top Algorithms:</p>
+<ol type="1">
+<li>Krylov Subspace Iteration method.</li>
+<li>Decompositional Approach For Matrix Computation.</li>
+<li>FFT</li>
+<li>FMM (Fast Multipole Method)</li>
+</ol>
+</blockquote>
+<h3 id="求解大规模线性系统">求解大规模线性系统</h3>
+<ol type="1">
+<li>PARDISO</li>
+<li>Iterative
+<ol type="1">
+<li>Gauss-Seidel</li>
+<li>Jacobi</li>
+<li>(Preconditioned) Krylov-subspace solvers.</li>
+</ol></li>
+</ol>
+<h3 id="matrix-storage">Matrix Storage</h3>
+<ol type="1">
+<li>Dense</li>
+<li>Sparse</li>
+<li>Matrix-Free.</li>
+</ol>
+<h3 id="krylov-subspace-iteration-method.">Krylov Subspace Iteration
+method.</h3>
+<ol type="1">
+<li><strong>CG</strong></li>
+<li>CR</li>
+<li>GMERS</li>
+<li>BiCGStab</li>
+</ol>
+<blockquote>
+<p>An introduction to Conjugate Gradient Method Without the Agonizing
+Pain.</p>
+</blockquote>
+<h3 id="tricks">Tricks</h3>
+<ul>
+<li>Warm Starting 对于大多数情况下有显著效果。</li>
+<li>Preconditioning 消除较大的条件数</li>
+</ul>
+<h3 id="multigrid-mgpcg">Multigrid (MGPCG)</h3>
+<blockquote>
+<ol type="1">
+<li>A Multigrid Tutorial</li>
+<li>A parallel multigrid Poisson solver for fluid simulation ...</li>
+</ol>
+</blockquote>
+</div><div class="story post-story"><h2 id="references.">References.</h2>
+<ol type="1">
+<li>2018 TOG: An Advection-Reflection Solver for Detail-Preserving Fluid
+Simulation.</li>
+</ol>
 
 </div>
   </div>
@@ -2811,10 +2940,10 @@ s.t. \nabla \cdot \mathbf u = \mathbf 0
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-25T11:33:14+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-05T09:18:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月25日</p>
+    <p>更新于：2022年8月5日</p>
   </a>
 </div>
 
@@ -2905,15 +3034,18 @@ Shape Analy...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/21/CG/GAMES/g201-03/'>
-          <p class='title'>201-03-拉格朗日视角2<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>GAMES 201 -高级物理引擎实战 - 4 - 拉格朗日视角
+        <a class='next' href='/2022/04/21/study/ComputerScience/fragments/WhyProgramming/'>
+          <p class='title'>Programming<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>占坑
 
-变形 – Deformation
+为什么要研究语言
+很多时候，我们会在网络上看到一些没有意义的问题：
 
-Reading：
+Q: 什么是世界上最好的语言？
 
-The classical FEM method and discre...</p>
+ anwser 
+              
+              肯定不...</p>
         </a>
       
     </div>
@@ -2965,18 +3097,6 @@ The classical FEM method and discre...</p>
   <div class='content'>
     <ul class="list entry navigation">
       
-        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
-          
-          
-          active-action="action-20220419CGGAMESg102-03"
-          >
-          <div class='name'>
-            
-            102-03-参数曲线拟合
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-04/" href="/2022/04/19/CG/GAMES/g102-04/"
           
           
@@ -2985,6 +3105,18 @@ The classical FEM method and discre...</p>
           <div class='name'>
             
             102-04-三次样条函数
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
+          
+          
+          active-action="action-20220419CGGAMESg102-03"
+          >
+          <div class='name'>
+            
+            102-03-参数曲线拟合
           </div>
           
         </a></li>
@@ -3001,18 +3133,6 @@ The classical FEM method and discre...</p>
           
         </a></li>
       
-        <li><a class="flat-box" title="/2022/04/09/CG/GAMES/g102-08/" href="/2022/04/09/CG/GAMES/g102-08/"
-          
-          
-          active-action="action-20220409CGGAMESg102-08"
-          >
-          <div class='name'>
-            
-            102-08-离散微分几何
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-06/" href="/2022/04/20/CG/GAMES/g102-06/"
           
           
@@ -3021,6 +3141,18 @@ The classical FEM method and discre...</p>
           <div class='name'>
             
             102-04-B样条曲线
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/09/CG/GAMES/g102-08/" href="/2022/04/09/CG/GAMES/g102-08/"
+          
+          
+          active-action="action-20220409CGGAMESg102-08"
+          >
+          <div class='name'>
+            
+            102-08-离散微分几何
           </div>
           
         </a></li>
@@ -3049,6 +3181,18 @@ The classical FEM method and discre...</p>
           
         </a></li>
       
+        <li><a class="flat-box" title="/2022/08/04/CG/GAMES/g201-05/" href="/2022/08/04/CG/GAMES/g201-05/"
+          
+          
+          active-action="action-20220804CGGAMESg201-05"
+          >
+          <div class='name'>
+            
+            GAMES201-多体问题和涡方法
+          </div>
+          
+        </a></li>
+      
         <li><a class="flat-box" title="/2022/04/21/CG/GAMES/g201-03/" href="/2022/04/21/CG/GAMES/g201-03/"
           
           
@@ -3061,10 +3205,154 @@ The classical FEM method and discre...</p>
           
         </a></li>
       
+        <li><a class="flat-box" title="/2022/08/05/CG/GAMES/g201-06/" href="/2022/08/05/CG/GAMES/g201-06/"
+          
+          
+          active-action="action-20220805CGGAMESg201-06"
+          >
+          <div class='name'>
+            
+            GAMES 201 - 06 - 线性弹性有限元、拓扑优化
+          </div>
+          
+        </a></li>
+      
         <li><a class="flat-box" title="/2022/04/25/CG/GAMES/g201-04/" href="/2022/04/25/CG/GAMES/g201-04/"
           
           
           active-action="action-20220425CGGAMESg201-04"
+          >
+          <div class='name'>
+            
+            201-04-欧拉视角
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-03.html" href="/posts-origin/CG/GAMES/g102-03.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-03html"
+          >
+          <div class='name'>
+            
+            102-03-参数曲线拟合
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-06.html" href="/posts-origin/CG/GAMES/g102-06.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-06html"
+          >
+          <div class='name'>
+            
+            102-04-B样条曲线
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-04.html" href="/posts-origin/CG/GAMES/g102-04.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-04html"
+          >
+          <div class='name'>
+            
+            102-04-三次样条函数
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-08.html" href="/posts-origin/CG/GAMES/g102-08.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-08html"
+          >
+          <div class='name'>
+            
+            102-08-离散微分几何
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-05.html" href="/posts-origin/CG/GAMES/g102-05.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-05html"
+          >
+          <div class='name'>
+            
+            102-05-B样条曲线
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-02.html" href="/posts-origin/CG/GAMES/g201-02.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-02html"
+          >
+          <div class='name'>
+            
+            201-02-拉格朗日视角1
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-03.html" href="/posts-origin/CG/GAMES/g201-03.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-03html"
+          >
+          <div class='name'>
+            
+            201-03-拉格朗日视角2
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-05.html" href="/posts-origin/CG/GAMES/g201-05.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-05html"
+          >
+          <div class='name'>
+            
+            GAMES201-多体问题和涡方法
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-09.html" href="/posts-origin/CG/GAMES/g102-09.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-09html"
+          >
+          <div class='name'>
+            
+            102-09-微分坐标
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-06.html" href="/posts-origin/CG/GAMES/g201-06.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-06html"
+          >
+          <div class='name'>
+            
+            GAMES 201 - 06 - 线性弹性有限元、拓扑优化
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-04.html" href="/posts-origin/CG/GAMES/g201-04.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-04html"
           >
           <div class='name'>
             
@@ -3097,7 +3385,9 @@ The classical FEM method and discre...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#overview"><span class="toc-text">Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E5%8E%8B%E7%BC%A9%E7%9A%84ns%E6%96%B9%E7%A8%8B"><span class="toc-text">（不可压缩的）NS方程</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#overview"><span class="toc-text">Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E5%8E%8B%E7%BC%A9%E7%9A%84ns%E6%96%B9%E7%A8%8B"><span class="toc-text">（不可压缩的）NS方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%BD%91%E6%A0%BCgrid%E8%BF%9B%E8%A1%8C%E6%A8%A1%E6%8B%9F"><span class="toc-text">使用网格（Grid）进行模拟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#advection"><span class="toc-text">Advection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#semi-lagrangian"><span class="toc-text">Semi-Lagrangian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bfecc-back-and-force-error-compensation-and-corrrection."><span class="toc-text">BFECC:
+Back and Force Error Compensation and corrrection.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#projection"><span class="toc-text">Projection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F"><span class="toc-text">求解大规模线性系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matrix-storage"><span class="toc-text">Matrix Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#krylov-subspace-iteration-method."><span class="toc-text">Krylov Subspace Iteration
+method.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tricks"><span class="toc-text">Tricks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multigrid-mgpcg"><span class="toc-text">Multigrid (MGPCG)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#references."><span class="toc-text">References.</span></a></li></ol>
     </div>
   </section>
 
@@ -3273,7 +3563,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 <!-- internal -->
 
-<script src="/js/app.af2d54c8.js"></script>
+<script src="/js/app.!!revision:/js/app.js!!.js"></script>
 
 
 
@@ -3520,7 +3810,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.!!revision:/js/plugins/rightMenus.js!!.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -3757,19 +4047,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
+        volantis.js("/js/plugins/tags/sites.!!revision:/js/plugins/tags/sites.js!!.js")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/tags/friends.f372da57.js")
+        volantis.js("/js/plugins/tags/friends.!!revision:/js/plugins/tags/friends.js!!.js")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/tags/contributors.aec80453.js")
+        volantis.js("/js/plugins/tags/contributors.!!revision:/js/plugins/tags/contributors.js!!.js")
       }
     
   };
@@ -3923,7 +4213,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.0e52f222.js");
+    return volantis.js("/js/search/hexo.!!revision:/js/search/hexo.js!!.js");
   }
 
   function loadSearchService() {
@@ -4312,7 +4602,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/25/CG/GAMES/g201-04/","name":"201-04-欧拉视角"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"201-04-欧拉视角","description":"GAMES 201–欧拉视角","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/25/CG/GAMES/g201-04/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/25/CG/GAMES/g201-04/","wordCount":14,"datePublished":"2022-04-24T16:00:00.000Z","dateModified":"2022-04-25T03:33:14.864Z","articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/25/CG/GAMES/g201-04/","name":"201-04-欧拉视角"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"201-04-欧拉视角","description":"GAMES 201–欧拉视角","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/25/CG/GAMES/g201-04/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/25/CG/GAMES/g201-04/","wordCount":14,"datePublished":"2022-04-24T16:00:00.000Z","dateModified":"2022-08-05T01:18:30.933Z","articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

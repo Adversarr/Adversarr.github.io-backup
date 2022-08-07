@@ -26,7 +26,7 @@
   
   <!-- Custom Files headBegin end-->
     <link rel="shortcut icon" type='image/x-icon' href="/image/favicon.webp">
-  <link rel="preload" href="/css/style.1154b99c.css" as="style">
+  <link rel="preload" href="/css/style.!!revision:/css/style.css!!.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-21T02:44:10.543Z">
+<meta property="article:modified_time" content="2022-08-05T12:32:54.038Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="GAMES 在线课">
 <meta name="twitter:card" content="summary">
@@ -1833,8 +1833,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1154b99c.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1154b99c.css"></noscript>
+  <link rel="stylesheet" href="/css/style.!!revision:/css/style.css!!.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.!!revision:/css/style.css!!.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1912,9 +1912,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
+    cdn: {"js":{"app":"/js/app.!!revision:/js/app.js!!.js","parallax":"/js/plugins/parallax.!!revision:/js/plugins/parallax.js!!.js","rightMenu":"/js/plugins/rightMenu.!!revision:/js/plugins/rightMenu.js!!.js","rightMenus":"/js/plugins/rightMenus.!!revision:/js/plugins/rightMenus.js!!.js","sites":"/js/plugins/tags/sites.!!revision:/js/plugins/tags/sites.js!!.js","friends":"/js/plugins/tags/friends.!!revision:/js/plugins/tags/friends.js!!.js","contributors":"/js/plugins/tags/contributors.!!revision:/js/plugins/tags/contributors.js!!.js","search":"/js/search/hexo.!!revision:/js/search/hexo.js!!.js"},"css":{"style":"/css/style.!!revision:/css/style.css!!.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656080355406),
+    lastupdate: new Date(1659859320877),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2744,7 +2744,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>The MPM for simulating continuous …</li>
 </ol>
 </blockquote>
-<p>形变就是一个单对单的映射： <span class="math display">\[
+<p>形变就是一个单对单的映射：(从静止的位置映射到形变的位置） <span
+class="math display">\[
 \phi : \mathbb R^3 \rightarrow \mathbb R^3
 \]</span> 从而形变梯度为： <span class="math display">\[
 \mathbf F = \frac{\partial \mathbf x_{deformed}}{\partial \mathbf
@@ -2760,62 +2761,92 @@ F\)</span></p>
 材料有恢复原始状态的性质
 </dd>
 </dl>
+<blockquote>
+<p>考虑超弹性模型</p>
+</blockquote>
 <ul>
 <li>我们只观察超形变物体（有strain能量函数<span
 class="math inline">\(\Psi\)</span>）的</li>
 </ul>
+<p>Potential Function: 惩罚函数，惩罚<strong>形变</strong>。<span
+class="math inline">\(\varPsi(\mathbf F)\)</span></p>
 <p>注意区别：</p>
 <ol type="1">
-<li>stress</li>
-<li>strain – 直接替换为 <span class="math inline">\(\mathbf
-F\)</span></li>
+<li>stress - 应力：材料<strong>内</strong>部的弹性力 - 就是Deformation
+Gradient</li>
+<li>strain - 应变：（形变的Measure）直接替换为 <span
+class="math inline">\(\mathbf F\)</span></li>
 </ol>
 <h3 id="stress-tensor">Stress Tensor</h3>
 <p>表明了材料微元和其他材料微元的相互作用：</p>
-<p>有不同的stress tensor</p>
+<p>有不同的stress tensor（三种常用的）</p>
 <ul>
 <li>PK1：<span class="math inline">\(\mathbf P(\mathbf F) = \partial
-\Psi (\mathbf F) /\partial \mathbf F\)</span> –容易计算，但在rest
-space</li>
+\Psi (\mathbf F) /\partial \mathbf F\)</span>
+<ul>
+<li>容易计算，但在rest space</li>
+</ul></li>
 <li>Kirchhoff stress：<span class="math inline">\(\tau\)</span></li>
 <li>Cauchy Stress：<span class="math inline">\(\sigma\)</span></li>
 </ul>
-<p>相互关系为： <span class="math display">\[
+<p>相互关系为：</p>
+<p><span class="math display">\[
 \tau = J \sigma = \mathbf P\mathbf F^T
 \]</span></p>
 <ul>
 <li>Traction = <span class="math inline">\(\mathbf t = \sigma^T \mathbf
 n\)</span></li>
 </ul>
-<h4 id="常用属性">常用属性</h4>
+<h4 id="常用属性描述弹性材料">常用属性（描述弹性材料）</h4>
 <ol type="1">
 <li>杨氏模量 – <span class="math inline">\(E = \sigma /
-\varepsilon\)</span></li>
-<li>Bulk modulus</li>
-<li>泊松比</li>
+\varepsilon\)</span> - 对应弹簧的 <span
+class="math inline">\(k\)</span></li>
+<li>Bulk modulus - 常见于可压缩液体的仿真</li>
+<li>泊松比 <span class="math inline">\(\nu \in [0, 0.5)\)</span> -
+泊松比是材料的一个力学参数，定义为横向应变与纵向应变的比值，也叫横向应变系数。</li>
 </ol>
 <p>考虑 Lame Parameters：</p>
 <ul>
 <li><span class="math inline">\(\mu\)</span></li>
 <li><span class="math inline">\(\lambda\)</span></li>
 </ul>
-<p>可以相互转换，只要指定泊松比和杨氏模量</p>
+<p>可以相互转换，只要指定<span
+class="math inline">\(\mu\)</span>和杨氏模量</p>
 <h4 id="常用超弹性模型">常用超弹性模型</h4>
 <ol type="1">
-<li>Linear elsaticity – 小形变下可以，但对于旋转没有惩罚</li>
-<li>Neo-Hookean</li>
-<li>Fixed Corotated</li>
+<li>Linear elsaticity – 小形变下可以，但对于旋转没有惩罚 -
+导出的是线性方程组</li>
+<li><strong>Neo-Hookean</strong></li>
+<li><strong>Fixed Corotated</strong></li>
 </ol>
 <p><img src="g201-03/image-20220421102323599.png" class="lazyload" data-srcset="g201-03/image-20220421102323599.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
-</div><div class="story post-story"><h2 id="fem">FEM</h2>
-<p>对于形变物体： <span class="math display">\[
-\mathbf x_{def} = \mathbf F \mathbf x _{rest} + \mathbf b
-\]</span> 对于每一个元素： <span class="math display">\[
+<p><img src="g201-03/1.jpg" class="lazyload" data-srcset="g201-03/1.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+</div><div class="story post-story"><h2 id="fem-basics">FEM basics</h2>
+<p>目标：建立离散方程（PDE）</p>
+<h3 id="linear-tetrahedral-femtriangular">Linear Tetrahedral
+FEM(Triangular)</h3>
+<p>假设对每一个元素 Deformation map 是仿射变换，即<span
+class="math inline">\(F\)</span>为常数。</p>
+<p>对于每一个元素（三角形） <span
+class="math inline">\(e\)</span>，弹性势能为：</p>
+<p><span class="math display">\[
 U(e)=\int_e \psi(\mathbf F(\mathbf x))\mathbf x = V_e \psi (\mathbf F_e)
-\]</span> 求出力： <span class="math display">\[
+\]</span></p>
+<p>简单求解一个线性方程组即可解得 <span class="math inline">\(\psi = Fx
++ B\)</span></p>
+<blockquote>
+<p>力是势能<span class="math inline">\(U\)</span>对位置<span
+class="math inline">\(x\)</span>的导数</p>
+</blockquote>
+<p>求出力：</p>
+<p><span class="math display">\[
 f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
 \mathbf P(\mathbf F_e)\frac{\partial \mathbf F_e}{\partial \mathbf x_i}
 \]</span></p>
+<blockquote>
+<p><em>FEM Table</em></p>
+</blockquote>
 
 </div>
   </div>
@@ -2853,10 +2884,10 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-21T10:44:10+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-05T20:32:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月21日</p>
+    <p>更新于：2022年8月5日</p>
   </a>
 </div>
 
@@ -2936,15 +2967,18 @@ f_{t, i} = - \frac{\partial U}{\partial \mathbf x_i}= - \sum_e V_e
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/25/CG/GAMES/g201-04/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>201-04-欧拉视角</p>
-          <p class='content'>GAMES 201–欧拉视角
+        <a class='prev' href='/2022/04/21/study/ComputerScience/fragments/WhyProgramming/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Programming</p>
+          <p class='content'>占坑
 
+为什么要研究语言
+很多时候，我们会在网络上看到一些没有意义的问题：
 
-Fluid Simulation for computer graphics
+Q: 什么是世界上最好的语言？
 
-Overview
-Material Derivatives — L. vs E....</p>
+ anwser 
+              
+              肯定不...</p>
         </a>
       
       
@@ -3010,18 +3044,6 @@ B 样条曲线
   <div class='content'>
     <ul class="list entry navigation">
       
-        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
-          
-          
-          active-action="action-20220419CGGAMESg102-03"
-          >
-          <div class='name'>
-            
-            102-03-参数曲线拟合
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-04/" href="/2022/04/19/CG/GAMES/g102-04/"
           
           
@@ -3030,6 +3052,18 @@ B 样条曲线
           <div class='name'>
             
             102-04-三次样条函数
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/19/CG/GAMES/g102-03/" href="/2022/04/19/CG/GAMES/g102-03/"
+          
+          
+          active-action="action-20220419CGGAMESg102-03"
+          >
+          <div class='name'>
+            
+            102-03-参数曲线拟合
           </div>
           
         </a></li>
@@ -3046,18 +3080,6 @@ B 样条曲线
           
         </a></li>
       
-        <li><a class="flat-box" title="/2022/04/09/CG/GAMES/g102-08/" href="/2022/04/09/CG/GAMES/g102-08/"
-          
-          
-          active-action="action-20220409CGGAMESg102-08"
-          >
-          <div class='name'>
-            
-            102-08-离散微分几何
-          </div>
-          
-        </a></li>
-      
         <li><a class="flat-box" title="/2022/04/20/CG/GAMES/g102-06/" href="/2022/04/20/CG/GAMES/g102-06/"
           
           
@@ -3066,6 +3088,18 @@ B 样条曲线
           <div class='name'>
             
             102-04-B样条曲线
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/2022/04/09/CG/GAMES/g102-08/" href="/2022/04/09/CG/GAMES/g102-08/"
+          
+          
+          active-action="action-20220409CGGAMESg102-08"
+          >
+          <div class='name'>
+            
+            102-08-离散微分几何
           </div>
           
         </a></li>
@@ -3094,6 +3128,18 @@ B 样条曲线
           
         </a></li>
       
+        <li><a class="flat-box" title="/2022/08/04/CG/GAMES/g201-05/" href="/2022/08/04/CG/GAMES/g201-05/"
+          
+          
+          active-action="action-20220804CGGAMESg201-05"
+          >
+          <div class='name'>
+            
+            GAMES201-多体问题和涡方法
+          </div>
+          
+        </a></li>
+      
         <li><a class="flat-box" title="/2022/04/21/CG/GAMES/g201-03/" href="/2022/04/21/CG/GAMES/g201-03/"
           
           
@@ -3106,10 +3152,154 @@ B 样条曲线
           
         </a></li>
       
+        <li><a class="flat-box" title="/2022/08/05/CG/GAMES/g201-06/" href="/2022/08/05/CG/GAMES/g201-06/"
+          
+          
+          active-action="action-20220805CGGAMESg201-06"
+          >
+          <div class='name'>
+            
+            GAMES 201 - 06 - 线性弹性有限元、拓扑优化
+          </div>
+          
+        </a></li>
+      
         <li><a class="flat-box" title="/2022/04/25/CG/GAMES/g201-04/" href="/2022/04/25/CG/GAMES/g201-04/"
           
           
           active-action="action-20220425CGGAMESg201-04"
+          >
+          <div class='name'>
+            
+            201-04-欧拉视角
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-03.html" href="/posts-origin/CG/GAMES/g102-03.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-03html"
+          >
+          <div class='name'>
+            
+            102-03-参数曲线拟合
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-06.html" href="/posts-origin/CG/GAMES/g102-06.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-06html"
+          >
+          <div class='name'>
+            
+            102-04-B样条曲线
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-04.html" href="/posts-origin/CG/GAMES/g102-04.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-04html"
+          >
+          <div class='name'>
+            
+            102-04-三次样条函数
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-08.html" href="/posts-origin/CG/GAMES/g102-08.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-08html"
+          >
+          <div class='name'>
+            
+            102-08-离散微分几何
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-05.html" href="/posts-origin/CG/GAMES/g102-05.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-05html"
+          >
+          <div class='name'>
+            
+            102-05-B样条曲线
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-02.html" href="/posts-origin/CG/GAMES/g201-02.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-02html"
+          >
+          <div class='name'>
+            
+            201-02-拉格朗日视角1
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-03.html" href="/posts-origin/CG/GAMES/g201-03.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-03html"
+          >
+          <div class='name'>
+            
+            201-03-拉格朗日视角2
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-05.html" href="/posts-origin/CG/GAMES/g201-05.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-05html"
+          >
+          <div class='name'>
+            
+            GAMES201-多体问题和涡方法
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g102-09.html" href="/posts-origin/CG/GAMES/g102-09.html"
+          
+          
+          active-action="action-posts-originCGGAMESg102-09html"
+          >
+          <div class='name'>
+            
+            102-09-微分坐标
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-06.html" href="/posts-origin/CG/GAMES/g201-06.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-06html"
+          >
+          <div class='name'>
+            
+            GAMES 201 - 06 - 线性弹性有限元、拓扑优化
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/posts-origin/CG/GAMES/g201-04.html" href="/posts-origin/CG/GAMES/g201-04.html"
+          
+          
+          active-action="action-posts-originCGGAMESg201-04html"
           >
           <div class='name'>
             
@@ -3142,7 +3332,8 @@ B 样条曲线
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%BD%A2-deformation"><span class="toc-text">变形 – Deformation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7"><span class="toc-text">弹性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stress-tensor"><span class="toc-text">Stress Tensor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-text">常用属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%B6%85%E5%BC%B9%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-text">常用超弹性模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fem"><span class="toc-text">FEM</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%BD%A2-deformation"><span class="toc-text">变形 – Deformation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7"><span class="toc-text">弹性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stress-tensor"><span class="toc-text">Stress Tensor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E5%BC%B9%E6%80%A7%E6%9D%90%E6%96%99"><span class="toc-text">常用属性（描述弹性材料）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%B6%85%E5%BC%B9%E6%80%A7%E6%A8%A1%E5%9E%8B"><span class="toc-text">常用超弹性模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fem-basics"><span class="toc-text">FEM basics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linear-tetrahedral-femtriangular"><span class="toc-text">Linear Tetrahedral
+FEM(Triangular)</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3318,7 +3509,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 <!-- internal -->
 
-<script src="/js/app.af2d54c8.js"></script>
+<script src="/js/app.!!revision:/js/app.js!!.js"></script>
 
 
 
@@ -3565,7 +3756,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.!!revision:/js/plugins/rightMenus.js!!.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -3802,19 +3993,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
+        volantis.js("/js/plugins/tags/sites.!!revision:/js/plugins/tags/sites.js!!.js")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/tags/friends.f372da57.js")
+        volantis.js("/js/plugins/tags/friends.!!revision:/js/plugins/tags/friends.js!!.js")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/tags/contributors.aec80453.js")
+        volantis.js("/js/plugins/tags/contributors.!!revision:/js/plugins/tags/contributors.js!!.js")
       }
     
   };
@@ -3968,7 +4159,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.0e52f222.js");
+    return volantis.js("/js/search/hexo.!!revision:/js/search/hexo.js!!.js");
   }
 
   function loadSearchService() {
@@ -4357,7 +4548,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/21/CG/GAMES/g201-03/","name":"201-03-拉格朗日视角2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"201-03-拉格朗日视角2","description":"GAMES 201 -高级物理引擎实战 - 4 - 拉格朗日视角","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/21/CG/GAMES/g201-03/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/21/CG/GAMES/g201-03/","wordCount":32,"datePublished":"2022-04-20T16:00:00.000Z","dateModified":"2022-04-21T02:44:10.543Z","articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/21/CG/GAMES/g201-03/","name":"201-03-拉格朗日视角2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"201-03-拉格朗日视角2","description":"GAMES 201 -高级物理引擎实战 - 4 - 拉格朗日视角","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/21/CG/GAMES/g201-03/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/21/CG/GAMES/g201-03/","wordCount":32,"datePublished":"2022-04-20T16:00:00.000Z","dateModified":"2022-08-05T12:32:54.038Z","articleSection":"计算机图形学","keywords":"GAMES 在线课","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -46,16 +46,49 @@ $$
 
 ## 求解方法
 
+### 积分因子法
+
 利用 Integrating factor（积分因子） $u(x)$
 
 同乘$u$
+
 $$
 uy' + puy = qu
 $$
+
 希望：
+
 $$
 uy'+puy=(...)'
 $$
+
 如果$...=uy$，则要求$u' = pu$
 
 那么$u = e ^{\int p\cdot\mathrm dx}$
+
+例如：$xy' - y = x^3$
+
+1. $y'-y/x = x^2$
+2. $u = \frac 1 x$
+3. $(y/x)' = x$
+4. $y = x ^ 3 / 2 + Cx$
+
+方法总结:
+
+1. Standard Form
+2. 计算 $u = e ^{\int p dx}$ 积分因子
+3. 两侧同乘 $u$
+
+### Linear with k constant
+
+例如：
+
+$$
+\frac{dT}{dt} + kT = k T_e
+$$
+
+$$
+u = e ^ { k T }
+$$
+
+

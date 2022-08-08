@@ -79,16 +79,23 @@ $$
 2. 计算 $u = e ^{\int p dx}$ 积分因子
 3. 两侧同乘 $u$
 
-### Linear with k constant
+### Linear with k constant（线性常系数微分方程）
 
 例如：
 
 $$
-\frac{dT}{dt} + kT = k T_e
+\frac{dT}{dt} + kT = k T_e(t)
 $$
 
 $$
 u = e ^ { k T }
 $$
+
+$$
+T = e^{-kt} \int_0^{t'} k T_e(t') \mathrm dt'  + Ce^{-kt}
+$$
+
+- $C$ 取决于 $T_0$：体现为暂态解
+
 
 

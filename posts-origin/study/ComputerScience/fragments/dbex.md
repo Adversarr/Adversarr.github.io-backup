@@ -5,7 +5,6 @@ categories: 课程
 tags:
   - 数据库
 math: false
-typora-root-url: ./dbex
 ---
 
 rt.
@@ -40,7 +39,7 @@ alter system checkpoint;
 
 测试结果：
 
-![image-20220614200507403](image-20220614200507403.png)
+![image-20220614200507403](dbex/image-20220614200507403.png)
 
 ### 检查数据库情况
 
@@ -169,7 +168,7 @@ commit;
 select * from scott.baktest;
 ```
 
-![image-20220614202258052](image-20220614202258052.png)
+![image-20220614202258052](dbex/image-20220614202258052.png)
 
 ### 复制连接的日志文件
 
@@ -202,7 +201,7 @@ startup nomount; # 不挂载（缺少spfile）
 restore spfile from '/u01/<>/auto/...'
 ```
 
-![image-20220614203112028](image-20220614203112028.png)
+![image-20220614203112028](dbex/image-20220614203112028.png)
 
 ### 创建对应的目录
 
@@ -329,7 +328,7 @@ alter database open resetlogs;
 select * from scott.baktest;
 ```
 
-![image-20220614210608902](image-20220614210608902.png)
+![image-20220614210608902](dbex/image-20220614210608902.png)
 
 结束
 

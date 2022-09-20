@@ -119,7 +119,7 @@ $$
 
 **保守体系的平衡及平衡条件**：
 
-![stable](03_0.jpg)
+![stable](Ch3ConservationofMechanicalEnergy/03_0.jpg)
 
 - 稳定平衡
 - 不稳定平衡

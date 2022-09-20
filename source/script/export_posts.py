@@ -19,11 +19,12 @@ def preprocess_imgpath(r, d, b):
 
     p = path.join(d, b)
     p = path.join(p, r)
+    global summary
     if path.exists(p):
+        summary.append(f"Source With Target Path: {path.join(d, b)}.md, image={r}.")
         return p
 
-    global summary
-    summary.append(f'In file:{path.join(d, b)}.md, image={p}')
+    summary.append(f'Image Not Found:{path.join(d, b)}.md, image={r}')
 
     return None
 

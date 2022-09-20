@@ -137,11 +137,11 @@ $$
 
 ### 频分复用
 
-![](image/image.png "")
+![](image/image.png)
 
 ## 时分复用
 
-![](image/image_1.png "")
+![](image/image_1.png)
 
 ---
 

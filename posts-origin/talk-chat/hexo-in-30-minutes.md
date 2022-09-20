@@ -39,7 +39,7 @@ repo创建时，必须满足：
 
 例如：
 
-![](2022-01-08-17-54-19.png)
+![](hexo-in-30-minutes/2022-01-08-17-54-19.png)
 
 ### 测试效果
 
@@ -149,7 +149,7 @@ hexo deploy
 就能直接把生成的【网站源码】push到github仓库中，让github自动部署网站到`username.github.io`。
 {% folding 当然你也可以在 github repo 的设置中设置你想要的branch作为【网站源码】的路径 %}
 
-![](2022-01-08-22-07-28.png)
+![](hexo-in-30-minutes/2022-01-08-22-07-28.png)
 
 {% endfolding %}
 

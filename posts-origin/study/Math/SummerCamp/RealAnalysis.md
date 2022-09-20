@@ -14,7 +14,7 @@ group: group-adv-math
 sidebar: [group-adv-math, toc]
 ---
 
-*待完善*
+谁能想到呢。
 
 <!-- more -->
 

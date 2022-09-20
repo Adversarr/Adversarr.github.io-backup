@@ -75,7 +75,7 @@ $\pmb{r}=\pmb{r}(t)=x(t) \pmb{i}+y(t) \pmb{j}+z(t) \pmb{k}$
 
 于是，质点在时间间隔$\Delta t$内的位置变化，可以用自 A 到 B 的矢量$\Delta \pmb{r}$来表示，即$\Delta \pmb{r} = \pmb{r}(t+\Delta t) - \pmb{r}(t).$
 
-![png](01a_1.png)
+![png](Ch1KinematicsOfMassPoint/01a_1.png)
 
 在直角坐标系中：
 
@@ -116,7 +116,7 @@ $$
 
   注意：一般情况下：$|\Delta \pmb{r}| \neq \Delta s \quad |\pmb{v}| \neq  \bar{v}$
 
-  ​ 当$\Delta t \to 0$ 时：$|\Delta \vec{r}| \rightarrow|\mathrm{d} \vec{r}|=\mathrm{d} s \quad|\vec{v}|=v$
+   当$\Delta t \to 0$ 时：$|\Delta \vec{r}| \rightarrow|\mathrm{d} \vec{r}|=\mathrm{d} s \quad|\vec{v}|=v$
 
 #### 加速度（Acceleration）——反映瞬时速度的变化
 
@@ -169,7 +169,7 @@ $$
 
 **注意**：$v_x,v_y,v_z$和 $a_x,a_y,a_z$ 都是可正可负的量。
 
-![a的方向](01a_4.png)
+![a的方向](Ch1KinematicsOfMassPoint/01a_4.png)
 
 **正负号的含义**：如图所示，当质点在$P$点处时， $a_x$与$v_x$的符号相同，说明质点在$x$轴上的投影是在作加速运动；而$a_y$与$v_y$的符号相反，说明质点在$y$轴上的投影是在作减速运动。
 
@@ -215,7 +215,7 @@ $$
 
 #### 平面极坐标系、横向速度和径向速度
 
-![微分](01a_6.png)
+![微分](Ch1KinematicsOfMassPoint/01a_6.png)
 
 如图所示，在一选定的参考系上选取一点$O$为**原点**，并从它出发引一条有刻度的射线$Ox$ 为**极轴**，即建立起了一个**平面极坐标系**。
 
@@ -241,7 +241,7 @@ $$
 
 （a）图解法
 
-![01a_6b](01a_6b.png)
+![01a_6b](Ch1KinematicsOfMassPoint/01a_6b.png)
 
 **位矢**：$\pmb{r}=r\pmb{e}_r$
 
@@ -275,7 +275,7 @@ $$
 
 **径向速度**：$v_{r} \boldsymbol{e}_{r}=\dot{r} \boldsymbol{e}_{r}$
 
-​ 其中：$\dot{\theta}=\mathrm{d} \theta / \mathrm{d} t, \quad \dot{r}=\mathrm{d} r / \mathrm{d} t$
+ 其中：$\dot{\theta}=\mathrm{d} \theta / \mathrm{d} t, \quad \dot{r}=\mathrm{d} r / \mathrm{d} t$
 
 （b）矢量微分法
 
@@ -305,7 +305,7 @@ $$
 
 **曲率圆**：通过曲线上的一点$A$及其两个邻近的点作一个圆，在这三个点无限趋近的极限情况下，这个圆称为$A$点的曲率圆，其半径称为曲率半径$\rho$。
 
-![曲率](01b_7.png)
+![曲率](Ch1KinematicsOfMassPoint/01b_7.png)
 
 **速度**：$\boldsymbol{v}=\boldsymbol{v} \boldsymbol{e}_{t}=\frac{\mathrm{d}s}{\mathrm{d}t}\pmb{e}_t$（只有切向）
 
@@ -341,7 +341,7 @@ $$
 
 如图 1 - 10 所示，参考系$S'$相对于参考系$S$作平移。
 
-![坐标系变换](01b_10.png)
+![坐标系变换](Ch1KinematicsOfMassPoint/01b_10.png)
 
 设参考系 相对于参考系$S$的位矢为$R$，则参考系$S'$和参考系$S$间的
 

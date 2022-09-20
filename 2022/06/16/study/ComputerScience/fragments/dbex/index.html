@@ -1,0 +1,4965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
+  <meta name="Volantis" content="5.4.0">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="http://adversarr.github.io/2022/06/16/study/computerscience/fragments/dbex/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+    <link rel="shortcut icon" type='image/x-icon' href="/image/favicon.webp">
+  <link rel="preload" href="/css/style.1154b99c.css" as="style">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+      <link rel="alternate" href="/atom.xml" title="逆版本战士の部落格" type="application/atom+xml">
+  <!-- 页面元数据 -->
+  <title>数据库机试 - 逆版本战士の部落格</title>
+  <meta name="keywords" content="数据库,study">
+  <meta desc name="description" content="rt. - Adversarr - 逆版本战士の部落格">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库机试">
+<meta property="og:url" content="http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/index.html">
+<meta property="og:site_name" content="逆版本战士の部落格">
+<meta property="og:description" content="rt.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-06-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-15T07:05:48.033Z">
+<meta property="article:author" content="Adversarr">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+/*
+  * Workaround for Chrome bug, part 1
+  * Chunk rendering for all but the first article.
+  * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
+*/
+.post-story + .post-story {
+  content-visibility: auto;
+  contain-intrinsic-size: 10px 500px;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #666;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #c74f00;
+  --color-codeblock: #fff7ea;
+  --color-h1: #3a3a3a;
+  --color-h2: #3a3a3a;
+  --color-h3: #333;
+  --color-h4: #444;
+  --color-h5: #555;
+  --color-h6: #666;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #30ad91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2092ec;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+.cover-wrapper .cover-bg.lazyload:not(.loaded) {
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.cover-wrapper .cover-bg.lazyload.loaded {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+.cover-wrapper.dock .menu,
+.cover-wrapper.featured .menu,
+.cover-wrapper.focus .menu {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.cover-wrapper.dock .menu .list-h a,
+.cover-wrapper.featured .menu .list-h a,
+.cover-wrapper.focus .menu .list-h a {
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  line-height: 24px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-bottom: none;
+  text-align: center;
+  align-content: flex-end;
+  color: rgba(68,68,68,0.7);
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h a,
+  .cover-wrapper.featured .menu .list-h a,
+  .cover-wrapper.focus .menu .list-h a {
+    padding: 12px 8px;
+  }
+}
+.cover-wrapper.dock .menu .list-h a i,
+.cover-wrapper.featured .menu .list-h a i,
+.cover-wrapper.focus .menu .list-h a i {
+  margin: 8px;
+}
+.cover-wrapper.dock .menu .list-h a p,
+.cover-wrapper.featured .menu .list-h a p,
+.cover-wrapper.focus .menu .list-h a p {
+  font-size: 0.875rem;
+}
+.cover-wrapper.dock .menu .list-h a.active,
+.cover-wrapper.featured .menu .list-h a.active,
+.cover-wrapper.focus .menu .list-h a.active {
+  background: var(--color-card);
+  backdrop-filter: none;
+}
+.cover-wrapper.dock .menu .list-h a.active i,
+.cover-wrapper.featured .menu .list-h a.active i,
+.cover-wrapper.focus .menu .list-h a.active i,
+.cover-wrapper.dock .menu .list-h a.active i+p,
+.cover-wrapper.featured .menu .list-h a.active i+p,
+.cover-wrapper.focus .menu .list-h a.active i+p {
+  color: #3dd9b6;
+}
+.cover-wrapper.dock .menu .list-h a.active img+p,
+.cover-wrapper.featured .menu .list-h a.active img+p,
+.cover-wrapper.focus .menu .list-h a.active img+p {
+  color: var(--color-text);
+}
+.cover-wrapper.dock .menu .list-h a:hover,
+.cover-wrapper.featured .menu .list-h a:hover,
+.cover-wrapper.focus .menu .list-h a:hover {
+  background: var(--color-card);
+}
+.cover-wrapper.dock .top {
+  margin-bottom: 48px;
+}
+.cover-wrapper.dock .menu {
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+}
+.cover-wrapper.dock .menu .list-h {
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  margin: 4px;
+}
+.cover-wrapper.dock .menu .list-h a+a {
+  margin-left: 4px;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h {
+    overflow-x: scroll;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb {
+    background: #3dd9b6;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
+    background: #ff5722;
+  }
+}
+@supports (backdrop-filter: blur(20px)) {
+  .cover-wrapper.dock .menu {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+  :root:not([color-scheme]) {
+    --color-site-body: #121212;
+    --color-read-bkg: #1f1f1f;
+    --color-read-post: #262626;
+    --color-site-bg: #1f1f1f;
+    --color-site-inner: rgba(238,238,238,0.871);
+    --color-site-footer: rgba(170,170,170,0.871);
+    --color-card: #262626;
+    --color-text: rgba(238,238,238,0.871);
+    --color-block: #434343;
+    --color-codeblock: #1f1f1f;
+    --color-inlinecode: #d56d28;
+    --color-h1: rgba(255,255,255,0.871);
+    --color-h2: rgba(255,255,255,0.871);
+    --color-h3: rgba(255,255,255,0.6);
+    --color-h4: rgba(255,255,255,0.6);
+    --color-h5: rgba(255,255,255,0.6);
+    --color-h6: rgba(255,255,255,0.6);
+    --color-p: rgba(217,217,217,0.871);
+    --color-list: rgba(217,217,217,0.871);
+    --color-list-hl: #63e0c4;
+    --color-meta: rgba(191,191,191,0.871);
+    --color-link: rgba(191,191,191,0.871);
+  }
+  :root:not([color-scheme]) img {
+    filter: brightness(70%) !important;
+  }
+  :root:not([color-scheme]) .blur {
+    background: rgba(31,31,31,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(38,38,38,0.9) !important;
+  }
+  :root:not([color-scheme]) .nav-main .u-search-input {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) .article blockquote {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .article-title a {
+    color: var(--color-h1) !important;
+  }
+  :root:not([color-scheme]) details>summary {
+    color: var(--color-p) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) details {
+    border: 1px solid var(--color-site-bg) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal,
+  :root:not([color-scheme]) #u-search .modal-header,
+  :root:not([color-scheme]) #u-search .modal-body {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
+}
+[color-scheme='dark'] {
+  --color-site-body: #121212;
+  --color-read-bkg: #1f1f1f;
+  --color-read-post: #262626;
+  --color-site-bg: #1f1f1f;
+  --color-site-inner: rgba(238,238,238,0.871);
+  --color-site-footer: rgba(170,170,170,0.871);
+  --color-card: #262626;
+  --color-text: rgba(238,238,238,0.871);
+  --color-block: #434343;
+  --color-codeblock: #1f1f1f;
+  --color-inlinecode: #d56d28;
+  --color-h1: rgba(255,255,255,0.871);
+  --color-h2: rgba(255,255,255,0.871);
+  --color-h3: rgba(255,255,255,0.6);
+  --color-h4: rgba(255,255,255,0.6);
+  --color-h5: rgba(255,255,255,0.6);
+  --color-h6: rgba(255,255,255,0.6);
+  --color-p: rgba(217,217,217,0.871);
+  --color-list: rgba(217,217,217,0.871);
+  --color-list-hl: #63e0c4;
+  --color-meta: rgba(191,191,191,0.871);
+  --color-link: rgba(191,191,191,0.871);
+}
+[color-scheme='dark'] img {
+  filter: brightness(70%) !important;
+}
+[color-scheme='dark'] .blur {
+  background: rgba(31,31,31,0.9) !important;
+}
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(38,38,38,0.9) !important;
+}
+[color-scheme='dark'] .nav-main .u-search-input {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a:hover {
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] .article blockquote {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .article-title a {
+  color: var(--color-h1) !important;
+}
+[color-scheme='dark'] details>summary {
+  color: var(--color-p) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] details {
+  border: 1px solid var(--color-site-bg) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] #u-search .modal,
+[color-scheme='dark'] #u-search .modal-header,
+[color-scheme='dark'] #u-search .modal-body {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
+}
+@media screen and (max-width: 500px) {
+  [color-scheme='dark'] .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #3dd9b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #3dd9b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #3dd9b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
+  .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.1154b99c.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.1154b99c.css"></noscript>
+    <script>
+      let userColorScheme=localStorage.getItem("color-scheme")
+      if(userColorScheme){
+        document.documentElement.setAttribute("color-scheme", userColorScheme);
+      }
+    </script>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = false; // 开启调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: false,
+    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1663680599545),
+    sidebar: {
+      for_page: ["blogger","category","tagcloud"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2020/01/01",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      aplayer: {
+        id: 3175833810,
+        enable:null
+      },
+      rightmenu: {
+        faicon: "fa",
+        layout: ["home","hr","help","examples","contributors","hr","source_docs","source_theme","hr","print","darkmode","reading","music"],
+        music_alwaysShow: true,
+        customPicUrl: {"enable":false,"old":null,"new":null}
+      },
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/jquery/dist/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) =>{
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(()=>{
+        volantis.scroll.unengine.push(()=>{
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='/image/logo.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="也许你在找些有意思的..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
+        
+  <div class='cover-bg lazyload placeholder' data-bg="https://api.dujin.org/bing/1920.php"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">逆版本战士の部落格</p>
+    
+    
+      <p class="subtitle">Je pense, donc je suis</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/categories/"
+              
+              
+              active-action="action-categories">
+              <img src='https://fastly.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>分类</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <img src='https://fastly.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>标签</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              active-action="action-about">
+              <img src='https://fastly.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>关于</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              active-action="action-archives">
+              <img src='https://fastly.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>归档</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/adversarr"
+              
+              
+              active-action="action-https:githubcomadversarr">
+              <img src='https://fastly.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>Github</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逆版本战士の部落格">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="逆版本战士の部落格">
+    <meta itemprop="description" content="Je pense, donc je suis">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        数据库机试
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="/image/logo.png" class="lazyload" data-srcset="/image/logo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Adversarr</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E8%AF%BE%E7%A8%8B/" itemprop="url"><span itemprop="name">课程</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-16T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年6月16日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>rt.</p>
+<span id="more"></span>
+<div class="story post-story"><h2 id="rman-全库备份">RMAN 全库备份</h2>
+<p>前提：</p>
+<ol type="1">
+<li>dbca创建数据库 <code>ctest</code>（主要是怕搞错）</li>
+<li><code>@?/rdbms/admin/utlsampl.sql</code></li>
+</ol>
+<p>准备：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> ORACLE_SID=ctest</span><br></pre></td></tr></table></figure>
+<h3 id="准备实验数据">准备实验数据</h3>
+<p>创建表+checkpoint(写入)</p>
+<p>RMAN:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> scott.baktest(a <span class="type">varchar</span>(<span class="number">30</span>));</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> scott.baktest <span class="keyword">values</span>(<span class="string">&#x27;Before Backup&#x27;</span>);</span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> checkpoint;</span><br></pre></td></tr></table></figure>
+<p>测试结果：</p>
+<figure>
+<img src="dbex/image-20220614200507403.png"
+alt="image-20220614200507403" />
+<figcaption aria-hidden="true">image-20220614200507403</figcaption>
+</figure>
+<h3 id="检查数据库情况">检查数据库情况</h3>
+<h4 id="初始化参数文件">初始化参数文件</h4>
+<p>sqlplus:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">parameter</span> spfile;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SYS<span class="variable">@ctest</span><span class="operator">&gt;</span><span class="keyword">show</span> <span class="keyword">parameter</span> spfile;</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE                   <span class="keyword">VALUE</span></span><br><span class="line"><span class="comment">------------------------------------ ---------------------- ------------------------------</span></span><br><span class="line">spfile                               string                 <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>product<span class="operator">/</span><span class="number">19.3</span><span class="number">.0</span><span class="operator">/</span>dbhome_1<span class="operator">/</span>dbs<span class="operator">/</span>spfilectest.ora</span><br></pre></td></tr></table></figure>
+<p>记录下spfile的位置：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>product<span class="regexp">/19.3.0/</span>dbhome_1<span class="regexp">/dbs/</span>spfilectest.ora</span><br></pre></td></tr></table></figure>
+<h4 id="查看控制文件位置">查看控制文件位置</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> v$controlfile;</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>control01.ctl</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>fast_recovery_area<span class="operator">/</span>CTEST<span class="operator">/</span>control02.ctl</span><br></pre></td></tr></table></figure>
+<h4 id="查看重做日志">！！查看重做日志</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SYS<span class="variable">@ctest</span><span class="operator">&gt;</span><span class="keyword">select</span> <span class="keyword">member</span> <span class="keyword">from</span> v$logfile;</span><br><span class="line"></span><br><span class="line"><span class="keyword">MEMBER</span></span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>redo03.log</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>redo02.log</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>redo01.log</span><br></pre></td></tr></table></figure>
+<h4 id="检查datafile">检查datafile</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SYS<span class="variable">@ctest</span><span class="operator">&gt;</span><span class="keyword">select</span> name <span class="keyword">from</span> v$datafile;</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>system01.dbf</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>sysaux01.dbf</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>undotbs01.dbf</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>users01.dbf</span><br></pre></td></tr></table></figure>
+<h4 id="查看状态">查看状态</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SYS<span class="variable">@ctest</span><span class="operator">&gt;</span><span class="keyword">select</span> tablespace_name, status <span class="keyword">from</span> dba_tablespaces;</span><br><span class="line"></span><br><span class="line">TABLESPACE_NAME                                              STATUS</span><br><span class="line"><span class="comment">------------------------------------------------------------ ------------------</span></span><br><span class="line"><span class="keyword">SYSTEM</span>                                                       ONLINE</span><br><span class="line">SYSAUX                                                       ONLINE</span><br><span class="line">UNDOTBS1                                                     ONLINE</span><br><span class="line">TEMP                                                         ONLINE</span><br><span class="line">USERS                                                        ONLINE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="rman设置修改">RMAN设置修改</h3>
+<blockquote>
+<p>RMAN内执行</p>
+</blockquote>
+<p>打开控制文件备份：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">configure</span> controlfile autobackup <span class="literal">on</span>;</span><br></pre></td></tr></table></figure>
+<p>创建备份目的目录： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> &lt;backup&gt; &amp;&amp; <span class="built_in">cd</span> &lt;backup&gt;</span><br><span class="line"><span class="built_in">mkdir</span> auto </span><br></pre></td></tr></table></figure></p>
+<p>设置 controlfile 备份目的地</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">configure controlfile autobackup format <span class="keyword">for</span> device type disk <span class="keyword">to</span> <span class="string">&#x27;/u01/&lt;backup&gt;/auto/%F&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>其他的设置</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># <span class="keyword">show</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> archive log <span class="keyword">current</span>; # 归档日志</span><br><span class="line"># 设置 channel</span><br><span class="line">configure channel device type disk format <span class="string">&#x27;/u01/&lt;backup&gt;/%d_%u.bak&#x27;</span>;</span><br><span class="line"># 删除之前的备份</span><br><span class="line"><span class="keyword">delete</span> backup;</span><br></pre></td></tr></table></figure>
+<h3 id="执行全盘备份">执行全盘备份</h3>
+<blockquote>
+<p>RMAN内执行</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">backup database plus archivelog;</span><br></pre></td></tr></table></figure>
+<h3 id="举手示意备份完成">！！！「举手示意，备份完成」</h3>
+<h3 id="增加新数据">增加新数据</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> scott.baktest <span class="keyword">values</span>(<span class="string">&#x27;After Backup&#x27;</span>);</span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> scott.baktest;</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="dbex/image-20220614202258052.png"
+alt="image-20220614202258052" />
+<figcaption aria-hidden="true">image-20220614202258052</figcaption>
+</figure>
+<h3 id="复制连接的日志文件">复制连接的日志文件</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># in back directory:</span></span><br><span class="line">sql&gt; select * from v<span class="variable">$logfile</span>;</span><br><span class="line"><span class="built_in">cp</span> &lt;...&gt; .</span><br><span class="line"><span class="built_in">cp</span> &lt;...&gt; . <span class="comment"># redo log</span></span><br><span class="line"><span class="built_in">cp</span> &lt;...&gt; .</span><br><span class="line"><span class="comment"># 或者直接 cp /u01/app/oracle/oradata/CTEST/redo0* .</span></span><br></pre></td></tr></table></figure>
+<h3 id="破坏数据库">破坏数据库</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dbca</span><br><span class="line"><span class="comment"># 如果没有 -- vim /etc/oratab</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动例程">启动例程</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rman target /</span><br><span class="line">startup nomount; <span class="comment"># 不挂载（缺少spfile）</span></span><br></pre></td></tr></table></figure>
+<p>然后恢复启动参数文件：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">restore spfile <span class="keyword">from</span> <span class="string">&#x27;/u01/&lt;&gt;/auto/...&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="dbex/image-20220614203112028.png"
+alt="image-20220614203112028" />
+<figcaption aria-hidden="true">image-20220614203112028</figcaption>
+</figure>
+<h3 id="创建对应的目录">创建对应的目录</h3>
+<p>bash 查看目录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /u01/app/oracle/product/19.3.0/dbhome_1/dbs/spfilectest.ora</span><br></pre></td></tr></table></figure>
+<p>应该是：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /u01/app/oracle/admin/CTEST/adump</span><br><span class="line"><span class="built_in">mkdir</span> -p /u01/app/oracle/oradata/CTEST</span><br><span class="line"><span class="built_in">mkdir</span> -p /u01/app/oracle/fast_recovery_area/CTEST</span><br></pre></td></tr></table></figure>
+<h3 id="重启例程">重启例程</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">shutdown immediate;</span><br><span class="line">exit</span><br><span class="line">startup nomount</span><br></pre></td></tr></table></figure>
+<h3 id="还原控制文件">还原控制文件：</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">RMAN<span class="operator">&gt;</span> restore controlfile <span class="keyword">from</span> <span class="string">&#x27;/u01/_backup_test1/auto/c-899807147-20220614-00&#x27;</span>;</span><br><span class="line"></span><br><span class="line">Starting restore <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line"><span class="keyword">using</span> target database control file instead <span class="keyword">of</span> recovery catalog</span><br><span class="line">allocated channel: ORA_DISK_1</span><br><span class="line">channel ORA_DISK_1: SID<span class="operator">=</span><span class="number">261</span> device type<span class="operator">=</span>DISK</span><br><span class="line"></span><br><span class="line">channel ORA_DISK_1: restoring control file</span><br><span class="line">channel ORA_DISK_1: restore complete, elapsed <span class="type">time</span>: <span class="number">00</span>:<span class="number">00</span>:<span class="number">01</span></span><br><span class="line">output file name<span class="operator">=</span><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>control01.ctl</span><br><span class="line">output file name<span class="operator">=</span><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>fast_recovery_area<span class="operator">/</span>CTEST<span class="operator">/</span>control02.ctl</span><br><span class="line">Finished restore <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br></pre></td></tr></table></figure>
+<h3 id="加载数据库">加载数据库</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> database mount;</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">shutdown immediate;</span><br><span class="line">startup mount;</span><br></pre></td></tr></table></figure>
+<h3 id="还原数据文件">还原数据文件：</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">restore database;</span><br><span class="line"></span><br><span class="line">Starting restore <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line">Starting implicit crosscheck backup <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line">allocated channel: ORA_DISK_1</span><br><span class="line">channel ORA_DISK_1: SID<span class="operator">=</span><span class="number">379</span> device type<span class="operator">=</span>DISK</span><br><span class="line">Crosschecked <span class="number">3</span> objects</span><br><span class="line">Finished implicit crosscheck backup <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line"></span><br><span class="line">Starting implicit crosscheck <span class="keyword">copy</span> <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line"><span class="keyword">using</span> channel ORA_DISK_1</span><br><span class="line">Finished implicit crosscheck <span class="keyword">copy</span> <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line"></span><br><span class="line">searching <span class="keyword">for</span> <span class="keyword">all</span> files <span class="keyword">in</span> the recovery area</span><br><span class="line">cataloging files...</span><br><span class="line"><span class="keyword">no</span> files cataloged</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> channel ORA_DISK_1</span><br><span class="line"></span><br><span class="line">channel ORA_DISK_1: starting datafile backup <span class="keyword">set</span> restore</span><br><span class="line">channel ORA_DISK_1: specifying datafile(s) <span class="keyword">to</span> restore <span class="keyword">from</span> backup <span class="keyword">set</span></span><br><span class="line">channel ORA_DISK_1: restoring datafile <span class="number">00001</span> <span class="keyword">to</span> <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>system01.dbf</span><br><span class="line">channel ORA_DISK_1: restoring datafile <span class="number">00003</span> <span class="keyword">to</span> <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>sysaux01.dbf</span><br><span class="line">channel ORA_DISK_1: restoring datafile <span class="number">00004</span> <span class="keyword">to</span> <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>undotbs01.dbf</span><br><span class="line">channel ORA_DISK_1: restoring datafile <span class="number">00007</span> <span class="keyword">to</span> <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>users01.dbf</span><br><span class="line">channel ORA_DISK_1: reading <span class="keyword">from</span> backup piece <span class="operator">/</span>u01<span class="operator">/</span>_backup_test1<span class="operator">/</span>CTEST_03102deq.bak</span><br><span class="line">channel ORA_DISK_1: piece handle<span class="operator">=</span><span class="operator">/</span>u01<span class="operator">/</span>_backup_test1<span class="operator">/</span>CTEST_03102deq.bak tag<span class="operator">=</span>TAG20220614T201938</span><br><span class="line">channel ORA_DISK_1: restored backup piece <span class="number">1</span></span><br><span class="line">channel ORA_DISK_1: restore complete, elapsed <span class="type">time</span>: <span class="number">00</span>:<span class="number">00</span>:<span class="number">07</span></span><br><span class="line">Finished restore <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br></pre></td></tr></table></figure>
+<h3 id="复制redolog文件">!!! 复制RedoLog文件</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> redo* /u01/app/oracle/oradata/CTEST/</span><br></pre></td></tr></table></figure>
+<h3 id="恢复数据库">恢复数据库</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">recover database;</span><br><span class="line"></span><br><span class="line">Starting recover <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br><span class="line"><span class="keyword">using</span> channel ORA_DISK_1</span><br><span class="line"></span><br><span class="line">starting media recovery</span><br><span class="line"></span><br><span class="line">archived log <span class="keyword">for</span> thread <span class="number">1</span> <span class="keyword">with</span> sequence <span class="number">8</span> <span class="keyword">is</span> already <span class="keyword">on</span> disk <span class="keyword">as</span> file <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>fast_recovery_area<span class="operator">/</span>CTEST<span class="operator">/</span>archivelog<span class="operator">/</span><span class="number">2022</span>_06_14<span class="operator">/</span>o1_mf_1_8_kbjz71dj_.arc</span><br><span class="line">archived log <span class="keyword">for</span> thread <span class="number">1</span> <span class="keyword">with</span> sequence <span class="number">9</span> <span class="keyword">is</span> already <span class="keyword">on</span> disk <span class="keyword">as</span> file <span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>redo03.log</span><br><span class="line">archived log file name<span class="operator">=</span><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>fast_recovery_area<span class="operator">/</span>CTEST<span class="operator">/</span>archivelog<span class="operator">/</span><span class="number">2022</span>_06_14<span class="operator">/</span>o1_mf_1_8_kbjz71dj_.arc thread<span class="operator">=</span><span class="number">1</span> sequence<span class="operator">=</span><span class="number">8</span></span><br><span class="line">archived log file name<span class="operator">=</span><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>redo03.log thread<span class="operator">=</span><span class="number">1</span> sequence<span class="operator">=</span><span class="number">9</span></span><br><span class="line">media recovery complete, elapsed <span class="type">time</span>: <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">Finished recover <span class="keyword">at</span> <span class="number">14</span><span class="operator">-</span>JUN<span class="number">-22</span></span><br></pre></td></tr></table></figure>
+<h3 id="打开数据库注意设置resetlog">打开数据库，注意设置resetlog</h3>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">database</span> <span class="keyword">open</span> resetlogs;</span><br></pre></td></tr></table></figure>
+<h3 id="检查">检查！</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> scott.baktest;</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="dbex/image-20220614210608902.png"
+alt="image-20220614210608902" />
+<figcaption aria-hidden="true">image-20220614210608902</figcaption>
+</figure>
+<p>结束</p>
+</div><div class="story post-story"><h2 id="logminer">Logminer</h2>
+<h3 id="启用日志挖掘器">启用日志挖掘器</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> SUPPLEMENTAL_LOG_DATA_MIN <span class="keyword">from</span> v$database;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> <span class="keyword">NO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> database <span class="keyword">add</span> supplemental log data;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> Database altered.</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> SUPPLEMENTAL_LOG_DATA_MIN <span class="keyword">from</span> v$database;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> YES</span><br></pre></td></tr></table></figure>
+<p>Note: 删除方法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> database <span class="keyword">drop</span> supplemental log data;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> Database altered.</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> SUPPLEMENTAL_LOG_DATA_MIN <span class="keyword">from</span> v$database;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> <span class="keyword">NO</span></span><br></pre></td></tr></table></figure>
+<h3 id="产生数据字典文件">产生数据字典文件</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">desc</span> dbms_logmnr_d</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> </span><br><span class="line"><span class="keyword">PROCEDURE</span> BUILD</span><br><span class="line"> Argument Name                  Type                    <span class="keyword">In</span><span class="operator">/</span><span class="keyword">Out</span> <span class="keyword">Default</span>?</span><br><span class="line"> <span class="comment">------------------------------ ----------------------- ------ --------</span></span><br><span class="line"> DICTIONARY_FILENAME            VARCHAR2                <span class="keyword">IN</span>     <span class="keyword">DEFAULT</span></span><br><span class="line"> DICTIONARY_LOCATION            VARCHAR2                <span class="keyword">IN</span>     <span class="keyword">DEFAULT</span></span><br><span class="line"> OPTIONS                        NUMBER                  <span class="keyword">IN</span>     <span class="keyword">DEFAULT</span></span><br><span class="line"><span class="keyword">PROCEDURE</span> SET_TABLESPACE</span><br><span class="line"> Argument Name                  Type                    <span class="keyword">In</span><span class="operator">/</span><span class="keyword">Out</span> <span class="keyword">Default</span>?</span><br><span class="line"> <span class="comment">------------------------------ ----------------------- ------ --------</span></span><br><span class="line"> NEW_TABLESPACE                 VARCHAR2                <span class="keyword">IN</span></span><br></pre></td></tr></table></figure>
+<p>产生方法：</p>
+<h4 id="创建目录">创建目录</h4>
+<p>操作系统：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /u01/&lt;dict&gt;</span><br></pre></td></tr></table></figure>
+<p>oracle：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> directory dict1 <span class="keyword">as</span> <span class="string">&#x27;/u01/dict&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="创建文件">创建文件</h4>
+<p>注意大小写</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">execute</span> dbms_logmnr_d.build(<span class="string">&#x27;v816dict.ora&#x27;</span>, <span class="string">&#x27;DICT1&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="开始事务">开始事务</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">conn scott<span class="operator">/</span>tiger</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> Connected.</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> emp <span class="keyword">set</span> sal<span class="operator">=</span><span class="number">1800</span> <span class="keyword">where</span> empno<span class="operator">=</span><span class="number">7369</span>;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> <span class="number">1</span> <span class="type">row</span> updated.</span><br><span class="line"></span><br><span class="line"><span class="keyword">commit</span></span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> <span class="keyword">Commit</span> complete.</span><br></pre></td></tr></table></figure>
+<h3 id="添加需要分析的日志文件">添加需要分析的日志文件</h3>
+<h4 id="查看当前日志文件">查看当前日志文件</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">group</span>#, status <span class="keyword">from</span> v$log;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span></span><br><span class="line">    <span class="keyword">GROUP</span># STATUS</span><br><span class="line"><span class="comment">---------- --------------------------------</span></span><br><span class="line">         <span class="number">1</span> INACTIVE</span><br><span class="line">         <span class="number">2</span> INACTIVE</span><br><span class="line">         <span class="number">3</span> <span class="keyword">CURRENT</span></span><br></pre></td></tr></table></figure>
+<p>查看对应的恢复日志文件：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">member</span> <span class="keyword">from</span> v$logfile <span class="keyword">where</span> <span class="keyword">group</span>#<span class="operator">=</span><span class="number">3</span>;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span></span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>oradata<span class="operator">/</span>CTEST<span class="operator">/</span>redo03.log</span><br></pre></td></tr></table></figure>
+<h4 id="添加要分析的日志">添加要分析的日志</h4>
+<p>一定要注意不能写错路径查了别的数据库的log！</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">execute</span> dbms_logmnr.add_logfile(LogFileName<span class="operator">=</span><span class="operator">&gt;</span><span class="string">&#x27;/u01/app/oracle/oradata/CTEST/redo03.log&#x27;</span>, Options<span class="operator">=</span><span class="operator">&gt;</span>dbms_logmnr.new);</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span> </span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+<h3 id="启动分析">启动分析</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">execute</span> dbms_logmnr.start_logmnr(DictFileName<span class="operator">=</span><span class="operator">&gt;</span><span class="string">&#x27;/u01/_logmin_test1/v816dict.ora&#x27;</span>);</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span></span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+<h3
+id="查询结果vlogmnr_contents">查询结果<code>v$logmnr_contents</code></h3>
+<h4 id="修改时间戳格式">修改时间戳格式</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> session <span class="keyword">set</span> nls_date_format<span class="operator">=</span><span class="string">&#x27;yyyy-mm-dd hh24:mi:ss&#x27;</span>;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span></span><br><span class="line">Session altered.</span><br></pre></td></tr></table></figure>
+<h4 id="查询最终结果">查询最终结果</h4>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> username, <span class="type">timestamp</span>, sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;SCOTT&#x27;</span>;</span><br><span class="line"><span class="operator">&gt;&gt;</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="type">timestamp</span>, username, sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> USERNAME<span class="operator">=</span><span class="string">&#x27;SCOTT&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">TIMESTAMP</span></span><br><span class="line"><span class="comment">-------------------</span></span><br><span class="line">USERNAME</span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line">SQL_REDO</span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="number">2022</span><span class="number">-06</span><span class="number">-16</span> <span class="number">10</span>:<span class="number">47</span>:<span class="number">17</span></span><br><span class="line">SCOTT</span><br><span class="line"><span class="keyword">set</span> transaction read write;</span><br><span class="line"></span><br><span class="line"><span class="number">2022</span><span class="number">-06</span><span class="number">-16</span> <span class="number">10</span>:<span class="number">47</span>:<span class="number">17</span></span><br><span class="line">SCOTT</span><br><span class="line"><span class="keyword">update</span> &quot;SCOTT&quot;.&quot;EMP&quot; <span class="keyword">set</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;1800&#x27;</span> <span class="keyword">where</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;2900&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAAR34AAHAAAAFvAAA&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="number">2022</span><span class="number">-06</span><span class="number">-16</span> <span class="number">10</span>:<span class="number">47</span>:<span class="number">17</span></span><br><span class="line">SCOTT</span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
+</div><div class="story post-story"><h2 id="oracle-数据库系统结构概述">Oracle 数据库系统结构概述</h2>
+<p><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html#GUID-8F2EEEC8-0372-4419-88FF-7D77A9C0FCAD">官方参考资料</a></p>
+<p>Oracle
+数据库由<code>数据库存储结构</code>和<code>数据库实例</code>两部分构成。</p>
+<ul>
+<li><p>数据库</p>
+<p>数据库是位于磁盘上的一组文件，用于存储数据。这些文件可以独立于数据库实例而存在。</p></li>
+<li><p>数据库实例</p>
+<p>实例是一组管理数据库文件的内存结构。该实例由一个共享内存区域（称为系统全局区域<code>SGA</code>）和一组后台进程组成。实例可以独立于数据库文件而存在。</p></li>
+</ul>
+<p>下图显示了数据库及其实例。对于与实例的每个用户连接，客户端进程将运行该应用程序。每个客户端进程都与自己的服务器进程相关联。服务器进程具有自己的专用会话内存，称为程序全局区域<code>PGA</code>。</p>
+<p><a
+target="_blank" rel="noopener" href="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-18-12-46.png"><img
+src="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-18-12-46.png"
+alt="Oracle实例和数据库" /></a></p>
+<p>其中<code>存储结构</code>包括<code>物理存储结构</code>和<code>逻辑存储结构</code>，是<code>数据存储及空间分配</code>的基础；<code>实例</code>是构成
+Oracle
+数据库的<code>软件结构</code>，包括<code>内存结构</code>和<code>后台进程</code>，是<code>数据库运行与管理</code>的基础。</p>
+<p>Oracle
+数据库由存放在磁盘上的数据库<code>DB</code>和对磁盘上的数据库进行管理的数据库管理系统<code>DBMS</code>两部分构成，分别对应着数据库的<code>存储结构</code>和<code>软件结构</code>。</p>
+<p>Oracle 数据库的存储结构（Storage
+Structure）分为<code>物理存储结构</code>和<code>逻辑存储结构</code>两种，分别描述了在<code>操作系统</code>中和<code>数据库系统</code>内部数据的组织与管理方式。其中，物理存储结构表现为操作系统中一系列文件，逻辑存储结构是对物理存储结构的逻辑组织与管理。</p>
+<p>Oracle 数据库的软件结构，即 Oracle
+实例（Instance），包括<code>内存结构</code>与<code>后台进程结构</code>两部分。</p>
+<p><a
+target="_blank" rel="noopener" href="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-18-12-10.png"><img
+src="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-18-12-10.png"
+alt="Oracle数据库系统结构内部关系" /></a></p>
+<p>图描述了 Oracle
+数据库<code>内存结构</code>、<code>后台进程结构</code>、<code>存储结构</code>之间的关系。从图中可以看出，用户的所有操作都是通过<code>实例</code>完成的，首先在<code>内存结构</code>中进行，在一定条件下由数据库的<code>后台进程结构</code>写入数据库的<code>物理存储结构</code>做永久保存</p>
+<h3 id="存储结构">存储结构</h3>
+<p>Oracle
+数据库的存储结构分为<code>物理存储结构</code>和<code>逻辑存储结构</code>两种。</p>
+<ul>
+<li>物理存储结构主要用于描述在 Oracle
+数据库外部数据的存储，即在操作系统层面中如何组织和管理数据，与具体的操作系统有关。</li>
+<li>逻辑存储结构主要描述 Oracle
+数据库内部数据的组织和管理方式，即在数据库管理系统的层面中如何组织和管理数据，与操作系统没有关系。</li>
+</ul>
+<p>物理存储结构具体表现为一系列的操作系统文件，是可见的；而逻辑存储结构是物理存储结构的抽象体现，是不可见的，可以通过查询数据库数据字典了解逻辑存储结构信息。</p>
+<p>Oracle
+数据库的物理存储结构与逻辑存储结构既相互独立又相互联系，如图所示。</p>
+<p><a
+target="_blank" rel="noopener" href="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-07-20.png"><img
+src="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-07-20.png"
+alt="Oracle数据库物理存储结构与逻辑存储结构的关系" /></a></p>
+<p>从图中可以看出数据库物理存储结构与逻辑存储结构的基本关系。</p>
+<ul>
+<li>一个数据库在物理上包含多个数据文件，在逻辑上包含多个表空间。</li>
+<li>一个表空间包含一个或多个数据文件，一个数据文件只能从属于某个表空间。</li>
+<li>数据库的逻辑块由一个或多个操作系统块构成。</li>
+<li>一个逻辑区只能从属于某一个数据文件，而一个数据文件可包含一个或多个逻辑区。</li>
+</ul>
+<h4 id="物理存储结构概述">1. 物理存储结构概述</h4>
+<p>Oracle
+数据库的物理存储结构是由一系列操作系统文件组成的，存放于物理磁盘上，是数据库的实际存储单元。这些文件主要包括数据文件、控制文件、重做日志文件、归档文件、初始化参数文件、跟踪文件、告警文件等。每种文件都存储特定内容的信息，其数量也因文件类型不同而不同。</p>
+<ul>
+<li>数据文件：是数据库中所有数据的实际存储空间，所有数据文件的大小和构成了数据库的大小。</li>
+<li>控制文件：记录数据库结构信息的重要的二进制文件，由 Oracle 系统进行读
+/ 写操作，DBA 不能直接操作控制文件。</li>
+<li>重做日志文件：是以重做记录的形式记录、保存用户对数据库所进行的变更操作，是数据库中最重要的物理文件。</li>
+<li>归档日志文件：是历史联机重做日志文件的集合，是联机重做日志文件被覆盖之前备份的副本。</li>
+<li>初始化参数文件：是数据库启动过程所必需的文件，记录了数据库显式参数的设置。数据库启动的第一步就是根据初始化参数文件中的设置，创建并启动实例，即分配内存空间、启动后台进程。</li>
+<li>跟踪文件：是数据库中重要的诊断文件，是获取数据库信息的重要工具，对管理数据库的实例起着至关重要的作用。跟踪文件中包含数据库系统运行过程中所发生的重大事件的有关信息，可以为数据库运行故障的解决提供重要信息。</li>
+<li>告警文件：是数据库中重要的诊断文件，记录数据库在启动、关闭和运行期间后台进程的活动情况。</li>
+</ul>
+<h4 id="逻辑存储结构概述">2. 逻辑存储结构概述</h4>
+<p>Oracle
+数据库的逻辑存储结构是从逻辑的角度来分析数据库的构成的，也就是数据库创建后利用逻辑概念来描述
+Oracle
+数据库内部数据的组织和管理形式。在操作系统中，没有数据库逻辑存储结构信息，而只有物理存储结构信息。数据库的逻辑存储结构概念存储在数据库的数据字典中，可以通过数据字典查询逻辑存储结构信息。</p>
+<p>Oracle 数据库的逻辑存储结构分为 Oracle 数据块（Oracle DATE
+Block）、区（Extent）、段（Segment）和表空间（Table space）4
+种，它们之间的关系如图所示。一个或多个连续的 Oracle
+数据块构成区，一个或多个区构成段，一个或多个段构成表空间，所有表空间构成数据库。</p>
+<p><a
+target="_blank" rel="noopener" href="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-09-00.png"><img
+src="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-09-00.png"
+alt="Oracle数据库逻辑存储结构之间的关系" /></a></p>
+<ol type="1">
+<li><p>Oracle 数据块</p>
+<p>Oracle
+数据块是数据库中最小的逻辑存储单元，是数据库执行输入、输出操作的最小单位，由一个或者多个操作系统块构成。在
+Oracle 11g
+数据库中，数据块分为标准块和非标准块两种，其中标准块由数据库初始化参数
+DB_BLOCK_SIZE 设置，其大小不可更改。Oracle
+数据库的默认数据缓冲区就是由标准数据块构成的。</p></li>
+<li><p>区</p>
+<p>区是由一系列连续的数据块构成的逻辑存储单元，是存储空间分配的最小单位。当创建一个数据库对象时，Oracle
+为对象分配若干个区，以构成一个段来为对象提供初始的存储空间。当段中已分配的区都写满后，Oracle
+会为段分配一个新区，以容纳更多的数据。构成一个段的所有区只能在一个文件中。在
+Oracle
+数据库中，引入区的目的是为了提高系统存储空间分配的效率，以区为单位的存储空间分配大大减少了磁盘分配的次数。</p></li>
+<li><p>段</p>
+<p>段是由一个或多个连续或不连续的区组成的逻辑存储单元，用于存储特定的、具有独立存储结构的数据库对象。根据存储对象类型不同，分为表段、索引段、临时段和回退段
+4 类。</p>
+<ul>
+<li>表段，又称数据段，用来存储表或簇的数据，可以细分为普通表段（TABLE）、分区表段（TABLE
+Partition）、簇段（Cluster）、索引化表段（INDEX-organized TABLE）。</li>
+<li>索引段用来存放索引数据，包括 ROWID 和索引键值。</li>
+<li>临时段是进行查询、排序等操作时，如果内存空间不足，用于保存 SQL
+语句在解释和执行过程中产生的临时数据。会话结束时，为该操作分配的临时段将被释放。</li>
+<li>回退段用于保存数据库的回退信息，包含当前未提交事务所修改的数据的原始版本。利用回退段中保存的回退信息，可以实现事务回滚、数据库恢复、数据的读一致性和闪回查询。</li>
+</ul></li>
+<li><p>表空间</p>
+<p>表空间是 Oracle
+数据库最大的逻辑存储单元，数据库的大小从逻辑上看就是由表空间决定的，所有表空间大小的和就是数据库的大小。在
+Oracle 数据库中，存储结构管理主要就是通过对表空间的管理来实现的。</p>
+<p>表空间与数据库文件直接关联，一个表空间包含一个或多个数据文件，一个数据文件只能从属于某一个表空间，数据库对象就是存储在表空间对应的一个或多个数据文件中。</p>
+<p>表空间根据存储数据的类型不同，分为系统表空间和非系统表空间两类。系统表空间主要存放数据库的系统信息，如数据字典信息、数据库对象定义信息、数据库组件信息等。非系统表空间又分为撤销表空间、临时表空间和用户表空间等。其中，撤销表空间用于自动管理数据库的回退信息，临时表空间用于管理数据库的临时信息，用户表空间用于存储用户的业务数据。Oracle
+11g 数据库在创建时会自动创建 6 个表空间，见表 3-1。</p></li>
+</ol>
+<p>Oracle 11g 数据库自动创建的表空间</p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SYSTEM</td>
+<td>系统表空间</td>
+<td>存放数据字典、数据库对象定义、PL/SQL 程序源代码等系统信息</td>
+</tr>
+<tr class="even">
+<td>SYSAUX</td>
+<td>系统表空间</td>
+<td>辅助系统表空间，存储数据库组件等信息</td>
+</tr>
+<tr class="odd">
+<td>TEMP</td>
+<td>临时表空间</td>
+<td>存放临时数据，用于排序等操作</td>
+</tr>
+<tr class="even">
+<td>UNDOTBS1</td>
+<td>撤销表空间</td>
+<td>存储、管理回退信息</td>
+</tr>
+<tr class="odd">
+<td>USERS</td>
+<td>用户表空间</td>
+<td>存放用户业务数据信息</td>
+</tr>
+<tr class="even">
+<td>EXAMPLE</td>
+<td>示例表空间</td>
+<td>示例表空间，存放示例的数据库方案对象信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="内存结构">内存结构</h3>
+<p>Oracle
+数据库实例由一系列内存结构和后台进程组成。用户操作数据库的过程实质上是与数据库实例建立连接，然后通过实例来操作数据库的过程。用户的所有操作都在内存中进行，最后由数据库后台进程将操作结果写入各种物理文件中永久性保存。</p>
+<p>内存结构是 Oracle 数据库体系结构的重要组成部分，是 Oracle
+数据库重要的信息缓存和共享区域。根据内存区域信息使用范围的不同，分为系统全局区（System
+Global Area，SGA）和程序全局区（Program Global Area，PGA）。</p>
+<h4 id="sga">1. SGA</h4>
+<p>SGA 是由 Oracle
+分配的共享内存结构，包含一个数据库实例的数据和控制信息。SGA
+数据供所有的服务器进程和后台进程共享，所以 SGA 又称为共享全局区（Shared
+Global Area）。用户对数据库的各种操作主要在 SGA
+中进行。该内存区随数据库实例的创建而分配，随实例的终止而释放。</p>
+<p>SGA 主要由数据高速缓冲区（Database Buffer Cache）、共享池（Shared
+Pool）、重做日志缓冲区（Redo Log Cache）、大型池（Large Pool）、Java
+池（Java Pool）、流池（Streams Pool）和其他结构（如固定
+SGA、锁管理等）组成。</p>
+<ol type="1">
+<li><p>数据高速缓冲区</p>
+<p>数据高速缓冲区存储的是最近从数据文件中检索出来的数据，供所有用户共享。当用户要操作数据库中的数据时，先由服务器进程将数据从磁盘的数据文件中读取到数据高速缓冲区中，然后在缓冲区中进行处理。用户处理后的结果被存储在数据高速缓冲区中，最后由数据库写入进程
+DBWR 写到硬盘的数据文件中永久保存，如图所示。</p>
+<p><a
+target="_blank" rel="noopener" href="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-15-14.png"><img
+src="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-15-14.png"
+alt="数据高速缓冲区的工作过程" /></a></p>
+<p>根据数据缓冲区中存放的信息的不同，数据高速缓冲区分为下列 4
+种类型。</p>
+<ul>
+<li>脏缓存块（Dirty
+Buffers）：脏缓存块中保存的是已经被修改过的数据。</li>
+<li>空闲缓存块（Free
+Buffers）：空闲缓存块中不包含任何数据，它们等待后台进程或服务器进程向其中写入数据。</li>
+<li>命中缓存块（Pinned
+Buffers）：命中缓存块是那些正被使用的数据块，同时还有很多会话等待修改或访问的数据块。</li>
+<li>干净缓存块（Clean
+Buffers）：干净缓存块是指那些当前没有被使用，即将被换出内存的缓存块，这些块中的数据要么没有被修改，要么在内存中有该数据块的快照。</li>
+</ul>
+<p>在 Oracle 11g
+中，数据高速缓冲区由标准缓冲区和非标准缓冲区构成，两者的和决定了数据高速缓冲区大小。标准缓冲区大小由参数
+DB_CACHE_SIZE 设定，非标准缓冲区由参数 DB_nK_CACHE_SIZE 设定。</p></li>
+<li><p>重做日志缓冲区</p>
+<p>重做日志缓冲区用于缓存用户对数据库进行修改操作时生成的重做记录。为了提高工作效率，重做记录并不是直接写入到重做日志文件中，而是首先被服务器进程写入重做日志缓冲区中，在一定条件下，再由日志写入进程
+LGWR
+把重做日志缓冲区的内容写入到重做日志文件中做永久性保存。在归档模式下，当重做日志切换时，由归档进程
+ARCH 将重做日志文件的内容写入到归档文件中，如图所示。</p>
+<p><a
+target="_blank" rel="noopener" href="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-16-17.png"><img
+src="https://liushilive.github.io/github_exercise_oracle/lsbook_import_img/2020-06-21-19-16-17.png"
+alt="重做日志缓冲区的工作过程" /></a></p>
+<p>重做日志缓存区大小由初始化参数 LOG_BUFFER 设定。</p></li>
+<li><p>共享池</p>
+<p>共享池用于缓存最近执行过的 SQL 语句、PL/SQL 程序和数据字典信息，是对
+SQL 语句、PL/SQL 程序进行语法分析、编译、执行的区域。</p>
+<p>共享池由库缓存（Library Cache）和数据字典缓存（Dictionary
+Cache）组成。</p>
+<ul>
+<li><p>库缓存</p>
+<p>Oracle 执行用户提交 SQL 语句或 PL/SQL
+程序之前，先要对其进行语法分析、对象确认、权限检查、执行优化等一系列操作，并生成执行计划。这一系列操作会占用一定的系统资源，如果多次执行相同的
+SQL 语句、PL/SQL
+程序，都要进行如此操作的话，将浪费很多系统资源。库缓存的作用就是缓存最近被解释并执行过的
+SQL 语句、PL/SQL 程序代码正文、编译后代码以及执行计划，以提高
+SQL、PL/SQL 程序的执行效率。当执行 SQL 语句或 PL/SQL 程序时，Oracle
+首先在共享池的库缓存中搜索，查看正文完全相同的 SQL 语句或 PL/SQL
+程序是否已经被分析、解析、执行并缓存过。如果有，Oracle
+将利用缓存中的分析结果和执行计划来执行该语句，而不必重新对它进行解析，从而大大提高了系统的执行速度。</p></li>
+<li><p>数据字典缓存区</p>
+<p>数据字典缓存区中保存最常使用的数据字典信息，如数据库对象信息、账户信息、数据库结构信息等。当用户访问数据库时，可以从数据字典缓存中获得对象是否存在、用户是否有操作权限等信息，大大提高了执行效率。</p>
+<p>共享池的大小由初始化参数 SHARED_POOL_SIZE 设定。</p></li>
+</ul></li>
+<li><p>大型池</p>
+<p>大型池是一个可选的内存配置项，主要为 Oracle 共享服务器、服务器 I/O
+进程、数据库备份与恢复操作、执行具有大量排序操作的 SQL
+语句、执行并行化的数据库操作等需要大量缓存的操作提供内存空间。如果没有在
+SGA 中创建大型池，上述操作所需要的缓存空间将在共享池或 PGA
+中分配，因而会影响共享池或 PGA 的使用效率。</p>
+<p>大型池的大小由初始化参数 LARGE_POOL_SIZE 设定。</p></li>
+<li><p>Java 池</p>
+<p>Java 池是一个可选的内存配置项，提供对 Java 程序设计的支持，用于存储
+Java 代码、Java 语句的语法分析表、Java 语句的执行方案和进行 Java
+程序开发等。</p>
+<p>Java 池大小由初始化参数 JAVA_POOL_SIZE 设定。</p></li>
+<li><p>流池</p>
+<p>流池是一个可选的内存配置项，用于对流的支持。</p>
+<p>流池大小由初始化参数 STREAMS_POOL_SIZE 设定。</p></li>
+</ol>
+<h4 id="pga">2. PGA</h4>
+<p>Oracle
+创建一个服务器进程的同时要为该服务器进程分配一个内存区，该内存区称为程序全局区（Program
+Global Area，PGA）。PGA
+是一个私有的内存区，不能共享，每个服务器进程只能访问自己的 PGA，因此 PGA
+又称为私有全局区（Private Global
+Area）。系统同时为每个后台进程分配私有的 PGA 区。所有服务器进程 PGA
+与所有后台进程 PGA 大小的和，即为实例的 PGA 的大小。PGA
+随着服务器进程与后台进程的启动而分配，随着服务器进程和后台进程终止而被释放。</p>
+<p>PGA 由下列 4 部分组成。</p>
+<ol type="1">
+<li>排序区（SORT Area）：存放排序操作所产生的临时数据。</li>
+<li>游标信息区（Cursor
+Information）：存放执行游标操作时所产生的数据。</li>
+<li>会话信息区（Session
+Information）：保存用户会话所具有的权限、角色、性能统计信息。</li>
+<li>堆栈区（Stack
+Space）：用于保存会话过程中的绑定变量、会话变量等信息。</li>
+</ol>
+<h3 id="后台进程">后台进程</h3>
+<h4 id="oracle-进程概述">1. Oracle 进程概述</h4>
+<ol type="1">
+<li><p>进程概念</p>
+<p>进程是操作系统中一个独立的可以调度的活动，用于完成指定的任务。进程与程序的区别在于：</p>
+<p>进程是动态的概念，即动态创建，完成任务后立即消亡；而程序是一个静态实体。
+进程强调执行过程，而程序仅仅是指令的有序集合。</p></li>
+<li><p>进程类型</p>
+<p>在 Oracle 数据库服务器中，进程分为用户进程（USER
+Process）、服务器进程（Server Process）和后台进程（Background Process）3
+种。</p>
+<ul>
+<li><p>用户进程</p>
+<p>当用户连接数据库执行一个应用程序时，会创建一个用户进程，来完成用户所指定的任务。</p></li>
+<li><p>服务器进程</p>
+<p>Oracle 服务器进程由 Oracle
+自身创建，用于处理连接到数据库实例的用户进程所提出的请求。</p>
+<p>服务器进程主要完成以下任务：</p>
+<ol type="1">
+<li>解析并执行用户提交的 SQL 语句和 PL/SQL 程序。</li>
+<li>在 SGA
+的数据高速缓冲区中搜索用户进程所要访问的数据，如果数据不在缓冲区中，则需要从硬盘数据文件中读取所需的数据，再将它们复制到缓冲区中。</li>
+<li>将用户改变数据库的操作信息写入日志缓冲区中。</li>
+<li>将查询或执行后的结果数据返回给用户进程。</li>
+</ol></li>
+<li><p>后台进程</p>
+<p>为了保证 Oracle
+数据库在任意一个时刻都可以处理多用户的并发请求，进行复杂的数据操作，而且优化系统性能，Oracle
+数据库启用了一些相互独立的附加进程，称为后台进程。服务器进程在执行用户进程请求时，会调用后台进程来实现对数据库的操作。</p></li>
+</ul></li>
+</ol>
+<h4 id="oracle-后台进程">2. Oracle 后台进程</h4>
+<p>Oracle
+实例的主要后台进程包括数据库写入进程（DBWR）、日志写入进程（LGWR）、检查点进程（CKPT）、系统监控进程（SMON）、进程监控进程（PMON）、归档进程（ARCH）、恢复进程（RECO）、锁进程（LCKn）、调度进程（Dnnn）等，其中前
+5 个后台进程是必需的。</p>
+<p>数据库的后台进程随数据库实例的启动而自动启动，它们协调服务器进程的工作，优化系统的性能。可以通过初始化参数文件中参数的设置来确定启动后台进程的数量。</p>
+<ol type="1">
+<li><p>DBWR</p>
+<p>数据库写入进程负责把数据高速缓冲区中已经被修改过的数据（脏缓存块）成批写入数据文件中永久保存，同时使数据高速缓冲区有更多的空闲缓存块，保证服务器进程将所需要的数据从数据文件中读取到数据高速缓冲区中，提高缓存命中率。</p>
+<p>当下列某个条件满足时，DBWR
+进程将启动，将数据高速缓冲区中的脏数据写入数据文件：</p>
+<ul>
+<li>服务器进程在数据高速缓存区中搜索一定数量的缓存块后，仍然没有找到可用的空闲缓存块，此时
+DBWR 进程将被启动；</li>
+<li>检查点发生时，将启动 DBWR 进程；</li>
+<li>当数据高速缓冲区中 LRU 列表长度达到初始化参数 DB_BLOCK_WRITE_BATCH
+指定值的一半时，DBWR 进程将被启动；</li>
+<li>DBWR 进程发生超时（约 3s），DBWR 进程将被启动。</li>
+</ul>
+<blockquote>
+<p>注意：DBWR 进程启动的时间与用户提交事务的时间完全无关。</p>
+</blockquote></li>
+<li><p>LGWR</p>
+<p>日志写入进程负责把重做日志缓冲区的重做记录写入重做日志文件中永久保存。</p>
+<p>DBWR 进程在工作之前，需要了解 LGWR
+进程是否已经把相关的日志缓冲区中的重做记录写入重做日志文件中。如果还没有写入重做日志文件，DBWR
+进程将通知 LGWR 进程完成相应的工作，然后 DBWR
+进程才开始写入。这样可以保证先将与脏缓存块相关的重做记录信息写入重做日志文件，然后将脏缓存块写入数据文件，即先写重做日志文件，后写数据文件。</p>
+<p>当下列事件发生时，LGWR
+进程会将重做日志缓冲区中的重做记录写入重做日志文件：</p>
+<ul>
+<li>用户通过 COMMIT 语句提交当前事务；</li>
+<li>重做日志缓冲区被写满三分之一；</li>
+<li>DBWR 进程开始将脏缓存块写入数据文件；</li>
+<li>LGWR 进程超时（约 3s），LGWR 进程将启动。</li>
+</ul></li>
+<li><p>CKPT</p>
+<p>检查点是一个事件，当该事件发生时（每隔一段时间发生），DBWR
+进程把数据高速缓冲区中的脏缓存块写入数据文件中，同时 Oracle
+将对数据库控制文件和数据文件的头部的同步序号进行更新，以记录下当前的数据库结构和状态，保证数据的同步。</p>
+<p>在执行了一个检查点事件后，Oracle
+知道所有已提交的事务对数据库所做的更改已经全部被写入到数据文件中，此时数据库处于一个完整状态。在发生数据库崩溃后，只需要将数据库恢复到上一个检查点执行时刻即可。因此，缩短检查点执行的间隔，可以缩短数据库恢复所需的时间。</p>
+<p>CKPT 进程的作用就是执行检查点，完成下列操作：</p>
+<ul>
+<li>更新控制文件与数据文件的头部，使其同步；</li>
+<li>触发 DBWR 进程，将脏缓存块写入数据文件。</li>
+</ul></li>
+<li><p>SMON</p>
+<p>如果由于某种原因系统崩溃了，那么 SGA
+中任何没有来得及写入磁盘文件中的信息都将丢失。如果有些已经提交的数据还没有真正写入数据文件中就会丢失了，当数据库重新启动时，SMON
+进程将自动执行 Oracle 实例的恢复工作。</p>
+<p>除了进行数据库实例恢复外，SMON 进程还具有以下功能：</p>
+<ul>
+<li>回收不再使用的临时空间；</li>
+<li>将各个表空间的空闲碎片合并（表空间的存储参数 PCTINCREASE 不为 0
+时）。</li>
+<li>SMON
+进程除了在实例启动时执行一次外，在实例运行期间，它会被定期唤醒，检查是否有工作需要它来完成。如果有其他任何进程需要使用
+SMON 进程的功能，它们将随时唤醒 SMON 进程。</li>
+</ul></li>
+<li><p>PMON</p>
+<p>PMON 进程的主要功能包括：</p>
+<ul>
+<li>负责恢复失败的用户进程或服务器进程，并且释放进程所占用的资源；</li>
+<li>清除非正常中断的用户进程留下的孤儿会话，回退未提交的事务，释放会话所占用的锁、SGA、PGA
+等资源；</li>
+<li>监控调度进程和服务器进程的状态，如果它们失败，则尝试重新启动它们，并释放它们所占用的各种资源。</li>
+<li>与 SMON 进程类似，PMON
+进程在实例运行期间会被定期唤醒，检查是否有工作需要它来完成。如果有其他任何进程需要使用
+PMON 进程的功能，它们将随时唤醒 PMON 进程。</li>
+</ul></li>
+<li><p>ARCH</p>
+<p>ARCH
+进程负责在日志切换后将已经写满的重做日志文件复制到归档目标，以防止写满的重做日志文件被覆盖。</p>
+<p>只有当数据库运行在归档模式，并且初始化参数 LOG_ARCHIVE_START 设置为
+TRUE，即启动自动归档功能时，才能启动 ARCH
+进程；否则当重做日志文件全部被写满后，数据库将被挂起，等待 DBA
+进行手工归档。</p></li>
+</ol>
+<h3 id="数据字典">数据字典</h3>
+<h4 id="概述">1.概述</h4>
+<ol type="1">
+<li><p>数据字典的内容与作用</p>
+<p>数据字典是数据库重要组成部分，是在数据库创建过程中创建的，保存了数据库系统信息以及数据库中所有的对象信息，是数据库系统运行的基础。</p>
+<p>Oracle
+数据库的数据字典由一系列表和视图构成，这些表和视图对于所有的用户，包括
+DBA，都是只读的。只有 Oracle 系统才可以对数据字典进行管理与维护。在
+Oracle 数据库中，所有数据字典表和视图都属于 SYS 模式，存储于 SYSTEM
+表空间中。</p>
+<p>Oracle
+数据字典保存数据库本身的系统信息及所有数据库对象信息，包括：</p>
+<ul>
+<li>各种数据库对象的定义信息，包括表、视图、索引、同义词、序列、存储过程、函数、包、触发器及其他各种对象；</li>
+<li>数据库存储空间分配信息，如为某个数据库对象分配了多少空间，已经使用了多少空间等；</li>
+<li>数据库的安全信息，包括用户、权限、角色、完整性等；</li>
+<li>数据库运行时的性能和统计信息；</li>
+<li>其他数据库本身的基本信息。</li>
+</ul>
+<p>数据字典除了用于 Oracle 进行系统管理外，对于 DBA
+以及普通数据库用户都有着非常重要的作用。数据字典的主要用途包括：</p>
+<ul>
+<li>Oracle
+通过访问数据字典获取用户、模式对象、数据库对象定义与存储等信息，以判断用户权限合法性、模式对象存在性及存储空间的可用性等；</li>
+<li>使用 DDL 语句修改数据库对象后，Oracle
+将在数据字典中记录所做的修改；</li>
+<li>任何数据库用户都可以从数据字典只读视图中获取各种数据库对象信息；</li>
+<li>DBA
+可以从数据字典动态性能视图中获取数据库的运行状态，作为进行性能调整的依据。</li>
+</ul></li>
+<li><p>数据字典的管理与维护</p>
+<p>数据字典主要是由 Oracle
+数据库服务器使用的，服务器通过访问数据字典基表获取用户、数据库对象、存储结构等信息，并利用这些信息进行数据库的管理与维护。只有
+Oracle 系统可以对数据字典进行管理与维护。在 Oracle
+数据库运行过程中，如果数据库结构发生变化，Oracle
+数据库服务器会及时地修改相应的数据字典以记录这些变化。</p>
+<p>当数据库中执行下列各种 SQL 语句操作时，Oracle
+数据库服务器会修改数据字典信息。</p>
+<ul>
+<li>DDL 语句。如增加或减少表空间、增加或减少用户。</li>
+<li>DCL 语句。如授予用户权限、回收用户权限。</li>
+<li>DML 语句。某些 DML
+语句，如引起表的存储空间扩展的插入、修改语句，Oracle
+会将磁盘上存储空间的变化信息记录到数据字典中。</li>
+</ul>
+<p>包括数据库管理员（DBA）在内的任何用户都不能直接使用 DML
+语句修改数据字典中的内容。所有用户和管理员（DBA）只能通过访问数据字典视图来得到数据库的相关信息。一些数据字典视图可以被所有用户访问，而另一些只能被数据库管理员访问。</p></li>
+</ol>
+<h4 id="数据字典的结构">2. 数据字典的结构</h4>
+<p>数据字典主要包括数据字典表和数据字典视图两种。根据数据字典对象的虚实性不同，分为静态的数据字典和动态数据字典两种，其中，静态数据字典在用户访问数据字典时不会发生改变，但动态数据字典是依赖数据库运行的性能的，反映数据库运行的一些内在信息，所以在访问这类数据字典时往往不是一成不变的。</p>
+<ol type="1">
+<li><p>静态数据字典表</p>
+<p>静态数据字典表是在数据库创建过程中自动运行
+sql.bsq（<code>%Oracle_HOME%\RDBMS\ADMIN\sql.bsq</code>）脚本创建的，由
+SYS
+用户所拥有，表中信息都是经过加密处理的。数据字典中的所有信息实际上都是存储在静态数据字典表中的。静态数据字典表的命名中通常包含
+<code>$</code> 符号。只有 Oracle 才能读 /
+写这些静态数据字典表。例如，静态数据字典表 <code>tab$</code>。</p></li>
+<li><p>静态数据字典视图</p>
+<p>由于静态数据字典表对于用户而言是不可访问的，因此，通过对静态数据字典表进行解密和处理，创建了一系列用户可读的静态数据字典视图。在数据库创建过程中，通过自动运行
+catalog.sql（<code>%Oracle_HOME%\RDBMS\ADMIN\catalog.sql</code>）脚本创建静态数据字典视图及其公共同义词，并进行授权。例如，静态数据字典视图
+USER_TABLES。</p></li>
+<li><p>动态数据字典表</p>
+<p>动态数据字典表是在数据库实例运行过程中由 Oracle
+动态创建和维护的一系列“虚表”，在实例关闭时被释放。动态数据字典表中记录与数据库运行的性能相关的统计信息，因此又称为动态性能表。通常，动态性能表的命名以
+<code>X$</code>开头。动态性能表由 SYS 用户所拥有。例如，动态性能表
+<code>X$KSPPI</code>。</p></li>
+<li><p>动态数据字典视图</p>
+<p>在动态性能表上创建的视图称为动态数据字典视图，又称动态性能视图。所有动态性能视图命名都以
+V开头，Oracle自动为这些视图创建了以‘V开头，*O<strong>r</strong>a<strong>c</strong>l**e<em>自动为这些视图创建了以‘</em>V*<code>开头命名的公共同义词，因此动态性能视图又称为</code>V$
+视图<code>。例如，动态性能视图</code>V$DATAFILE`。</p>
+<p>通过查询表
+dictionary，可以获得全部可以访问的数据字典表或视图的名称和解释；通过查询表
+dict_columns，可以获得全部可以访问的数据字典表或视图中字段名称和解释。例如：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> dictionary;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> dict_columns <span class="keyword">WHERE</span> TABLE_NAME<span class="operator">=</span><span class="string">&#x27;USER_TABLES&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>SQL</p>
+<p>Copy</p></li>
+</ol>
+<h4 id="数据字典的使用">3. 数据字典的使用</h4>
+<ol type="1">
+<li><p>静态数据字典表的使用</p>
+<p>静态数据字典表只能由 Oracle
+进行维护，用户不能对这些表进行直接操作。当用户执行 DDL 操作时，Oracle
+系统自动对相应的静态数据字典表进行操作。例如，当执行 CREATE TABLE、ALTER
+TABLE 和 DROP TABLE 操作时，系统会自动对 <code>TAB$</code> 表进行
+INSERT、UPDATE 和 DELETE 操作。</p></li>
+<li><p>静态数据字典视图的使用</p>
+<p>通常，用户通过对静态数据字典视图的查询可以获取所需要的所有数据库信息。</p>
+<p>Oracle 静态数据字典视图可以分为 3
+类，各类视图具有独特的前缀，其表示形式和含义如表所描述。</p>
+<p>静态数据字典视图分类及其含义</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>名称前缀</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USER_</td>
+<td>包含当前数据库用户所拥有的所有的模式对象的信息</td>
+</tr>
+<tr class="even">
+<td>ALL_</td>
+<td>包含当前数据库用户可以访问的所有的模式对象的信息</td>
+</tr>
+<tr class="odd">
+<td>DBA_</td>
+<td>包含所有数据库对象信息，只有具有 DBA
+角色的用户才能够访问这些视图</td>
+</tr>
+</tbody>
+</table>
+<p>例如，查询当前用户所拥有的表的信息、可以访问的表的信息及当前数据库所有表的信息，可以分别执行下列语句：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> USER_TABLES;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> ALL_TABLES;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> SYS.DBA_TABLES;</span><br></pre></td></tr></table></figure>
+<p>SQL</p>
+<p>Copy</p>
+<p>注意：以
+USER_、ALL_开头的数据字典视图都具有与其同名公共同义词，用户可以直接访问，而以
+DBA_开头的数据字典视图归 SYS
+用户所有，没有与其对应的同名公共同义词，因此非 SYS 用户访问时，需在
+DBA_视图名前加 SYS 前缀。</p></li>
+<li><p>动态性能表的使用</p>
+<p>动态性能表是数据库实例启动后动态创建的表，用于存放数据库运行过程中的性能相关的信息。动态性能表都属于
+SYS 用户，Oracle 使用这些表生成动态性能视图。</p>
+<p>可以通过下列语句查询当前数据库中所有的动态性能表和动态性能视图：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> NAME <span class="keyword">FROM</span> V_$FIXED_TABLE;</span><br></pre></td></tr></table></figure>
+<p>SQL</p>
+<p>Copy</p></li>
+<li><p>动态性能视图的使用</p>
+<p>动态性能视图是 SYS 用户所拥有的，在默认状况下，只有 SYS 用户和拥有
+DBA
+角色的用户可以访问。与静态数据字典表和视图不同，在数据库启动的不同阶段只能访问不同的动态性能视图。</p>
+<p>当数据库启动到 NOMOUNT 状态时，Oracle 数据库打开初始化参数文件，分配
+SGA 并启动后台进程，因此只能访问从 SGA 中获得信息的动态性能视图，如
+<code>V$PARAMETER</code>、<code>V$SGA</code>、<code>V$SESSION</code>、<code>V$PROCESSE</code>、<code>V$INSTANCE</code>、<code>V$VERSION</code>、<code>V$OPTION</code>等。</p>
+<p>当数据库启动到 MOUNT 状态时，Oracle 打开控制文件，因此不仅能访问从
+SGA
+中获得信息的动态性能视图，还可以访问从控制文件中获得信息的动态性能视图，如
+<code>V$LOG</code>、<code>V$LOGFILE</code>、<code>V$DATAFILE</code>、<code>V$CONTROLFILE</code>、<code>V$DATABASE</code>、<code>V$THREAD</code>、<code>V$DATAFILE_HEADER</code>等。</p>
+<p>当数据库完全启动后，可以访问 <code>V_$fixed_table</code>
+表中所有的动态性能视图。</p>
+<p>例如，利用动态性能视图查询当前数据库参数设置信息、数据文件信息。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> V$<span class="keyword">PARAMETER</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> DATAFILE;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</div><div class="story post-story"><h2 id="数据类型">数据类型</h2>
+<p>要使用数据库来存储数据，首先就要知道这个数据库都能存储什么类型的数据。</p>
+<p>数据类型是在向数据表中存储数据前必须设定好的，就像如果要使用记事本查看文件内容，那么文件就要是文本的，不能有图片，否则图片是查看不了的，因为记事本中只能查看文本文件。</p>
+<p><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Data-Types.html#GUID-7B72E154-677A-4342-A1EA-C74C1EA928E6">官网文档</a></p>
+<p>在 Oracle 11g 中提供的数据类型有 23 种，下面介绍常用的数据类型。</p>
+<h3 id="字符型">1. 字符型</h3>
+<p>字符型在 Oracle 11g 中有 varchar2、char、nchar、nvarchar2 和 long
+五种，它们在数据库中是以 ASCII 码的格式存储的。</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CHAR(n)</td>
+<td>存储固定长度的字符串，长度以字节为单位，默认和最小字符数为
+1，最大字符数为 2000</td>
+</tr>
+<tr class="even">
+<td>VARCHAR2(n)</td>
+<td>存储可变长度的字符串，长度以字节为单位，最小字符数是 1，最大字符数是
+4000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数字型">2. 数字型</h3>
+<p>数字型在 Oracle 11g 中常用的有 number 和 float
+类型两种，可以用它们来表示整数和小数。</p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NUMBER(p, s)</td>
+<td>可以存储 0、正数和负数。p 表示数值的总位数（精度），取值范围为
+1～38；s 表示刻度，取值为−84～127</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日期类型">3. 日期类型</h3>
+<p>日期类型在 Oracle 11g 中常用的有 date 和 timestamp
+两种类型，可以用它们来存放日期和时间。</p>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DATE</td>
+<td>用于存储日期和时间。可以存储的日期范围为公元前 4712 年 1 月 1
+日到公元后 9999 年 12 月 31 日，占据 7
+字节的空间，由世纪、年、月、日、时、分、秒组成</td>
+</tr>
+<tr class="even">
+<td>TIMESTAMP(n)</td>
+<td>表示时间戳，是 DATE 数据类型的扩展，允许存储小数形式的秒值。p
+表示秒的小数位数，取值范围为 0～9，默认值为 6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其他数据类型">4. 其他数据类型</h3>
+<p>除了上面讲过的字符型、数字型、日期类型之外，在 Oracle 11g
+中还有存放大数据的数据类型以及存放二进制文件的数据类型。</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 83%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>数据类型</th>
+<th>取值范围（字节）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CLOB</td>
+<td>用于存储单字节或多字节的大型字符串对象，支持使用数据库字符集的定长或变长字符。在
+Oracle 11g 中 CLOB 类型最大存储容量为 128TB</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>BLOB</td>
+<td>用于存储大型的、未被结构化的变长的二进制数据（如二进制文件、图片文件、音频和视频等非文本文件）。在
+Oracle 11g 中 BLOB 类型最大存储容量为 128TB</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>BFILE</td>
+<td>用于存储指向二进制格式文件的定位器，该二进制文件保存在数据库外部的操作系统中。在
+Oracle 11g 中 BFILE 文件最大容量为 128TB，不能通过数据库操作修改 BFILE
+定位器所指向的文件</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>RAW(n)</td>
+<td>用于存储变长的二进制数据，n 表示数据长度，取值范围为 1～2000
+字节</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>LONG RAW</td>
+<td>用于存储变长的二进制数据，最大存储数据量为 2GB。Oracle 建议使用 BLOB
+类型代替 LONG RAW 类型</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ROWID</td>
+<td>行标识符，表示表中行的物理地址的伪列类型</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
+4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/>http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-15T15:05:48+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年8月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数据库</p></a></div>
+  <span hidden itemprop="keywords">数据库</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/&title=数据库机试 - 逆版本战士の部落格&summary=rt."
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/&title=数据库机试 - 逆版本战士の部落格&summary=rt."
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/&title=数据库机试 - 逆版本战士の部落格&summary=rt."
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/06/18/study/Physics/TheoMechanics/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>理论力学C</p>
+          <p class='content'>理论力学复习笔记
+
+
+静力学
+静力学公理和受力分析
+静力学公理
+
+二力平衡原理：受靓丽作用的刚体，平衡的充要条件时两个力大小相等、方向相反、作用在同一直线；
+
+二力构件
+
+加减平衡力系原理：在作...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/05/27/study/ComputerScience/fragments/Snippets/'>
+          <p class='title'>神奇的 C++ 代码片段（模版元编程）<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>哈希函数
+
+The code
+理论上说，把任何类型丢进去都能够直接hash了：
+
+vector、map、set等stl容器
+tuple、pair 等固定长模版容器
+定义了 size_t hash...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2022/06/16/study/ComputerScience/fragments/dbex/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#rman-%E5%85%A8%E5%BA%93%E5%A4%87%E4%BB%BD"><span class="toc-text">RMAN 全库备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE"><span class="toc-text">准备实验数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E6%83%85%E5%86%B5"><span class="toc-text">检查数据库情况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%82%E6%95%B0%E6%96%87%E4%BB%B6"><span class="toc-text">初始化参数文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8E%A7%E5%88%B6%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="toc-text">查看控制文件位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%81%9A%E6%97%A5%E5%BF%97"><span class="toc-text">！！查看重做日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5datafile"><span class="toc-text">检查datafile</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="toc-text">查看状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rman%E8%AE%BE%E7%BD%AE%E4%BF%AE%E6%94%B9"><span class="toc-text">RMAN设置修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%85%A8%E7%9B%98%E5%A4%87%E4%BB%BD"><span class="toc-text">执行全盘备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E6%89%8B%E7%A4%BA%E6%84%8F%E5%A4%87%E4%BB%BD%E5%AE%8C%E6%88%90"><span class="toc-text">！！！「举手示意，备份完成」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-text">增加新数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="toc-text">复制连接的日志文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%B4%E5%9D%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">破坏数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E4%BE%8B%E7%A8%8B"><span class="toc-text">启动例程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E5%BA%94%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">创建对应的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E4%BE%8B%E7%A8%8B"><span class="toc-text">重启例程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E6%8E%A7%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-text">还原控制文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">加载数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%98%E5%8E%9F%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-text">还原数据文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6redolog%E6%96%87%E4%BB%B6"><span class="toc-text">!!! 复制RedoLog文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">恢复数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E6%84%8F%E8%AE%BE%E7%BD%AEresetlog"><span class="toc-text">打开数据库，注意设置resetlog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5"><span class="toc-text">检查！</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#logminer"><span class="toc-text">Logminer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E6%97%A5%E5%BF%97%E6%8C%96%E6%8E%98%E5%99%A8"><span class="toc-text">启用日志挖掘器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8%E6%96%87%E4%BB%B6"><span class="toc-text">产生数据字典文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">创建目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">创建文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BA%8B%E5%8A%A1"><span class="toc-text">开始事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%9C%80%E8%A6%81%E5%88%86%E6%9E%90%E7%9A%84%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="toc-text">添加需要分析的日志文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="toc-text">查看当前日志文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%A6%81%E5%88%86%E6%9E%90%E7%9A%84%E6%97%A5%E5%BF%97"><span class="toc-text">添加要分析的日志</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%88%86%E6%9E%90"><span class="toc-text">启动分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9Cvlogmnr_contents"><span class="toc-text">查询结果v$logmnr_contents</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E6%88%B3%E6%A0%BC%E5%BC%8F"><span class="toc-text">修改时间戳格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C"><span class="toc-text">查询最终结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oracle-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="toc-text">Oracle 数据库系统结构概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="toc-text">1. 物理存储结构概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="toc-text">2. 逻辑存储结构概述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84"><span class="toc-text">内存结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sga"><span class="toc-text">1. SGA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pga"><span class="toc-text">2. PGA</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-text">后台进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#oracle-%E8%BF%9B%E7%A8%8B%E6%A6%82%E8%BF%B0"><span class="toc-text">1. Oracle 进程概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#oracle-%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-text">2. Oracle 后台进程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8"><span class="toc-text">数据字典</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">1.概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">2. 数据字典的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">3. 数据字典的使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-text">1. 字符型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="toc-text">2. 数字型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B"><span class="toc-text">3. 日期类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">4. 其他数据类型</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.add("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a
+target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
+4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+次</span> <span id="lc-uv">访客数为 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  
+  
+  
+</script>
+
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.af2d54c8.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-arrow-left fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-arrow-right fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-redo fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-solid fa-arrow-up fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-solid fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-solid fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-solid fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-solid fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-solid fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-solid fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyImg" data-event="copyImg" data-group="elementImage">
+      <i class="fa-solid fa-image fa-fw"></i>
+      复制图片
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="googleImg" data-event="window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)" data-group="elementImage">
+      <i class="fa-solid fa-images fa-fw"></i>
+      谷歌识图
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="help" target="_blank" rel="noopener" href="https://volantis.js.org/faqs/" data-group="link">
+      <i class="fa-solid fa-question fa-fw"></i>
+      常见问题
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="examples" target="_blank" rel="noopener" href="https://volantis.js.org/examples/" data-group="link">
+      <i class="fa-solid fa-rss fa-fw"></i>
+      示例博客
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="contributors" target="_blank" rel="noopener" href="https://volantis.js.org/contributors/" data-group="link">
+      <i class="fa-solid fa-fan fa-fw"></i>
+      加入社区
+    </a>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_docs" target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      本站源码
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_theme" target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      主题源码
+    </a>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-solid fa-moon fa-fw"></i>
+      暗黑模式
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-solid fa-print fa-fw"></i>
+      打印页面
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-solid fa-book-open fa-fw"></i>
+      阅读模式
+    </span>
+  </li>
+
+
+<div id="menuMusic">
+  <li class='music name menuOption-Content'>
+    <p class='nav music-title fix-cursor-default'></p>
+  </li>
+  <li class='music ctrl'>
+    <a class='nav icon-only backward fix-cursor-default' href="/" onclick="return false;" title="backward">
+      <i class='fa-solid fa-step-backward fa-fw'></i>
+    </a>
+    <a class='nav icon-only toggle fix-cursor-default' href="/" onclick="return false;" title="toggle">
+      <i class='fa-solid fa-play fa-fw'></i>
+    </a>
+    <a class='nav icon-only forward fix-cursor-default' href="/" onclick="return false;" title="forward">
+      <i class='fa-solid fa-step-forward fa-fw'></i>
+    </a>
+  </li>
+  <li class='music volume'>
+    <div class='nav volume'>
+      <div class="aplayer-volume-bar-wrap">
+        <div class="aplayer-volume-bar fix-cursor-pointer">
+          <div class="aplayer-volume"></div>
+          <i class='left fa-solid fa-volume-off fa-fw'></i>
+          <i class='right fa-solid fa-volume-up fa-fw'></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script>
+  const RightMenusFunction = {};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+
+
+
+
+
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+
+
+
+
+
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+
+
+
+
+
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+
+
+
+
+
+  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+
+
+
+
+
+  RightMenusFunction['googleImg'] = (__link__) => {window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+
+
+
+
+
+  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+
+
+
+
+
+</script>
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "color-scheme";
+const rootElementDarkModeAttributeName = "color-scheme";
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+  getCustomDarkMode();
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+/**
+ * get target mode
+ */
+ const getCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  if(currentSetting=="dark"){
+    volantis.dark.mode="light";
+  }else{
+    volantis.dark.mode="dark";
+  }
+  // console.log(volantis.dark.mode)
+};
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+/**
+ * 暗黑模式触发器
+ */
+volantis.dark.toggle=()=>{
+  const mode = toggleCustomDarkMode();
+  applyCustomDarkModeSettings(mode);
+  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
+  volantis.dark.method.toggle.start();
+}
+/**
+ * bind event for toggle button
+ */
+
+function bindToggleButton() {
+  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
+  btn.forEach(function (e) {
+    volantis.dom.$(e).on('click',volantis.dark.toggle);
+  })
+}
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", ()=>{
+  volantis.requestAnimationFrame(bindToggleButton)
+});
+volantis.pjax.push(bindToggleButton);
+
+const darkModelListeners={
+  dark:(mediaQueryList )=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "dark";
+    }
+    volantis.dark.method.toggle.start();
+  },
+  light:(mediaQueryList)=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "light";
+    }
+    volantis.dark.method.toggle.start();
+  }
+}
+window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
+window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
+</script>
+
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.f372da57.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.aec80453.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+   <script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal("#l_main .reveal", {
+      distance: "32px",
+      duration: "800",
+      interval: "20",
+      scale: "1",
+      easing: "ease-out",
+    });
+  }
+  function init_scrollrebeal() {
+    if (typeof ScrollReveal == "undefined") {
+      volantis.requestAnimationFrame(init_scrollrebeal);
+    } else {
+      pjax_scrollrebeal();
+    }
+  }
+  volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/scrollreveal/dist/scrollreveal.min.js");
+  document.addEventListener("DOMContentLoaded", init_scrollrebeal);
+  volantis.pjax.push(
+    pjax_scrollrebeal,
+    "pjax_scrollrebeal",
+    (setRequestAnimationFrame = false)
+  );
+</script>
+
+
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"Adversarr/Adversarr.github.io","repo-id":"xxx","category":"xxx","category-id":"xxx","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.0e52f222.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+<script>
+  try {
+    // https://web.dev/content-visibility/
+    // https://www.caniuse.com/?search=content-visibility
+    // https://infrequently.org/2020/12/content-visibility-scroll-fix/
+    // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
+
+    // 备注 目前已知的问题:
+    // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
+    // scrollreveal 插件潜在问题 目前尚不明确
+
+    let eqIsh = (a, b, fuzz = 2) => {
+      return Math.abs(a - b) <= fuzz;
+    };
+
+    let rectNotEQ = (a, b) => {
+      return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
+    };
+
+    // Keep a map of elements and the dimensions of
+    // their place-holders, re-setting the element's
+    // intrinsic size when we get updated measurements
+    // from observers.
+    let spaced = new WeakMap();
+
+    // Only call this when known cheap, post layout
+    let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
+      let old = spaced.get(el);
+      // Set intrinsic size to prevent jumping on un-painting:
+      //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
+      if (!old || rectNotEQ(old, rect)) {
+        spaced.set(el, rect);
+        el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
+      }
+    };
+
+    let iObs = new IntersectionObserver(
+      (entries, o) => {
+        entries.forEach((entry) => {
+          // We don't care if the element is intersecting or
+          // has been laid out as our page structure ensures
+          // they'll get the right width.
+          reserveSpace(entry.target, entry.boundingClientRect);
+        });
+      },
+      { rootMargin: "500px 0px 500px 0px" }
+    );
+
+    let rObs = new ResizeObserver((entries, o) => {
+      entries.forEach((entry) => {
+        reserveSpace(entry.target, entry.contentRect);
+      });
+    });
+
+    let resizeResilientDeferredRendering = (Selector) => {
+      let articles = document.querySelectorAll(Selector);
+
+      if (articles.length) {
+        articles.forEach((el) => {
+          iObs.observe(el);
+          rObs.observe(el);
+        });
+
+        // Workaround for Chrome bug, part 2.
+        //
+        // Re-enable browser management of rendering for the
+        // first article after the first paint. Double-rAF
+        // to ensure we get called after a layout.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            articles[0].style["content-visibility"] = "auto";
+          });
+        });
+      }
+    };
+
+    let contentVisibilityScrollFix = () => {
+      if (!("content-visibility" in document.documentElement.style)) {
+        return;
+      }
+      resizeResilientDeferredRendering(".post-story");
+    };
+    contentVisibilityScrollFix();
+    volantis.pjax.push(contentVisibilityScrollFix);
+  } catch (error) {
+    console.log(error);
+  }
+</script>
+
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/课程/","name":"课程"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/","name":"数据库机试"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数据库机试","description":"rt.","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/06/16/study/ComputerScience/fragments/dbex/","wordCount":3,"datePublished":"2022-06-15T16:00:00.000Z","dateModified":"2022-08-15T07:05:48.033Z","articleSection":"课程","keywords":"数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+
+<script src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/pjax/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </body>
+</html>

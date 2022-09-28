@@ -6,7 +6,7 @@
   <link href="http://adversarr.github.io/atom.xml" rel="self"/>
   
   <link href="http://adversarr.github.io/"/>
-  <updated>2022-08-08T11:18:08.915Z</updated>
+  <updated>2022-09-28T06:06:08.259Z</updated>
   <id>http://adversarr.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://adversarr.github.io/2022/08/08/CG/DiscreteGeometry/c1/"/>
     <id>http://adversarr.github.io/2022/08/08/CG/DiscreteGeometry/c1/</id>
     <published>2022-08-07T16:00:00.000Z</published>
-    <updated>2022-08-08T11:18:08.915Z</updated>
+    <updated>2022-09-28T06:06:08.259Z</updated>
     
     <content type="html"><![CDATA[<p>离散微分几何 - 1 - Introduction</p><span id="more"></span><div class="story post-story"><h2 id="introduction">Introduction</h2><p>Application:</p><ul><li>Geometry Processing: Up-sample / Down-sample — 3d-surface</li><li>Shape Analysis</li><li>Machine Learning.</li><li>Numerical Simu</li></ul></div><div class="story post-story"><h2 id="what-will-we-learn-wont">What will we learn / Won't</h2><ol type="1"><li>Diff Geometry</li><li>Geo Processing</li><li>Central — Link These two perspectives</li></ol><p>Won't</p><ol type="1"><li>view points on diff geometry</li><li>huge number of algorithms</li></ol></div><div class="story post-story"><h2 id="what-is-diff-geo">What is Diff Geo</h2><h3 id="diff-geo">Diff Geo</h3><ol type="1"><li>Talk about local properties of shape</li><li>and thier connection to global properties of shape</li><li>Lang of geometry physics</li></ol><h3 id="discrete-diff-geo">Discrete Diff Geo</h3><ol type="1"><li>infinity no longer allowed</li><li>expressed in terms of lenghs, angles</li><li>Loss is littow: captures many fundamental ideas</li></ol><blockquote><p>Translate continuous to discrete</p></blockquote><h3 id="how-to">How to</h3><p>DDG — obtain discrete definitions</p><ol type="1"><li>write down several equivalent definitions in the smooth setting</li><li>apply each smooth definition to an object in discrete</li><li>Determine which properties are captured by each resultinginequivalent discrete definition</li></ol></div><div class="story post-story"><h2 id="example-discrete-curvature">Example: Discrete Curvature</h2><h3 id="curves-in-the-plane">Curves in the Plane</h3><p>in 2D, a <strong>parameterized curve</strong> is a map taking eachpoint in an interval <span class="math inline">\([0, L]\)</span>.</p><p>Discrete Curves in the Plane:</p><ul><li><p>piecewise linear parameterized curve, vertices connected bystraight line segments</p></li><li><p>view as a interval <spanclass="math inline">\(\rightarrow\)</span> Segments</p></li></ul><h3 id="tangentnormalcurvature">Tangent/Normal/Curvature</h3><p>unit tangent: <span class="math display">\[T(s) := \frac{d}{ds} \gamma(s) / |\frac{d}{ds}\gamma(s)|\]</span> unit Normal: <span class="math display">\[N(s) = \mathcal JT(s)\]</span></p><ul><li><span class="math inline">\(\mathcal J\)</span>表示顺时针旋转</li></ul><p>curvature can be expressed as the rate of change in the tangent.<span class="math display">\[\kappa(s):=\langle N, \frac{d}{ds} T\rangle\]</span></p><ul><li>Key idea 1 — curvature is a second devirative.</li><li>Key idea 2 — curvature can have sign.</li></ul><h3 id="to-discrete">To Discrete</h3><p>in continuous:</p><ol type="1"><li>Turning angle</li><li>length variation</li><li>steiner formula</li><li>osculating curve</li></ol><h3 id="integrated-curvature">Integrated Curvature</h3><p><span class="math display">\[\int _ b ^ a \kappa(s) \mathrm ds = \varphi(b) - \varphi(a)\]</span></p><p>consider <span class="math inline">\(\gamma_{i - 1}\)</span>, <spanclass="math inline">\(\gamma_{i}\)</span>,<spanclass="math inline">\(\gamma_{i + 1}\)</span> <spanclass="math display">\[\theta _ i =: \kappa_i ^A\quad (\text{turning angle})\]</span></p><ul><li>integrated rather than pointwise values</li><li>total change in angle, not derivative.</li></ul><h3 id="length-variation">Length Variation</h3><blockquote><p>The fastest way to descrease the length of a curve is to move it inthe normal direction, with speed proportioonal to curvature</p></blockquote><p>Intuition — in flat rigions, normal motions doesn't change curvelength.</p><p>变分： <span class="math display">\[\eta(0) = \eta(L) = 0\]</span> Gradient of Length for a line segment</p></div>]]></content>
     
@@ -151,11 +151,11 @@
     <category term="数学" scheme="http://adversarr.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-    <category term="微分几何" scheme="http://adversarr.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"/>
-    
     <category term="数学" scheme="http://adversarr.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
     <category term="夏令营" scheme="http://adversarr.github.io/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/"/>
+    
+    <category term="微分几何" scheme="http://adversarr.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -219,27 +219,6 @@
   </entry>
   
   <entry>
-    <title>102-05-B样条曲线</title>
-    <link href="http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/"/>
-    <id>http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/</id>
-    <published>2022-04-19T16:00:00.000Z</published>
-    <updated>2022-04-26T13:29:00.253Z</updated>
-    
-    <content type="html"><![CDATA[<p>GAMES 102 -- 5 B样条曲线</p><span id="more"></span><div class="story post-story"><h2 id="b-样条曲线">B 样条曲线</h2><h3 id="建模的两种形式">建模的两种形式</h3><ol type="1"><li>重建 – 形状已经有了，猜出来– 基函数组合</li><li>设计 – 产生 – 自行组合权系数</li></ol><h3 id="如果用-bernstein-基函数">如果用 Bernstein 基函数？</h3><p>顶点和曲线的关联性强，具有较高的几何意义</p><p><span class="math inline">\(n\)</span> 次Bernstein基函数 <spanclass="math display">\[B_i ^{(n)} (t) = C_n ^ i t ^ i ( 1- t ) ^{n - i}\]</span> 从而： <span class="math display">\[\mathbf f ( t ) = \sum_{i = 1} ^ n b_i ( t )\mathbf p_i, \quad t \in [0,1]\]</span> 我们使用Bernstein基函数替代权函数： <spanclass="math display">\[x(t) = \sum_{i=0}^n B_i^n(t) b_i\]</span> <img src="g102-05/image-20220421233511284.png"alt="使用 Bernstein 基函数构造的曲线" /></p></div><div class="story post-story"><h2 id="b曲线的性质">B曲线的性质</h2><p>观察基函数：</p><ol type="1"><li>具有对称性（关于 <span class="math inline">\(i\)</span>）</li><li>当 <span class="math inline">\(t = i/n\)</span> 最大</li><li>非负性 + 权性（加和为1）— 具有凸包性<ol type="1"><li>曲线始终在凸包内</li></ol></li><li>基性 – 是<span class="math inline">\(n\)</span>次多项式空间的基</li><li>递推公式（从组合系数证明）</li><li>端点差值 – 经过始末顶点</li><li>端点性质 –<ol type="1"><li>插值</li><li>切线方向和边相同</li></ol></li><li>升阶 — 通过递推公式来推导</li></ol></div><div class="story post-story"><h2 id="de-casteljau-算法">de Casteljau 算法</h2><p>输入：点</p><p>输出：在 <span class="math inline">\(t\)</span> 位置的值</p><p>思想：反复用 <span class="math inline">\(t \mathbf x + (1-t)\mathbfy\)</span> 作用在相邻点上</p><p>复杂度 – <span class="math inline">\(O(n^2)\)</span></p><p>算法只有线性运算，计算稳定</p><p>应用：离散、求根</p></div><div class="story post-story"><h2 id="两bezier曲线的拼接条件">两Bezier曲线的拼接条件</h2><p>要求<span class="math inline">\(C^1\)</span>：要求有连接点同向</p><p>要求<span class="math inline">\(C^2\)</span>：要求连接点是中点</p><h3 id="广义样条曲线">广义样条曲线</h3><p>分段的多项式曲线（Bezier曲线）</p></div><div class="story post-story"><h2 id="b-样条">B 样条</h2><p>Bezier 曲线的不足：</p><ol type="1"><li>全局性！牵一发而动全身-不利于设计</li></ol><p>思考：怎样统一表达？</p><p>类比：每个控制顶点用一个基函数 <span class="math display">\[x(t) = \sum N_{i, k}(t) \cdot d_i\]</span> 性质：</p><ol type="1"><li>局部性</li><li>正、权性</li><li>……</li></ol><p>启发：根据递推公式–</p><ol type="1"><li>局部类似，由一个基函数平移得到</li><li>高阶的由两个低阶的基函数升阶得到</li></ol><h3 id="b-样条-1">B-样条</h3><p>对于均匀节点<spanclass="math inline">\(\cdots,i,i+1,\cdots\)</span></p><p>定义如下： <span class="math display">\[N_i^1(t) = \begin{cases}1, &amp; i \le t &lt; i + 1\\0\end{cases}\]</span> 那么： <span class="math display">\[N_i^k= \frac{t-i}{k-1}N_i^{k-1} + \frac{i+k-t}{k-1}N_{i+1}^{k-1}\]</span> 对于非均匀节点：<span class="math inline">\(t_0&lt; t_1 &lt;\cdots&lt;t_n\)</span> <span class="math display">\[N_i^1(t) = \begin{cases}1, &amp; t_i \le t &lt; t_{i + 1}\\0\end{cases}\]</span></p><p><span class="math display">\[N_i^k= \frac{t-t_i}{t_{i+k-1}-t_i}N_i^{k-1} + \frac{t_{i+k}-t}{t_{i + k}- t_{i + 1}}N_{i+1}^{k-1}\]</span></p><h3 id="样条曲线">样条曲线</h3><p>从而根据上述基函数，可以定义样条曲线。</p><p>设置重数：</p><figure><img src="g102-05/image-20220425162243893.png"alt="设置重数来避免始末点不重合" /><figcaption aria-hidden="true">设置重数来避免始末点不重合</figcaption></figure><h3 id="其他理论知识">其他理论知识</h3><p>性质很多：</p><ol type="1"><li>局部凸包性</li><li>变分缩减性</li><li>包络性</li><li>导数、积分</li><li>几何作图</li></ol></div>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;GAMES 102 -- 5 B样条曲线&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="计算机图形学" scheme="http://adversarr.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
-    
-    <category term="GAMES 在线课" scheme="http://adversarr.github.io/tags/GAMES-%E5%9C%A8%E7%BA%BF%E8%AF%BE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>102-04-B样条曲线</title>
     <link href="http://adversarr.github.io/2022/04/20/CG/GAMES/g102-06/"/>
     <id>http://adversarr.github.io/2022/04/20/CG/GAMES/g102-06/</id>
@@ -257,6 +236,27 @@
 &lt;h3 id=&quot;投影几何&quot;&gt;投影几何：&lt;/h3&gt;
 &lt;p&gt;齐次坐标： &lt;s</summary>
       
+    
+    
+    
+    <category term="计算机图形学" scheme="http://adversarr.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    
+    <category term="GAMES 在线课" scheme="http://adversarr.github.io/tags/GAMES-%E5%9C%A8%E7%BA%BF%E8%AF%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>102-05-B样条曲线</title>
+    <link href="http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/"/>
+    <id>http://adversarr.github.io/2022/04/20/CG/GAMES/g102-05/</id>
+    <published>2022-04-19T16:00:00.000Z</published>
+    <updated>2022-04-26T13:29:00.253Z</updated>
+    
+    <content type="html"><![CDATA[<p>GAMES 102 -- 5 B样条曲线</p><span id="more"></span><div class="story post-story"><h2 id="b-样条曲线">B 样条曲线</h2><h3 id="建模的两种形式">建模的两种形式</h3><ol type="1"><li>重建 – 形状已经有了，猜出来– 基函数组合</li><li>设计 – 产生 – 自行组合权系数</li></ol><h3 id="如果用-bernstein-基函数">如果用 Bernstein 基函数？</h3><p>顶点和曲线的关联性强，具有较高的几何意义</p><p><span class="math inline">\(n\)</span> 次Bernstein基函数 <spanclass="math display">\[B_i ^{(n)} (t) = C_n ^ i t ^ i ( 1- t ) ^{n - i}\]</span> 从而： <span class="math display">\[\mathbf f ( t ) = \sum_{i = 1} ^ n b_i ( t )\mathbf p_i, \quad t \in [0,1]\]</span> 我们使用Bernstein基函数替代权函数： <spanclass="math display">\[x(t) = \sum_{i=0}^n B_i^n(t) b_i\]</span> <img src="g102-05/image-20220421233511284.png"alt="使用 Bernstein 基函数构造的曲线" /></p></div><div class="story post-story"><h2 id="b曲线的性质">B曲线的性质</h2><p>观察基函数：</p><ol type="1"><li>具有对称性（关于 <span class="math inline">\(i\)</span>）</li><li>当 <span class="math inline">\(t = i/n\)</span> 最大</li><li>非负性 + 权性（加和为1）— 具有凸包性<ol type="1"><li>曲线始终在凸包内</li></ol></li><li>基性 – 是<span class="math inline">\(n\)</span>次多项式空间的基</li><li>递推公式（从组合系数证明）</li><li>端点差值 – 经过始末顶点</li><li>端点性质 –<ol type="1"><li>插值</li><li>切线方向和边相同</li></ol></li><li>升阶 — 通过递推公式来推导</li></ol></div><div class="story post-story"><h2 id="de-casteljau-算法">de Casteljau 算法</h2><p>输入：点</p><p>输出：在 <span class="math inline">\(t\)</span> 位置的值</p><p>思想：反复用 <span class="math inline">\(t \mathbf x + (1-t)\mathbfy\)</span> 作用在相邻点上</p><p>复杂度 – <span class="math inline">\(O(n^2)\)</span></p><p>算法只有线性运算，计算稳定</p><p>应用：离散、求根</p></div><div class="story post-story"><h2 id="两bezier曲线的拼接条件">两Bezier曲线的拼接条件</h2><p>要求<span class="math inline">\(C^1\)</span>：要求有连接点同向</p><p>要求<span class="math inline">\(C^2\)</span>：要求连接点是中点</p><h3 id="广义样条曲线">广义样条曲线</h3><p>分段的多项式曲线（Bezier曲线）</p></div><div class="story post-story"><h2 id="b-样条">B 样条</h2><p>Bezier 曲线的不足：</p><ol type="1"><li>全局性！牵一发而动全身-不利于设计</li></ol><p>思考：怎样统一表达？</p><p>类比：每个控制顶点用一个基函数 <span class="math display">\[x(t) = \sum N_{i, k}(t) \cdot d_i\]</span> 性质：</p><ol type="1"><li>局部性</li><li>正、权性</li><li>……</li></ol><p>启发：根据递推公式–</p><ol type="1"><li>局部类似，由一个基函数平移得到</li><li>高阶的由两个低阶的基函数升阶得到</li></ol><h3 id="b-样条-1">B-样条</h3><p>对于均匀节点<spanclass="math inline">\(\cdots,i,i+1,\cdots\)</span></p><p>定义如下： <span class="math display">\[N_i^1(t) = \begin{cases}1, &amp; i \le t &lt; i + 1\\0\end{cases}\]</span> 那么： <span class="math display">\[N_i^k= \frac{t-i}{k-1}N_i^{k-1} + \frac{i+k-t}{k-1}N_{i+1}^{k-1}\]</span> 对于非均匀节点：<span class="math inline">\(t_0&lt; t_1 &lt;\cdots&lt;t_n\)</span> <span class="math display">\[N_i^1(t) = \begin{cases}1, &amp; t_i \le t &lt; t_{i + 1}\\0\end{cases}\]</span></p><p><span class="math display">\[N_i^k= \frac{t-t_i}{t_{i+k-1}-t_i}N_i^{k-1} + \frac{t_{i+k}-t}{t_{i + k}- t_{i + 1}}N_{i+1}^{k-1}\]</span></p><h3 id="样条曲线">样条曲线</h3><p>从而根据上述基函数，可以定义样条曲线。</p><p>设置重数：</p><figure><img src="g102-05/image-20220425162243893.png"alt="设置重数来避免始末点不重合" /><figcaption aria-hidden="true">设置重数来避免始末点不重合</figcaption></figure><h3 id="其他理论知识">其他理论知识</h3><p>性质很多：</p><ol type="1"><li>局部凸包性</li><li>变分缩减性</li><li>包络性</li><li>导数、积分</li><li>几何作图</li></ol></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;GAMES 102 -- 5 B样条曲线&lt;/p&gt;</summary>
     
     
     
@@ -289,16 +289,16 @@
   </entry>
   
   <entry>
-    <title>102-04-三次样条函数</title>
-    <link href="http://adversarr.github.io/2022/04/19/CG/GAMES/g102-04/"/>
-    <id>http://adversarr.github.io/2022/04/19/CG/GAMES/g102-04/</id>
+    <title>102-03-参数曲线拟合</title>
+    <link href="http://adversarr.github.io/2022/04/19/CG/GAMES/g102-03/"/>
+    <id>http://adversarr.github.io/2022/04/19/CG/GAMES/g102-03/</id>
     <published>2022-04-18T16:00:00.000Z</published>
-    <updated>2022-04-19T07:52:10.194Z</updated>
+    <updated>2022-04-19T03:40:08.873Z</updated>
     
-    <content type="html"><![CDATA[<p>GAMES 102 – 几何建模与处理</p><span id="more"></span><div class="story post-story"><h2 id="三次样条函数">三次样条函数</h2><h3 id="力学解释">力学解释</h3><ul><li><p>曲线：弹性梁 — 弹性模量为 <spanclass="math inline">\(E\)</span></p></li><li><p>利用贝努利-欧拉方程，得到近似为分段三次函数</p></li><li><p>2次 — 无法表达拐点、三次 — <spanclass="math inline">\(C^2\)</span>，四次 — 误差大</p></li></ul><p>如何求？满足什么条件？</p><h3 id="思路">思路</h3><p>分段三次多项式，四个变量待定 <span class="math display">\[y_{i}(x) = a_i + b_i x. + c_i x ^ 2 + d_i x ^ 3\]</span> 从而有 <span class="math inline">\(4n-2\)</span>个约束条件，加上两个边界条件。</p><p>列出三弯矩方程组（对称、三对角、对角占优），可以使用追赶法来计算。</p><h3 id="边界条件">边界条件</h3><ul><li>自由端 — 指定二阶导数</li><li>夹持端 — 指定一阶导数</li></ul><h3 id="三次基样条">三次基样条</h3><p>使用三次基函数，计算在基函数下的“坐标”</p></div><div class="story post-story"><h2 id="三次样条曲线">三次样条曲线</h2><ul><li>取 <span class="math inline">\(x,y,z\)</span></li><li>参数化</li></ul></div><div class="story post-story"><h2 id="曲线的连续性">曲线的连续性</h2><p>参数连续性：<span class="math inline">\(C^2\)</span>连续 —和参数有关</p><p>几何连续性：设 <span class="math inline">\(\phi(t)\)</span>是给定曲线的参数方程，存在参数变换，可以达到的连续性是几何连续性。记为<spanclass="math inline">\(G^n\)</span></p><p>具体：</p><ul><li><span class="math inline">\(G^0\)</span>，连续</li><li><span class="math inline">\(G^1\)</span> 切线相同</li><li><span class="math inline">\(G^2\)</span> 曲率相同</li></ul></div>]]></content>
+    <content type="html"><![CDATA[<p>几何建模与处理</p><span id="more"></span><div class="story post-story"><h2 id="多元函数">多元函数</h2><p><span class="math display">\[f:\R ^n \rightarrow \R\]</span></p><h3 id="二元函数基函数构造">二元函数基函数构造</h3><p>方法：<strong>张量积</strong>（两两相乘）</p><figure><img src="g102-03/image-20220419111126729.png" class="lazyload" data-srcset="g102-03/image-20220419111126729.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="张量基函数" /><figcaption aria-hidden="true">张量基函数</figcaption></figure><p>优点：定义简单，多个一元基函数的乘积形式</p><p>不足：</p><ul><li>维数增加 – 基函数个数 <span class="math inline">\(n^2\)</span> –变量（参数数量）增加</li></ul><h3 id="神经网络表达">神经网络表达</h3><ul><li>用单变量函数 <span class="math inline">\(\sigma(x)\)</span>和不同的仿射变换来构造基函数。</li></ul></div><div class="story post-story"><h2 id="向量值函数">向量值函数</h2><p><span class="math display">\[f:\R^m \rightarrow \R^n\]</span></p><ul><li>看成多个单变量函数，各个函数独立无关。</li><li>共享基函数</li></ul><p>几何上：</p><ul><li>对于<span class="math inline">\(m=1\)</span> – 轨迹为曲线 —本质维度=1</li><li>对于 <span class="math inline">\(\R^2 \rightarrow \R^3\)</span> —参数曲面 — 本质维度=2 —</li><li><span class="math inline">\(3\rightarrow3\)</span> — 变形 –应用：有限元、图像变形</li><li><span class="math inline">\(3\rightarrow 2\)</span> — 降维映射 —例如 AutoEncoder</li></ul><figure><img src="g102-03/image-20220419112717602.png" class="lazyload" data-srcset="g102-03/image-20220419112717602.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="总结" /><figcaption aria-hidden="true">总结</figcaption></figure></div><div class="story post-story"><h2 id="曲线拟合">曲线拟合</h2><h3 id="曲线拟合问题">曲线拟合问题</h3><ul><li>输入：给定平面上的点</li><li>输出：一条参数曲线，拟合这些点</li></ul><p><span class="math display">\[f:\R \rightarrow \R^2\]</span></p><p>参数化 — <span class="math display">\[\begin{cases}x = x(t)\\y = y(t)\end{cases}\]</span></p><ul><li><p>问题转化为：对数据点 <spanclass="math inline">\((x_i,y_i)\)</span>，对应哪个参数<spanclass="math inline">\(t_i\)</span>？</p></li><li><p><span class="math inline">\(E = \sum\|\mathbf p (t_i) - \mathbfp_i\|\)</span></p></li></ul><p>如何确定 <span class="math inline">\(t\)</span></p><ul><li><p>均匀参数化（Equidistant Parameterization）</p></li><li><p>弦长参数化 <span class="math inline">\(t_{i+1} - t_i =\|\mathbfb_{i+1} -\mathbf b\|\)</span></p></li><li><p>中心参数化</p></li></ul><blockquote><p><strong>需要好的参数化</strong></p><p>目的：保持原有结构！</p></blockquote><h3 id="曲面参数化">曲面参数化</h3><ul><li>三维点找二维的参数 — 降维问题</li></ul><p>例如：</p><ul><li>纹理映射</li><li>世界地图</li></ul></div>]]></content>
     
     
-    <summary type="html">&lt;p&gt;GAMES 102 – 几何建模与处理&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;几何建模与处理&lt;/p&gt;</summary>
     
     
     
@@ -310,16 +310,16 @@
   </entry>
   
   <entry>
-    <title>102-03-参数曲线拟合</title>
-    <link href="http://adversarr.github.io/2022/04/19/CG/GAMES/g102-03/"/>
-    <id>http://adversarr.github.io/2022/04/19/CG/GAMES/g102-03/</id>
+    <title>102-04-三次样条函数</title>
+    <link href="http://adversarr.github.io/2022/04/19/CG/GAMES/g102-04/"/>
+    <id>http://adversarr.github.io/2022/04/19/CG/GAMES/g102-04/</id>
     <published>2022-04-18T16:00:00.000Z</published>
-    <updated>2022-04-19T03:40:08.873Z</updated>
+    <updated>2022-04-19T07:52:10.194Z</updated>
     
-    <content type="html"><![CDATA[<p>几何建模与处理</p><span id="more"></span><div class="story post-story"><h2 id="多元函数">多元函数</h2><p><span class="math display">\[f:\R ^n \rightarrow \R\]</span></p><h3 id="二元函数基函数构造">二元函数基函数构造</h3><p>方法：<strong>张量积</strong>（两两相乘）</p><figure><img src="g102-03/image-20220419111126729.png" class="lazyload" data-srcset="g102-03/image-20220419111126729.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="张量基函数" /><figcaption aria-hidden="true">张量基函数</figcaption></figure><p>优点：定义简单，多个一元基函数的乘积形式</p><p>不足：</p><ul><li>维数增加 – 基函数个数 <span class="math inline">\(n^2\)</span> –变量（参数数量）增加</li></ul><h3 id="神经网络表达">神经网络表达</h3><ul><li>用单变量函数 <span class="math inline">\(\sigma(x)\)</span>和不同的仿射变换来构造基函数。</li></ul></div><div class="story post-story"><h2 id="向量值函数">向量值函数</h2><p><span class="math display">\[f:\R^m \rightarrow \R^n\]</span></p><ul><li>看成多个单变量函数，各个函数独立无关。</li><li>共享基函数</li></ul><p>几何上：</p><ul><li>对于<span class="math inline">\(m=1\)</span> – 轨迹为曲线 —本质维度=1</li><li>对于 <span class="math inline">\(\R^2 \rightarrow \R^3\)</span> —参数曲面 — 本质维度=2 —</li><li><span class="math inline">\(3\rightarrow3\)</span> — 变形 –应用：有限元、图像变形</li><li><span class="math inline">\(3\rightarrow 2\)</span> — 降维映射 —例如 AutoEncoder</li></ul><figure><img src="g102-03/image-20220419112717602.png" class="lazyload" data-srcset="g102-03/image-20220419112717602.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="总结" /><figcaption aria-hidden="true">总结</figcaption></figure></div><div class="story post-story"><h2 id="曲线拟合">曲线拟合</h2><h3 id="曲线拟合问题">曲线拟合问题</h3><ul><li>输入：给定平面上的点</li><li>输出：一条参数曲线，拟合这些点</li></ul><p><span class="math display">\[f:\R \rightarrow \R^2\]</span></p><p>参数化 — <span class="math display">\[\begin{cases}x = x(t)\\y = y(t)\end{cases}\]</span></p><ul><li><p>问题转化为：对数据点 <spanclass="math inline">\((x_i,y_i)\)</span>，对应哪个参数<spanclass="math inline">\(t_i\)</span>？</p></li><li><p><span class="math inline">\(E = \sum\|\mathbf p (t_i) - \mathbfp_i\|\)</span></p></li></ul><p>如何确定 <span class="math inline">\(t\)</span></p><ul><li><p>均匀参数化（Equidistant Parameterization）</p></li><li><p>弦长参数化 <span class="math inline">\(t_{i+1} - t_i =\|\mathbfb_{i+1} -\mathbf b\|\)</span></p></li><li><p>中心参数化</p></li></ul><blockquote><p><strong>需要好的参数化</strong></p><p>目的：保持原有结构！</p></blockquote><h3 id="曲面参数化">曲面参数化</h3><ul><li>三维点找二维的参数 — 降维问题</li></ul><p>例如：</p><ul><li>纹理映射</li><li>世界地图</li></ul></div>]]></content>
+    <content type="html"><![CDATA[<p>GAMES 102 – 几何建模与处理</p><span id="more"></span><div class="story post-story"><h2 id="三次样条函数">三次样条函数</h2><h3 id="力学解释">力学解释</h3><ul><li><p>曲线：弹性梁 — 弹性模量为 <spanclass="math inline">\(E\)</span></p></li><li><p>利用贝努利-欧拉方程，得到近似为分段三次函数</p></li><li><p>2次 — 无法表达拐点、三次 — <spanclass="math inline">\(C^2\)</span>，四次 — 误差大</p></li></ul><p>如何求？满足什么条件？</p><h3 id="思路">思路</h3><p>分段三次多项式，四个变量待定 <span class="math display">\[y_{i}(x) = a_i + b_i x. + c_i x ^ 2 + d_i x ^ 3\]</span> 从而有 <span class="math inline">\(4n-2\)</span>个约束条件，加上两个边界条件。</p><p>列出三弯矩方程组（对称、三对角、对角占优），可以使用追赶法来计算。</p><h3 id="边界条件">边界条件</h3><ul><li>自由端 — 指定二阶导数</li><li>夹持端 — 指定一阶导数</li></ul><h3 id="三次基样条">三次基样条</h3><p>使用三次基函数，计算在基函数下的“坐标”</p></div><div class="story post-story"><h2 id="三次样条曲线">三次样条曲线</h2><ul><li>取 <span class="math inline">\(x,y,z\)</span></li><li>参数化</li></ul></div><div class="story post-story"><h2 id="曲线的连续性">曲线的连续性</h2><p>参数连续性：<span class="math inline">\(C^2\)</span>连续 —和参数有关</p><p>几何连续性：设 <span class="math inline">\(\phi(t)\)</span>是给定曲线的参数方程，存在参数变换，可以达到的连续性是几何连续性。记为<spanclass="math inline">\(G^n\)</span></p><p>具体：</p><ul><li><span class="math inline">\(G^0\)</span>，连续</li><li><span class="math inline">\(G^1\)</span> 切线相同</li><li><span class="math inline">\(G^2\)</span> 曲率相同</li></ul></div>]]></content>
     
     
-    <summary type="html">&lt;p&gt;几何建模与处理&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;GAMES 102 – 几何建模与处理&lt;/p&gt;</summary>
     
     
     

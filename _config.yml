@@ -43,11 +43,12 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
+hexo_asset_folder: true
 relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: false
+  line_number: true
   auto_detect: true
   tab_replace: ''
   wrap: true

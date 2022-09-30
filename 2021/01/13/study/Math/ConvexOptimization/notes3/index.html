@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.0.0">
   <meta name="Volantis" content="5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-01-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-15T07:01:41.404Z">
+<meta property="article:modified_time" content="2022-09-30T01:16:33.329Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="凸优化">
 <meta name="twitter:card" content="summary">
@@ -1914,7 +1914,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664345188210),
+    lastupdate: new Date(1664502783696),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2756,7 +2756,7 @@ x+(1-\theta) y)\le \theta f(x) + (1-\theta)f(y), \forall x, y \in
 class="math inline">\(-f\)</span>为凸函数</li>
 <li>仿射函数</li>
 </ul>
-<p><img src="notes3/image-20210112203149510.png" class="lazyload" data-srcset="notes3/image-20210112203149510.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112203149510.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112203149510.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p><strong>严格凸函数</strong></p>
 <ul>
 <li><span class="math inline">\(f:\R^n\rightarrow \R\)</span>
@@ -2773,7 +2773,7 @@ class="math inline">\(\forall x\in\mathrm{dom}f,v\in \R^n\)</span></p>
 <p>例如：<span class="math inline">\(f:S^n\rightarrow \R,~where~f(X) =
 \log\det X,\mathrm{dom} f = S^n_{++}\)</span> 为凹函数</p>
 </blockquote>
-<p><img src="notes3/image-20210112203810426.png" class="lazyload" data-srcset="notes3/image-20210112203810426.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112203810426.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112203810426.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h5 id="扩展值延伸">扩展值延伸</h5>
 <ul>
 <li>用<span class="math inline">\(\tilde f(x) = f(x), x\in \mathrm{dom}
@@ -2806,7 +2806,7 @@ class="math inline">\(f(y) \ge f(x) +\nabla f(x)^T(y-x),~\forall x, y
 f(x+tv)为凸函数\iff g(t)\ge g(\tilde{t})+g(\dot t)(\tilde{t}-t)\iff
 f(y)\ge f(x) +\nabla f^T(x) (y-x)\)</span></p></li>
 </ul>
-<p><img src="notes3/image-20210112204104951.png" class="lazyload" data-srcset="notes3/image-20210112204104951.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112204104951.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112204104951.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h5 id="二阶条件">二阶条件</h5>
 <p><strong>Thm</strong>（二阶条件）f 二阶可微，即对于 <span
 class="math inline">\(\mathrm {dom}~f\)</span> 内的任意一点，Hessian
@@ -2961,12 +2961,12 @@ class="math inline">\(C_\alpha=\{x\in \mathrm {dom}~f|f(x)\le
 \alpha\}\)</span></li>
 <li>凸函数的所有下水平集都是凸集</li>
 </ul>
-<p><img src="notes3/image-20210112212004137.png" class="lazyload" data-srcset="notes3/image-20210112212004137.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112212004137.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112212004137.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>上境图：</p>
-<p><img src="notes3/image-20210112211354752.png" class="lazyload" data-srcset="notes3/image-20210112211354752.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112211354752.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112211354752.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>共轭函数 <span class="math inline">\(\displaystyle f^*(y)=\sup_{x\in
 \mathbf{dom}f}*(y^Tx-f(x))\)</span>：</p>
-<p><img src="notes3/image-20210112212840193.png" class="lazyload" data-srcset="notes3/image-20210112212840193.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112212840193.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112212840193.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <ul>
 <li>可微<span class="math inline">\(f\)</span>的共轭函数<span
 class="math inline">\(f^*(y)=\sup_{x\in\mathbf{dom}f}(y^Tx-f(x))\)</span>
@@ -2992,26 +2992,26 @@ f^*(y)&amp;=\sup_{x&gt;0}(xy+\log x)\\
 class="math inline">\(f\)</span>
 为拟凸函数，当其定义域为凸集，且其下水平集对于所有<span
 class="math inline">\(\alpha\)</span>为凸集。</p>
-<p><img src="notes3/image-20210112213224293.png" class="lazyload" data-srcset="notes3/image-20210112213224293.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213224293.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213224293.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>也就是说：<span class="math inline">\(f(\theta x+(1-\theta)y)\le
 \max\{f(x),f(y)\}\)</span></p>
-<p><img src="notes3/image-20210112213332290.png" class="lazyload" data-srcset="notes3/image-20210112213332290.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213332290.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213332290.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>例如：</p>
 <ol type="1">
 <li>向量的长度（最后一个⾮零元素的位置）</li>
 <li>线性分数函数</li>
 </ol>
-<p><img src="notes3/image-20210112213408052.png" class="lazyload" data-srcset="notes3/image-20210112213408052.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213408052.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213408052.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <ol start="3" type="1">
 <li>向量的零范数（非零元素的个数）</li>
 </ol>
 <p>拟凸函数的二阶条件：</p>
-<p><img src="notes3/image-20210112213609724.png" class="lazyload" data-srcset="notes3/image-20210112213609724.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213609724.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213609724.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="对数凸函数对数凹函数">对数凸函数、对数凹函数</h3>
 <p>例如：</p>
 <p>对数凹函数：</p>
-<p><img src="notes3/image-20210112213640429.png" class="lazyload" data-srcset="notes3/image-20210112213640429.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
-<p><img src="notes3/image-20210112213701936.png" class="lazyload" data-srcset="notes3/image-20210112213701936.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213640429.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213640429.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213701936.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes3/image-20210112213701936.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="基于广义不等式的凸函数">基于广义不等式的凸函数</h3>
 
 </div>
@@ -3050,10 +3050,10 @@ class="math inline">\(\alpha\)</span>为凸集。</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-15T15:01:41+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-30T09:16:33+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年8月15日</p>
+    <p>更新于：2022年9月30日</p>
   </a>
 </div>
 
@@ -4431,7 +4431,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes3/","name":"「凸优化」 凸函数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"「凸优化」 凸函数","description":"凸函数","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes3/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes3/","wordCount":3,"datePublished":"2021-01-12T16:00:00.000Z","dateModified":"2022-08-15T07:01:41.404Z","articleSection":"数学","keywords":"凸优化","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes3/","name":"「凸优化」 凸函数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"「凸优化」 凸函数","description":"凸函数","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes3/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes3/","wordCount":3,"datePublished":"2021-01-12T16:00:00.000Z","dateModified":"2022-09-30T01:16:33.329Z","articleSection":"数学","keywords":"凸优化","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

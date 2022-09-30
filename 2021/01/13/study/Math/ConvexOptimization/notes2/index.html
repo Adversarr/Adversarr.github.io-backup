@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.0.0">
   <meta name="Volantis" content="5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-01-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-15T07:01:20.583Z">
+<meta property="article:modified_time" content="2022-09-30T01:16:33.320Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="凸优化">
 <meta name="twitter:card" content="summary">
@@ -1914,7 +1914,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664345188210),
+    lastupdate: new Date(1664502783696),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2836,7 +2836,7 @@ class="math inline">\(x = \theta x_1 + (1-\theta)x_2,\quad 0\le \theta
 <p><strong>Def</strong>（凸包） <span
 class="math inline">\(\mathrm{conv}~S\)</span>
 S中所有点的凸组合的集合</p>
-<p><img src="notes2/image-20210112193144228.png" class="lazyload" data-srcset="notes2/image-20210112193144228.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112193144228.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112193144228.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="锥">锥</h4>
 <ul>
 <li>定义：<span class="math inline">\(\forall x \in C\wedge \theta\ge 0,
@@ -2849,7 +2849,7 @@ x_1+\theta_2 x_2\)</span></li>
 C, \theta_i\ge 0, i = 0, 1\dots,k\}\)</span></li>
 </ul></li>
 </ul>
-<p><img src="notes2/image-20210112193113353.png" class="lazyload" data-srcset="notes2/image-20210112193113353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112193113353.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112193113353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h5 id="对比">对比</h5>
 <table>
 <thead>
@@ -2904,13 +2904,13 @@ class="math inline">\(\{x|a^Tx=b\}\quad(a\ne 0)\)</span></p>
 <ul>
 <li>仿射集合、凸集</li>
 </ul>
-<p><img src="notes2/image-20210112193344729.png" class="lazyload" data-srcset="notes2/image-20210112193344729.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112193344729.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112193344729.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p><strong>Def</strong>（半空间）<span class="math inline">\(\{x|a^Tx\le
 b\}\quad(a\ne 0)\)</span></p>
 <ul>
 <li>凸集</li>
 </ul>
-<p><img src="notes2/image-20210112194043195.png" class="lazyload" data-srcset="notes2/image-20210112194043195.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112194043195.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112194043195.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <blockquote>
 <p>注意证明方法：利用线性方程组</p>
 </blockquote>
@@ -2955,7 +2955,7 @@ class="math inline">\(x_c\)</span> 为球心，<span
 class="math inline">\(r\)</span> 为半径。</p>
 <p><strong>Def</strong>（范数锥）<span
 class="math inline">\(\{(x,t)|\|x\|\le t\}\)</span></p>
-<p><img src="notes2/image-20210112194656365.png" class="lazyload" data-srcset="notes2/image-20210112194656365.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112194656365.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112194656365.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h5 id="多面体">多面体</h5>
 <p><strong>Def</strong>（多面体）有限个线性等式和不等式的解集：<span
 class="math inline">\(Ax\preceq b,\quad Cx = d\)</span></p>
@@ -2963,7 +2963,7 @@ class="math inline">\(Ax\preceq b,\quad Cx = d\)</span></p>
 <li><p>考虑仅由不等式组成的情况。</p></li>
 <li><p>有限个半空间和超平面的交集</p></li>
 </ul>
-<p><img src="notes2/image-20210112195218829.png" class="lazyload" data-srcset="notes2/image-20210112195218829.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112195218829.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112195218829.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h5 id="单纯形">单纯形</h5>
 <p><strong>Def</strong>（单纯形）<span
 class="math inline">\(C=\mathrm{conv}\{v_0,\dots,v_k\}=\{\sum \theta_i
@@ -2988,7 +2988,7 @@ class="math inline">\(\mathbf{S}^n_{++}=\{X\in\mathbf{S}^n|X\succ
 </ul>
 <blockquote>
 <p>n = 2 时：</p>
-<p><img src="notes2/image-20210112195408027.png" class="lazyload" data-srcset="notes2/image-20210112195408027.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112195408027.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112195408027.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 </blockquote>
 <h3 id="保凸运算">保凸运算</h3>
 <p>如何确定凸集：</p>
@@ -3002,7 +3002,7 @@ class="math inline">\(\mathbf{S}^n_{++}=\{X\in\mathbf{S}^n|X\succ
 <ul>
 <li>包括无穷</li>
 </ul>
-<p><img src="notes2/image-20210112195840400.png" class="lazyload" data-srcset="notes2/image-20210112195840400.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112195840400.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112195840400.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="仿射函数">仿射函数</h4>
 <ul>
 <li><span class="math inline">\(f(x) = Ax+b\)</span> 其中 <span
@@ -3046,7 +3046,7 @@ g(x) = \left[\begin{matrix}A\\c^T
 <li>条件概率</li>
 </ol>
 <p>又如：</p>
-<p><img src="notes2/image-20210112201048077.png" class="lazyload" data-srcset="notes2/image-20210112201048077.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201048077.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201048077.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="广义不等式">广义不等式</h3>
 <blockquote>
 <p>建立向量的不等关系</p>
@@ -3089,16 +3089,16 @@ y = x\)</span></li>
 class="math inline">\(S_1\)</span> 最小元，<span
 class="math inline">\(x_2\)</span> 为 <span
 class="math inline">\(S_2\)</span> 极小元</p>
-<p><img src="notes2/image-20210112201529670.png" class="lazyload" data-srcset="notes2/image-20210112201529670.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201529670.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201529670.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="超平面分离定理">超平面分离定理</h4>
 <p>若C和D时两个不相交的凸集，则存在：</p>
 <p><span class="math inline">\(a\ne 0, a^Tx \le b~for~x\in C,~~a^Tx\ge
 b~for~x\in D\)</span></p>
-<p><img src="notes2/image-20210112201743364.png" class="lazyload" data-srcset="notes2/image-20210112201743364.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201743364.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201743364.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="支撑超平面">支撑超平面</h3>
 <p><strong>Def</strong>（支撑超平面）<span class="math inline">\(\forall
 x\in C,a^Tx\le a^Tx_0 \rightarrow \{x|a^Tx=a^Tx_0\}\)</span></p>
-<p><img src="notes2/image-20210112201855548.png" class="lazyload" data-srcset="notes2/image-20210112201855548.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201855548.png" class="lazyload" data-srcset="/2021/01/13/study/Math/ConvexOptimization/notes2/image-20210112201855548.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p><strong>Thm</strong>（支撑超平面存在定理）：若集合 <span
 class="math inline">\(C\)</span> 为凸集，则在集合 <span
 class="math inline">\(C\)</span>
@@ -3165,10 +3165,10 @@ class="math inline">\(x\)</span> 为极小元。</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-15T15:01:20+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-30T09:16:33+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年8月15日</p>
+    <p>更新于：2022年9月30日</p>
   </a>
 </div>
 
@@ -4550,7 +4550,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes2/","name":"「凸优化」 凸集"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"「凸优化」 凸集","description":"凸集合","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes2/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes2/","wordCount":3,"datePublished":"2021-01-12T16:00:00.000Z","dateModified":"2022-08-15T07:01:20.583Z","articleSection":"数学","keywords":"凸优化","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes2/","name":"「凸优化」 凸集"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"「凸优化」 凸集","description":"凸集合","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes2/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2021/01/13/study/Math/ConvexOptimization/notes2/","wordCount":3,"datePublished":"2021-01-12T16:00:00.000Z","dateModified":"2022-09-30T01:16:33.320Z","articleSection":"数学","keywords":"凸优化","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

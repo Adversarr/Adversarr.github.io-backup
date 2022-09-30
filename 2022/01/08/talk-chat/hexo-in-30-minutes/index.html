@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.0.0">
   <meta name="Volantis" content="5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-01-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-15T07:06:29.801Z">
+<meta property="article:modified_time" content="2022-09-30T01:16:33.380Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -1914,7 +1914,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664345188210),
+    lastupdate: new Date(1664502783696),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2753,27 +2753,27 @@ target="_blank" rel="noopener" href="https://pages.github.com">https://pages.git
 <li>名字：必须是 <code>username.github.io</code></li>
 </ol>
 <p>例如：</p>
-<p><img src="hexo-in-30-minutes/2022-01-08-17-54-19.png" class="lazyload" data-srcset="hexo-in-30-minutes/2022-01-08-17-54-19.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/01/08/talk-chat/hexo-in-30-minutes/2022-01-08-17-54-19.png" class="lazyload" data-srcset="/2022/01/08/talk-chat/hexo-in-30-minutes/2022-01-08-17-54-19.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h3 id="测试效果">测试效果</h3>
 <p>实际上，你已经完成了这里面（<a
 target="_blank" rel="noopener" href="https://pages.github.com">https://pages.github.com</a>）最难的一个部分，下面要测试你的网站的代码仓库是否成功创建：</p>
 <div class="story post-story"><h2 id="配置网站">配置网站</h2>
 <h3 id="下载-repo-到本地">下载 repo 到本地</h3>
 <p>首先，先打开一个terminal（Windows下的Powershell），并且用cd命令转到一个用来存放你的网站源码的文件夹，例如我的：</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">cd D:<span class="regexp">/Documents/</span><span class="keyword">Repositories</span>/</span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd D:<span class="regexp">/Documents/</span><span class="keyword">Repositories</span>/</span><br></pre></td></tr></table></figure>
 <p>通过：</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/username/u</span>sername.github.io</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/username/u</span>sername.github.io</span><br></pre></td></tr></table></figure>
 <p>来下载你这个网站对应的代码。</p>
 <h4 id="打开你的repo">打开你的repo</h4>
 <p>首先，你需要一个vscode（或者sublime，或者任何一个轻量级的代码编辑器），用它打开这个repo的文件夹（想必大家都很熟悉）</p>
 <details ><summary> 这个时候，如果你不放心是否你的repo已经设置好了，可以看看这里 </summary>
               <div class='content'>
-              <p>创建一个新的 <code>index.html</code> 文件</p><p>内容简单的写一句：</p><figure class="highlight erlang-repl"><table><tr><td class="code"><pre><span class="line">Hello world!</span><br></pre></td></tr></table></figure><p>就可以了～</p><p>然后将它push到远端：</p><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">add</span> <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">commit</span> <span class="operator">-</span>m &quot;Initial commit&quot;</span><br><span class="line">git push <span class="operator">-</span>u origin main</span><br></pre></td></tr></table></figure><p>然后稍微等等，然后访问：<code>https://username.github.io</code>网站，应该就能看到结果。</p>
+              <p>创建一个新的 <code>index.html</code> 文件</p><p>内容简单的写一句：</p><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello world!</span><br></pre></td></tr></table></figure><p>就可以了～</p><p>然后将它push到远端：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">commit</span> <span class="operator">-</span>m &quot;Initial commit&quot;</span><br><span class="line">git push <span class="operator">-</span>u origin main</span><br></pre></td></tr></table></figure><p>然后稍微等等，然后访问：<code>https://username.github.io</code>网站，应该就能看到结果。</p>
               </div>
             </details>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>接着，执行：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">hexo init .</span><br><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init .</span><br><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
 <p>然后，在当前文件夹应该就能看到hexo和npm自动生成了你的blog源码，配置好了相关环境。从这里起，你的Blog之旅将正式开始。</p>
 <h3 id="站点配置">站点配置</h3>
 <p>一个Hexo站点主要由五部分组成：</p>
@@ -2801,15 +2801,15 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
 只有Git章节有用</p>
 </blockquote>
 <p>先讲讲第四部分，就是不同的branch组织源码库。这一部分需要：</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">git branch gh-pages-<span class="keyword">source</span></span><br><span class="line">git checkout gh-pages-<span class="keyword">source</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">git branch gh-pages-<span class="keyword">source</span></span><br><span class="line">git checkout gh-pages-<span class="keyword">source</span></span><br></pre></td></tr></table></figure>
 <p>然后在你的<code>_config.yml</code>文件中添加：</p>
-<figure class="highlight handlebars"><table><tr><td class="code"><pre><span class="line"><span class="language-xml">deploy:</span></span><br><span class="line"><span class="language-xml">  type: git</span></span><br><span class="line"><span class="language-xml">  repository: git@github.com:username/username.github.io.git</span></span><br><span class="line"><span class="language-xml">  branch: master # 这里就是你存放【网站源码】的地方</span></span><br><span class="line"><span class="language-xml">  message: Site updated:</span><span class="template-variable">&#123;&#123; <span class="name">now</span>(<span class="name">&#x27;YYYY-MM-DD HH:mm:ss&#x27;</span>) &#125;&#125;</span><span class="language-xml">)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">deploy:</span></span><br><span class="line"><span class="language-xml">  type: git</span></span><br><span class="line"><span class="language-xml">  repository: git@github.com:username/username.github.io.git</span></span><br><span class="line"><span class="language-xml">  branch: master # 这里就是你存放【网站源码】的地方</span></span><br><span class="line"><span class="language-xml">  message: Site updated:</span><span class="template-variable">&#123;&#123; <span class="name">now</span>(<span class="name">&#x27;YYYY-MM-DD HH:mm:ss&#x27;</span>) &#125;&#125;</span><span class="language-xml">)</span></span><br></pre></td></tr></table></figure>
 <p>然后试试看：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo deploy</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo deploy</span></span><br></pre></td></tr></table></figure>
 <p>就能直接把生成的【网站源码】push到github仓库中，让github自动部署网站到<code>username.github.io</code>。
 <details ><summary> 当然你也可以在 github repo 的设置中设置你想要的branch作为【网站源码】的路径 </summary>
               <div class='content'>
-              <p><img src="hexo-in-30-minutes/2022-01-08-22-07-28.png" class="lazyload" data-srcset="hexo-in-30-minutes/2022-01-08-22-07-28.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+              <p><img src="/2022/01/08/talk-chat/hexo-in-30-minutes/2022-01-08-22-07-28.png" class="lazyload" data-srcset="/2022/01/08/talk-chat/hexo-in-30-minutes/2022-01-08-22-07-28.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload"></p>
               </div>
             </details></p>
 </div><div class="story post-story"><h2 id="资料">资料</h2>
@@ -2874,10 +2874,10 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-15T15:06:29+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-30T09:16:33+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年8月15日</p>
+    <p>更新于：2022年9月30日</p>
   </a>
 </div>
 
@@ -2953,16 +2953,13 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/03/03/study/Math/NumericRecipies/Chapter%203%20%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%95%B0%E5%80%BC%E8%A7%A3/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数值分析-线性方程组的数值解</p>
-          <p class='content'>数值分析 ch 3 - 线性方程组的数值解
+        <a class='prev' href='/2022/03/28/study/Math/SummerCamp/RealAnalysis/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>面向夏令营的实变函数整理</p>
+          <p class='content'>谁能想到呢。
 
-Chapter 3 线性方程组的数值解
-Content：
-
-Gauss 消去法，Gauss列主元消去法
-向量和矩阵的范数、方程组性态和误差估计
-Ja...</p>
+ 目录 
+              
+              集合论集合集合运算：上极限和下极限相关内容：映射Rn空间闭集、开集、Borel集开集结构、连续性基本定理勒贝格...</p>
         </a>
       
       
@@ -4184,7 +4181,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/杂谈/","name":"杂谈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/01/08/talk-chat/hexo-in-30-minutes/","name":"Hexo in 30 Minutes"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hexo in 30 Minutes","description":"三十分钟实现你的Hexo博客。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/01/08/talk-chat/hexo-in-30-minutes/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/01/08/talk-chat/hexo-in-30-minutes/","wordCount":15,"datePublished":"2022-01-07T16:00:00.000Z","dateModified":"2022-08-15T07:06:29.801Z","articleSection":"杂谈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/杂谈/","name":"杂谈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/01/08/talk-chat/hexo-in-30-minutes/","name":"Hexo in 30 Minutes"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hexo in 30 Minutes","description":"三十分钟实现你的Hexo博客。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/01/08/talk-chat/hexo-in-30-minutes/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/01/08/talk-chat/hexo-in-30-minutes/","wordCount":15,"datePublished":"2022-01-07T16:00:00.000Z","dateModified":"2022-09-30T01:16:33.380Z","articleSection":"杂谈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

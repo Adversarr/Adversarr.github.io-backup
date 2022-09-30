@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.0.0">
   <meta name="Volantis" content="5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-15T07:05:27.856Z">
+<meta property="article:modified_time" content="2022-09-30T01:16:33.235Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="计算机图形学">
 <meta property="article:tag" content="几何">
@@ -1915,7 +1915,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664345188210),
+    lastupdate: new Date(1664502783696),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2740,10 +2740,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>[toc]</p>
 <div class="story post-story"><h2 id="碰撞处理简述">碰撞处理简述</h2>
 <p>碰撞处理的难度是不大的，主要问题是如何进行快速、准确的碰撞检测。碰撞检测主要算法执行流程如下图：</p>
-<figure>
-<img src="Survey/2022-04-05-17-32-22.png" class="lazyload" data-srcset="Survey/2022-04-05-17-32-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GAMES-103-Wang" />
-<figcaption aria-hidden="true">GAMES-103-Wang</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-05-17-32-22.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-05-17-32-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="GAMES-103-Wang">
 </div><div class="story post-story"><h2 id="碰撞检测----introduction">碰撞检测 -- Introduction</h2>
 <p>首先再次引一下 PhyX 里面的内容，这也是这篇文章整体的一个思路。</p>
 <blockquote>
@@ -2845,11 +2842,7 @@ Partitioning</h4>
 的思想是为每一个空间一个编号。最简单的方法是均匀的使用格点来对于全空间进行划分。最基础的
 Spatial Hashing
 在为每一个格子建立列表，列表中存放所有和该格子有重合区域的物体（即一个物体可能出现在多个格子内），在查询碰撞时即对于同一列表中的不同物体进行查询即可。</p>
-<figure>
-<img src="Survey/image-20220409103734403.png"
-alt="Spatial Partitioning" />
-<figcaption aria-hidden="true">Spatial Partitioning</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220409103734403.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220409103734403.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="Spatial Partitioning">
 <p>如图所示，其将全空间划分为16个格子。考虑到减少空间浪费的问题，将这些物体的按id进行排序，即可在不为每一个id建立表格的情况下完成筛选。</p>
 <p>该算法的主要问题在于，现代的渲染常常物体、面元分布极不均匀，在可能在几个小的cell中包含大量物体，而产生大量的可能碰撞物体对，极大的降低了其查询效率。</p>
 <p>但是得益于其可以轻松在并行计算环境，特别是GPU上进行实现，其在物理引擎中也得到了广泛的应用。</p>
@@ -2861,12 +2854,7 @@ alt="Spatial Partitioning" />
 的方法，因为这个方法针对于 <em>Deformed</em>
 的物体进行计算的效率较高。这些方法在曲面上进行划分，相当于在曲面上定义了一个空间划分。比如通过形变能量来指导在其上的空间划分，最后精细化求解使用三次方程法求解。例如：该论文提出，可以依照形变能量，在曲面的表面上建立BVH，来指导Culling进行。</p>
 </blockquote>
-<figure>
-<img src="Survey/image-20220413220403382.png"
-alt="Energy-based Self-Collision Culling for Arbitrary Mesh Deformations" />
-<figcaption aria-hidden="true">Energy-based Self-Collision Culling for
-Arbitrary Mesh Deformations</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220413220403382.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220413220403382.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="Energy-based Self-Collision Culling for Arbitrary Mesh Deformations">
 </div><div class="story post-story"><h2 id="narrow-phase-1-刚体">Narrow-phase 1 刚体</h2>
 <h3 id="dcd">DCD</h3>
 <h4 id="signed-distance-function">Signed Distance Function</h4>
@@ -2899,8 +2887,7 @@ B\)</span>碰撞，当且仅当<span class="math inline">\(0 \in \mathcal A -
 class="math inline">\(0\)</span>，这样的操作可以在物体是凸的的时候要求其形成的单纯形。对于二维的情况，使用三角形；对于三维情况，使用四面体。</p>
 <p>为了生成这样的单纯形，我们计算 support
 函数来快速获取给定方向上的支撑点，如图所示[^1]。</p>
-<p><img
-src="Survey/v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/v2-2ac6f479d9ba1510b75d89fd0dbb56f0_1440w.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h6 id="迭代求解">迭代求解</h6>
 <p>有了如上的论述，我们可以通过如此构造单纯形：</p>
 <ol type="1">
@@ -2953,16 +2940,13 @@ i 帧和第 i + 1 帧没有碰撞，二分就不会开始。</p>
 class="math inline">\(t+1\)</span>时刻物体对应点连线（按物体形状、沿直线执行扫描）构成的体积区域，不难发现，如果有相交，则可能会出现碰撞。计算TOI（碰撞时间）后将物体移动到改时间，执行碰撞处理（如计算速度等）然后重新扫描。</p>
 <p>在物体角速度很大的情况下会产生不精确的结果 <a
 href="Survey/https://docs.unity3d.com/Manual/ContinuousCollisionDetection.html">Ref</a>：</p>
-<figure>
-<img src="Survey/2022-04-14-15-52-26.png" class="lazyload" data-srcset="Survey/2022-04-14-15-52-26.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Unity 3D" />
-<figcaption aria-hidden="true">Unity 3D</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-15-52-26.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-15-52-26.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="Unity 3D">
 <h4 id="speculative-ccd">Speculative CCD</h4>
 <p>Speculative CCD
 的工作原理是根据物体的速度和角速度，计算物体的AABB，从而推测出下一个物理步骤中所有潜在的接触。然后将所有可能接触送入求解器，以确保满足所有接触约束，以便对象不会通过任何穿模（Tunnel）的情况。求解器使用速度、体积来精确计算CCD。</p>
-<p><img src="Survey/2022-04-14-15-55-41.png" class="lazyload" data-srcset="Survey/2022-04-14-15-55-41.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-15-55-41.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-15-55-41.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>但该方法并不能完全解决所有碰撞问题。考虑如下的情况，小球因为被杆击打而获得更大的速度，先前计算的AABB并不能检测到这样的速度变化：</p>
-<p><img src="Survey/2022-04-14-16-00-14.png" class="lazyload" data-srcset="Survey/2022-04-14-16-00-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-16-00-14.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-16-00-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <h4 id="ray-cast">Ray-cast</h4>
 <p>小而高速和大而低速物体之间的碰撞检测中可以视作光投射到低速物体上的过程，该方法在
 Unreal Engine
@@ -3172,7 +3156,7 @@ Tight Error Bounds</li>
 <p><span class="math display">\[
 Y(0),Y&#39;(0),Y&#39;(1),Y&#39;&#39;(0),Y&#39;&#39;(1)
 \]</span></p>
-<p><img src="Survey/2022-04-14-19-56-39.png" class="lazyload" data-srcset="Survey/2022-04-14-19-56-39.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-19-56-39.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-14-19-56-39.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>优点：</p>
 <ol type="1">
 <li>速度快，准确率也高，几乎是最好的算法</li>
@@ -3203,7 +3187,7 @@ classification</li>
 </blockquote>
 <p>原理上：给定一个三次函数 <span class="math inline">\(Y(t)\)</span>
 用伯恩斯坦多项式唯一分解，对应了一个三次贝塞尔曲线，而每一个三次贝塞尔曲线可以被分类为</p>
-<p><img src="Survey/image-20220412105920274.png" class="lazyload" data-srcset="Survey/image-20220412105920274.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220412105920274.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220412105920274.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <p>从而通过观察：</p>
 <p><span class="math display">\[
 Y(0), Y(1/3), Y(2/3), Y(1)
@@ -3247,11 +3231,7 @@ Animation</li>
 </blockquote>
 <p>根据王老师在GAMES103和2021图形学大会讲的内容（Real-Time Cloth
 Simulation on GPUs），其程序流程如下：</p>
-<figure>
-<img src="Survey/image-20220414221444102.png"
-alt="A Practical System" />
-<figcaption aria-hidden="true">A Practical System</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220414221444102.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220414221444102.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="A Practical System">
 <p>前两种方法都是基于如下公式： <span class="math display">\[
 \mathbf x^{k+1} = \arg\min \|\mathbf x - \mathbf x ^ *\|
 \]</span> 而Untangle Cloth不基于上式直接进行解除相交问题。</p>
@@ -3268,19 +3248,11 @@ class="math inline">\(\log\)</span>边界函数，保持在可行域内，逐步
 <li>需要计算所有的顶点来迭代</li>
 <li>小步长 — 速度慢</li>
 </ul>
-<figure>
-<img src="Survey/image-20220414221940838.png"
-alt="Interior Point Method" />
-<figcaption aria-hidden="true">Interior Point Method</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220414221940838.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220414221940838.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="Interior Point Method">
 <h4 id="impact-zone-optimization">Impact Zone Optimization</h4>
 <p>思想：直接从 <span class="math inline">\(\mathbf x^*\)</span>
 开始迭代，逐步逼进可行域，如下图</p>
-<figure>
-<img src="Survey/image-20220414222918767.png"
-alt="Impact Zone Optimization" />
-<figcaption aria-hidden="true">Impact Zone Optimization</figcaption>
-</figure>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220414222918767.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/image-20220414222918767.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="Impact Zone Optimization">
 <p>优点：</p>
 <ul>
 <li>很容易得到一个可能的解。</li>
@@ -3380,7 +3352,7 @@ y\text{ from different primitives}
 <p>这是一个几乎没有约束的优化问题：因为原来的碰撞处理的全套流程转化为在迭代求解过程中，保证迭代路径是可接受的！</p>
 <p>具体而言，Log函数为了避免在不充分接近时也出现“抵抗力”，其在保证<span
 class="math inline">\(C^2\)</span>的情况下，构造了如下的“log-barrier”：</p>
-<p><img src="Survey/2022-04-15-08-56-06.png" class="lazyload" data-srcset="Survey/2022-04-15-08-56-06.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-15-08-56-06.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-15-08-56-06.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <blockquote>
 <p>该方法可以看作是一个“内点法”</p>
 </blockquote>
@@ -3468,7 +3440,7 @@ f = \begin{cases}
 2\)</span>，为了使得这个条件不是过于充分的，要求最小边长和最大边长<span
 class="math inline">\(l\)</span>与<span
 class="math inline">\(L\)</span>的比例大于一定值。</p>
-<p><img src="Survey/2022-04-15-11-19-43.png" class="lazyload" data-srcset="Survey/2022-04-15-11-19-43.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+<img src="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-15-11-19-43.png" class="lazyload" data-srcset="/2022/04/12/CG/SortByCato/ContactDetection/Survey/2022-04-15-11-19-43.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 
 </div>
   </div>
@@ -3506,10 +3478,10 @@ class="math inline">\(L\)</span>的比例大于一定值。</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-15T15:05:27+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-30T09:16:33+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年8月15日</p>
+    <p>更新于：2022年9月30日</p>
   </a>
 </div>
 
@@ -3589,14 +3561,16 @@ class="math inline">\(L\)</span>的比例大于一定值。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/14/CG/SortByCato/ContactDetection/ClothSimu/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>实时布料仿真</p>
-          <p class='content'>Real-Time Cloth Simulation on GPU -- by Huaming Wang 2021
+        <a class='prev' href='/2022/04/19/CG/GAMES/g102-04/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>102-04-三次样条函数</p>
+          <p class='content'>GAMES 102 – 几何建模与处理
 
-Introduction
-Dynamic Solver：
+三次样条函数
+力学解释
 
-High res...</p>
+曲线：弹性梁 — 弹性模量为 \(E\)
+利用贝努利-欧拉方程，得到近似为分段三次函数
+2次 — 无法表达拐点、三次 — \(...</p>
         </a>
       
       
@@ -4885,7 +4859,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/12/CG/SortByCato/ContactDetection/Survey/","name":"Collision Detection 整理 6 - 综述"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 6 - 综述","description":"碰撞检测 学习笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/12/CG/SortByCato/ContactDetection/Survey/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/12/CG/SortByCato/ContactDetection/Survey/","wordCount":9,"datePublished":"2022-04-11T16:00:00.000Z","dateModified":"2022-08-15T07:05:27.856Z","articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/04/12/CG/SortByCato/ContactDetection/Survey/","name":"Collision Detection 整理 6 - 综述"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 6 - 综述","description":"碰撞检测 学习笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/04/12/CG/SortByCato/ContactDetection/Survey/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/04/12/CG/SortByCato/ContactDetection/Survey/","wordCount":9,"datePublished":"2022-04-11T16:00:00.000Z","dateModified":"2022-09-30T01:16:33.235Z","articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

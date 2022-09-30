@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.2.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.0.0">
   <meta name="Volantis" content="5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -45,7 +45,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-03-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-15T07:05:02.366Z">
+<meta property="article:modified_time" content="2022-09-30T01:16:33.213Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="计算机图形学">
 <meta property="article:tag" content="几何">
@@ -1915,7 +1915,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664345188210),
+    lastupdate: new Date(1664502783696),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2741,12 +2741,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>众所又周知啊，碰撞检测是一个老大难的问题，在很多的仿真模拟、游戏引擎中间都会用哈</p>
 <p>碰撞检测的主要流程是 <a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a>：</p>
-<figure>
-<img src="Introduction/2022-04-05-17-32-22.png"
-alt="GAMES 103- Collision Handling" />
-<figcaption aria-hidden="true">GAMES 103- Collision
-Handling</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/2022-04-05-17-32-22.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/2022-04-05-17-32-22.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="GAMES 103- Collision Handling">
 <p>其中：</p>
 <ul>
 <li><span class="math inline">\(\{\mathbf x, \mathbf x^{new}\}\)</span>
@@ -2789,22 +2784,16 @@ class="math inline">\(x\)</span> 都认为是其位置，再进行划分。</p>
 </ol>
 <h4 id="改进方案">改进方案</h4>
 <h5 id="排序">排序</h5>
-<figure>
-<img src="Introduction/image-20220409103734403.png" class="lazyload" data-srcset="Introduction/image-20220409103734403.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="排序" />
-<figcaption aria-hidden="true">排序</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409103734403.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409103734403.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="排序">
 <p><strong>目的</strong>：所有的Pair都按照格子的编号排列（类似于稀疏矩阵压缩），从而节约内存开销。</p>
 <h5 id="为了达到连续内存访问">为了达到连续内存访问</h5>
 <p>使用 <code>Morton Code</code> 编码，</p>
 <h3 id="bvh-层次包围盒">BVH 层次包围盒</h3>
 <p>递归的建立一棵树，例如：</p>
-<figure>
-<img src="Introduction/image-20220409104753151.png" class="lazyload" data-srcset="Introduction/image-20220409104753151.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="BVH" />
-<figcaption aria-hidden="true">BVH</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409104753151.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409104753151.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="BVH">
 <p>Idea：把包围盒组合成新的包围盒</p>
 <p>如何检查：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">ProcessNode(A) &#123;</span><br><span class="line">	for_each(B: A.child)&#123;</span><br><span class="line">		ProcessNode(B);</span><br><span class="line">	&#125;</span><br><span class="line">	for_each([B, C]: A.childrenPair) &#123;</span><br><span class="line">		<span class="keyword">if</span> B-C intersect &#123;</span><br><span class="line">			ProcessPair(B, C)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ProcessPair(B, C) &#123;</span><br><span class="line">	for_each(B<span class="number">&#x27;</span>: B.child) &#123;</span><br><span class="line">		for_each(C<span class="number">&#x27;</span>: C.child) &#123;</span><br><span class="line">			<span class="keyword">if</span> B<span class="number">&#x27;</span>-C<span class="number">&#x27;</span> intersect &#123;</span><br><span class="line">				ProcessPair(B<span class="number">&#x27;</span>, C<span class="number">&#x27;</span>)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ProcessNode(A) &#123;</span><br><span class="line">	for_each(B: A.child)&#123;</span><br><span class="line">		ProcessNode(B);</span><br><span class="line">	&#125;</span><br><span class="line">	for_each([B, C]: A.childrenPair) &#123;</span><br><span class="line">		<span class="keyword">if</span> B-C intersect &#123;</span><br><span class="line">			ProcessPair(B, C)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ProcessPair(B, C) &#123;</span><br><span class="line">	for_each(B<span class="number">&#x27;</span>: B.child) &#123;</span><br><span class="line">		for_each(C<span class="number">&#x27;</span>: C.child) &#123;</span><br><span class="line">			<span class="keyword">if</span> B<span class="number">&#x27;</span>-C<span class="number">&#x27;</span> intersect &#123;</span><br><span class="line">				ProcessPair(B<span class="number">&#x27;</span>, C<span class="number">&#x27;</span>)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="常见的包围盒">常见的包围盒</h4>
 <ol type="1">
 <li><strong>AABB</strong>：intersect 当且仅当在轴上有相交</li>
@@ -2846,10 +2835,7 @@ x_{20}}
 \end{cases}
 \]</span> 若解出来的 <span class="math inline">\(t\in [0, 1]\)</span>
 则能够判断出在 <span class="math inline">\(t\)</span> 处相交</p>
-<figure>
-<img src="Introduction/image-20220409111138061.png" class="lazyload" data-srcset="Introduction/image-20220409111138061.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="DCD" />
-<figcaption aria-hidden="true">DCD</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409111138061.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409111138061.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="DCD">
 <h4 id="问题-1">问题</h4>
 <p>可能会产生穿透问题（运动很快的情况）。对于大体积问题的概率低，但是如果是cloth等薄物体，容易发生。</p>
 <ol type="1">
@@ -2858,14 +2844,8 @@ x_{20}}
 <h3 id="ccd">CCD</h3>
 <p>测试两个状态（之间）有无碰撞产生。</p>
 <p>一般是做 VT 和 EE 的检测：</p>
-<figure>
-<img src="Introduction/image-20220409111542472.png" class="lazyload" data-srcset="Introduction/image-20220409111542472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="V-T测试" />
-<figcaption aria-hidden="true">V-T测试</figcaption>
-</figure>
-<figure>
-<img src="Introduction/image-20220409111601254.png" class="lazyload" data-srcset="Introduction/image-20220409111601254.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="EE测试" />
-<figcaption aria-hidden="true">EE测试</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409111542472.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409111542472.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="V-T测试">
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409111601254.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409111601254.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="EE测试">
 <p>共同点：</p>
 <ol type="1">
 <li>解一元三次方程。观察解的情况</li>
@@ -2881,18 +2861,12 @@ x_{20}}
 <p>Bridson2002-Robust … …</p>
 </blockquote>
 <h1 id="碰撞处理">碰撞处理</h1>
-<figure>
-<img src="Introduction/image-20220409112929873.png" class="lazyload" data-srcset="Introduction/image-20220409112929873.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IPM / IZO" />
-<figcaption aria-hidden="true">IPM / IZO</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409112929873.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409112929873.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="IPM &#x2F; IZO">
 <h3 id="内点法">内点法</h3>
 <blockquote>
 <p>截断 – IPC</p>
 </blockquote>
-<figure>
-<img src="Introduction/image-20220409112859592.png" class="lazyload" data-srcset="Introduction/image-20220409112859592.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="内点法" />
-<figcaption aria-hidden="true">内点法</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409112859592.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409112859592.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="内点法">
 <p>反复进行碰撞检测</p>
 <blockquote>
 <p>Robust……</p>
@@ -2902,11 +2876,7 @@ x_{20}}
 <ol type="1">
 <li>Rigid Impact Zone</li>
 </ol>
-<figure>
-<img src="Introduction/image-20220409113154440.png"
-alt="一个常见的思路为" />
-<figcaption aria-hidden="true">一个常见的思路为</figcaption>
-</figure>
+<img src="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409113154440.png" class="lazyload" data-srcset="/2022/03/28/CG/SortByCato/ContactDetection/Introduction/image-20220409113154440.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="一个常见的思路为">
 <h1 id="相交解除">相交解除</h1>
 <blockquote>
 <p>碰撞不是灾难，可以在发生之后进行解除</p>
@@ -3074,10 +3044,10 @@ role="doc-backlink">↩︎</a></p></li>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-15T15:05:02+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-30T09:16:33+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年8月15日</p>
+    <p>更新于：2022年9月30日</p>
   </a>
 </div>
 
@@ -3157,23 +3127,30 @@ role="doc-backlink">↩︎</a></p></li>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/03/28/CG/SortByCato/ContactDetection/Deformed/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Collision Detection 整理 4 - Deformed Object</p>
-          <p class='content'>碰撞检测 4 - Deformed Object
-
-90-00初
-变形体和三角网格的处理的经典论文是：
-
-[Bridson02] Robust Treatment of Collisions, ...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/03/28/CG/SortByCato/ContactDetection/NarrowPhase/'>
-          <p class='title'>Collision Detection 整理 3 - Narrow Phase 阶段<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2022/03/28/CG/SortByCato/ContactDetection/NarrowPhase/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Collision Detection 整理 3 - Narrow Phase 阶段</p>
           <p class='content'>碰撞检测笔记 3 — Narrow Phase
 
 一般而言的 Narrow Phase
 是基于点线面的关系推导得到的。而且在很多情况下，我们不需要知道碰撞在两个插值点之间的具体位置，而只需要知道...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/03/28/study/Math/SummerCamp/Algebra/'>
+          <p class='title'>面向夏令营的抽象代数整理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>待完善
+
+群论初步
+引论
+
+群
+
+在一个非空集合上，定义了一个代数运算，其满足 1. 结合 2. 存在幺元 3.
+对每个元素都存在逆元
+
+
+群的典型例子
+在上述条件中，若只满足 1 ，则称为半群...</p>
         </a>
       
     </div>
@@ -4441,7 +4418,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/03/28/CG/SortByCato/ContactDetection/Introduction/","name":"Collision Detection 整理 1 - Introduction"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 1 - Introduction","description":"碰撞检测相关介绍","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/03/28/CG/SortByCato/ContactDetection/Introduction/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/03/28/CG/SortByCato/ContactDetection/Introduction/","wordCount":8,"datePublished":"2022-03-27T16:00:00.000Z","dateModified":"2022-08-15T07:05:02.366Z","articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"逆版本战士の部落格"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/计算机图形学/","name":"计算机图形学"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2022/03/28/CG/SortByCato/ContactDetection/Introduction/","name":"Collision Detection 整理 1 - Introduction"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Collision Detection 整理 1 - Introduction","description":"碰撞检测相关介绍","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2022/03/28/CG/SortByCato/ContactDetection/Introduction/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"逆版本战士の部落格","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2022/03/28/CG/SortByCato/ContactDetection/Introduction/","wordCount":8,"datePublished":"2022-03-27T16:00:00.000Z","dateModified":"2022-09-30T01:16:33.213Z","articleSection":"计算机图形学","keywords":"计算机图形学,几何","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

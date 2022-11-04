@@ -1,5 +1,6 @@
 ---
 title: Programming
+hide: true
 ---
 
 占坑

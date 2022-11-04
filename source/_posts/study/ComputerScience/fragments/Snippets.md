@@ -1,9 +1,13 @@
 ---
-title: 神奇的 C++ 代码片段（模版元编程）
+title: Magic. 
 date: 2022-05-27
+tags:
+  - Meta Programming
+  - C/C++
+category: 计算机科学
 ---
 
-哈希函数
+Meta Programming in C++
 
 <!-- more -->
 

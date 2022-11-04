@@ -1,0 +1,20 @@
+name: Deploy Webpage
+on: [push]
+
+
+jobs:
+  ubuntu-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: install npm packages
+        run: npm install
+      - name: clean
+        run: npm run clean
+
+      - name: build
+        run: npm run build
+      
+      - name: deploy
+        run: npm run deploy

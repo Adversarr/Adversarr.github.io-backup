@@ -24,6 +24,16 @@
         "problemMatcher": [],
         "label": "npm: clean",
         "detail": "hexo clean"
+    }, 
+    { //TODO: bug.
+      "type": "shell",
+      "command": [
+        "cd ${workspaceFolder} && pwd",
+        "npm run clean", 
+        "npm run build",
+        "npm run deploy"
+      ],
+      "label": "Clean and Deploy",
     }
 ]
 }

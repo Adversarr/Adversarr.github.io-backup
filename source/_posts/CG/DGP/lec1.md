@@ -1,5 +1,7 @@
 ---
-title: 数字几何处理
+title: Digital Geometry Processing
+plugins:
+- mathjax
 ---
 
 GCL-F-DGP1

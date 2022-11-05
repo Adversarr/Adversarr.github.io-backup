@@ -10,6 +10,8 @@ tags:
 math: true
 plugins:
   - mathjax
+group: group-cg-paper
+sidebar: [group-cg-paper, toc]
 ---
 
 Paper Reading: The Affine Particle In Cell.

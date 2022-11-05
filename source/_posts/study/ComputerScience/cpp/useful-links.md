@@ -6,14 +6,10 @@ categories: Programming
 tags:
   - C/C++
   - Programming
-math: false # true
 plugins:
   - mathjax
 ---
 
-{random}
-
-<!-- more -->
 
 ## Cpp
 

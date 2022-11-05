@@ -581,6 +581,15 @@ sidebar:
         icon: fa fa-book
         title: 数值分析
 
+    group-cg-paper:
+      class: group
+      display: [desktop, mobile]
+      seo_title: Cg Paper
+      header:
+        icon: fa fa-book
+        title: Cg Paper
+
+
     group-games:
       class: group
       display: [desktop, mobile]
@@ -1266,7 +1275,7 @@ custom_css:
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: 'UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      fontfamily: 'Monaco, UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'UbuntuMono'
       url: volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal

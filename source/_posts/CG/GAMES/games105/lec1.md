@@ -1,3 +1,9 @@
+---
+title: Introduction to Computer Animation 3d.
+plugin:
+  - mathjax
+---
+
 ## Introduction to Computer Animation -- in 3D.
 
 ### What is character animation

@@ -1,6 +1,12 @@
 ---
-title： Games 301
+title: Games 301
+plugin:
+  - mathjax
 ---
+
+Games 301-01
+
+<!--more-->
 
 ## 曲面参数化
 

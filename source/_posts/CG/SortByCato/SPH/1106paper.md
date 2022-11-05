@@ -1,16 +1,17 @@
 ---
-title: 
+title: SPH Introduction
 author: Clover
 date: 2022/10/27 # yyyy-mm-dd
 categories: Anything
 tags:
   - Anything
-math: false # true
 plugins:
   - mathjax
+group: group-cg-paper
+sidebar: [group-cg-paper, toc]
 ---
 
-1027 论文汇报
+1106 论文汇报
 
 SPH Fluids in computer graphic
 
@@ -62,20 +63,16 @@ $W _ {ij}$ should be close to a Gaussian, amd can be implemented as:
 
 $$
 \begin{aligned}
-
-\nabla A _ i = \rho _ i + \sum _ {j} m _ j  \left ( \frac { A _ i} { \rho _ i  ^ 2} + \frac{A _ j} {\rho _ j ^ 2}\right) \nabla W_ { i j }\\
-
-\nabla \cdot \mathbf A _ i = - \frac 1 { \rho _ i} \sum _ j m _ j \mathbf A _ {ij} \cdot \nabla W _ {ij} \\
-
+\nabla A_i = \rho_i + \sum_{j} m_j  \left ( \frac { A _ i} { \rho _ i  ^ 2} + \frac{A _ j} {\rho _ j ^ 2}\right) \nabla W_ { i j }\\
+\nabla \cdot \mathbf{A}_i = - \frac 1 { \rho _ i} \sum _ j m _ j \mathbf A _ {ij} \cdot \nabla W _ {ij} \\
 \nabla ^ 2 A _ i = 2 \sum _ { j } \frac { m _ j} { \rho _ j} A _ {ij} \frac {\mathbf x _ {ij} \cdot \nabla W _ { ij }}{\mathbf x _ {ij} \cdot \mathbf x _ {ij} + 0.01 h ^ 2}
-
 \end{aligned} 
 $$
 
 Here, $\rho$ is computed using:
 
 $$
-\rho _ i  = \sum  _ j m _ j W _ { i j }
+\rho_i  = \sum_j m_j W_{ij}
 $$
 
 > we always use $m / \rho$, and the meaning of $\rho$ here does not matter.
@@ -95,12 +92,12 @@ A typical choice is:
 For *Pressure Computation*: 
 
 $$
-p _ i = k \left( \left ( \frac{\rho _ i}{\rho _ 0}\right) ^ 7 - 1 \right)
+p_i = k \left( \left ( \frac{\rho_i}{\rho_0}\right) ^ 7 - 1 \right)
 $$
 
 where: 
 
-- $\rho _ 0$ is the rest density.
+- $\rho_0$ is the rest density.
 - $k$ is the stiffness.
 
 ```
@@ -152,7 +149,7 @@ $$
 
 ### GPUs
 
-## InCompressibility
+## Incompressibility
 
 ### Non Iterative EOS Solver
 
@@ -161,7 +158,7 @@ $$
 Original:
 
 $$
-p = p (\rho , T) = \frac{\mu} {R} \rho T
+p = p (\rho , T) = \frac{\mu}{R} \rho T
 $$
 
 Typically, for water:
@@ -199,7 +196,7 @@ Alternatively, *strong-incompressibility*.
 ```
 foreach P: find neighbours
 foreach P: compute Non-Pressure part.       -> Advection
-repeat until convergence:                   -> Projection
+repeat until convergence:                   -> Projection(weak)
   foreach P: compute density and pressure
   foreach P: update velocity and positions
 ```
@@ -213,7 +210,133 @@ e.g.:
 
 Solve a pressure poisson equation(PPE).
 
+$$
+\nabla ^ 2 p _ i = \frac {\rho _ 0} {\Delta t} \nabla \cdot v_i
+$$
 
+1. IISPH
+
+```
+foreach P: find neighbours
+foreach P: compute Non-Pressure part.       -> Advection
+foreach P: compute rho*
+solve PPE                                   -> Projection
+compute Pressure Force
+update v, x
+```
+
+> As the overall computation time of all solvers largely depends on the obtained incompressibility, average or maximum density errors are considered to specify the simulation quality.
+
+## Incompressibility -- Extra
+
+In (EG 2022): There are only two categories:
+
+1. weak-incompressible: incompressible is not enforced, only a *trend* is formulated. Pressure indicates incompressible.
+  - Local Pressure Solver
+2. strong-incompressible: incompressible PPE is solved.
+  - Global Pressure Solver
+
+In this sense: target of PCISPH = IISPH = PBF.
+
+### IISPH
+
+$$
+\Delta t^2 \nabla^2 p_i = \rho^0 - (\rho_i - \Delta t \rho_i\nabla \cdot v_i^{*})
+$$
+step 1: compute the pressure accelerations:
+
+$$
+(a_i^P)^l = - \frac{1}{\rho_i} \nabla p_i^l
+$$
+step 2: compute density change
+$$
+\Delta \rho = \Delta t \sum_j m_j\Delta t(a_i^p - a_j^p)\Delta W_{ij}
+$$
+## Boundary Handling
+
+Most methods: Extend the field attributes to the boundary.
+
+### Particle-based Methods
+
+Also sample the particle points on rigid/deformable bodies, compute the penalty force based on distance.
+
+> The boundary particles serve as additional sampling points and typically have the same radius as the fluid particles.
+
+$$
+\rho_i = \rho_{\mathcal{F}} + \rho_{\mathcal{B}} \approx \sum_j m_j W_{ij} + \sum_k \tilde{m}_k W_{ik}
+$$
+when computing the pressure and force, these particles should be considered as well.
+
+**How-to-Sample**: 
+
+1. uniform / non-uniform
+2. single-layer/multi-layer
+
+**Pros**: 
+
+1. simplicity: generate, integration, computation
+
+**Cons**: 
+
+1. result in small time-steps for weak-incompressible fluids. (pressure variety is large)
+2. even simple geometry shape need large amount of particles.
+3. *bumpy representation*: reduce the accuracy of pressure computation, introduce artificial friction. -> Implicit boundary representation.
+
+### Implicit Method
+
+Signed Distance Function.
+
+### Computing the boundary pressure
+
+Original, without boundary:
+
+$$
+(a_i^P)^l = - \frac{1}{\rho_i} \nabla p_i^l = - \sum_j m \left( p_i^l/\rho_i^2 + p_j^l/\rho_j^2 \right)\Delta W_{ij}
+$$
+
+With boundary:
+
+$$
+(a_i^P)^l = - \sum_j m_j \left( p_i^l/\rho_i^2 + p_j^l/\rho_j^2 \right)\Delta W_{ij} - \sum_k m_k \left( p_i^l/\rho_i^2 + p_k^l/\rho_k^2 \right)\Delta W_{ik}
+$$
+
+To define $p_k$:
+
+1. Pressure Mirroring: $p_k = p_i$
+2. Pressure Extrapolation: 
+
+$$
+p_k = \frac{\sum_l p_lW_{kl}+ \mathbf{g} \cdot \sum_j \rho_l(x_k - x_l)W_{kl}}{\sum_l W_{kl}}
+$$
+
+### Penalty based Methods
+
+**Cons**: hard to control the stiffness, and have small time steps.
+
+## Other Techniques
+
+1. Adaptive time-step
+2. Data-Driven.
+
+### CNNs
+
+Target: enforce incompressibility
+
+Steps:
+
+1. Rasterize to Grid.
+2. use cnn on grid to compute the velocity correction.
+
+## Future work
+
+1. Approximate Quality:
+    1. particle count is low => degradation of approximation
+    2. lack of practical and sufficient solution: because negative pressure are clamped to 0, only projective Jacobi or GS Iteration is allowed. Conj-Grad is not available currently.
+2. Unified Solver & Ultimate Coupling:
+    1. Unified Coupling solver.
+    2. Suitable for multiple particle-resolution.
+3. Artist Control
+4. Data Driven
 
 
 

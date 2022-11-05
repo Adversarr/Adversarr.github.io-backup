@@ -1,10 +1,14 @@
 ---
 archive: false
-title: 实时布料仿真
+title: Real-Time Cloth Simulation
 categories: 计算机图形学
 tags:
 - 仿真模拟
 - 布料
+plugin:
+- mathjax
+group: group-cg-paper
+sidebar: [group-cg-paper, toc]
 ---
 
 Real-Time Cloth Simulation on GPU -- by Huaming Wang 2021

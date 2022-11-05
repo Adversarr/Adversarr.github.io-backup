@@ -1037,12 +1037,3 @@ $$
  \int _{\mathbb R^n}\left[\int _{\mathbb R ^ n}|f(x, y) |^p  \mathrm dy \right] ^{1/p} \mathrm dx\le \int _{\mathbb R^n}\left[\int _{\mathbb R ^ n}|f(x, y) |^p  \mathrm dx \right] ^{1/p} \mathrm dy
 $$
 
-
-
-
-
-
-
-
-
-

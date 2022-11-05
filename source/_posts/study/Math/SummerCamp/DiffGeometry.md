@@ -5,11 +5,9 @@ tags:
   - 微分几何
   - 数学
   - 夏令营
-
+date: 2022-07-15
 plugins:
   - mathjax
-mathjax: true
-hide: false
 group: group-adv-math
 sidebar: [group-adv-math, toc]
 ---
@@ -17,8 +15,6 @@ sidebar: [group-adv-math, toc]
 *待完善*
 
 <!-- more -->
-
-TODO
 
 ## 欧氏空间
 

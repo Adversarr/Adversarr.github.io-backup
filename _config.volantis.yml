@@ -622,6 +622,14 @@ sidebar:
       header:
         icon: fa fa-book
         title: 概率统计
+
+    group-bachelor-final:
+      class: group
+      display: [desktop, mobile]
+      seo_title: 毕业前，我想发的文章
+      header:
+        icon: fa fa-book
+        title: 毕业前，我想发的文章
 ############################### Sidebar ############################### > end
 
 

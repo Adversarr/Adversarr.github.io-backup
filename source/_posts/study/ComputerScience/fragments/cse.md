@@ -133,4 +133,32 @@ output reg[`WordRange] abnormal_type_out,     // information about instr
 output reg[`WordRange] current_id_pc_addr_out
 ```
 
-所有指令类型根据《》实现。
+所有指令类型根据《自己动手实现CPU》实现。
+
+#### ID→EX
+
+从译码到执行过程中需要传递的信号（及其解释如下）
+
+```verilog
+// ALU 功能选择
+ex_aluop <= id_aluop;
+// ALU 数据
+ex_data1 <= id_data1;
+ex_data2 <= id_data2;
+// （传到WB阶段）写使能
+ex_write_reg_enable <= id_write_reg_enable;
+ex_write_reg_addr <= id_write_reg_addr;
+// 跳转地址
+ex_link_addr <= id_link_addr;
+// 延迟槽
+ex_is_in_delayslot <= id_is_in_delayslot;
+ex_next_is_in_delayslot <= id_next_is_in_delayslot;
+// 指令
+ex_instr <= id_instr;
+// 异常处理
+ex_current_pc_addr <= id_current_pc_addr;
+ex_abnormal_type <= id_abnormal_type;
+```
+
+#### Stage EX
+

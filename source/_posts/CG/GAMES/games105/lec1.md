@@ -100,7 +100,7 @@ Approaches
 4. Reinforcement Learning.
 5. Generative Control Policies.
 
-![](media/16655417660523.jpg)
+![](lec1/16655417660523.jpg)
 
 
 

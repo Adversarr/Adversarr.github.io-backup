@@ -2,9 +2,10 @@
 title: SPH Introduction
 author: Clover
 date: 2022/10/27 # yyyy-mm-dd
-categories: Anything
+categories: Physics Simulation
 tags:
-  - Anything
+  - SPH
+  - Paper Reading
 plugins:
   - mathjax
 group: group-cg-paper

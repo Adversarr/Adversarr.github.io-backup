@@ -1,11 +1,11 @@
 ---
-title: Particle-In-Cell Method
+title: 论文阅读：Affine Particle-In-Cell Method
 author: Clover
 date: 2022/9/30
-categories: Anything
+categories: Physics Simulation
 tags:
-  - Computer Graphic
-  - PIC
+  - Computer Graphics
+  - Paper Reading
   - Fluid Simulation
 math: true
 plugins:

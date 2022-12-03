@@ -97,7 +97,7 @@ $$
 
 #### Global Bijective v.s. Locally Bijective.
 
-![](media/16651115265131.jpg)
+![](lec1/16651115265131.jpg)
 
 #### Distortion Metric
 

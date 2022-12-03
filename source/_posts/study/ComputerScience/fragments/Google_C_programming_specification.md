@@ -3,7 +3,7 @@ hide: true
 title: C++ 编程规范
 category: 计算机科学
 tag:
-- C++
+- C/C++
 - 编程
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Collision Detection 整理 6 - 综述
 date: 2022-04-12
-categories: 计算机图形学
+categories: Physics Simulation
 tags:
   - 几何
   - 计算机图形学

@@ -1,5 +1,5 @@
 ---
-title:CSE
+title: CSE
 author: Clover
 date: 2022/11/23 # yyyy-mm-dd
 categories: Anything
@@ -15,7 +15,7 @@ CSE
 
 ## General Idea
 
-![cpu-pipeline-graph](./media/cpu-pipeline-graph.png)
+![cpu-pipeline-graph](cse/cpu-pipeline-graph.png)
 
 > Reference: [RISC-V-CPU](https://github.com/Evensgn/RISC-V-CPU)
 

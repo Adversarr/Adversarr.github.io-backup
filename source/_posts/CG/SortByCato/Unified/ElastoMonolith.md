@@ -1,10 +1,12 @@
 ---
-title:
+title: 论文阅读笔记：Elasto Monolith
 author: Clover
 date: 2022/11/13 # yyyy-mm-dd
-categories: Anything
+categories: Physics Simulation
 tags:
-  - Anything
+  - Paper Reading
+  - Rigid-Fluid Coupling
+  - Computer Graphics
 plugins:
   - mathjax
 ---

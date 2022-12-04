@@ -5,4 +5,4 @@ comments: true
 mathjax: false
 ---
 
-快来和些些同学的小伙伴们聊天吧~ ヾ|≧_≦|〃
+快来和Adversarr的小伙伴们聊天吧~ ヾ|≧_≦|〃

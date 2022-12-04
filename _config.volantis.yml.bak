@@ -81,7 +81,7 @@ cover:
   # background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
   background: https://api.dujin.org/bing/1920.php
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: '逆版本战士の部落格'
+  title: "Adversarr's Blog"
   subtitle: 'Je pense, donc je suis'
   search: 也许你在找些有意思的... # search bar placeholder
   features:

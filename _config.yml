@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "逆版本战士の部落格"
+title: "Adversarr's Blog"
 description: "Je pense, donc je suis"
 keywords: "study"
 author: Adversarr
@@ -16,7 +16,7 @@ favicon: image/favicon.webp
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://adversarr.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: ":year/:month/:day/:title/"
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks

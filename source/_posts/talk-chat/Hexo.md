@@ -2,9 +2,8 @@
 title: Hexo 建站实录
 author: Adversarr
 tag:
-- 杂记
+  - 杂记
 categories: Programming
-- 杂谈
 date: 2020-8-13
 ---
 

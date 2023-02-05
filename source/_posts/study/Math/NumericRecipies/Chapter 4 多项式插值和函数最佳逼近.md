@@ -2,8 +2,9 @@
 layout: post
 title: 数值分析-多项式插值和函数最佳逼近
 group: group-numeric-recipies
+date: 2021-06-25
 order: 4
-categories: [数学]
+categories: Mathematics
 tags:
   - 数值分析
 sidebar: [group-numeric-recipies, toc]

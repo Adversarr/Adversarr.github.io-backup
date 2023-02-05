@@ -1,7 +1,7 @@
 ---
 title: 面向夏令营的实变函数整理
 date: 2022-03-28
-categories: 数学
+categories: Mathematics
 tags:
   - 实变函数
   - 数学

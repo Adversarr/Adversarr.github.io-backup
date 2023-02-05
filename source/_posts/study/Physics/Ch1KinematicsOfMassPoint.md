@@ -2,7 +2,7 @@
 title: 质点运动学
 author: Clover
 date: 2020-6-8
-categories: 课程
+categories: Course
 tags:
   - 物理
   - 运动学

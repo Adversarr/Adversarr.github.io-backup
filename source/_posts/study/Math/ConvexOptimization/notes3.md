@@ -1,7 +1,7 @@
 ---
 title: 「凸优化」 凸函数
 date: 2021-01-13
-categories: 数学
+categories: Mathematics
 tags:
   - 凸优化
 math: true

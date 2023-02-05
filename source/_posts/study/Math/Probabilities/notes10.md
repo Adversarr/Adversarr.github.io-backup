@@ -1,7 +1,7 @@
 ---
 title: 「概率统计与随机过程」 10 - 马尔科夫链
 date: 2020-12-11
-categories: 数学
+categories: Mathematics
 tags:
   - 概率论
 math: true

@@ -3,7 +3,7 @@ title: Lambda 演算简介（2）
 tags:
   - 编程
   - Lambda演算
-categories: 程序设计
+categories: Computer Science
 math: true
 plugins:
   - mathjax

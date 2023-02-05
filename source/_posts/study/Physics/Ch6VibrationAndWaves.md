@@ -4,7 +4,7 @@ date: 2020-6-4
 tags:
   - 物理
   - 波
-categories: 课程
+categories: Course
 math: true
 plugins:
   - mathjax

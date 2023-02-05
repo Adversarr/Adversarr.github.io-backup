@@ -1,7 +1,7 @@
 ---
 title: Hexo in 30 Minutes
 date: 2022-1-8
-categories: 杂谈
+categories: Programming
 ---
 
 三十分钟实现你的Hexo博客。

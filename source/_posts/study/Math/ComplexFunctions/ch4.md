@@ -7,7 +7,7 @@ math: true
 plugins:
   - mathjax
   - katex
-categories: 数学
+categories: Mathematics
 ---
 
 复数项级数的概念和性质

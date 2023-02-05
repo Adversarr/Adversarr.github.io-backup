@@ -4,7 +4,7 @@ date: 2020-5-27
 tags:
   - 代数结构
   - 离散数学
-categories: 数学
+categories: Mathematics
 math: true
 plugins:
   - mathjax

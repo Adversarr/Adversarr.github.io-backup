@@ -9,7 +9,7 @@ math: true
 plugins:
   - mathjax
   - katex
-categories: 数学
+categories: Mathematics
 ---
 
 到这里，这个学期的内容就大致整理完整了。

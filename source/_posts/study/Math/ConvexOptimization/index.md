@@ -1,7 +1,7 @@
 ---
 title: 最（凸）优化方法 [Overview and Intro]
 date: 2020-9-26
-categories: 数学
+categories: Mathematics
 tags:
   - 凸优化
 mathjax: true

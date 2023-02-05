@@ -7,7 +7,7 @@ math: true
 plugins:
   - mathjax
   - katex
-categories: 数学
+categories: Mathematics
 ---
 
 复数与复变函数

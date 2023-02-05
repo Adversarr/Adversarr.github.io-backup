@@ -1,7 +1,7 @@
 ---
 title: 数据库机试
 date: 2022-06-16
-categories: 课程
+categories: Course
 tags:
   - 数据库
 math: false

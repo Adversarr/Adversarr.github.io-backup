@@ -1,6 +1,6 @@
 ---
 title: 面向夏令营的微分几何整理
-categories: 数学
+categories: Mathematics
 tags:
   - 微分几何
   - 数学

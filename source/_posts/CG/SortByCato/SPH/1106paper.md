@@ -1,11 +1,13 @@
 ---
-title: SPH Introduction
+title: 论文阅读：SPH Introduction
 author: Clover
 date: 2022/10/27 # yyyy-mm-dd
 categories: Physics Simulation
 tags:
   - SPH
   - Paper Reading
+  - Computer Graphics
+  - Fluid Simulation
 plugins:
   - mathjax
 group: group-cg-paper

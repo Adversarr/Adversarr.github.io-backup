@@ -1,10 +1,10 @@
 ---
 title: 数学在计算机图形学中的应用
 date: 2020-9-26
-categories: 计算机图形学
+categories: Computer Graphics
 tags:
-  - 计算机图形学
-  - 编程
+  - Computer Graphics
+  - Programming
   - 摘抄
 math: false
 hide: false

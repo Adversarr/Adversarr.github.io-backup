@@ -1,10 +1,10 @@
 ---
 archive: false
 title: Real-Time Cloth Simulation
-categories: 计算机图形学
+categories: Physics Simulation
 tags:
-- 仿真模拟
-- 布料
+  - Geometry
+  - Computer Graphics
 plugin:
 - mathjax
 group: group-cg-paper

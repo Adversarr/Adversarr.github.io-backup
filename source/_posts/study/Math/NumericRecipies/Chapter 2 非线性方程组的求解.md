@@ -1,9 +1,10 @@
 ---
 layout: post
 title: 数值分析-非线性方程求解
+date: 2021-06-25
 group: group-numeric-recipies
 order: 2
-categories: [数学]
+categories: Mathematics
 tags:
   - 数值分析
 sidebar: [group-numeric-recipies, toc]

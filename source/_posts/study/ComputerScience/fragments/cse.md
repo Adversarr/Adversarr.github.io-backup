@@ -2,9 +2,8 @@
 title: CSE
 author: Clover
 date: 2022/11/23 # yyyy-mm-dd
-categories: Anything
-tags:
-  - Anything
+categories: Computer Science
+tags: 
 plugins:
   - mathjax
 ---

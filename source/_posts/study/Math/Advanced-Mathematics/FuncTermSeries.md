@@ -4,7 +4,7 @@ date: 2020-06-01 18:07:35
 tags:
   - 高等数学
   - 级数
-categories: 数学
+categories: Mathematics
 math: true
 plugins:
   - mathjax

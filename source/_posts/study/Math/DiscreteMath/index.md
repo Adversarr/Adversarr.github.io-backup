@@ -3,7 +3,7 @@ title: 离散数学 [Overview]
 date: 2020-09-26
 tags:
   - 离散数学
-categories: 数学
+categories: Mathematics
 math: false
 ---
 

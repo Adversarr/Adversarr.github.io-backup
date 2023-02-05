@@ -1,7 +1,7 @@
 ---
 title: 「概率统计与随机过程」 6 - 抽样分布
 date: 2020-12-18
-categories: 数学
+categories: Mathematics
 tags:
   - 概率论
 math: true

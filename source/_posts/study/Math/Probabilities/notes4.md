@@ -1,7 +1,7 @@
 ---
 title: 「概率统计与随机过程」 4 - 随机向量的数字特征
 date: 2020-12-2
-categories: 数学
+categories: Mathematics
 tags:
   - 概率论
 math: true

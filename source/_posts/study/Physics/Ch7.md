@@ -2,7 +2,7 @@
 title: 狭义相对论
 author: Clover
 date: 2020-6-8
-categories: 课程
+categories: Course
 tags:
   - 物理
 math: true

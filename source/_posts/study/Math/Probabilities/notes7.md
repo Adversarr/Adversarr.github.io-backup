@@ -1,7 +1,7 @@
 ---
 title: 「随机数学与数理统计」7 - 参数估计
 date: 2020-12-23
-categories: 数学
+categories: Mathematics
 tags:
   - 概率论
 math: true

@@ -2,7 +2,7 @@
 title: 理论力学C
 author: Clover
 date: 2022/6/18
-categories: 课程
+categories: Course
 tags:
   - 物理
 math: true

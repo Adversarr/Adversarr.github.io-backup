@@ -4,7 +4,7 @@ date: 2020-6-6
 tags:
   - 数理逻辑
   - 离散数学
-categories: 数学
+categories: Mathematics
 math: true
 plugins:
   - mathjax

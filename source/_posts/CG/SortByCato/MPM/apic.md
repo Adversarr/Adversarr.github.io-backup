@@ -7,6 +7,7 @@ tags:
   - Computer Graphics
   - Paper Reading
   - Fluid Simulation
+  - MPM
 math: true
 plugins:
   - mathjax

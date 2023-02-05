@@ -6,7 +6,7 @@ tag:
   - 高等数学
   - 向量空间
   - 解析几何
-categories: 数学
+categories: Mathematics
 math: true
 plugins:
   - mathjax

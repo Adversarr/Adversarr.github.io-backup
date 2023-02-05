@@ -2,7 +2,7 @@
 title: 外微分形式与微积分
 author: Clover
 date: 2020-5-24
-categories: 数学
+categories: Mathematics
 tags:
   - 高等数学
   - 外微分形式

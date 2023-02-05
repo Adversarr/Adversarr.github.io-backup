@@ -1,7 +1,7 @@
 ---
 title: 数据结构复习
 date: 2020-8-19
-categories: 课程
+categories: Course
 tags:
   - 数据结构
   - 编程

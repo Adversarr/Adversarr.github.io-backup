@@ -3,7 +3,8 @@ layout: post
 title: 数值分析-引言
 group: group-numeric-recipies
 order: 1
-categories: [数学]
+date: 2021-06-25
+categories: Mathematics
 tags:
   - 数值分析
 sidebar: [group-numeric-recipies, toc]

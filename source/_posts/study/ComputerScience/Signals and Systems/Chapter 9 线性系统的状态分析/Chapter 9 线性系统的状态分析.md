@@ -1,7 +1,7 @@
 ---
 title: 线性系统的状态分析
 date: 2021-6-13
-categories: 课程
+categories: Course
 tags:
   - 信号与系统
 math: true

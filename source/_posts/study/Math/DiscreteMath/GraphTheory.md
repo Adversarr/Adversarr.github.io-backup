@@ -8,7 +8,7 @@ math: true
 plugins:
   - mathjax
   - katex
-categories: 数学
+categories: Mathematics
 ---
 
 图论的基本概念和定理，真的炒鸡多呀。

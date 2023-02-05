@@ -2,8 +2,9 @@
 layout: post
 title: 数值分析-常微分方程的数值解
 group: group-numeric-recipies
+date: 2021-06-25
 order: 5
-categories: [数学]
+categories: Mathematics
 tags:
   - 数值分析
   - 常微分方程

@@ -1,7 +1,7 @@
 ---
 title: 「概率统计与随机过程」 2 - 随机变量及其概率分布
 date: 2020-11-18
-categories: 数学
+categories: Mathematics
 tags:
   - 概率论
 math: true

@@ -79,10 +79,10 @@ scroll_smooth: true
 navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    # img: /image/logo.png
-    icon: 
-    title:
+    # img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: # /image/logo.png
+    icon: /image/fav-smile.jpeg
+    title: Adversarr's Blog
   menu:
     - name: 博客
       icon: fas fa-rss

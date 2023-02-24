@@ -12,7 +12,7 @@ group: group-adv-math
 sidebar: [group-adv-math, toc]
 ---
 
-*待完善*
+微分几何，主要是局部的性质。（不再更新）
 
 <!-- more -->
 

@@ -2,7 +2,7 @@
 title: 论文阅读：Affine Particle-In-Cell Method
 author: Clover
 date: 2022/9/30
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Computer Graphics
   - Paper Reading

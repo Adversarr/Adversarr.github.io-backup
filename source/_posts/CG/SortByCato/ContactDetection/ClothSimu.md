@@ -1,7 +1,7 @@
 ---
 archive: false
 title: Real-Time Cloth Simulation
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Geometry
   - Computer Graphics

@@ -2,7 +2,7 @@
 title: 论文阅读：SPH Introduction
 author: Clover
 date: 2022/10/27 # yyyy-mm-dd
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - SPH
   - Paper Reading

@@ -1,8 +1,8 @@
 ---
-title: 论文阅读笔记：Elasto Monolith
+title: 论文阅读：Elasto Monolith
 author: Clover
 date: 2022/11/13 # yyyy-mm-dd
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Paper Reading
   - Rigid-Fluid Coupling

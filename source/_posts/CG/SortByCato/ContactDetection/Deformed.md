@@ -1,7 +1,7 @@
 ---
 title: Collision Detection 整理 4 - Deformed Object
 date: 2022-03-28
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Geometry
   - Computer Graphics

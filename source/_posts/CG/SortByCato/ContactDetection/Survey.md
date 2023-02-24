@@ -1,7 +1,7 @@
 ---
 title: Collision Detection 整理 6 - 综述
 date: 2022-04-12
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Geometry
   - Computer Graphics

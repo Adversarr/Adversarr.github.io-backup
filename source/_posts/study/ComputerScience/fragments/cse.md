@@ -1,5 +1,5 @@
 ---
-title: CSE
+title: 计算机系统综合课程设计
 author: Clover
 date: 2022/11/23 # yyyy-mm-dd
 categories: Computer Science
@@ -8,9 +8,11 @@ plugins:
   - mathjax
 ---
 
-CSE
+SEU 19 综合课设
 
 <!-- more -->
+
+Project: [reborn](https://github.com/adversarr/reborn)
 
 ## General Idea
 

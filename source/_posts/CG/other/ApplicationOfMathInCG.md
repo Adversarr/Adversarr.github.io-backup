@@ -5,7 +5,6 @@ categories: Computer Graphics
 tags:
   - Computer Graphics
   - Programming
-  - 摘抄
 math: false
 hide: false
 ---

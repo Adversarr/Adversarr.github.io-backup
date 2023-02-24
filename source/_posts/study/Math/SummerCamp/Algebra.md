@@ -12,7 +12,7 @@ group: group-adv-math
 sidebar: [group-adv-math, toc]
 ---
 
-*待完善*
+抽象代数
 
 <!-- more -->
 

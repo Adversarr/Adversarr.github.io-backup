@@ -2,7 +2,7 @@
 title: 论文阅读：Incremental Potential Contact 大杂烩
 author: Clover
 date: 2022/11/30 # yyyy-mm-dd
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - IPC
   - Paper Reading

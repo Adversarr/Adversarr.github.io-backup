@@ -1,7 +1,7 @@
 ---
 title: Collision Detection 整理 5 - 2021 A large scale benchmark and an Inclusion-based Algorithm
 date: 2022-04-11
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Geometry
   - Computer Graphics

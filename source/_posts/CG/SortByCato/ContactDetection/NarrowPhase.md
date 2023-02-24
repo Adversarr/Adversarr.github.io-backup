@@ -1,7 +1,7 @@
 ---
 title: Collision Detection 整理 3 - Narrow Phase 阶段
 date: 2022-03-28
-categories: Physics Simulation
+categories: Physical Simlation
 tags:
   - Geometry
   - Computer Graphics

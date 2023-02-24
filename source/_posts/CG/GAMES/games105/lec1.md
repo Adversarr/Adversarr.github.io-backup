@@ -1,7 +1,8 @@
 ---
-title: Introduction to Computer Animation 3d.
+title: 105-1-Introduction to Computer Animation 3d.
 plugin:
   - mathjax
+date: 2022/10/01
 ---
 
 ## Introduction to Computer Animation -- in 3D.

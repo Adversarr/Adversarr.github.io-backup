@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://adversarr.github.io/2023/02/24/cg/things/fluid/surfacetesion/"/>
+  <link rel="canonical" href="http://adversarr.github.io/2023/02/24/cg/things/fluid/surfacetension/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -39,13 +39,13 @@
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="流体-表面张力">
-<meta property="og:url" content="http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/index.html">
+<meta property="og:url" content="http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/index.html">
 <meta property="og:site_name" content="Adversarr&#39;s Blog">
-<meta property="og:description" content="流体-表面张力 物理解释  Surface Tension  表面张力是静止液体表面收缩到尽可能小表面积的趋势。 在液体-空气边界面上，表面张力源于「液体分子间吸引力」（Cohesion）大于「液体和空气分子间吸引力」（Adhesion）：  Adhesion：不相同（相似）的粒子或表面“粘附”在一起的力（流体和其他物体之间） Cohesion：相同（相似）的粒子或表面“粘附”在一起的力（流体内部">
+<meta property="og:description" content="物理解释  Surface Tension  表面张力是静止液体表面收缩到尽可能小表面积的趋势。 在液体-空气边界面上，表面张力源于「液体分子间吸引力」（Cohesion）大于「液体和空气分子间吸引力」（Adhesion）：  Adhesion：不相同（相似）的粒子或表面“粘附”在一起的力（流体和其他物体之间） Cohesion：相同（相似）的粒子或表面“粘附”在一起的力（流体内部产生）   Ad">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-02-24T01:44:02.000Z">
-<meta property="article:modified_time" content="2023-02-24T04:25:47.966Z">
+<meta property="article:modified_time" content="2023-02-25T03:16:51.654Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="Surface Tension">
 <meta property="article:tag" content="Fluid">
@@ -1915,7 +1915,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677213508387),
+    lastupdate: new Date(1677295057594),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2649,7 +2649,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/">
+  <link itemprop="mainEntityOfPage" href="http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Adversarr's Blog">
   </span>
@@ -2737,8 +2737,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="流体-表面张力">流体-表面张力</h1>
-<div class="story post-story"><h2 id="物理解释">物理解释</h2>
+    <div class="story post-story"><h2 id="物理解释">物理解释</h2>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Surface_tension">Surface
 Tension</a></p>
@@ -2752,8 +2751,19 @@ Tension</a></p>
 <blockquote>
 <p>Adhesion 和 Cohesion
 的大小关系，给出了液体和其他物体之间的<strong>润湿程度</strong>、<strong>接触角</strong>和<strong>弯月面形状</strong>。</p>
-<p>​<img src="/2023/02/24/CG/Things/Fluid/SurfaceTesion/image-20230224095819-wdisr0n.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTesion/image-20230224095819-wdisr0n.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">​</p>
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">
+<p>​</p>
 </blockquote>
+<p>流体内部<strong>在平衡情况下</strong>，表面张力为0，不平衡情况下，有缩小表面积的趋势。物理中的（在平衡状态下）表面张力（参数）实际上对应上图中的几个向量，即发生在流体与其他物体<strong>接触面的边界</strong>上，但并没有给出整个接触面上如何进行表面张力的计算公式（Wikipedia中没有给出）。</p>
+<p>在图形学中，实际上并没有严格按照物理公式求解表面张力。之前讨论的SPH方法中，其中有一项<span
+class="math inline">\(\alpha\)</span>和<span
+class="math inline">\(\beta\)</span>是人为指定的参数，其实考虑的也只是流体和空气的边界面，即不需要算出流体对于空气的作用力。</p>
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225111005299">
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225110955456">
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225110720208">
+<p>对于流体-固体边界面，则需要通过公式算出流体对于固体的力，可以进行双向耦合。(SIGGRAPH21)
+Solid-fluid interaction with surface-tension-dominant contact
+给出了基于MPM流体的流固耦合方法，该方法基于物理公式，求解了计算流固边界上表面张力。</p>
 </div><div class="story post-story"><h2 id="相关论文">相关论文</h2>
 <p>（不完整列表）</p>
 <h3
@@ -2768,7 +2778,8 @@ target="_blank" rel="noopener" href="http://physbam.stanford.edu/~fedkiw/papers/
 </ul>
 </blockquote>
 <p>主要工作是在类似于肥皂泡的“一层”流体上进行的：</p>
-<p>​<img src="/2023/02/24/CG/Things/Fluid/SurfaceTesion/image-20230224103303-4bvtqki.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTesion/image-20230224103303-4bvtqki.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">​</p>
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224103303-4bvtqki.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224103303-4bvtqki.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="i">
+<p>​</p>
 <p>拉格朗日视角下，基于单纯复形进行。</p>
 <h3
 id="codimensional-surface-tension-flow-using-moving-least-squares-particles">Codimensional
@@ -2797,7 +2808,8 @@ interaction with surface-tension-dominant contact</h3>
 <li>整体耦合框架，满足所有速度和位置约束，同时保持动量。</li>
 <li>预测-校正接触处理方案，以实际物理参数准确处理流固接触。</li>
 </ol>
-<p>​<img src="/2023/02/24/CG/Things/Fluid/SurfaceTesion/image-20230224104219-5wb9ihv.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTesion/image-20230224104219-5wb9ihv.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">​</p>
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224104219-5wb9ihv.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224104219-5wb9ihv.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">
+<p>​</p>
 <h3 id="versatile-surface-tension-and-adhesion-for-sph-fluids">Versatile
 surface tension and adhesion for SPH fluids</h3>
 <blockquote>
@@ -2830,7 +2842,7 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
               
             
               
-                <p>本文永久链接是：<a href=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/>http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/</a></p>
+                <p>本文永久链接是：<a href=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/>http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/</a></p>
               
             
           </blockquote>
@@ -2847,10 +2859,10 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-24T12:25:47+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-25T11:16:51+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年2月24日</p>
+    <p>更新于：2023年2月25日</p>
   </a>
 </div>
 
@@ -2873,7 +2885,7 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/&title=流体-表面张力 - Adversarr's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/&title=流体-表面张力 - Adversarr's Blog&summary="
           
           >
           
@@ -2885,7 +2897,7 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/&title=流体-表面张力 - Adversarr's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/&title=流体-表面张力 - Adversarr's Blog&summary="
           
           >
           
@@ -2897,7 +2909,7 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/&title=流体-表面张力 - Adversarr's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/&title=流体-表面张力 - Adversarr's Blog&summary="
           
           >
           
@@ -2955,7 +2967,7 @@ Tags: #Tutorial#...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/02/24/CG/Things/Fluid/SurfaceTesion/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/02/24/CG/Things/Fluid/SurfaceTension/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3948,6 +3960,60 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
+
 </pjax>
 
 <script>
@@ -4152,7 +4218,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Physical-Simlation/","name":"Physical Simlation"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/","name":"流体-表面张力"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"流体-表面张力","description":"Je pense, donc je suis","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTesion/","wordCount":0,"datePublished":"2023-02-24T01:44:02.000Z","dateModified":"2023-02-24T04:25:47.966Z","articleSection":"Physical Simlation","keywords":"Surface Tension,Fluid","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Physical-Simlation/","name":"Physical Simlation"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","name":"流体-表面张力"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"流体-表面张力","description":"Je pense, donc je suis","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","wordCount":0,"datePublished":"2023-02-24T01:44:02.000Z","dateModified":"2023-02-25T03:16:51.654Z","articleSection":"Physical Simlation","keywords":"Surface Tension,Fluid","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

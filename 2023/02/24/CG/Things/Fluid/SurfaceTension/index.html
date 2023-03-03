@@ -41,11 +41,11 @@
 <meta property="og:title" content="流体-表面张力">
 <meta property="og:url" content="http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/index.html">
 <meta property="og:site_name" content="Adversarr&#39;s Blog">
-<meta property="og:description" content="物理解释  Surface Tension  表面张力是静止液体表面收缩到尽可能小表面积的趋势。 在液体-空气边界面上，表面张力源于「液体分子间吸引力」（Cohesion）大于「液体和空气分子间吸引力」（Adhesion）：  Adhesion：不相同（相似）的粒子或表面“粘附”在一起的力（流体和其他物体之间） Cohesion：相同（相似）的粒子或表面“粘附”在一起的力（流体内部产生）   Ad">
+<meta property="og:description" content="资料汇总 Fluid Simulation in Computer Graphics (Bridson 15-Book) Chapter 8 Water - Section 5 Surface Tension P131  The physical chemistry of surface tension is conceptually simple. Water molecules are mor">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-02-24T01:44:02.000Z">
-<meta property="article:modified_time" content="2023-02-25T03:16:51.654Z">
+<meta property="article:modified_time" content="2023-03-03T12:18:25.370Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="Surface Tension">
 <meta property="article:tag" content="Fluid">
@@ -1915,7 +1915,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677295057594),
+    lastupdate: new Date(1677845936593),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2737,34 +2737,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="物理解释">物理解释</h2>
+    <div class="story post-story"><h2 id="资料汇总">资料汇总</h2>
+<h3 id="fluid-simulation-in-computer-graphics-bridson-15-book">Fluid
+Simulation in Computer Graphics (Bridson 15-Book)</h3>
+<p>Chapter 8 Water - Section 5 Surface Tension P131</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Surface_tension">Surface
-Tension</a></p>
+<p>The physical chemistry of surface tension is conceptually simple.
+<strong>Water molecules are more attracted to other water molecules than
+to air molecules, and vice versa.</strong> Thus, water molecules near
+the surface tend to be pulled in towards the rest of the water molecules
+and vice versa. In a way they are seeking to minimize the area exposed
+to the other fuid, bunching up around their own type. <strong>The
+simplest linear model of surface tension can in fact be phrased in terms
+of a potential energy equal to a surface-tension coefhicient ay times
+the surface area between the two fuids</strong> (<span
+class="math inline">\(\gamma\)</span> for water and air at normal
+conditions is approximatelv <span
+class="math inline">\(0.073J/m^2\)</span>). The force seeks to minimize
+the surface area.</p>
 </blockquote>
-<p>表面张力是静止液体表面收缩到尽可能小表面积的趋势。</p>
-<p>在液体-空气边界面上，表面张力源于「液体分子间吸引力」（Cohesion）大于「液体和空气分子间吸引力」（Adhesion）：</p>
-<ul>
-<li>Adhesion：不相同（相似）的粒子或表面“粘附”在一起的力（流体和其他物体之间）</li>
-<li>Cohesion：相同（相似）的粒子或表面“粘附”在一起的力（流体内部产生）</li>
-</ul>
-<blockquote>
-<p>Adhesion 和 Cohesion
-的大小关系，给出了液体和其他物体之间的<strong>润湿程度</strong>、<strong>接触角</strong>和<strong>弯月面形状</strong>。</p>
-<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">
-<p>​</p>
-</blockquote>
-<p>流体内部<strong>在平衡情况下</strong>，表面张力为0，不平衡情况下，有缩小表面积的趋势。物理中的（在平衡状态下）表面张力（参数）实际上对应上图中的几个向量，即发生在流体与其他物体<strong>接触面的边界</strong>上，但并没有给出整个接触面上如何进行表面张力的计算公式（Wikipedia中没有给出）。</p>
-<p>在图形学中，实际上并没有严格按照物理公式求解表面张力。之前讨论的SPH方法中，其中有一项<span
-class="math inline">\(\alpha\)</span>和<span
-class="math inline">\(\beta\)</span>是人为指定的参数，其实考虑的也只是流体和空气的边界面，即不需要算出流体对于空气的作用力。</p>
-<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225111005299">
-<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225110955456">
-<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225110720208">
-<p>对于流体-固体边界面，则需要通过公式算出流体对于固体的力，可以进行双向耦合。(SIGGRAPH21)
-Solid-fluid interaction with surface-tension-dominant contact
-给出了基于MPM流体的流固耦合方法，该方法基于物理公式，求解了计算流固边界上表面张力。</p>
-</div><div class="story post-story"><h2 id="相关论文">相关论文</h2>
+<p>欧拉方法</p>
+<p>Surface Area of Fluid = <span class="math display">\[
+A = \iint_{\partial\Omega}1=\cdots =\iiint_\Omega \nabla \cdot \nabla
+\phi
+\]</span> "Pressure" at the surface of water = <span
+class="math display">\[
+p = \gamma \nabla \cdot \nabla \phi = \gamma \kappa
+\]</span> 其中 <span class="math inline">\(\kappa\)</span>
+为流体表面的平均曲率。</p>
+<p>由此推出：</p>
+<ol type="1">
+<li>Explicit 方法：容易出现数值问题<span class="math inline">\(\Delta t
+\le O(\Delta x^{3/2} \sqrt{\rho / \gamma})\)</span></li>
+<li>Implicit 方法：仍然需要改进（难整合进现有求解器）</li>
+<li>……</li>
+</ol>
 <p>（不完整列表）</p>
 <h3
 id="codimensional-surface-tension-flow-on-simplicial-complexes">Codimensional
@@ -2821,7 +2828,386 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
 </ul>
 </blockquote>
 <p>SPH方法，分为Adhesion和Cohesion。与综述中一致。</p>
-<p>‍</p>
+<h3 id="simulation-of-bubbles">Simulation of bubbles</h3>
+<blockquote>
+<p>SIGGRAPH 2006</p>
+<p><a
+target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1016/j.gmod.2009.08.001">Link</a></p>
+<p><strong>Abstract</strong>: We present a novel framework based on a
+continuous fluid simulator for general simulation of realistic bubbles,
+with which we can handle as many significant dynamic bubble effects as
+possible. To capture a very thin liquid film of bubbles, we have
+developed <strong>a regional level set method allowing multi-manifold
+interface tracking</strong>. Based on the definitions of regional
+distance and its five operators, the implementation of the regional
+level set method is very easy. An implicit surface of liquid film with
+arbitrary thickness can be reconstructed from the regional level set
+function. To overcome the numerical instability problem, we exploit a
+new semi-implicit surface tension model which is unconditionally stable
+and makes the simulation of surface tension dominated phenomena much
+more efficient. An approximated film thickness evolution model is
+proposed to control the bubble's lifecycle. All these new techniques
+combine into a general framework that can produce various realistic
+dynamic <strong>effects of bubbles</strong>.</p>
+</blockquote>
+<ul>
+<li>主要侧重点在于气泡的模拟</li>
+<li>流体-空气边界</li>
+</ul>
+<h3
+id="a-stable-and-efficient-method-for-treating-surface-tension-in-incompressible-two-phase-flow.">A
+stable and efficient method for treating surface tension in
+incompressible two-phase flow.</h3>
+<blockquote>
+<p>SIAM Journal on Scientific Computing, 2009</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.math.fsu.edu/~sussman/SussmanOhta08.pdf">PDF</a></p>
+<p><a target="_blank" rel="noopener" href="https://epubs.siam.org/doi/10.1137/080732122">Link</a></p>
+<p><strong>Abstract</strong>: A new approach based on volume preserving
+motion by mean curvature for treating surface tension in
+<strong>two-phase flows</strong> is introduced. Many numerical tests and
+a theoretical justification are included which provide evidence
+regarding the efficacy of the new approach. For many flows, which
+exhibit stiff surface tension effects, the new approach gives a factor
+of at least three and sometimes five or more speed-up for a given
+accuracy. The new method is easy to implement in the context of (1)
+level set methods, or coupled level set and volume-of-fluid methods, (2)
+complicated interfaces separating gas from liquid, and (3)
+three-dimensional axisymmetric, or fully three-dimensional adaptive mesh
+refinement.</p>
+</blockquote>
+<h3
+id="an-extended-cut-cell-method-for-sub-grid-liquids-tracking-with-surface-tension.">An
+Extended Cut-Cell Method for Sub-Grid Liquids Tracking with Surface
+Tension.</h3>
+<blockquote>
+<p>TOG 2020</p>
+<p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3414685.3417859">Link</a></p>
+<p><strong>Abstract</strong>: Simulating liquid phenomena utilizing
+Eulerian frameworks is challenging, since highly energetic flows often
+induce <strong>severe topological changes, creating thin and complex
+liquid surfaces</strong>. Thus, capturing structures that are small
+relative to the grid size become intractable, since continually
+increasing the resolution will scale sub-optimally due to the pressure
+projection step. Previous methods successfully relied on using higher
+resolution grids for tracking the liquid surface implicitly; however
+this technique comes with drawbacks. The mismatch of pressure samples
+and surface degrees of freedom will cause artifacts such as hanging
+blobs and permanent kinks at the liquid-air interface. In this paper, we
+propose an extended cut-cell method for handling liquid structures that
+are smaller than a grid cell. At the core of our method is a novel
+iso-surface Poisson Solver, which converges with second-order accuracy
+for pressure values while maintaining attractive discretization
+properties such as symmetric positive definiteness. Additionally, we
+extend the iso-surface assumption to be also compatible with surface
+tension forces. Our results show that the proposed method provides a
+novel framework for handling arbitrarily small splashes that can also
+correctly interact with objects embodied by complex geometries.</p>
+</blockquote>
+<ul>
+<li>欧拉网格</li>
+<li>主要处理计算速度问题</li>
+</ul>
+<h3
+id="a-deformable-surface-model-for-real-time-water-drop-animation.">A
+deformable surface model for real-time water drop animation.</h3>
+<blockquote>
+<p>IEEE Trans on Visualization &amp; Computer Graphics 2012</p>
+<p><a target="_blank" rel="noopener" href="http://kunzhou.net/2011/surface_water_drop.pdf">Link</a></p>
+<p><strong>Abstract</strong>: A water drop behaves differently from a
+large water body because of its strong viscosity and surface tension
+under the small scale. Surface tension causes the motion of a water drop
+to be largely determined by its boundary surface. Meanwhile, viscosity
+makes the interior of a water drop less relevant to its motion, as the
+smooth velocity field can be well approximated by an interpolation of
+the velocity on the boundary. Consequently, we propose a fast deformable
+surface model to realistically animate water drops and their flowing
+behaviors on solid surfaces. Our system efficiently simulates water drop
+motions in a Lagrangian fashion, by reducing 3D fluid dynamics over the
+whole liquid volume to a deformable surface model. In each time step,
+the model uses an <strong>implicit mean curvature flow operator to
+produce surface tension effects</strong>, a <strong>contact angle
+operator to change droplet shapes on solid surfaces</strong>, and a set
+of mesh connectivity updates to handle topological changes and improve
+mesh quality over time. Our numerical experiments demonstrate a variety
+of physically plausible water drop phenomena at a real-time rate,
+including capillary waves when water drops collide, pinch-off of water
+jets, and droplets flowing over solid materials. The whole system
+performs orders-of-magnitude faster than existing simulation approaches
+that generate comparable water drop effects.</p>
+</blockquote>
+<figure>
+<img src="./SurfaceTension/image-20230303193834629.png"
+alt="image-20230303193834629" />
+<figcaption aria-hidden="true">image-20230303193834629</figcaption>
+</figure>
+<ul>
+<li>处理了流体-固体-气体边界</li>
+<li>流体动，固体不动</li>
+</ul>
+<h3
+id="double-bubbles-sans-toil-and-trouble-discrete-circulation-preserving-vortex-sheets-for-soap-films-and-foams">Double
+bubbles sans toil and trouble: Discrete circulation-preserving vortex
+sheets for soap films and foams</h3>
+<blockquote>
+<p>TOG 2015</p>
+<p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/2767003">Link</a></p>
+<p><strong>Abstract</strong>: Simulating the delightful dynamics of soap
+films, bubbles, and foams has traditionally required the use of a fully
+three-dimensional many-phase Navier-Stokes solver, even though their
+visual appearance is completely dominated by the thin liquid surface. We
+depart from earlier work on soap bubbles and foams by noting that their
+dynamics are naturally described by a Lagrangian vortex sheet model in
+which circulation is the primary variable. This leads us to derive a
+novel circulation-preserving surface-only discretization of foam
+dynamics driven by surface tension on a non-manifold triangle mesh. We
+represent the surface using a mesh-based multimaterial surface tracker
+which supports complex bubble topology changes, and evolve the surface
+according to the ambient air flow induced by a scalar circulation field
+stored on the mesh. Surface tension forces give rise to a simple update
+rule for circulation, even at non-manifold Plateau borders, based on a
+discrete measure of signed scalar mean curvature. We further incorporate
+vertex constraints to enable the interaction of soap films with wires.
+The result is a method that is at once simple, robust, and efficient,
+yet able to capture an array of soap films behaviors including foam
+rearrangement, catenoid collapse, blowing bubbles, and double bubbles
+being pulled apart.</p>
+</blockquote>
+<ul>
+<li>只考虑单层的流体 – 肥皂泡等</li>
+</ul>
+<p><img
+src="https://camo.githubusercontent.com/b2973d6c4872e860879fbaa3c0d4ffa3914848754749a9d2c2112a095a5a1c29/687474703a2f2f7777772e63732e636f6c756d6269612e6564752f63672f646f75626c65627562626c65732f7469746c652e6a7067" /></p>
+<h3 id="surface-only-liquids">Surface-only liquids</h3>
+<blockquote>
+<p>TOG 16</p>
+<p><strong>Abstract</strong>: We propose a novel surface-only technique
+for simulating incompressible, inviscid and uniform-density liquids with
+surface tension in three dimensions. The liquid surface is captured by a
+triangle mesh on which a Lagrangian velocity field is stored. Because
+advection of the velocity field may violate the incompressibility
+condition, we devise an orthogonal projection technique to remove the
+divergence while requiring the evaluation of only two boundary integrals
+The forces of surface tension, gravity, and solid contact are all
+treated by a boundary element solve, allowing us to perform detailed
+simuIations of a wide range of liquid phenomena, including waterbe lls,
+droplet and jet collisions, fuid chains, and crown splashes.</p>
+</blockquote>
+<ul>
+<li>处理了流体-固体-气体边界，同样假定固体不动</li>
+<li>只在流体表面进行计算，计算速度快</li>
+</ul>
+<h3 id="a-hyperbolic-geometric-flow-for-evolving-films-and-foams.">A
+hyperbolic geometric flow for evolving films and foams.</h3>
+<blockquote>
+<p>TOG 17</p>
+<p><strong>Abstract</strong>: Simulating the behavior of soap films and
+foams is a challenging task. A direct numerical simulation of films and
+foams via the Navier-Stokes equations is still computationally too
+expensive. We propose an alternative formulation inspired by geometric
+flow. Our model exploits the fact, according to Plateau's laws, that the
+steady state of a film is a union of constant mean curvature surfaces
+and minimal surfaces. Such surfaces are also well known as the steady
+state solutions of certain curvature flows. We show a link between the
+Navier-Stokes equations and a recent variant of mean curvature flow,
+called hyperbolic mean curvature flow, under the assumption of constant
+air pressure per enclosed region. Instead of using hyperbolic mean
+curvature flow as is, we propose to replace curvature by the gradient of
+the surface area functional. This formulation enables us to robustly
+handle non-manifold configurations; such junctions connecting multiple
+films are intractable with the traditional formulation using curvature.
+We also add explicit volume preservation to hyperbolic mean curvature
+flow, which in fact corresponds to the pressure term of the
+Navier-Stokes equations. Our method is simple, fast, robust, and
+consistent with Plateau's laws, which are all due to our reformulation
+of film dynamics as a geometric flow.</p>
+</blockquote>
+<ul>
+<li>主要处理气泡（薄的、“一层”液体）</li>
+</ul>
+<figure>
+<img src="./SurfaceTension/1-Figure1-1.png" class="lazyload" data-srcset="./SurfaceTension/1-Figure1-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h3
+id="semi-implicit-surface-tension-formulation-with-a-lagrangian-surface-mesh-on-an-eulerian-simulation-grid.">Semi-implicit
+surface tension formulation with a Lagrangian surface mesh on an
+Eulerian simulation grid.</h3>
+<blockquote>
+<p>JCP 2012</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.researchgate.net/publication/220207188_Semi-implicit_surface_tension_formulation_with_a_Lagrangian_surface_mesh_on_an_Eulerian_simulation_grid">Link</a></p>
+<p><strong>Abstract</strong>: We present a method for applying
+semi-implicit forces on a Lagrangian mesh to an Eulerian discretization
+of the Navier Stokes equations in a way that produces a sparse symmetric
+positive definite system. The resulting method has semi-implicit and
+fully-coupled viscosity, pressure, and Lagrangian forces. We apply our
+new framework for forces on a Lagrangian mesh to the case of a surface
+tension force, which when treated explicitly leads to a tight time step
+restriction. By applying surface tension as a semi-implicit Lagrangian
+force, the resulting method benefits from improved stability and the
+ability to take larger time steps. The resulting discretization is also
+able to maintain parasitic currents at low levels.</p>
+</blockquote>
+<h3
+id="a-new-incompressibility-discretization-for-a-hybrid-particle-mac-grid-representation-with-surface-tension.">A
+new incompressibility discretization for a hybrid particle MAC grid
+representation with surface tension.</h3>
+<blockquote>
+<p>JCP 2012</p>
+<p><strong>Abstract</strong>: We take a particle based approach to
+incompressible free surface flow motivated by the fact that an explicit
+representation of the interface geometry and internal deformations gives
+precise feedback to an implicit solver for surface tension. Methods that
+enforce incompressibility directly on the particles are typically
+numerically inefficient compared to those that utilize a background
+grid. However, background grid discretizations suffer from inaccuracy
+near the free surface where they do not properly capture the interface
+geometry. Therefore, our incompressibility discretization utilizes a
+particle based projection near the interface and a background MAC grid
+based projection for efficiency in the vast interior of the liquid
+domain - as well as a novel method for coupling these two disparate
+projections together. We show that the overall coupled elliptic solver
+is second order accurate, and remains second order accurate when used in
+conjunction with an appropriate temporal discretization for parabolic
+problems. A similar second order accurate discretization is derived when
+the MAC grid unknowns are located on faces (as opposed to cell centers)
+so that Navier-Stokes viscosity can be solved for implicitly as well.
+Finally, we present a fully implicit approach to surface tension that is
+robust enough to achieve a steady state solution in a single time step.
+Beyond stable implicit surface tension for our novel hybrid
+discretization, we demonstrate preliminary results for both standard
+front tracking and the particle level set method.</p>
+</blockquote>
+<h3
+id="codimensional-surface-tension-flow-on-simplicial-complexes.">Codimensional
+surface tension flow on simplicial complexes.</h3>
+<blockquote>
+<p>TOG 2014</p>
+<p><strong>Abstract</strong>: Many visually interesting natural
+phenomena are characterized by thin liquid sheets, long filaments, and
+droplets. We present a new Lagrangian-based numerical method to simulate
+these codimensional surface tension driven phenomena using non-manifold
+simplicial complexes. Tetrahedra, triangles, segments, and points are
+used to model the fluid volume, thin films, filaments, and droplets,
+respectively. We present a new method for enforcing fluid
+incompressibility on simplicial complexes along with a physically-guided
+meshing algorithm to provide temporally consistent information for
+interparticle forces. Our method naturally allows for transitions
+between codimensions, either from tetrahedra to triangles to segments to
+points or vice versa, regardless of the simulation resolution. We
+demonstrate the efficacy of this method by simulating various natural
+phenomena that are characterized by thin fluid sheets, filaments, and
+surface tension effects.</p>
+</blockquote>
+<h3
+id="nonlinear-dynamics-of-surface-tension-driven-instabilities.-wiley-online-library">Nonlinear
+dynamics of surface-tension-driven instabilities. (Wiley Online
+Library)</h3>
+<blockquote>
+<p>A century after Henri Bénard discovered cellular convective
+structures, thermal convection in fluid layers still remains a central
+subject in nonlinear physics. Within this framework,
+surface-tension-driven instabilities have increasingly been the subject
+of attention over the last few years, owing to the even greater variety
+of pattern and wave-forming phenomena observed in this situation. This
+book provides readers with a progressive and complete insight into this
+vast field, describing as it does a number of "first principle" analyses
+of realistic set-ups, including several physicochemical processes at
+interfaces. Nonetheless, much emphasis is placed on the generality of
+the results and methods used, by way of the detailed derivation and
+analysis of a number of generic nonlinear equations known to hold in
+many physical systems, even outside the realm of fluid mechanics.</p>
+<p>The first introductory chapter describes nonlinear dissipative
+structures at a general level, with several examples of hydrodynamic
+instabilities in systems with interfaces. Chapter 2 contains a summary
+of the derivation of thermo-hydrodynamic equations, including boundary
+conditions prevailing at interfaces, while the third chapter is devoted
+to linear stability analyzes and identification of basic instability
+modes. The following two chapters deal with weakly nonlinear theories,
+both monotonic and oscillatory. Chapter 6 presents experimental and
+theoretical results on solitonic and shock-like surface waves, while
+Chapter 7 explores examples of multiple bifurcations. Finally, Chapter 8
+presents recent results on strongly nonlinear surface-tension-driven
+convection and chaotic interfacial dynamics.</p>
+</blockquote>
+<h3 id="numerical-models-of-surface-tension.">Numerical models of
+surface tension.</h3>
+<blockquote>
+<p>Annual Review of Fluid Mechanics 2018</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.annualreviews.org/doi/10.1146/annurev-fluid-122316-045034">Link</a></p>
+<p><strong>Abstract</strong>: Numerical models of surface tension play
+an increasingly important role in our capacity to understand and predict
+a wide range of multiphase flow problems. The accuracy and robustness of
+these models have improved markedly in the past 20 years, so that they
+are now applicable to complex, three-dimensional configurations of great
+theoretical and practical interest. In this review, I attempt to
+summarize the most significant recent developments in Eulerian surface
+tension models, with an emphasis on well-balanced estimation, curvature
+estimation, stability, and implicit time stepping, as well as test cases
+and applications. The advantages and limitations of various models are
+discussed, with a focus on common features rather than differences.
+Several avenues for further progress are suggested.</p>
+</blockquote>
+<h3 id="unsorted">「Unsorted」</h3>
+<ol type="1">
+<li>A coupled volume-of-fluid and level set method based on general
+curvilinear grids with accurate surface tension calculation.(JCP)</li>
+<li>A new incompressibility discretization for a hybrid particle MAC
+grid representation with surface tension.(JCP)</li>
+<li>Simulating surface tension with smoothed particle hydrodynamics.
+International journal for numerical methods in fluids</li>
+<li>Modeling of surface tension and contact angles with smoothed
+particle hydrodynamics. Physical Review</li>
+<li>Thin-film smoothed particle hydrodynamics fluid. ACM Transactions on
+Graphics (TOG)</li>
+</ol>
+</div><div class="story post-story"><h2 id="物理解释">物理解释</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Surface_tension">Surface
+Tension</a></p>
+<p>表面张力在概念上很简单。水分子比空气分子更容易被其他水分子吸引，反之亦然。因此，表面附近的水分子倾向于被拉向其余的水分子，反之亦然。在某种程度上，他们正在寻求最小化暴露于其他流体的区域，聚集在他们自己的同类型流体周围。表面张力最简单的线性模型实际上可以用势能等于两个流体之间的表面积的超临界值r乘以（在正常条件下的水和空气约为<span
+class="math inline">\(0.073J/m^2\)</span>）来表述。该力提供将表面积降至最低的趋势。</p>
+</blockquote>
+<p>表面张力是静止液体表面收缩到尽可能小表面积的趋势。</p>
+<p>在液体-空气边界面上，表面张力源于「液体分子间吸引力」（Cohesion）大于「液体和空气分子间吸引力」（Adhesion）：</p>
+<ul>
+<li>Adhesion：不相同（相似）的粒子或表面“粘附”在一起的力（流体和其他物体之间）</li>
+<li>Cohesion：相同（相似）的粒子或表面“粘附”在一起的力（流体内部产生）</li>
+</ul>
+<blockquote>
+<p>与不同物体的 Adhesion 以及自身 Cohesion
+的大小关系，给出了液体和其他物体之间的<strong>润湿程度</strong>、<strong>接触角</strong>和<strong>弯月面形状</strong>。</p>
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">
+<p>​</p>
+</blockquote>
+<p>流体内部<strong>在平衡情况下</strong>，表面张力为0，不平衡情况下，有缩小表面积的趋势。物理中的（在平衡状态下）表面张力（参数）实际上对应上图中的几个向量，即发生在流体与其他物体<strong>接触面的边界</strong>上，但并没有给出整个接触面上如何进行表面张力的计算公式（Wikipedia中没有给出）。</p>
+<p>之前讨论的SPH方法中，其中有一项<span
+class="math inline">\(\alpha\)</span>和<span
+class="math inline">\(\beta\)</span>是人为指定的参数，其实考虑的也只是流体和空气的边界面，即不需要算出流体对于空气的作用力。</p>
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225111005299">
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225110955456">
+<img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image-20230225110720208">
+<p>对于流体-固体边界面，则需要通过公式算出流体对于固体的力，可以进行双向耦合。(SIGGRAPH21)
+Solid-fluid interaction with surface-tension-dominant contact
+给出了基于MPM流体的流固耦合方法，该方法基于物理公式，求解了计算流固边界上表面张力。</p>
+<p>总的来说，可以分为几类问题：</p>
+<ol type="1">
+<li>流体和空气边界：
+<ol type="1">
+<li>水滴等常规形状的流体 – 仍然是NS方程主导，附加表面张力</li>
+<li>肥皂泡 – 表面张力主导的“单层”流体</li>
+</ol></li>
+<li>流体、空气、固体边界（弯月面形状、角度等）
+<ol type="1">
+<li>固体不动，流体动</li>
+<li>固体动，流体也动，但固体是刚体</li>
+<li>软体、流体 - <a
+target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3550454.3555476">Position-based
+Surface Tension Flow</a></li>
+</ol></li>
+</ol>
 
 </div>
   </div>
@@ -2859,10 +3245,10 @@ target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publi
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-25T11:16:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-03T20:18:25+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年2月25日</p>
+    <p>更新于：2023年3月3日</p>
   </a>
 </div>
 
@@ -3000,11 +3386,28 @@ Tags: #Tutorial#...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%A3%E9%87%8A"><span class="toc-text">物理解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87"><span class="toc-text">相关论文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#codimensional-surface-tension-flow-on-simplicial-complexes"><span class="toc-text">Codimensional
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB"><span class="toc-text">资料汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fluid-simulation-in-computer-graphics-bridson-15-book"><span class="toc-text">Fluid
+Simulation in Computer Graphics (Bridson 15-Book)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#codimensional-surface-tension-flow-on-simplicial-complexes"><span class="toc-text">Codimensional
 Surface Tension Flow on Simplicial Complexes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#codimensional-surface-tension-flow-using-moving-least-squares-particles"><span class="toc-text">Codimensional
 Surface Tension Flow using Moving-Least-Squares Particles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solid-fluid-interaction-with-surface-tension-dominant-contact"><span class="toc-text">Solid-fluid
 interaction with surface-tension-dominant contact</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#versatile-surface-tension-and-adhesion-for-sph-fluids"><span class="toc-text">Versatile
-surface tension and adhesion for SPH fluids</span></a></li></ol></li></ol>
+surface tension and adhesion for SPH fluids</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#simulation-of-bubbles"><span class="toc-text">Simulation of bubbles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-stable-and-efficient-method-for-treating-surface-tension-in-incompressible-two-phase-flow."><span class="toc-text">A
+stable and efficient method for treating surface tension in
+incompressible two-phase flow.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#an-extended-cut-cell-method-for-sub-grid-liquids-tracking-with-surface-tension."><span class="toc-text">An
+Extended Cut-Cell Method for Sub-Grid Liquids Tracking with Surface
+Tension.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-deformable-surface-model-for-real-time-water-drop-animation."><span class="toc-text">A
+deformable surface model for real-time water drop animation.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#double-bubbles-sans-toil-and-trouble-discrete-circulation-preserving-vortex-sheets-for-soap-films-and-foams"><span class="toc-text">Double
+bubbles sans toil and trouble: Discrete circulation-preserving vortex
+sheets for soap films and foams</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#surface-only-liquids"><span class="toc-text">Surface-only liquids</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-hyperbolic-geometric-flow-for-evolving-films-and-foams."><span class="toc-text">A
+hyperbolic geometric flow for evolving films and foams.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#semi-implicit-surface-tension-formulation-with-a-lagrangian-surface-mesh-on-an-eulerian-simulation-grid."><span class="toc-text">Semi-implicit
+surface tension formulation with a Lagrangian surface mesh on an
+Eulerian simulation grid.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-new-incompressibility-discretization-for-a-hybrid-particle-mac-grid-representation-with-surface-tension."><span class="toc-text">A
+new incompressibility discretization for a hybrid particle MAC grid
+representation with surface tension.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#codimensional-surface-tension-flow-on-simplicial-complexes."><span class="toc-text">Codimensional
+surface tension flow on simplicial complexes.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nonlinear-dynamics-of-surface-tension-driven-instabilities.-wiley-online-library"><span class="toc-text">Nonlinear
+dynamics of surface-tension-driven instabilities. (Wiley Online
+Library)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#numerical-models-of-surface-tension."><span class="toc-text">Numerical models of
+surface tension.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unsorted"><span class="toc-text">「Unsorted」</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%A3%E9%87%8A"><span class="toc-text">物理解释</span></a></li></ol>
     </div>
   </section>
 
@@ -4218,7 +4621,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Physical-Simlation/","name":"Physical Simlation"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","name":"流体-表面张力"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"流体-表面张力","description":"Je pense, donc je suis","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","wordCount":0,"datePublished":"2023-02-24T01:44:02.000Z","dateModified":"2023-02-25T03:16:51.654Z","articleSection":"Physical Simlation","keywords":"Surface Tension,Fluid","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Physical-Simlation/","name":"Physical Simlation"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","name":"流体-表面张力"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"流体-表面张力","description":"Je pense, donc je suis","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","wordCount":0,"datePublished":"2023-02-24T01:44:02.000Z","dateModified":"2023-03-03T12:18:25.370Z","articleSection":"Physical Simlation","keywords":"Surface Tension,Fluid","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

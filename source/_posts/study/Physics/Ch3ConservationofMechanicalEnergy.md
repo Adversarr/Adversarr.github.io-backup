@@ -80,7 +80,7 @@ $W=\frac{1}{2}kx_A^2-\frac{1}{2}kx_B^2$
 
 > 旋度不恒为零
 
-有关旋度，参见 {% post_link Advanced-Mathematics/Vectors-and-Analytic-Geometry-Integration %}
+有关旋度，参见
 
 ### 势能（Potential Energy）
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.3.0">
-  <meta name="Volantis" content="5.4.0">
+  <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -25,8 +25,10 @@
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
+  <!-- front-matter head_begin begin -->
+  <!-- front-matter head_begin end -->
     <link rel="shortcut icon" type='image/x-icon' href="/image/favicon.webp">
-  <link rel="preload" href="/css/style.1154b99c.css" as="style">
+  <link rel="preload" href="/css/style.56f7feca.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -45,7 +47,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2020-08-20T06:00:00.000Z">
-<meta property="article:modified_time" content="2023-02-05T06:21:34.007Z">
+<meta property="article:modified_time" content="2023-07-10T12:43:25.950Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="波">
@@ -55,15 +57,6 @@
     /* 首屏样式 */
     #safearea {
   display: none;
-}
-/*
-  * Workaround for Chrome bug, part 1
-  * Chunk rendering for all but the first article.
-  * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
-*/
-.post-story + .post-story {
-  content-visibility: auto;
-  contain-intrinsic-size: 10px 500px;
 }
 :root {
   --color-site-body: #f4f4f4;
@@ -87,6 +80,7 @@
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
 }
 * {
   box-sizing: border-box;
@@ -127,13 +121,13 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #3dd9b6;
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: #ff5722;
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
 }
 body {
   background-color: var(--color-site-body);
@@ -868,6 +862,7 @@ button {
     --color-list-hl: #63e0c4;
     --color-meta: rgba(191,191,191,0.871);
     --color-link: rgba(191,191,191,0.871);
+    --color-copyright-bkg: #21252b;
   }
   :root:not([color-scheme]) img {
     filter: brightness(70%) !important;
@@ -939,6 +934,7 @@ button {
   --color-list-hl: #63e0c4;
   --color-meta: rgba(191,191,191,0.871);
   --color-link: rgba(191,191,191,0.871);
+  --color-copyright-bkg: #21252b;
 }
 [color-scheme='dark'] img {
   filter: brightness(70%) !important;
@@ -1834,8 +1830,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1154b99c.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1154b99c.css"></noscript>
+  <link rel="stylesheet" href="/css/style.56f7feca.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.56f7feca.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1870,7 +1866,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     '<div class="kill-ie">'+
         `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
         `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
     '</div>');
 </script>
 
@@ -1908,14 +1904,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = false; // 开启调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
+    cdn: {"js":{"app":"/js/app.7a2c825e.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.85946653.js"},"css":{"style":"/css/style.56f7feca.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677898882176),
+    lastupdate: new Date(1688993017292),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -1933,17 +1929,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
-      aplayer: {
-        id: 3175833810,
-        enable:null
-      },
-      rightmenu: {
-        faicon: "fa",
-        layout: ["home","hr","help","examples","contributors","hr","source_docs","source_theme","hr","print","darkmode","reading","music"],
-        music_alwaysShow: true,
-        customPicUrl: {"enable":false,"old":null,"new":null}
-      },
+      
+      
+      
       rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+      
     }
   }
 
@@ -2264,8 +2254,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     volantis.requestAnimationFrame(loop)
   }
   volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
   // 触发页面滚动至目标元素位置
-  volantis.scroll.to = (ele, option = {}) =>{
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
     // 默认配置
     opt = {
       top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
@@ -2291,8 +2284,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // 用于处理 lazyload 引起的 cls 导致的定位失败问题
     // option.observer = false
     if (option.observer) {
-      setTimeout(()=>{
-        volantis.scroll.unengine.push(()=>{
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
           let me = ele.getBoundingClientRect().top
           if(!(me >= -option.observerDic && me <= option.observerDic)){
             volantis.scroll.to(ele, option)
@@ -2333,7 +2329,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
   
-  <!-- Custom Files headEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- Custom Files headEnd end-->
+  <!-- front-matter head_end begin -->
+  <!-- front-matter head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- import body_begin begin-->
@@ -2341,6 +2339,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
+    <!-- front-matter body_begin begin -->
+    <!-- front-matter body_begin end -->
     <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
@@ -2701,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-08-20T14:00:00+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-08-20T06:00:00+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2020年8月20日</p>
@@ -2713,16 +2713,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
 
-
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span>次浏览</span>
-    </p>
-  </a>
-</div>
 
 
           
@@ -2740,19 +2730,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>基础物理学第 8 - 9 章</p>
 <span id="more"></span>
 <div class="note quote"><ul><li>静电场<ul><li>电相互作用</li><li>静电场的高斯定理</li><li>静电场的环路定理、电势</li></ul></li><li>静电场中的导体、电介质<ul><li>静电场中的导体</li><li>静电场中的电介质</li><li>静电场的能量</li></ul></li></ul></div>
-<div class="story post-story"><h2 id="电相互作用-真空中的静电场">电相互作用 真空中的静电场</h2>
+<h2 id="电相互作用-真空中的静电场">电相互作用 真空中的静电场</h2>
 <h3 id="电相互作用">电相互作用</h3>
 <p><strong><kbd>「电荷守恒定律」</kbd></strong>：在一个与外界没有点和交换的系统内，正负电荷的代数和，在任何物理过程中都保持不变。</p>
-<p><strong><kbd>「电荷量子化」</kbd></strong>：微小粒子的带电量的变化不是连续的，它只能是
-<kbd>元电荷 e</kbd> 的整数倍。</p>
+<p><strong><kbd>「电荷量子化」</kbd></strong>：微小粒子的带电量的变化不是连续的，它只能是 <kbd>元电荷 e</kbd> 的整数倍。</p>
 <h4 id="库仑定律">库仑定律</h4>
 <p><strong><kbd>「库仑定律」</kbd></strong>：</p>
 <ul>
 <li><p>在真空中，两个静止点电荷之间的相互作用力大小，与它们的电量的乘积成正比，与其距离平方成反比，作用力方向沿着它们的连线，同号电荷相斥，异号电荷相吸。</p></li>
-<li><p><span class="math inline">\(\displaystyle\boldsymbol{F} _
-{12}=k\frac{q _ 1q _ 2}{r _ {12}^2}\boldsymbol{e} _
-{12}=\frac{1}{4\pi\varepsilon _ 0}\frac{q _ 1q _ 2}{r _
-{12}^2}\boldsymbol{e} _ {12}\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle\boldsymbol{F} _ {12}=k\frac{q _ 1q _ 2}{r _ {12}^2}\boldsymbol{e} _ {12}=\frac{1}{4\pi\varepsilon _ 0}\frac{q _ 1q _ 2}{r _ {12}^2}\boldsymbol{e} _ {12}\)</span></p></li>
 </ul>
 <p><strong><kbd>「静电力的叠加原理」</kbd></strong>：总静电力等于其他点电荷单独存在作用在该点电荷上的静电力的矢量和</p>
 <h4 id="电场和电场强度">电场和电场强度</h4>
@@ -2761,7 +2747,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <p><strong><kbd>「场强的叠加原理」</kbd></strong>：（类似静电力的叠加原理）</p>
 <div class="note quote"><p>通过线积分、面积分、体积分计算电场强度。</p></div>
-<div class="note quote"><p><strong><kbd>「电偶极子」</kbd></strong>：由两个大小相等，符号相反的点电荷+q 和 -q 组成。从负电荷到正电荷的矢量称为电偶极子的臂 l，电荷 q 和 l的乘积称为电偶极矩 p（电矩）。</p></div>
+<div class="note quote"><p><strong><kbd>「电偶极子」</kbd></strong>：由两个大小相等，符号相反的点电荷 +q 和 -q 组成。从负电荷到正电荷的矢量称为电偶极子的臂 l，电荷 q 和 l 的乘积称为电偶极矩 p（电矩）。</p></div>
 <h3 id="静电场的高斯定理">静电场的高斯定理</h3>
 <h4 id="电场线">电场线</h4>
 <p>数量和场强大小成正比</p>
@@ -2770,53 +2756,43 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>通量（Flux）</li>
 </ul>
 <h4 id="静电场的高斯定理-1">静电场的高斯定理</h4>
-<p>静电场中任何闭合曲面 S 的电场通量 <span class="math inline">\(\varPhi
-_ E\)</span> 等于该曲面内所包围的电荷的代数和 <span
-class="math inline">\(\sum q _ i\)</span> 除以 <span
-class="math inline">\(\varepsilon _ 0\)</span></p>
+<p>静电场中任何闭合曲面 S 的电场通量 <span class="math inline">\(\varPhi _ E\)</span> 等于该曲面内所包围的电荷的代数和 <span class="math inline">\(\sum q _ i\)</span> 除以 <span class="math inline">\(\varepsilon _ 0\)</span></p>
 <div class="note quote"><p><strong><kbd>「注意」</kbd></strong></p><ol type="1"><li>如何证明？</li><li>类比到引力场</li></ol></div>
 <h4 id="静电场高斯定理的微分形式">静电场高斯定理的微分形式</h4>
 <ul>
-<li><span class="math inline">\(\displaystyle\nabla\cdot\boldsymbol{E}
-=\frac{1}{\varepsilon}\rho _ c\)</span></li>
+<li><span class="math inline">\(\displaystyle\nabla\cdot\boldsymbol{E} =\frac{1}{\varepsilon}\rho _ c\)</span></li>
 </ul>
 <h3 id="静电场的环路定理-电势">静电场的环路定理 电势</h3>
 <h4 id="静电场的环路定理">静电场的环路定理</h4>
 <ul>
 <li>静电场力所作的功，与路径无关（静电场力是保守力）</li>
 </ul>
-<p><strong><kbd>「静电场的环路定理」</kbd></strong>：静电场中，场强沿任意闭合环路的线积分恒等于
-0：</p>
+<p><strong><kbd>「静电场的环路定理」</kbd></strong>：静电场中，场强沿任意闭合环路的线积分恒等于 0：</p>
 <ul>
-<li><span
-class="math inline">\(\displaystyle\oint\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}=0\)</span></li>
+<li><span class="math inline">\(\displaystyle\oint\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}=0\)</span></li>
 </ul>
 <p>微分形式：</p>
 <ul>
-<li><span class="math inline">\(\nabla\times
-\boldsymbol{E}=0\)</span></li>
+<li><span class="math inline">\(\nabla\times \boldsymbol{E}=0\)</span></li>
 </ul>
 <h4 id="电势差和电势">电势差和电势</h4>
 <ul>
-<li><span class="math inline">\(\displaystyle U _ {PQ}=\int _
-P^Q\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}\)</span></li>
+<li><span class="math inline">\(\displaystyle U _ {PQ}=\int _ P^Q\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}\)</span></li>
 <li>常常选用无穷远为势能零点</li>
 </ul>
 <h4 id="电势叠加原理">电势叠加原理</h4>
 <p><strong><kbd>「电势叠加原理」</kbd></strong>：点电荷系中电子厂中某点的电势，是哥哥点电荷单独存在时电场在该点的电势的代数和。</p>
 <h4 id="等势面-电势的梯度">等势面 电势的梯度</h4>
 <ul>
-<li><span
-class="math inline">\(\boldsymbol{E}=-\mathrm{grad}~V\)</span></li>
+<li><span class="math inline">\(\boldsymbol{E}=-\mathrm{grad}~V\)</span></li>
 </ul>
 <blockquote>
 <p>**静电场的基本微分方程</p>
-<p>泊松方程：<span class="math inline">\(\nabla^2V=-\frac{1}{\varepsilon
-_ 0}\rho _ e\)</span></p>
+<p>泊松方程：<span class="math inline">\(\nabla^2V=-\frac{1}{\varepsilon _ 0}\rho _ e\)</span></p>
 <p>拉普拉斯方程：<span class="math inline">\(\nabla^2V=0\)</span></p>
 </blockquote>
 <hr />
-</div><div class="story post-story"><h2 id="静电场中的导体">静电场中的导体</h2>
+<h2 id="静电场中的导体">静电场中的导体</h2>
 <h3 id="静电场中的导体-1">静电场中的导体</h3>
 <h4 id="导体的静电平衡条件">导体的静电平衡条件</h4>
 <p><strong><kbd>「条件」</kbd></strong>：导体内场强处处为 0</p>
@@ -2829,10 +2805,8 @@ _ 0}\rho _ e\)</span></p>
 <p><strong><kbd>「有带电体」</kbd></strong>：内表面和腔内电荷的代数和为 0.</p>
 <p><strong><kbd>「静电屏蔽」</kbd></strong>：接地良好的道题刻可以把内部带电梯对外界的影响全部消除。</p>
 <h4 id="电容-电容器">电容 电容器</h4>
-<p><strong><kbd>「孤立导体的电容」</kbd></strong>：<span class="math inline">\(C =
-\frac{q}{V}\)</span></p>
-<p><strong><kbd>「电容器的电容」</kbd></strong>：<span class="math inline">\(C =
-\frac{q}{U_{AB}}\)</span></p>
+<p><strong><kbd>「孤立导体的电容」</kbd></strong>：<span class="math inline">\(C = \frac{q}{V}\)</span></p>
+<p><strong><kbd>「电容器的电容」</kbd></strong>：<span class="math inline">\(C = \frac{q}{U_{AB}}\)</span></p>
 <div class="note quote"><p><strong>电容计算</strong>：</p><ol type="1"><li>平行板电容器</li><li>同心球电容器</li><li>同轴柱形电容器</li></ol><p>并联的电容：加和</p><p>串联的电容：倒数 = 倒数加和</p></div>
 <h3 id="静电场中的电介质">静电场中的电介质</h3>
 <h4 id="电介质计划">电介质计划</h4>
@@ -2840,12 +2814,10 @@ _ 0}\rho _ e\)</span></p>
 <li>位移极化、取向极化、极化电荷、束缚电荷</li>
 </ul>
 <h4 id="极化强度和极化电荷">极化强度和极化电荷</h4>
-<p><span class="math inline">\(P = \frac{\sum \boldsymbol p_i}{\Delta
-V}\)</span></p>
+<p><span class="math inline">\(P = \frac{\sum \boldsymbol p_i}{\Delta V}\)</span></p>
 <p>闭合曲面 S 内向外移动的极化电荷总量为净余的极化电荷总量的负值：</p>
 <ul>
-<li><span class="math inline">\(\displaystyle\iint_{(S)}P\cdot \mathrm d
-S=-\sum q&#39;_i\)</span></li>
+<li><span class="math inline">\(\displaystyle\iint_{(S)}P\cdot \mathrm d S=-\sum q&#39;_i\)</span></li>
 </ul>
 <h4 id="各向同性线性电介质的极化规律">各向同性线性电介质的极化规律</h4>
 <ul>
@@ -2855,15 +2827,11 @@ S=-\sum q&#39;_i\)</span></li>
 <h4 id="电位移-有电介质时的高斯定理">电位移 有电介质时的高斯定理</h4>
 <ul>
 <li><span class="math inline">\(D=\varepsilon_0E+P\)</span></li>
-<li><span
-class="math inline">\(D=\varepsilon_r\varepsilon_0E=\varepsilon
-E\)</span></li>
+<li><span class="math inline">\(D=\varepsilon_r\varepsilon_0E=\varepsilon E\)</span></li>
 </ul>
-<p><strong><kbd>「D的高斯定理」</kbd></strong>：<span
-class="math inline">\(\nabla\cdot D=\rho_0\)</span></p>
+<p><strong><kbd>「D的高斯定理」</kbd></strong>：<span class="math inline">\(\nabla\cdot D=\rho_0\)</span></p>
 <ul>
-<li><span class="math inline">\(D = \varepsilon
-E=\varepsilon_r\varepsilon_0E\)</span></li>
+<li><span class="math inline">\(D = \varepsilon E=\varepsilon_r\varepsilon_0E\)</span></li>
 <li><span class="math inline">\(C=\varepsilon_rC_0\)</span></li>
 </ul>
 <h3 id="静电场的能量">静电场的能量</h3>
@@ -2871,56 +2839,54 @@ E=\varepsilon_r\varepsilon_0E\)</span></li>
 <ul>
 <li>点电荷之间的相互作用能
 <ul>
-<li><span class="math inline">\(\displaystyle
-W_{int}=\frac{1}{8\pi\varepsilon_0}\sum\sum\frac{q_iq_j}{r_{ij}}\)</span></li>
+<li><span class="math inline">\(\displaystyle W_{int}=\frac{1}{8\pi\varepsilon_0}\sum\sum\frac{q_iq_j}{r_{ij}}\)</span></li>
 </ul></li>
 <li>电荷连续分布情形的静电能
 <ul>
-<li><span class="math inline">\(\displaystyle W=\frac{1}{2}\sum
-qV\)</span></li>
+<li><span class="math inline">\(\displaystyle W=\frac{1}{2}\sum qV\)</span></li>
 </ul></li>
 <li>电荷在外电场中的能量</li>
 <li>电容器储能
 <ul>
-<li><span class="math inline">\(\displaystyle
-W=\frac{1}{2}QU\)</span></li>
+<li><span class="math inline">\(\displaystyle W=\frac{1}{2}QU\)</span></li>
 </ul></li>
 </ul>
 <h4 id="电场的能量和能量密度">电场的能量和能量密度</h4>
-<p><strong><kbd>「电能密度」</kbd></strong>：<span
-class="math inline">\(\displaystyle w_e = \frac{W_e}{V} =
-\frac{1}{2}DE\)</span></p>
+<p><strong><kbd>「电能密度」</kbd></strong>：<span class="math inline">\(\displaystyle w_e = \frac{W_e}{V} = \frac{1}{2}DE\)</span></p>
 <p>各向同性时：</p>
 <ul>
-<li><span class="math inline">\(\displaystyle
-w_e=\frac{1}{2}\varepsilon_0E^2(or~\frac{1}{2}\varepsilon_r\varepsilon_0E^2)\)</span></li>
+<li><span class="math inline">\(\displaystyle w_e=\frac{1}{2}\varepsilon_0E^2(or~\frac{1}{2}\varepsilon_r\varepsilon_0E^2)\)</span></li>
 </ul>
 
-</div>
   </div>
   
   
     
     <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
+       <!-- 相关文章 -->
       
+      <!-- 版权声明组件 -->
       
-        <div class='copyright'>
-          <blockquote>
-            
+        
+          <div class='copyright'>
+            <blockquote>
               
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
+                
               
-            
+                
+                  <p>本文永久链接是：<a href="http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/">http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/</a></p>
+                
               
-                <p>本文永久链接是：<a href=http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/>http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/</a></p>
-              
-            
-          </blockquote>
-        </div>
+            </blockquote>
+          </div>
+        
       
+      <!-- 打赏组件 -->
       
     </div>
   
@@ -2932,10 +2898,10 @@ w_e=\frac{1}{2}\varepsilon_0E^2(or~\frac{1}{2}\varepsilon_r\varepsilon_0E^2)\)</
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-05T14:21:34+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-10T12:43:25+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年2月5日</p>
+    <p>更新于：2023年7月10日</p>
   </a>
 </div>
 
@@ -3015,7 +2981,7 @@ w_e=\frac{1}{2}\varepsilon_0E^2(or~\frac{1}{2}\varepsilon_r\varepsilon_0E^2)\)</
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/09/26/study/Math/DiscreteMath/index/'>
+        <a class='prev' href='/2020/09/25/study/Math/DiscreteMath/index/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>离散数学 [Overview]</p>
           <p class='content'>2019 - 2020 - 3 离散数学目录
 
@@ -3027,12 +2993,11 @@ w_e=\frac{1}{2}\varepsilon_0E^2(or~\frac{1}{2}\varepsilon_r\varepsilon_0E^2)\)</
 图的基本概念
 欧拉图&amp;哈密顿图
 
-
 </p>
         </a>
       
       
-        <a class='next' href='/2020/08/19/study/ComputerScience/fragments/datastructure-review/'>
+        <a class='next' href='/2020/08/18/study/ComputerScience/fragments/datastructure-review/'>
           <p class='title'>数据结构复习<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>数据结构复习
 
@@ -3079,13 +3044,22 @@ ADT的概念：
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
+
   
     
     
+      
+    
+  
 
 
+<div class="widget-sticky pjax">
 
-  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
     
   <header>
     
@@ -3100,6 +3074,8 @@ ADT的概念：
   </section>
 
   
+
+</div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3160,6 +3136,9 @@ ADT的概念：
     <!-- pjax占位 -->
   </div>
 
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <!-- Custom Files side begin -->
   
@@ -3224,26 +3203,20 @@ ADT的概念：
       
     
       
-        <div><p>博客内容遵循 <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
-4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-次</span> <span id="lc-uv">访客数为 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
 </div>
         
       
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -3283,7 +3256,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 <!-- internal -->
 
-<script src="/js/app.af2d54c8.js"></script>
+<script src="/js/app.7a2c825e.js"></script>
 
 
 
@@ -3530,7 +3503,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.80d861b1.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -3546,25 +3519,25 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyPaste'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyAll'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyCut'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyText'] = (fun) => {fun()}
 
 
 
@@ -3588,13 +3561,13 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyLink'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyImg'] = (fun) => {fun()}
 
 
 
@@ -3626,13 +3599,13 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+  //RightMenusFunction['printMode'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+  //RightMenusFunction['readMode'] = (fun) => {fun()}
 
 
 
@@ -3933,7 +3906,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.0e52f222.js");
+    return volantis.js("/js/search/hexo.85946653.js");
   }
 
   function loadSearchService() {
@@ -4231,98 +4204,25 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   });
 </script>
 
+
+
 <script>
-  try {
-    // https://web.dev/content-visibility/
-    // https://www.caniuse.com/?search=content-visibility
-    // https://infrequently.org/2020/12/content-visibility-scroll-fix/
-    // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
-
-    // 备注 目前已知的问题:
-    // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
-    // scrollreveal 插件潜在问题 目前尚不明确
-
-    let eqIsh = (a, b, fuzz = 2) => {
-      return Math.abs(a - b) <= fuzz;
-    };
-
-    let rectNotEQ = (a, b) => {
-      return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
-    };
-
-    // Keep a map of elements and the dimensions of
-    // their place-holders, re-setting the element's
-    // intrinsic size when we get updated measurements
-    // from observers.
-    let spaced = new WeakMap();
-
-    // Only call this when known cheap, post layout
-    let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
-      let old = spaced.get(el);
-      // Set intrinsic size to prevent jumping on un-painting:
-      //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
-      if (!old || rectNotEQ(old, rect)) {
-        spaced.set(el, rect);
-        el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
-      }
-    };
-
-    let iObs = new IntersectionObserver(
-      (entries, o) => {
-        entries.forEach((entry) => {
-          // We don't care if the element is intersecting or
-          // has been laid out as our page structure ensures
-          // they'll get the right width.
-          reserveSpace(entry.target, entry.boundingClientRect);
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
         });
-      },
-      { rootMargin: "500px 0px 500px 0px" }
-    );
-
-    let rObs = new ResizeObserver((entries, o) => {
-      entries.forEach((entry) => {
-        reserveSpace(entry.target, entry.contentRect);
-      });
-    });
-
-    let resizeResilientDeferredRendering = (Selector) => {
-      let articles = document.querySelectorAll(Selector);
-
-      if (articles.length) {
-        articles.forEach((el) => {
-          iObs.observe(el);
-          rObs.observe(el);
-        });
-
-        // Workaround for Chrome bug, part 2.
-        //
-        // Re-enable browser management of rendering for the
-        // first article after the first paint. Double-rAF
-        // to ensure we get called after a layout.
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            articles[0].style["content-visibility"] = "auto";
-          });
-        });
+        document.querySelector("#safearea").style["display"] = "block";
       }
-    };
-
-    let contentVisibilityScrollFix = () => {
-      if (!("content-visibility" in document.documentElement.style)) {
-        return;
-      }
-      resizeResilientDeferredRendering(".post-story");
-    };
-    contentVisibilityScrollFix();
-    volantis.pjax.push(contentVisibilityScrollFix);
-  } catch (error) {
-    console.log(error);
+    }
   }
 </script>
 
 
-
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Course/","name":"Course"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/","name":"静电场"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"静电场","description":"基础物理学第 8 - 9 章","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/","wordCount":14,"datePublished":"2020-08-20T06:00:00.000Z","dateModified":"2023-02-05T06:21:34.007Z","articleSection":"Course","keywords":"物理,波","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Course/","name":"Course"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/","name":"静电场"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"静电场","description":"基础物理学第 8 - 9 章","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2020/08/20/study/Physics/Ch8_9/","wordCount":14,"datePublished":"2020-08-20T06:00:00.000Z","dateModified":"2023-07-10T12:43:25.950Z","articleSection":"Course","keywords":"物理,波","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
@@ -4405,6 +4305,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- import body_end end-->
     <!-- Custom Files bodyEnd begin-->
     
-    <!-- Custom Files bodyEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- Custom Files bodyEnd end-->
+    <!-- front-matter body_end begin -->
+    <!-- front-matter body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </body>
 </html>

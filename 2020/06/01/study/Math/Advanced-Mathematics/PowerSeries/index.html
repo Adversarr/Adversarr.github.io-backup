@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.3.0">
-  <meta name="Volantis" content="5.4.0">
+  <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -25,8 +25,10 @@
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
+  <!-- front-matter head_begin begin -->
+  <!-- front-matter head_begin end -->
     <link rel="shortcut icon" type='image/x-icon' href="/image/favicon.webp">
-  <link rel="preload" href="/css/style.1154b99c.css" as="style">
+  <link rel="preload" href="/css/style.56f7feca.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -34,7 +36,7 @@
       <link rel="alternate" href="/atom.xml" title="Adversarr's Blog" type="application/atom+xml">
   <!-- 页面元数据 -->
   <title>幂级数 - Adversarr's Blog</title>
-  <meta name="keywords" content="级数,高等数学,study">
+  <meta name="keywords" content="高等数学,级数,study">
   <meta desc name="description" content="幂级数 - Adversarr - Adversarr's Blog">
   
 <meta property="og:type" content="article">
@@ -45,25 +47,16 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2020-06-01T13:33:24.000Z">
-<meta property="article:modified_time" content="2023-02-05T06:22:20.153Z">
+<meta property="article:modified_time" content="2023-07-10T12:43:25.910Z">
 <meta property="article:author" content="Adversarr">
-<meta property="article:tag" content="级数">
 <meta property="article:tag" content="高等数学">
+<meta property="article:tag" content="级数">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
     /* 首屏样式 */
     #safearea {
   display: none;
-}
-/*
-  * Workaround for Chrome bug, part 1
-  * Chunk rendering for all but the first article.
-  * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
-*/
-.post-story + .post-story {
-  content-visibility: auto;
-  contain-intrinsic-size: 10px 500px;
 }
 :root {
   --color-site-body: #f4f4f4;
@@ -87,6 +80,7 @@
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
 }
 * {
   box-sizing: border-box;
@@ -127,13 +121,13 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #3dd9b6;
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: #ff5722;
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
 }
 body {
   background-color: var(--color-site-body);
@@ -868,6 +862,7 @@ button {
     --color-list-hl: #63e0c4;
     --color-meta: rgba(191,191,191,0.871);
     --color-link: rgba(191,191,191,0.871);
+    --color-copyright-bkg: #21252b;
   }
   :root:not([color-scheme]) img {
     filter: brightness(70%) !important;
@@ -939,6 +934,7 @@ button {
   --color-list-hl: #63e0c4;
   --color-meta: rgba(191,191,191,0.871);
   --color-link: rgba(191,191,191,0.871);
+  --color-copyright-bkg: #21252b;
 }
 [color-scheme='dark'] img {
   filter: brightness(70%) !important;
@@ -1834,8 +1830,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1154b99c.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1154b99c.css"></noscript>
+  <link rel="stylesheet" href="/css/style.56f7feca.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.56f7feca.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1870,7 +1866,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     '<div class="kill-ie">'+
         `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
         `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
     '</div>');
 </script>
 
@@ -1908,14 +1904,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = false; // 开启调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
+    cdn: {"js":{"app":"/js/app.7a2c825e.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.85946653.js"},"css":{"style":"/css/style.56f7feca.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677898882176),
+    lastupdate: new Date(1688993017292),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -1933,17 +1929,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
-      aplayer: {
-        id: 3175833810,
-        enable:null
-      },
-      rightmenu: {
-        faicon: "fa",
-        layout: ["home","hr","help","examples","contributors","hr","source_docs","source_theme","hr","print","darkmode","reading","music"],
-        music_alwaysShow: true,
-        customPicUrl: {"enable":false,"old":null,"new":null}
-      },
+      
+      
+      
       rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+      
     }
   }
 
@@ -2264,8 +2254,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     volantis.requestAnimationFrame(loop)
   }
   volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
   // 触发页面滚动至目标元素位置
-  volantis.scroll.to = (ele, option = {}) =>{
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
     // 默认配置
     opt = {
       top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
@@ -2291,8 +2284,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // 用于处理 lazyload 引起的 cls 导致的定位失败问题
     // option.observer = false
     if (option.observer) {
-      setTimeout(()=>{
-        volantis.scroll.unengine.push(()=>{
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
           let me = ele.getBoundingClientRect().top
           if(!(me >= -option.observerDic && me <= option.observerDic)){
             volantis.scroll.to(ele, option)
@@ -2333,7 +2329,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
   
-  <!-- Custom Files headEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- Custom Files headEnd end-->
+  <!-- front-matter head_end begin -->
+  <!-- front-matter head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- import body_begin begin-->
@@ -2341,6 +2339,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
+    <!-- front-matter body_begin begin -->
+    <!-- front-matter body_begin end -->
     <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
@@ -2701,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-06-01T21:33:24+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-06-01T13:33:24+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2020年6月1日</p>
@@ -2713,16 +2713,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
 
-
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span>次浏览</span>
-    </p>
-  </a>
-</div>
 
 
           
@@ -2739,89 +2729,71 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>幂级数</p>
 <span id="more"></span>
-<div class="story post-story"><h2 id="幂级数的收敛半径与收敛区间">幂级数的收敛半径与收敛区间</h2>
+<h2 id="幂级数的收敛半径与收敛区间">幂级数的收敛半径与收敛区间</h2>
 <p><strong>Thm</strong>：（幂级数的收敛情况）幂级数的收敛情况有且仅有以下三种：</p>
 <ol type="1">
 <li>收敛范围是整个实轴</li>
 <li>收敛范围是一个对称区间</li>
 <li>仅在 <span class="math inline">\(x=0\)</span> 收敛</li>
 </ol>
-<p><strong>Thm</strong>：（幂级数的收敛半径）对于幂级数的系数 <span
-class="math inline">\(a_n\)</span>，若 <span class="math inline">\(\rho
-=\overline{\lim\limits_{n\rightarrow \infty}}\sqrt[n]{|a_n|}\)</span>
-则</p>
+<p><strong>Thm</strong>：（幂级数的收敛半径）对于幂级数的系数 <span class="math inline">\(a_n\)</span>，若 <span class="math inline">\(\rho =\overline{\lim\limits_{n\rightarrow \infty}}\sqrt[n]{|a_n|}\)</span> 则</p>
 <ol type="1">
-<li>当 <span class="math inline">\(0\le \rho&lt;+\infty,|x|&lt;\frac 1
-\rho\)</span> 幂级数绝对收敛</li>
-<li>当 <span class="math inline">\(0&lt;\rho&lt;\infty, |x|&gt;\frac 1
-\rho\)</span> 幂级数发散</li>
+<li>当 <span class="math inline">\(0\le \rho&lt;+\infty,|x|&lt;\frac 1 \rho\)</span> 幂级数绝对收敛</li>
+<li>当 <span class="math inline">\(0&lt;\rho&lt;\infty, |x|&gt;\frac 1 \rho\)</span> 幂级数发散</li>
 </ol>
-<p>其中 <span class="math inline">\(R=\frac 1 \rho\)</span>
-称作<strong>收敛半径</strong>，称 <span
-class="math inline">\((-R,R)\)</span> 为<strong>收敛区间</strong></p>
+<p>其中 <span class="math inline">\(R=\frac 1 \rho\)</span> 称作<strong>收敛半径</strong>，称 <span class="math inline">\((-R,R)\)</span> 为<strong>收敛区间</strong></p>
 <div class="note done"><p><strong>Tips</strong></p><p>收敛区间和收敛域是不同的，区别在于端点处可能条件收敛</p></div>
-<p><strong>Thm</strong>：幂级数在 <span class="math inline">\(x
-=x_1\)</span> 处收敛，则在 <span
-class="math inline">\((-|x_1|,|x_1|)\)</span> 上绝对收敛。若 <span
-class="math inline">\(x=x_2\)</span> 发散，则它在 <span
-class="math inline">\(|x|&gt;|x_2|\)</span> 处也发散</p>
+<p><strong>Thm</strong>：幂级数在 <span class="math inline">\(x =x_1\)</span> 处收敛，则在 <span class="math inline">\((-|x_1|,|x_1|)\)</span> 上绝对收敛。若 <span class="math inline">\(x=x_2\)</span> 发散，则它在 <span class="math inline">\(|x|&gt;|x_2|\)</span> 处也发散</p>
 <blockquote>
 <p>这个定理很好证明，用 M 判别法即可</p>
 </blockquote>
-<p><strong>Thm</strong>：对于幂级数的系数 <span
-class="math inline">\(a_n\)</span> 满足 <span
-class="math inline">\(\lim\limits_{n\rightarrow\infty}|\frac{a_{n+1}}{a_n}|=l\)</span>
-则 <span class="math inline">\(R=\frac 1 l\)</span>（包含 0
-和无穷的情况）</p>
-</div><div class="story post-story"><h2 id="幂级数的性质">幂级数的性质</h2>
-<p><strong>Thm</strong>：（内闭一致收敛）设一个幂级数的收敛半径为 <span
-class="math inline">\(R&gt;0\)</span>，在收敛区间内，幂级数内闭一致收敛</p>
+<p><strong>Thm</strong>：对于幂级数的系数 <span class="math inline">\(a_n\)</span> 满足 <span class="math inline">\(\lim\limits_{n\rightarrow\infty}|\frac{a_{n+1}}{a_n}|=l\)</span> 则 <span class="math inline">\(R=\frac 1 l\)</span>（包含 0 和无穷的情况）</p>
+<h2 id="幂级数的性质">幂级数的性质</h2>
+<p><strong>Thm</strong>：（内闭一致收敛）设一个幂级数的收敛半径为 <span class="math inline">\(R&gt;0\)</span>，在收敛区间内，幂级数内闭一致收敛</p>
 <blockquote>
-<p>如果在 R 处也收敛，则可以补全一致收敛到 R 处，也就是说 <span
-class="math inline">\(在R处收敛\rightarrow 在[0,R]一致收敛\)</span></p>
+<p>如果在 R 处也收敛，则可以补全一致收敛到 R 处，也就是说 <span class="math inline">\(在R处收敛\rightarrow 在[0,R]一致收敛\)</span></p>
 </blockquote>
 <p><strong>Thm</strong>：幂级数的和函数是在收敛区间内是一个连续函数</p>
 <p><strong>Thm</strong>：幂级数的和函数是在收敛区间内的可微函数，且可以逐项求微，收敛区间不变</p>
 <p><strong>Thm</strong>：幂级数在积分后，收敛区间不变</p>
 <p><strong>Thm</strong>：在可导的情况下，幂级数可以逐项求导任意多次。</p>
-<p><strong>Thm</strong>：在 <span class="math inline">\(x=R\)</span>
-处收敛，则和函数在 <span class="math inline">\([0,R]\)</span> 连续</p>
+<p><strong>Thm</strong>：在 <span class="math inline">\(x=R\)</span> 处收敛，则和函数在 <span class="math inline">\([0,R]\)</span> 连续</p>
 <blockquote>
 <p>通过函数项级数的判定即可得到这些定理</p>
 </blockquote>
-</div><div class="story post-story"><h2 id="斯特林公式">斯特林公式</h2>
-<p>公式：<span class="math inline">\(\displaystyle n!=\sqrt{2\pi n}
-(\frac n e)^ne^{\frac{\theta}{12n}}\approx\sqrt{2\pi n} (\frac n
-e)^n,\theta\in(0,1)\)</span></p>
-<p>沃利斯公式：<span class="math inline">\(\displaystyle \frac \pi
-2=\lim\limits_{n \to
-\infty}\frac{[(2n)!!]^2}{[(2n-1)!!]^2(2n+1)}\)</span></p>
+<h2 id="斯特林公式">斯特林公式</h2>
+<p>公式：<span class="math inline">\(\displaystyle n!=\sqrt{2\pi n} (\frac n e)^ne^{\frac{\theta}{12n}}\approx\sqrt{2\pi n} (\frac n e)^n,\theta\in(0,1)\)</span></p>
+<p>沃利斯公式：<span class="math inline">\(\displaystyle \frac \pi 2=\lim\limits_{n \to \infty}\frac{[(2n)!!]^2}{[(2n-1)!!]^2(2n+1)}\)</span></p>
 
-</div>
   </div>
   
   
     
     <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
+       <!-- 相关文章 -->
       
+      <!-- 版权声明组件 -->
       
-        <div class='copyright'>
-          <blockquote>
-            
+        
+          <div class='copyright'>
+            <blockquote>
               
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
+                
               
-            
+                
+                  <p>本文永久链接是：<a href="http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/">http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/</a></p>
+                
               
-                <p>本文永久链接是：<a href=http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/>http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/</a></p>
-              
-            
-          </blockquote>
-        </div>
+            </blockquote>
+          </div>
+        
       
+      <!-- 打赏组件 -->
       
     </div>
   
@@ -2833,10 +2805,10 @@ e)^n,\theta\in(0,1)\)</span></p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-05T14:22:20+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-10T12:43:25+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年2月5日</p>
+    <p>更新于：2023年7月10日</p>
   </a>
 </div>
 
@@ -2845,8 +2817,8 @@ e)^n,\theta\in(0,1)\)</span></p>
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Series/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>级数</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Advanced-Mathematics/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>高等数学</p></a></div>
-  <span hidden itemprop="keywords">级数 高等数学</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Advanced-Mathematics/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>高等数学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Series/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>级数</p></a></div>
+  <span hidden itemprop="keywords">高等数学 级数</span>
 
 
         
@@ -2916,12 +2888,11 @@ e)^n,\theta\in(0,1)\)</span></p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/06/04/study/Math/Advanced-Mathematics/Vectors-and-Analytic-Geometry-Derivative/'>
+        <a class='prev' href='/2020/06/03/study/Math/Advanced-Mathematics/Vectors-and-Analytic-Geometry-Derivative/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>多元数量值函数微分学及其应用</p>
           <p class='content'>到这里，这个学期的内容就大致整理完整了。
 
-n 维 Euclid 空间 R^n
-中点集知识
+n 维 Euclid 空间 R^n 中点集知识
 n 维 Euclid 空间 R^n
 
 Def：n 维实向量
@@ -2967,13 +2938,22 @@ Def：将无穷多项的一列函数依次用加号得到的表达式称为函�
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
+
   
     
     
+      
+    
+  
 
 
+<div class="widget-sticky pjax">
 
-  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
     
   <header>
     
@@ -2988,6 +2968,8 @@ Def：将无穷多项的一列函数依次用加号得到的表达式称为函�
   </section>
 
   
+
+</div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3048,6 +3030,9 @@ Def：将无穷多项的一列函数依次用加号得到的表达式称为函�
     <!-- pjax占位 -->
   </div>
 
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <!-- Custom Files side begin -->
   
@@ -3112,26 +3097,20 @@ Def：将无穷多项的一列函数依次用加号得到的表达式称为函�
       
     
       
-        <div><p>博客内容遵循 <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
-4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-次</span> <span id="lc-uv">访客数为 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
 </div>
         
       
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -3171,7 +3150,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 <!-- internal -->
 
-<script src="/js/app.af2d54c8.js"></script>
+<script src="/js/app.7a2c825e.js"></script>
 
 
 
@@ -3418,7 +3397,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.80d861b1.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -3434,25 +3413,25 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyPaste'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyAll'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyCut'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyText'] = (fun) => {fun()}
 
 
 
@@ -3476,13 +3455,13 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyLink'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyImg'] = (fun) => {fun()}
 
 
 
@@ -3514,13 +3493,13 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+  //RightMenusFunction['printMode'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+  //RightMenusFunction['readMode'] = (fun) => {fun()}
 
 
 
@@ -3821,7 +3800,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.0e52f222.js");
+    return volantis.js("/js/search/hexo.85946653.js");
   }
 
   function loadSearchService() {
@@ -4119,98 +4098,25 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   });
 </script>
 
+
+
 <script>
-  try {
-    // https://web.dev/content-visibility/
-    // https://www.caniuse.com/?search=content-visibility
-    // https://infrequently.org/2020/12/content-visibility-scroll-fix/
-    // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
-
-    // 备注 目前已知的问题:
-    // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
-    // scrollreveal 插件潜在问题 目前尚不明确
-
-    let eqIsh = (a, b, fuzz = 2) => {
-      return Math.abs(a - b) <= fuzz;
-    };
-
-    let rectNotEQ = (a, b) => {
-      return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
-    };
-
-    // Keep a map of elements and the dimensions of
-    // their place-holders, re-setting the element's
-    // intrinsic size when we get updated measurements
-    // from observers.
-    let spaced = new WeakMap();
-
-    // Only call this when known cheap, post layout
-    let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
-      let old = spaced.get(el);
-      // Set intrinsic size to prevent jumping on un-painting:
-      //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
-      if (!old || rectNotEQ(old, rect)) {
-        spaced.set(el, rect);
-        el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
-      }
-    };
-
-    let iObs = new IntersectionObserver(
-      (entries, o) => {
-        entries.forEach((entry) => {
-          // We don't care if the element is intersecting or
-          // has been laid out as our page structure ensures
-          // they'll get the right width.
-          reserveSpace(entry.target, entry.boundingClientRect);
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
         });
-      },
-      { rootMargin: "500px 0px 500px 0px" }
-    );
-
-    let rObs = new ResizeObserver((entries, o) => {
-      entries.forEach((entry) => {
-        reserveSpace(entry.target, entry.contentRect);
-      });
-    });
-
-    let resizeResilientDeferredRendering = (Selector) => {
-      let articles = document.querySelectorAll(Selector);
-
-      if (articles.length) {
-        articles.forEach((el) => {
-          iObs.observe(el);
-          rObs.observe(el);
-        });
-
-        // Workaround for Chrome bug, part 2.
-        //
-        // Re-enable browser management of rendering for the
-        // first article after the first paint. Double-rAF
-        // to ensure we get called after a layout.
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            articles[0].style["content-visibility"] = "auto";
-          });
-        });
+        document.querySelector("#safearea").style["display"] = "block";
       }
-    };
-
-    let contentVisibilityScrollFix = () => {
-      if (!("content-visibility" in document.documentElement.style)) {
-        return;
-      }
-      resizeResilientDeferredRendering(".post-story");
-    };
-    contentVisibilityScrollFix();
-    volantis.pjax.push(contentVisibilityScrollFix);
-  } catch (error) {
-    console.log(error);
+    }
   }
 </script>
 
 
-
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Mathematics/","name":"Mathematics"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/","name":"幂级数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"幂级数","description":"幂级数","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/","wordCount":3,"datePublished":"2020-06-01T13:33:24.000Z","dateModified":"2023-02-05T06:22:20.153Z","articleSection":"Mathematics","keywords":"级数,高等数学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Mathematics/","name":"Mathematics"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/","name":"幂级数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"幂级数","description":"幂级数","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2020/06/01/study/Math/Advanced-Mathematics/PowerSeries/","wordCount":3,"datePublished":"2020-06-01T13:33:24.000Z","dateModified":"2023-07-10T12:43:25.910Z","articleSection":"Mathematics","keywords":"高等数学,级数","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
@@ -4293,6 +4199,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- import body_end end-->
     <!-- Custom Files bodyEnd begin-->
     
-    <!-- Custom Files bodyEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- Custom Files bodyEnd end-->
+    <!-- front-matter body_end begin -->
+    <!-- front-matter body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </body>
 </html>

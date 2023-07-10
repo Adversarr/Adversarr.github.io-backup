@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="generator" content="Hexo 6.3.0">
-  <meta name="Volantis" content="5.4.0">
+  <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -25,8 +25,10 @@
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
+  <!-- front-matter head_begin begin -->
+  <!-- front-matter head_begin end -->
     <link rel="shortcut icon" type='image/x-icon' href="/image/favicon.webp">
-  <link rel="preload" href="/css/style.1154b99c.css" as="style">
+  <link rel="preload" href="/css/style.56f7feca.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -45,7 +47,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-02-24T01:44:02.000Z">
-<meta property="article:modified_time" content="2023-03-04T03:01:03.416Z">
+<meta property="article:modified_time" content="2023-07-10T12:43:25.782Z">
 <meta property="article:author" content="Adversarr">
 <meta property="article:tag" content="Surface Tension">
 <meta property="article:tag" content="Fluid">
@@ -55,15 +57,6 @@
     /* 首屏样式 */
     #safearea {
   display: none;
-}
-/*
-  * Workaround for Chrome bug, part 1
-  * Chunk rendering for all but the first article.
-  * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
-*/
-.post-story + .post-story {
-  content-visibility: auto;
-  contain-intrinsic-size: 10px 500px;
 }
 :root {
   --color-site-body: #f4f4f4;
@@ -87,6 +80,7 @@
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
 }
 * {
   box-sizing: border-box;
@@ -127,13 +121,13 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #3dd9b6;
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: #ff5722;
+  background: #54b5a0 linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent);
 }
 body {
   background-color: var(--color-site-body);
@@ -868,6 +862,7 @@ button {
     --color-list-hl: #63e0c4;
     --color-meta: rgba(191,191,191,0.871);
     --color-link: rgba(191,191,191,0.871);
+    --color-copyright-bkg: #21252b;
   }
   :root:not([color-scheme]) img {
     filter: brightness(70%) !important;
@@ -939,6 +934,7 @@ button {
   --color-list-hl: #63e0c4;
   --color-meta: rgba(191,191,191,0.871);
   --color-link: rgba(191,191,191,0.871);
+  --color-copyright-bkg: #21252b;
 }
 [color-scheme='dark'] img {
   filter: brightness(70%) !important;
@@ -1834,8 +1830,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1154b99c.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1154b99c.css"></noscript>
+  <link rel="stylesheet" href="/css/style.56f7feca.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.56f7feca.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1870,7 +1866,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     '<div class="kill-ie">'+
         `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
         `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
     '</div>');
 </script>
 
@@ -1908,14 +1904,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = false; // 开启调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.1154b99c.css"}},
+    cdn: {"js":{"app":"/js/app.7a2c825e.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.85946653.js"},"css":{"style":"/css/style.56f7feca.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677898882176),
+    lastupdate: new Date(1688993017292),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -1933,17 +1929,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     plugins: {
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
-      aplayer: {
-        id: 3175833810,
-        enable:null
-      },
-      rightmenu: {
-        faicon: "fa",
-        layout: ["home","hr","help","examples","contributors","hr","source_docs","source_theme","hr","print","darkmode","reading","music"],
-        music_alwaysShow: true,
-        customPicUrl: {"enable":false,"old":null,"new":null}
-      },
+      
+      
+      
       rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+      
     }
   }
 
@@ -2264,8 +2254,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     volantis.requestAnimationFrame(loop)
   }
   volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
   // 触发页面滚动至目标元素位置
-  volantis.scroll.to = (ele, option = {}) =>{
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
     // 默认配置
     opt = {
       top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
@@ -2291,8 +2284,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // 用于处理 lazyload 引起的 cls 导致的定位失败问题
     // option.observer = false
     if (option.observer) {
-      setTimeout(()=>{
-        volantis.scroll.unengine.push(()=>{
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
           let me = ele.getBoundingClientRect().top
           if(!(me >= -option.observerDic && me <= option.observerDic)){
             volantis.scroll.to(ele, option)
@@ -2333,7 +2329,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
   
-  <!-- Custom Files headEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- Custom Files headEnd end-->
+  <!-- front-matter head_end begin -->
+  <!-- front-matter head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- import body_begin begin-->
@@ -2341,6 +2339,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
+    <!-- front-matter body_begin begin -->
+    <!-- front-matter body_begin end -->
     <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
@@ -2701,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-02-24T09:44:02+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-02-24T01:44:02+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：2023年2月24日</p>
@@ -2713,16 +2713,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
 
-
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span>次浏览</span>
-    </p>
-  </a>
-</div>
 
 
           
@@ -2738,7 +2728,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h1 id="surface-tension">Surface tension</h1>
-<div class="story post-story"><h2 id="summary">Summary</h2>
+<h2 id="summary">Summary</h2>
 <ol type="1">
 <li>单个流体、空气、固体边界：决定了弯月面形状、角度、对固体附加的切向力等
 <ol type="1">
@@ -2750,98 +2740,52 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol></li>
 <li>形变不规则的流体（例如肥皂泡）： 表面张力主导</li>
 </ol></li>
-<li>多流体边界，溶解，分离等现象： Multi Phase (Multiple) Fluid
-simulation
+<li>多流体边界，溶解，分离等现象： Multi Phase (Multiple) Fluid simulation
 <ol type="1">
-<li>流体+流体+刚体：Multiple-Fluid SPH Simulation Using a Mixture
-Model</li>
-<li>流体+流体+软体（不混合）：Interlinked sph pressure solvers for
-strong fluid-rigid coupling（2019）</li>
+<li>流体+流体+刚体：Multiple-Fluid SPH Simulation Using a Mixture Model</li>
+<li>流体+流体+软体（不混合）：Interlinked sph pressure solvers for strong fluid-rigid coupling（2019）</li>
 </ol></li>
 </ol>
-</div><div class="story post-story"><h2 id="资料汇总">资料汇总</h2>
+<h2 id="资料汇总">资料汇总</h2>
 <h3 id="单流体">单流体</h3>
 <h4 id="常规">常规</h4>
-<h5 id="fluid-simulation-in-computer-graphics-bridson-15-book">Fluid
-Simulation in Computer Graphics (Bridson 15-Book)</h5>
+<h5 id="fluid-simulation-in-computer-graphics-bridson-15-book">Fluid Simulation in Computer Graphics (Bridson 15-Book)</h5>
 <p>Chapter 8 Water - Section 5 Surface Tension P131</p>
 <blockquote>
-<p>The physical chemistry of surface tension is conceptually simple.
-<strong>Water molecules are more attracted to other water molecules than
-to air molecules, and vice versa.</strong> Thus, water molecules near
-the surface tend to be pulled in towards the rest of the water molecules
-and vice versa. In a way they are seeking to minimize the area exposed
-to the other fuid, bunching up around their own type. <strong>The
-simplest linear model of surface tension can in fact be phrased in terms
-of a potential energy equal to a surface-tension coefhicient ay times
-the surface area between the two fuids</strong> (<span
-class="math inline">\(\gamma\)</span> for water and air at normal
-conditions is approximatelv <span
-class="math inline">\(0.073J/m^2\)</span>). The force seeks to minimize
-the surface area.</p>
+<p>The physical chemistry of surface tension is conceptually simple. <strong>Water molecules are more attracted to other water molecules than to air molecules, and vice versa.</strong> Thus, water molecules near the surface tend to be pulled in towards the rest of the water molecules and vice versa. In a way they are seeking to minimize the area exposed to the other fuid, bunching up around their own type. <strong>The simplest linear model of surface tension can in fact be phrased in terms of a potential energy equal to a surface-tension coefhicient ay times the surface area between the two fuids</strong> (<span class="math inline">\(\gamma\)</span> for water and air at normal conditions is approximatelv <span class="math inline">\(0.073J/m^2\)</span>). The force seeks to minimize the surface area.</p>
 </blockquote>
 <p>欧拉方法</p>
 <p>Surface Area of Fluid = <span class="math display">\[
-A = \iint_{\partial\Omega}1=\cdots =\iiint_\Omega \nabla \cdot \nabla
-\phi
-\]</span> "Pressure" at the surface of water = <span
-class="math display">\[
+A = \iint_{\partial\Omega}1=\cdots =\iiint_\Omega \nabla \cdot \nabla \phi
+\]</span> "Pressure" at the surface of water = <span class="math display">\[
 p = \gamma \nabla \cdot \nabla \phi = \gamma \kappa
-\]</span> 其中 <span class="math inline">\(\kappa\)</span>
-为流体表面的平均曲率。</p>
+\]</span> 其中 <span class="math inline">\(\kappa\)</span> 为流体表面的平均曲率。</p>
 <p>由此推出：</p>
 <ol type="1">
-<li>Explicit 方法：容易出现数值问题<span class="math inline">\(\Delta t
-\le O(\Delta x^{3/2} \sqrt{\rho / \gamma})\)</span></li>
+<li>Explicit 方法：容易出现数值问题<span class="math inline">\(\Delta t \le O(\Delta x^{3/2} \sqrt{\rho / \gamma})\)</span></li>
 <li>Implicit 方法：仍然需要改进（难整合进现有求解器）</li>
 <li>……</li>
 </ol>
-<h5 id="versatile-surface-tension-and-adhesion-for-sph-fluids">Versatile
-surface tension and adhesion for SPH fluids</h5>
+<h5 id="versatile-surface-tension-and-adhesion-for-sph-fluids">Versatile surface tension and adhesion for SPH fluids</h5>
 <blockquote>
 <ul>
 <li>SIG 13</li>
 <li>Nadir Akinci</li>
-<li><a
-target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publications/siggraphasia2013/2013_SIGGRAPHASIA_surface_tension_adhesion.pdf">PDF</a></li>
+<li><a target="_blank" rel="noopener" href="https://cg.informatik.uni-freiburg.de/publications/siggraphasia2013/2013_SIGGRAPHASIA_surface_tension_adhesion.pdf">PDF</a></li>
 </ul>
 </blockquote>
 <p>SPH方法，分为Adhesion和Cohesion。与综述中一致。</p>
-<h5
-id="an-extended-cut-cell-method-for-sub-grid-liquids-tracking-with-surface-tension.">An
-Extended Cut-Cell Method for Sub-Grid Liquids Tracking with Surface
-Tension.</h5>
+<h5 id="an-extended-cut-cell-method-for-sub-grid-liquids-tracking-with-surface-tension.">An Extended Cut-Cell Method for Sub-Grid Liquids Tracking with Surface Tension.</h5>
 <blockquote>
 <p>TOG 2020</p>
 <p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3414685.3417859">Link</a></p>
-<p><strong>Abstract</strong>: Simulating liquid phenomena utilizing
-Eulerian frameworks is challenging, since highly energetic flows often
-induce <strong>severe topological changes, creating thin and complex
-liquid surfaces</strong>. Thus, capturing structures that are small
-relative to the grid size become intractable, since continually
-increasing the resolution will scale sub-optimally due to the pressure
-projection step. Previous methods successfully relied on using higher
-resolution grids for tracking the liquid surface implicitly; however
-this technique comes with drawbacks. The mismatch of pressure samples
-and surface degrees of freedom will cause artifacts such as hanging
-blobs and permanent kinks at the liquid-air interface. In this paper, we
-propose an extended cut-cell method for handling liquid structures that
-are smaller than a grid cell. At the core of our method is a novel
-iso-surface Poisson Solver, which converges with second-order accuracy
-for pressure values while maintaining attractive discretization
-properties such as symmetric positive definiteness. Additionally, we
-extend the iso-surface assumption to be also compatible with surface
-tension forces. Our results show that the proposed method provides a
-novel framework for handling arbitrarily small splashes that can also
-correctly interact with objects embodied by complex geometries.</p>
+<p><strong>Abstract</strong>: Simulating liquid phenomena utilizing Eulerian frameworks is challenging, since highly energetic flows often induce <strong>severe topological changes, creating thin and complex liquid surfaces</strong>. Thus, capturing structures that are small relative to the grid size become intractable, since continually increasing the resolution will scale sub-optimally due to the pressure projection step. Previous methods successfully relied on using higher resolution grids for tracking the liquid surface implicitly; however this technique comes with drawbacks. The mismatch of pressure samples and surface degrees of freedom will cause artifacts such as hanging blobs and permanent kinks at the liquid-air interface. In this paper, we propose an extended cut-cell method for handling liquid structures that are smaller than a grid cell. At the core of our method is a novel iso-surface Poisson Solver, which converges with second-order accuracy for pressure values while maintaining attractive discretization properties such as symmetric positive definiteness. Additionally, we extend the iso-surface assumption to be also compatible with surface tension forces. Our results show that the proposed method provides a novel framework for handling arbitrarily small splashes that can also correctly interact with objects embodied by complex geometries.</p>
 </blockquote>
 <ul>
 <li>欧拉网格</li>
 <li>主要处理计算速度问题</li>
 </ul>
-<h5
-id="solid-fluid-interaction-with-surface-tension-dominant-contact">Solid-fluid
-interaction with surface-tension-dominant contact</h5>
+<h5 id="solid-fluid-interaction-with-surface-tension-dominant-contact">Solid-fluid interaction with surface-tension-dominant contact</h5>
 <blockquote>
 <ul>
 <li>SIG 21</li>
@@ -2857,37 +2801,14 @@ interaction with surface-tension-dominant contact</h5>
 <li>预测-校正接触处理方案，以实际物理参数准确处理流固接触。</li>
 </ol>
 <img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224104219-5wb9ihv.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224104219-5wb9ihv.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">
-<h5
-id="a-deformable-surface-model-for-real-time-water-drop-animation.">A
-deformable surface model for real-time water drop animation.</h5>
+<h5 id="a-deformable-surface-model-for-real-time-water-drop-animation.">A deformable surface model for real-time water drop animation.</h5>
 <blockquote>
 <p>IEEE Trans on Visualization &amp; Computer Graphics 2012</p>
 <p><a target="_blank" rel="noopener" href="http://kunzhou.net/2011/surface_water_drop.pdf">Link</a></p>
-<p><strong>Abstract</strong>: A water drop behaves differently from a
-large water body because of its strong viscosity and surface tension
-under the small scale. Surface tension causes the motion of a water drop
-to be largely determined by its boundary surface. Meanwhile, viscosity
-makes the interior of a water drop less relevant to its motion, as the
-smooth velocity field can be well approximated by an interpolation of
-the velocity on the boundary. Consequently, we propose a fast deformable
-surface model to realistically animate water drops and their flowing
-behaviors on solid surfaces. Our system efficiently simulates water drop
-motions in a Lagrangian fashion, by reducing 3D fluid dynamics over the
-whole liquid volume to a deformable surface model. In each time step,
-the model uses an <strong>implicit mean curvature flow operator to
-produce surface tension effects</strong>, a <strong>contact angle
-operator to change droplet shapes on solid surfaces</strong>, and a set
-of mesh connectivity updates to handle topological changes and improve
-mesh quality over time. Our numerical experiments demonstrate a variety
-of physically plausible water drop phenomena at a real-time rate,
-including capillary waves when water drops collide, pinch-off of water
-jets, and droplets flowing over solid materials. The whole system
-performs orders-of-magnitude faster than existing simulation approaches
-that generate comparable water drop effects.</p>
+<p><strong>Abstract</strong>: A water drop behaves differently from a large water body because of its strong viscosity and surface tension under the small scale. Surface tension causes the motion of a water drop to be largely determined by its boundary surface. Meanwhile, viscosity makes the interior of a water drop less relevant to its motion, as the smooth velocity field can be well approximated by an interpolation of the velocity on the boundary. Consequently, we propose a fast deformable surface model to realistically animate water drops and their flowing behaviors on solid surfaces. Our system efficiently simulates water drop motions in a Lagrangian fashion, by reducing 3D fluid dynamics over the whole liquid volume to a deformable surface model. In each time step, the model uses an <strong>implicit mean curvature flow operator to produce surface tension effects</strong>, a <strong>contact angle operator to change droplet shapes on solid surfaces</strong>, and a set of mesh connectivity updates to handle topological changes and improve mesh quality over time. Our numerical experiments demonstrate a variety of physically plausible water drop phenomena at a real-time rate, including capillary waves when water drops collide, pinch-off of water jets, and droplets flowing over solid materials. The whole system performs orders-of-magnitude faster than existing simulation approaches that generate comparable water drop effects.</p>
 </blockquote>
 <figure>
-<img src="./SurfaceTension/image-20230303193834629.png" class="lazyload" data-srcset="./SurfaceTension/image-20230303193834629.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
+<img src="./SurfaceTension/image-20230303193834629.png" class="lazyload" data-srcset="./SurfaceTension/image-20230303193834629.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image" /><figcaption aria-hidden="true">image</figcaption>
 </figure>
 <ul>
 <li>处理了流体-固体-气体边界</li>
@@ -2896,90 +2817,36 @@ that generate comparable water drop effects.</p>
 <h5 id="surface-only-liquids">Surface-only liquids</h5>
 <blockquote>
 <p>TOG 16</p>
-<p><strong>Abstract</strong>: We propose a novel surface-only technique
-for simulating incompressible, inviscid and uniform-density liquids with
-surface tension in three dimensions. The liquid surface is captured by a
-triangle mesh on which a Lagrangian velocity field is stored. Because
-advection of the velocity field may violate the incompressibility
-condition, we devise an orthogonal projection technique to remove the
-divergence while requiring the evaluation of only two boundary integrals
-The forces of surface tension, gravity, and solid contact are all
-treated by a boundary element solve, allowing us to perform detailed
-simuIations of a wide range of liquid phenomena, including waterbe lls,
-droplet and jet collisions, fuid chains, and crown splashes.</p>
+<p><strong>Abstract</strong>: We propose a novel surface-only technique for simulating incompressible, inviscid and uniform-density liquids with surface tension in three dimensions. The liquid surface is captured by a triangle mesh on which a Lagrangian velocity field is stored. Because advection of the velocity field may violate the incompressibility condition, we devise an orthogonal projection technique to remove the divergence while requiring the evaluation of only two boundary integrals The forces of surface tension, gravity, and solid contact are all treated by a boundary element solve, allowing us to perform detailed simuIations of a wide range of liquid phenomena, including waterbe lls, droplet and jet collisions, fuid chains, and crown splashes.</p>
 </blockquote>
 <ul>
 <li>处理了流体-固体-气体边界，同样假定固体不动</li>
 <li>只在流体表面进行计算，计算速度快</li>
 </ul>
-<h5
-id="semi-implicit-surface-tension-formulation-with-a-lagrangian-surface-mesh-on-an-eulerian-simulation-grid.">Semi-implicit
-surface tension formulation with a Lagrangian surface mesh on an
-Eulerian simulation grid.</h5>
+<h5 id="semi-implicit-surface-tension-formulation-with-a-lagrangian-surface-mesh-on-an-eulerian-simulation-grid.">Semi-implicit surface tension formulation with a Lagrangian surface mesh on an Eulerian simulation grid.</h5>
 <blockquote>
 <p>JCP 2012</p>
-<p><a
-target="_blank" rel="noopener" href="https://www.researchgate.net/publication/220207188_Semi-implicit_surface_tension_formulation_with_a_Lagrangian_surface_mesh_on_an_Eulerian_simulation_grid">Link</a></p>
-<p><strong>Abstract</strong>: We present a method for applying
-semi-implicit forces on a Lagrangian mesh to an Eulerian discretization
-of the Navier Stokes equations in a way that produces a sparse symmetric
-positive definite system. The resulting method has semi-implicit and
-fully-coupled viscosity, pressure, and Lagrangian forces. We apply our
-new framework for forces on a Lagrangian mesh to the case of a surface
-tension force, which when treated explicitly leads to a tight time step
-restriction. By applying surface tension as a semi-implicit Lagrangian
-force, the resulting method benefits from improved stability and the
-ability to take larger time steps. The resulting discretization is also
-able to maintain parasitic currents at low levels.</p>
+<p><a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/220207188_Semi-implicit_surface_tension_formulation_with_a_Lagrangian_surface_mesh_on_an_Eulerian_simulation_grid">Link</a></p>
+<p><strong>Abstract</strong>: We present a method for applying semi-implicit forces on a Lagrangian mesh to an Eulerian discretization of the Navier Stokes equations in a way that produces a sparse symmetric positive definite system. The resulting method has semi-implicit and fully-coupled viscosity, pressure, and Lagrangian forces. We apply our new framework for forces on a Lagrangian mesh to the case of a surface tension force, which when treated explicitly leads to a tight time step restriction. By applying surface tension as a semi-implicit Lagrangian force, the resulting method benefits from improved stability and the ability to take larger time steps. The resulting discretization is also able to maintain parasitic currents at low levels.</p>
 </blockquote>
-<h5
-id="a-new-incompressibility-discretization-for-a-hybrid-particle-mac-grid-representation-with-surface-tension.">A
-new incompressibility discretization for a hybrid particle MAC grid
-representation with surface tension.</h5>
+<h5 id="a-new-incompressibility-discretization-for-a-hybrid-particle-mac-grid-representation-with-surface-tension.">A new incompressibility discretization for a hybrid particle MAC grid representation with surface tension.</h5>
 <blockquote>
 <p>JCP 2012</p>
-<p><strong>Abstract</strong>: We take a particle based approach to
-incompressible free surface flow motivated by the fact that an explicit
-representation of the interface geometry and internal deformations gives
-precise feedback to an implicit solver for surface tension. Methods that
-enforce incompressibility directly on the particles are typically
-numerically inefficient compared to those that utilize a background
-grid. However, background grid discretizations suffer from inaccuracy
-near the free surface where they do not properly capture the interface
-geometry. Therefore, our incompressibility discretization utilizes a
-particle based projection near the interface and a background MAC grid
-based projection for efficiency in the vast interior of the liquid
-domain - as well as a novel method for coupling these two disparate
-projections together. We show that the overall coupled elliptic solver
-is second order accurate, and remains second order accurate when used in
-conjunction with an appropriate temporal discretization for parabolic
-problems. A similar second order accurate discretization is derived when
-the MAC grid unknowns are located on faces (as opposed to cell centers)
-so that Navier-Stokes viscosity can be solved for implicitly as well.
-Finally, we present a fully implicit approach to surface tension that is
-robust enough to achieve a steady state solution in a single time step.
-Beyond stable implicit surface tension for our novel hybrid
-discretization, we demonstrate preliminary results for both standard
-front tracking and the particle level set method.</p>
+<p><strong>Abstract</strong>: We take a particle based approach to incompressible free surface flow motivated by the fact that an explicit representation of the interface geometry and internal deformations gives precise feedback to an implicit solver for surface tension. Methods that enforce incompressibility directly on the particles are typically numerically inefficient compared to those that utilize a background grid. However, background grid discretizations suffer from inaccuracy near the free surface where they do not properly capture the interface geometry. Therefore, our incompressibility discretization utilizes a particle based projection near the interface and a background MAC grid based projection for efficiency in the vast interior of the liquid domain - as well as a novel method for coupling these two disparate projections together. We show that the overall coupled elliptic solver is second order accurate, and remains second order accurate when used in conjunction with an appropriate temporal discretization for parabolic problems. A similar second order accurate discretization is derived when the MAC grid unknowns are located on faces (as opposed to cell centers) so that Navier-Stokes viscosity can be solved for implicitly as well. Finally, we present a fully implicit approach to surface tension that is robust enough to achieve a steady state solution in a single time step. Beyond stable implicit surface tension for our novel hybrid discretization, we demonstrate preliminary results for both standard front tracking and the particle level set method.</p>
 </blockquote>
 <h4 id="肥皂泡">肥皂泡</h4>
-<h5
-id="codimensional-surface-tension-flow-on-simplicial-complexes">Codimensional
-Surface Tension Flow on Simplicial Complexes</h5>
+<h5 id="codimensional-surface-tension-flow-on-simplicial-complexes">Codimensional Surface Tension Flow on Simplicial Complexes</h5>
 <blockquote>
 <ul>
 <li>SIG 14</li>
 <li>Bo Zhu (Stanford University)</li>
-<li><a
-target="_blank" rel="noopener" href="http://physbam.stanford.edu/~fedkiw/papers/stanford2014-01.pdf">PDF</a></li>
+<li><a target="_blank" rel="noopener" href="http://physbam.stanford.edu/~fedkiw/papers/stanford2014-01.pdf">PDF</a></li>
 </ul>
 </blockquote>
 <p>主要工作是在类似于肥皂泡的“一层”流体上进行的：</p>
 <img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224103303-4bvtqki.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224103303-4bvtqki.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="i">
 <p>拉格朗日视角下，基于单纯复形进行。</p>
-<h5
-id="codimensional-surface-tension-flow-using-moving-least-squares-particles">Codimensional
-Surface Tension Flow using Moving-Least-Squares Particles</h5>
+<h5 id="codimensional-surface-tension-flow-using-moving-least-squares-particles">Codimensional Surface Tension Flow using Moving-Least-Squares Particles</h5>
 <blockquote>
 <ul>
 <li>SIG 2020</li>
@@ -2990,155 +2857,61 @@ Surface Tension Flow using Moving-Least-Squares Particles</h5>
 <h5 id="simulation-of-bubbles">Simulation of bubbles</h5>
 <blockquote>
 <p>SIGGRAPH 2006</p>
-<p><a
-target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1016/j.gmod.2009.08.001">Link</a></p>
-<p><strong>Abstract</strong>: We present a novel framework based on a
-continuous fluid simulator for general simulation of realistic bubbles,
-with which we can handle as many significant dynamic bubble effects as
-possible. To capture a very thin liquid film of bubbles, we have
-developed <strong>a regional level set method allowing multi-manifold
-interface tracking</strong>. Based on the definitions of regional
-distance and its five operators, the implementation of the regional
-level set method is very easy. An implicit surface of liquid film with
-arbitrary thickness can be reconstructed from the regional level set
-function. To overcome the numerical instability problem, we exploit a
-new semi-implicit surface tension model which is unconditionally stable
-and makes the simulation of surface tension dominated phenomena much
-more efficient. An approximated film thickness evolution model is
-proposed to control the bubble's lifecycle. All these new techniques
-combine into a general framework that can produce various realistic
-dynamic <strong>effects of bubbles</strong>.</p>
+<p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1016/j.gmod.2009.08.001">Link</a></p>
+<p><strong>Abstract</strong>: We present a novel framework based on a continuous fluid simulator for general simulation of realistic bubbles, with which we can handle as many significant dynamic bubble effects as possible. To capture a very thin liquid film of bubbles, we have developed <strong>a regional level set method allowing multi-manifold interface tracking</strong>. Based on the definitions of regional distance and its five operators, the implementation of the regional level set method is very easy. An implicit surface of liquid film with arbitrary thickness can be reconstructed from the regional level set function. To overcome the numerical instability problem, we exploit a new semi-implicit surface tension model which is unconditionally stable and makes the simulation of surface tension dominated phenomena much more efficient. An approximated film thickness evolution model is proposed to control the bubble's lifecycle. All these new techniques combine into a general framework that can produce various realistic dynamic <strong>effects of bubbles</strong>.</p>
 </blockquote>
 <ul>
 <li>主要侧重点在于气泡的模拟</li>
 <li>流体-空气边界</li>
 </ul>
-<h5 id="a-hyperbolic-geometric-flow-for-evolving-films-and-foams.">A
-hyperbolic geometric flow for evolving films and foams.</h5>
+<h5 id="a-hyperbolic-geometric-flow-for-evolving-films-and-foams.">A hyperbolic geometric flow for evolving films and foams.</h5>
 <blockquote>
 <p>TOG 17</p>
-<p><strong>Abstract</strong>: Simulating the behavior of soap films and
-foams is a challenging task. A direct numerical simulation of films and
-foams via the Navier-Stokes equations is still computationally too
-expensive. We propose an alternative formulation inspired by geometric
-flow. Our model exploits the fact, according to Plateau's laws, that the
-steady state of a film is a union of constant mean curvature surfaces
-and minimal surfaces. Such surfaces are also well known as the steady
-state solutions of certain curvature flows. We show a link between the
-Navier-Stokes equations and a recent variant of mean curvature flow,
-called hyperbolic mean curvature flow, under the assumption of constant
-air pressure per enclosed region. Instead of using hyperbolic mean
-curvature flow as is, we propose to replace curvature by the gradient of
-the surface area functional. This formulation enables us to robustly
-handle non-manifold configurations; such junctions connecting multiple
-films are intractable with the traditional formulation using curvature.
-We also add explicit volume preservation to hyperbolic mean curvature
-flow, which in fact corresponds to the pressure term of the
-Navier-Stokes equations. Our method is simple, fast, robust, and
-consistent with Plateau's laws, which are all due to our reformulation
-of film dynamics as a geometric flow.</p>
+<p><strong>Abstract</strong>: Simulating the behavior of soap films and foams is a challenging task. A direct numerical simulation of films and foams via the Navier-Stokes equations is still computationally too expensive. We propose an alternative formulation inspired by geometric flow. Our model exploits the fact, according to Plateau's laws, that the steady state of a film is a union of constant mean curvature surfaces and minimal surfaces. Such surfaces are also well known as the steady state solutions of certain curvature flows. We show a link between the Navier-Stokes equations and a recent variant of mean curvature flow, called hyperbolic mean curvature flow, under the assumption of constant air pressure per enclosed region. Instead of using hyperbolic mean curvature flow as is, we propose to replace curvature by the gradient of the surface area functional. This formulation enables us to robustly handle non-manifold configurations; such junctions connecting multiple films are intractable with the traditional formulation using curvature. We also add explicit volume preservation to hyperbolic mean curvature flow, which in fact corresponds to the pressure term of the Navier-Stokes equations. Our method is simple, fast, robust, and consistent with Plateau's laws, which are all due to our reformulation of film dynamics as a geometric flow.</p>
 </blockquote>
 <ul>
 <li>主要处理气泡（薄的、“一层”液体）</li>
 </ul>
 <figure>
-<img src="./SurfaceTension/Figure1.png" class="lazyload" data-srcset="./SurfaceTension/Figure1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
+<img src="./SurfaceTension/Figure1.png" class="lazyload" data-srcset="./SurfaceTension/Figure1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
-<h5
-id="double-bubbles-sans-toil-and-trouble-discrete-circulation-preserving-vortex-sheets-for-soap-films-and-foams">Double
-bubbles sans toil and trouble: Discrete circulation-preserving vortex
-sheets for soap films and foams</h5>
+<h5 id="double-bubbles-sans-toil-and-trouble-discrete-circulation-preserving-vortex-sheets-for-soap-films-and-foams">Double bubbles sans toil and trouble: Discrete circulation-preserving vortex sheets for soap films and foams</h5>
 <blockquote>
 <p>TOG 2015</p>
 <p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/2767003">Link</a></p>
-<p><strong>Abstract</strong>: Simulating the delightful dynamics of soap
-films, bubbles, and foams has traditionally required the use of a fully
-three-dimensional many-phase Navier-Stokes solver, even though their
-visual appearance is completely dominated by the thin liquid surface. We
-depart from earlier work on soap bubbles and foams by noting that their
-dynamics are naturally described by a Lagrangian vortex sheet model in
-which circulation is the primary variable. This leads us to derive a
-novel circulation-preserving surface-only discretization of foam
-dynamics driven by surface tension on a non-manifold triangle mesh. We
-represent the surface using a mesh-based multimaterial surface tracker
-which supports complex bubble topology changes, and evolve the surface
-according to the ambient air flow induced by a scalar circulation field
-stored on the mesh. Surface tension forces give rise to a simple update
-rule for circulation, even at non-manifold Plateau borders, based on a
-discrete measure of signed scalar mean curvature. We further incorporate
-vertex constraints to enable the interaction of soap films with wires.
-The result is a method that is at once simple, robust, and efficient,
-yet able to capture an array of soap films behaviors including foam
-rearrangement, catenoid collapse, blowing bubbles, and double bubbles
-being pulled apart.</p>
+<p><strong>Abstract</strong>: Simulating the delightful dynamics of soap films, bubbles, and foams has traditionally required the use of a fully three-dimensional many-phase Navier-Stokes solver, even though their visual appearance is completely dominated by the thin liquid surface. We depart from earlier work on soap bubbles and foams by noting that their dynamics are naturally described by a Lagrangian vortex sheet model in which circulation is the primary variable. This leads us to derive a novel circulation-preserving surface-only discretization of foam dynamics driven by surface tension on a non-manifold triangle mesh. We represent the surface using a mesh-based multimaterial surface tracker which supports complex bubble topology changes, and evolve the surface according to the ambient air flow induced by a scalar circulation field stored on the mesh. Surface tension forces give rise to a simple update rule for circulation, even at non-manifold Plateau borders, based on a discrete measure of signed scalar mean curvature. We further incorporate vertex constraints to enable the interaction of soap films with wires. The result is a method that is at once simple, robust, and efficient, yet able to capture an array of soap films behaviors including foam rearrangement, catenoid collapse, blowing bubbles, and double bubbles being pulled apart.</p>
 </blockquote>
 <ul>
 <li>只考虑单层的流体 – 肥皂泡等</li>
 </ul>
-<p><img
-src="https://camo.githubusercontent.com/b2973d6c4872e860879fbaa3c0d4ffa3914848754749a9d2c2112a095a5a1c29/687474703a2f2f7777772e63732e636f6c756d6269612e6564752f63672f646f75626c65627562626c65732f7469746c652e6a7067" /></p>
+<p><img src="https://camo.githubusercontent.com/b2973d6c4872e860879fbaa3c0d4ffa3914848754749a9d2c2112a095a5a1c29/687474703a2f2f7777772e63732e636f6c756d6269612e6564752f63672f646f75626c65627562626c65732f7469746c652e6a7067" class="lazyload" data-srcset="https://camo.githubusercontent.com/b2973d6c4872e860879fbaa3c0d4ffa3914848754749a9d2c2112a095a5a1c29/687474703a2f2f7777772e63732e636f6c756d6269612e6564752f63672f646f75626c65627562626c65732f7469746c652e6a7067" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
 <h3 id="多流体">多流体</h3>
-<h4
-id="multiple-fluid-sph-simulation-using-a-mixture-model">Multiple-Fluid
-SPH Simulation Using a Mixture Model</h4>
+<h4 id="multiple-fluid-sph-simulation-using-a-mixture-model">Multiple-Fluid SPH Simulation Using a Mixture Model</h4>
 <blockquote>
 <p>TOG 2014</p>
 <p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/2645703">Link</a></p>
-<p><strong>Article</strong>: This article presents a versatile and
-robust SPH simulation approach for multiple-fluid flows. The spatial
-distribution of different phases or components is modeled using the
-volume fraction representation, the dynamics of multiple-fluid flows is
-captured by using an improved mixture model, and a stable and accurate
-SPH formulation is rigorously derived to resolve the complex transport
-and transformation processes encountered in multiple-fluid flows. The
-new approach can capture a wide range of real-world multiple-fluid
-phenomena, including mixing/unmixing of miscible and immiscible fluids,
-diffusion effect and chemical reaction, etc. Moreover, the new
-multiple-fluid SPH scheme can be readily integrated into existing
-state-of-the-art SPH simulators, and the multiple-fluid simulation is
-easy to set up. Various examples are presented to demonstrate the
-effectiveness of our approach.</p>
+<p><strong>Article</strong>: This article presents a versatile and robust SPH simulation approach for multiple-fluid flows. The spatial distribution of different phases or components is modeled using the volume fraction representation, the dynamics of multiple-fluid flows is captured by using an improved mixture model, and a stable and accurate SPH formulation is rigorously derived to resolve the complex transport and transformation processes encountered in multiple-fluid flows. The new approach can capture a wide range of real-world multiple-fluid phenomena, including mixing/unmixing of miscible and immiscible fluids, diffusion effect and chemical reaction, etc. Moreover, the new multiple-fluid SPH scheme can be readily integrated into existing state-of-the-art SPH simulators, and the multiple-fluid simulation is easy to set up. Various examples are presented to demonstrate the effectiveness of our approach.</p>
 </blockquote>
 <ul>
 <li>多流体</li>
 </ul>
 <p><img src="./SurfaceTension/image-20230304104113576.png" class="lazyload" data-srcset="./SurfaceTension/image-20230304104113576.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
-<h4
-id="a-stable-and-efficient-method-for-treating-surface-tension-in-incompressible-two-phase-flow.">A
-stable and efficient method for treating surface tension in
-incompressible two-phase flow.</h4>
+<h4 id="a-stable-and-efficient-method-for-treating-surface-tension-in-incompressible-two-phase-flow.">A stable and efficient method for treating surface tension in incompressible two-phase flow.</h4>
 <blockquote>
 <p>SIAM Journal on Scientific Computing, 2009</p>
-<p><a
-target="_blank" rel="noopener" href="https://www.math.fsu.edu/~sussman/SussmanOhta08.pdf">PDF</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.math.fsu.edu/~sussman/SussmanOhta08.pdf">PDF</a></p>
 <p><a target="_blank" rel="noopener" href="https://epubs.siam.org/doi/10.1137/080732122">Link</a></p>
-<p><strong>Abstract</strong>: A new approach based on volume preserving
-motion by mean curvature for treating surface tension in
-<strong>two-phase flows</strong> is introduced. Many numerical tests and
-a theoretical justification are included which provide evidence
-regarding the efficacy of the new approach. For many flows, which
-exhibit stiff surface tension effects, the new approach gives a factor
-of at least three and sometimes five or more speed-up for a given
-accuracy. The new method is easy to implement in the context of (1)
-level set methods, or coupled level set and volume-of-fluid methods, (2)
-complicated interfaces separating gas from liquid, and (3)
-three-dimensional axisymmetric, or fully three-dimensional adaptive mesh
-refinement.</p>
+<p><strong>Abstract</strong>: A new approach based on volume preserving motion by mean curvature for treating surface tension in <strong>two-phase flows</strong> is introduced. Many numerical tests and a theoretical justification are included which provide evidence regarding the efficacy of the new approach. For many flows, which exhibit stiff surface tension effects, the new approach gives a factor of at least three and sometimes five or more speed-up for a given accuracy. The new method is easy to implement in the context of (1) level set methods, or coupled level set and volume-of-fluid methods, (2) complicated interfaces separating gas from liquid, and (3) three-dimensional axisymmetric, or fully three-dimensional adaptive mesh refinement.</p>
 </blockquote>
-<h4
-id="interlinked-sph-pressure-solvers-for-strong-fluid-rigid-coupling">Interlinked
-sph pressure solvers for strong fluid-rigid coupling</h4>
+<h4 id="interlinked-sph-pressure-solvers-for-strong-fluid-rigid-coupling">Interlinked sph pressure solvers for strong fluid-rigid coupling</h4>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3284980">Link</a></p>
 </blockquote>
 <p><img src="./SurfaceTension/image-20230304104323251.png" class="lazyload" data-srcset="./SurfaceTension/image-20230304104323251.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
-</div><div class="story post-story"><h2 id="物理解释">物理解释</h2>
+<h2 id="物理解释">物理解释</h2>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Surface_tension">Surface
-Tension</a></p>
-<p>表面张力在概念上很简单。水分子比空气分子更容易被其他水分子吸引，反之亦然。因此，表面附近的水分子倾向于被拉向其余的水分子，反之亦然。在某种程度上，他们正在寻求最小化暴露于其他流体的区域，聚集在他们自己的同类型流体周围。表面张力最简单的线性模型实际上可以用势能等于两个流体之间的表面积的超临界值r乘以（在正常条件下的水和空气约为<span
-class="math inline">\(0.073J/m^2\)</span>）来表述。该力提供将表面积降至最低的趋势。</p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Surface_tension">Surface Tension</a></p>
+<p>表面张力在概念上很简单。水分子比空气分子更容易被其他水分子吸引，反之亦然。因此，表面附近的水分子倾向于被拉向其余的水分子，反之亦然。在某种程度上，他们正在寻求最小化暴露于其他流体的区域，聚集在他们自己的同类型流体周围。表面张力最简单的线性模型实际上可以用势能等于两个流体之间的表面积的超临界值r乘以（在正常条件下的水和空气约为<span class="math inline">\(0.073J/m^2\)</span>）来表述。该力提供将表面积降至最低的趋势。</p>
 </blockquote>
 <p>表面张力是静止液体表面收缩到尽可能小表面积的趋势。</p>
 <p>在液体-空气边界面上，表面张力源于「液体分子间吸引力」（Cohesion）大于「液体和空气分子间吸引力」（Adhesion）：</p>
@@ -3147,46 +2920,45 @@ class="math inline">\(0.073J/m^2\)</span>）来表述。该力提供将表面积
 <li>Cohesion：相同（相似）的粒子或表面“粘附”在一起的力（流体内部产生）</li>
 </ul>
 <blockquote>
-<p>与不同物体的 Adhesion 以及自身 Cohesion
-的大小关系，给出了液体和其他物体之间的<strong>润湿程度</strong>、<strong>接触角</strong>和<strong>弯月面形状</strong>。</p>
+<p>与不同物体的 Adhesion 以及自身 Cohesion 的大小关系，给出了液体和其他物体之间的<strong>润湿程度</strong>、<strong>接触角</strong>和<strong>弯月面形状</strong>。</p>
 <img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230224095819-wdisr0n.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload" title="image">
 </blockquote>
 <p>流体内部<strong>在平衡情况下</strong>，表面张力为0，不平衡情况下，有缩小表面积的趋势。物理中的（在平衡状态下）表面张力（参数）实际上对应上图中的几个向量，即发生在流体与其他物体<strong>接触面的边界</strong>上，但并没有给出整个接触面上如何进行表面张力的计算公式（Wikipedia中没有给出）。</p>
-<p>之前讨论的SPH方法中，其中有一项<span
-class="math inline">\(\alpha\)</span>和<span
-class="math inline">\(\beta\)</span>是人为指定的参数，其实考虑的也只是流体和空气的边界面，即不需要算出流体对于空气的作用力。</p>
+<p>之前讨论的SPH方法中，其中有一项<span class="math inline">\(\alpha\)</span>和<span class="math inline">\(\beta\)</span>是人为指定的参数，其实考虑的也只是流体和空气的边界面，即不需要算出流体对于空气的作用力。</p>
 <img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225111005299.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110955456.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
 <img src="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" class="lazyload" data-srcset="/2023/02/24/CG/Things/Fluid/SurfaceTension/image-20230225110720208.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class=" lazyload">
-<p>对于流体-固体边界面，则需要通过公式算出流体对于固体的力，可以进行双向耦合。(SIGGRAPH21)
-Solid-fluid interaction with surface-tension-dominant contact
-给出了基于MPM流体的流固耦合方法，该方法基于物理公式，求解了计算流固边界上表面张力。</p>
+<p>对于流体-固体边界面，则需要通过公式算出流体对于固体的力，可以进行双向耦合。(SIGGRAPH21) Solid-fluid interaction with surface-tension-dominant contact 给出了基于MPM流体的流固耦合方法，该方法基于物理公式，求解了计算流固边界上表面张力。</p>
 
-</div>
   </div>
   
   
     
     <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
+       <!-- 相关文章 -->
       
+      <!-- 版权声明组件 -->
       
-        <div class='copyright'>
-          <blockquote>
-            
+        
+          <div class='copyright'>
+            <blockquote>
               
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-4.0) 协议</p>
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
+                
               
-            
+                
+                  <p>本文永久链接是：<a href="http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/">http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/</a></p>
+                
               
-                <p>本文永久链接是：<a href=http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/>http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/</a></p>
-              
-            
-          </blockquote>
-        </div>
+            </blockquote>
+          </div>
+        
       
+      <!-- 打赏组件 -->
       
     </div>
   
@@ -3198,10 +2970,10 @@ Solid-fluid interaction with surface-tension-dominant contact
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-04T11:01:03+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-10T12:43:25+00:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年3月4日</p>
+    <p>更新于：2023年7月10日</p>
   </a>
 </div>
 
@@ -3281,6 +3053,17 @@ Solid-fluid interaction with surface-tension-dominant contact
   
     <div class="prev-next">
       
+        <a class='prev' href='/2023/07/10/CG/DGP/lec1/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Digital Geometry Processing</p>
+          <p class='content'>GCL-F-DGP1
+
+Representations
+How to represent geometry data in computer.
+Point cloud
+\[
+P = \{ p _...</p>
+        </a>
+      
       
         <a class='next' href='/2022/12/04/CG/siggraph-courses/Sig2021course-Intro-to-PBA/'>
           <p class='title'>Siggraph 2021 course - An Introduction to Physics-based Animation<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -3323,13 +3106,22 @@ Tags: #Tutorial#...</p>
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
+
   
     
     
+      
+    
+  
 
 
+<div class="widget-sticky pjax">
 
-  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
     
   <header>
     
@@ -3339,30 +3131,13 @@ Tags: #Tutorial#...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#summary"><span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB"><span class="toc-text">资料汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%B5%81%E4%BD%93"><span class="toc-text">单流体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84"><span class="toc-text">常规</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#fluid-simulation-in-computer-graphics-bridson-15-book"><span class="toc-text">Fluid
-Simulation in Computer Graphics (Bridson 15-Book)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#versatile-surface-tension-and-adhesion-for-sph-fluids"><span class="toc-text">Versatile
-surface tension and adhesion for SPH fluids</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#an-extended-cut-cell-method-for-sub-grid-liquids-tracking-with-surface-tension."><span class="toc-text">An
-Extended Cut-Cell Method for Sub-Grid Liquids Tracking with Surface
-Tension.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solid-fluid-interaction-with-surface-tension-dominant-contact"><span class="toc-text">Solid-fluid
-interaction with surface-tension-dominant contact</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#a-deformable-surface-model-for-real-time-water-drop-animation."><span class="toc-text">A
-deformable surface model for real-time water drop animation.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#surface-only-liquids"><span class="toc-text">Surface-only liquids</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#semi-implicit-surface-tension-formulation-with-a-lagrangian-surface-mesh-on-an-eulerian-simulation-grid."><span class="toc-text">Semi-implicit
-surface tension formulation with a Lagrangian surface mesh on an
-Eulerian simulation grid.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#a-new-incompressibility-discretization-for-a-hybrid-particle-mac-grid-representation-with-surface-tension."><span class="toc-text">A
-new incompressibility discretization for a hybrid particle MAC grid
-representation with surface tension.</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%82%A5%E7%9A%82%E6%B3%A1"><span class="toc-text">肥皂泡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#codimensional-surface-tension-flow-on-simplicial-complexes"><span class="toc-text">Codimensional
-Surface Tension Flow on Simplicial Complexes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#codimensional-surface-tension-flow-using-moving-least-squares-particles"><span class="toc-text">Codimensional
-Surface Tension Flow using Moving-Least-Squares Particles</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#simulation-of-bubbles"><span class="toc-text">Simulation of bubbles</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#a-hyperbolic-geometric-flow-for-evolving-films-and-foams."><span class="toc-text">A
-hyperbolic geometric flow for evolving films and foams.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#double-bubbles-sans-toil-and-trouble-discrete-circulation-preserving-vortex-sheets-for-soap-films-and-foams"><span class="toc-text">Double
-bubbles sans toil and trouble: Discrete circulation-preserving vortex
-sheets for soap films and foams</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%B5%81%E4%BD%93"><span class="toc-text">多流体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multiple-fluid-sph-simulation-using-a-mixture-model"><span class="toc-text">Multiple-Fluid
-SPH Simulation Using a Mixture Model</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a-stable-and-efficient-method-for-treating-surface-tension-in-incompressible-two-phase-flow."><span class="toc-text">A
-stable and efficient method for treating surface tension in
-incompressible two-phase flow.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#interlinked-sph-pressure-solvers-for-strong-fluid-rigid-coupling"><span class="toc-text">Interlinked
-sph pressure solvers for strong fluid-rigid coupling</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%A3%E9%87%8A"><span class="toc-text">物理解释</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#summary"><span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB"><span class="toc-text">资料汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%B5%81%E4%BD%93"><span class="toc-text">单流体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84"><span class="toc-text">常规</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#fluid-simulation-in-computer-graphics-bridson-15-book"><span class="toc-text">Fluid Simulation in Computer Graphics (Bridson 15-Book)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#versatile-surface-tension-and-adhesion-for-sph-fluids"><span class="toc-text">Versatile surface tension and adhesion for SPH fluids</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#an-extended-cut-cell-method-for-sub-grid-liquids-tracking-with-surface-tension."><span class="toc-text">An Extended Cut-Cell Method for Sub-Grid Liquids Tracking with Surface Tension.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#solid-fluid-interaction-with-surface-tension-dominant-contact"><span class="toc-text">Solid-fluid interaction with surface-tension-dominant contact</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#a-deformable-surface-model-for-real-time-water-drop-animation."><span class="toc-text">A deformable surface model for real-time water drop animation.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#surface-only-liquids"><span class="toc-text">Surface-only liquids</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#semi-implicit-surface-tension-formulation-with-a-lagrangian-surface-mesh-on-an-eulerian-simulation-grid."><span class="toc-text">Semi-implicit surface tension formulation with a Lagrangian surface mesh on an Eulerian simulation grid.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#a-new-incompressibility-discretization-for-a-hybrid-particle-mac-grid-representation-with-surface-tension."><span class="toc-text">A new incompressibility discretization for a hybrid particle MAC grid representation with surface tension.</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%82%A5%E7%9A%82%E6%B3%A1"><span class="toc-text">肥皂泡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#codimensional-surface-tension-flow-on-simplicial-complexes"><span class="toc-text">Codimensional Surface Tension Flow on Simplicial Complexes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#codimensional-surface-tension-flow-using-moving-least-squares-particles"><span class="toc-text">Codimensional Surface Tension Flow using Moving-Least-Squares Particles</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#simulation-of-bubbles"><span class="toc-text">Simulation of bubbles</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#a-hyperbolic-geometric-flow-for-evolving-films-and-foams."><span class="toc-text">A hyperbolic geometric flow for evolving films and foams.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#double-bubbles-sans-toil-and-trouble-discrete-circulation-preserving-vortex-sheets-for-soap-films-and-foams"><span class="toc-text">Double bubbles sans toil and trouble: Discrete circulation-preserving vortex sheets for soap films and foams</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%B5%81%E4%BD%93"><span class="toc-text">多流体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#multiple-fluid-sph-simulation-using-a-mixture-model"><span class="toc-text">Multiple-Fluid SPH Simulation Using a Mixture Model</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a-stable-and-efficient-method-for-treating-surface-tension-in-incompressible-two-phase-flow."><span class="toc-text">A stable and efficient method for treating surface tension in incompressible two-phase flow.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#interlinked-sph-pressure-solvers-for-strong-fluid-rigid-coupling"><span class="toc-text">Interlinked sph pressure solvers for strong fluid-rigid coupling</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E8%A7%A3%E9%87%8A"><span class="toc-text">物理解释</span></a></li></ol>
     </div>
   </section>
 
   
+
+</div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3423,6 +3198,9 @@ sph pressure solvers for strong fluid-rigid coupling</span></a></li></ol></li></
     <!-- pjax占位 -->
   </div>
 
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <!-- Custom Files side begin -->
   
@@ -3487,26 +3265,20 @@ sph pressure solvers for strong fluid-rigid coupling</span></a></li></ol></li></
       
     
       
-        <div><p>博客内容遵循 <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享
-4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-次</span> <span id="lc-uv">访客数为 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
 </div>
         
       
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.4.0" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/#5.8.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -3546,7 +3318,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 <!-- internal -->
 
-<script src="/js/app.af2d54c8.js"></script>
+<script src="/js/app.7a2c825e.js"></script>
 
 
 
@@ -3793,7 +3565,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.80d861b1.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -3809,25 +3581,25 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyPaste'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyAll'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyCut'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyText'] = (fun) => {fun()}
 
 
 
@@ -3851,13 +3623,13 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyLink'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+  //RightMenusFunction['copyImg'] = (fun) => {fun()}
 
 
 
@@ -3889,13 +3661,13 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 
 
-  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+  //RightMenusFunction['printMode'] = (fun) => {fun()}
 
 
 
 
 
-  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+  //RightMenusFunction['readMode'] = (fun) => {fun()}
 
 
 
@@ -4196,7 +3968,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.0e52f222.js");
+    return volantis.js("/js/search/hexo.85946653.js");
   }
 
   function loadSearchService() {
@@ -4481,98 +4253,25 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   });
 </script>
 
+
+
 <script>
-  try {
-    // https://web.dev/content-visibility/
-    // https://www.caniuse.com/?search=content-visibility
-    // https://infrequently.org/2020/12/content-visibility-scroll-fix/
-    // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
-
-    // 备注 目前已知的问题:
-    // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
-    // scrollreveal 插件潜在问题 目前尚不明确
-
-    let eqIsh = (a, b, fuzz = 2) => {
-      return Math.abs(a - b) <= fuzz;
-    };
-
-    let rectNotEQ = (a, b) => {
-      return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
-    };
-
-    // Keep a map of elements and the dimensions of
-    // their place-holders, re-setting the element's
-    // intrinsic size when we get updated measurements
-    // from observers.
-    let spaced = new WeakMap();
-
-    // Only call this when known cheap, post layout
-    let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
-      let old = spaced.get(el);
-      // Set intrinsic size to prevent jumping on un-painting:
-      //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
-      if (!old || rectNotEQ(old, rect)) {
-        spaced.set(el, rect);
-        el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
-      }
-    };
-
-    let iObs = new IntersectionObserver(
-      (entries, o) => {
-        entries.forEach((entry) => {
-          // We don't care if the element is intersecting or
-          // has been laid out as our page structure ensures
-          // they'll get the right width.
-          reserveSpace(entry.target, entry.boundingClientRect);
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
         });
-      },
-      { rootMargin: "500px 0px 500px 0px" }
-    );
-
-    let rObs = new ResizeObserver((entries, o) => {
-      entries.forEach((entry) => {
-        reserveSpace(entry.target, entry.contentRect);
-      });
-    });
-
-    let resizeResilientDeferredRendering = (Selector) => {
-      let articles = document.querySelectorAll(Selector);
-
-      if (articles.length) {
-        articles.forEach((el) => {
-          iObs.observe(el);
-          rObs.observe(el);
-        });
-
-        // Workaround for Chrome bug, part 2.
-        //
-        // Re-enable browser management of rendering for the
-        // first article after the first paint. Double-rAF
-        // to ensure we get called after a layout.
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            articles[0].style["content-visibility"] = "auto";
-          });
-        });
+        document.querySelector("#safearea").style["display"] = "block";
       }
-    };
-
-    let contentVisibilityScrollFix = () => {
-      if (!("content-visibility" in document.documentElement.style)) {
-        return;
-      }
-      resizeResilientDeferredRendering(".post-story");
-    };
-    contentVisibilityScrollFix();
-    volantis.pjax.push(contentVisibilityScrollFix);
-  } catch (error) {
-    console.log(error);
+    }
   }
 </script>
 
 
-
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Physical-Simlation/","name":"Physical Simlation"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","name":"流体-表面张力"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"流体-表面张力","description":"Je pense, donc je suis","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","wordCount":0,"datePublished":"2023-02-24T01:44:02.000Z","dateModified":"2023-03-04T03:01:03.416Z","articleSection":"Physical Simlation","keywords":"Surface Tension,Fluid","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Je pense, donc je suis"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://adversarr.github.io/","name":"Adversarr's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://adversarr.github.io/categories/Physical-Simlation/","name":"Physical Simlation"}},{"@type":"ListItem","position":3,"item":{"@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","name":"流体-表面张力"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Adversarr's Blog","url":"http://adversarr.github.io/","keywords":"study","description":"Je pense, donc je suis","author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/","description":"Je pense, donc je suis"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","url":"http://adversarr.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://adversarr.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"流体-表面张力","description":"Je pense, donc je suis","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/"},"author":{"@type":"Person","name":"Adversarr","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://adversarr.github.io/"},"publisher":{"@type":"Organization","name":"Adversarr's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://adversarr.github.io/2023/02/24/CG/Things/Fluid/SurfaceTension/","wordCount":0,"datePublished":"2023-02-24T01:44:02.000Z","dateModified":"2023-07-10T12:43:25.782Z","articleSection":"Physical Simlation","keywords":"Surface Tension,Fluid","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
@@ -4655,6 +4354,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- import body_end end-->
     <!-- Custom Files bodyEnd begin-->
     
-    <!-- Custom Files bodyEnd end--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- Custom Files bodyEnd end-->
+    <!-- front-matter body_end begin -->
+    <!-- front-matter body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </body>
 </html>
